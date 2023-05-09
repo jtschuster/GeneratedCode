@@ -21,6 +21,7 @@ file unsafe partial interface InterfaceImplementation : global::ComInterfaceGene
             __invokeRetVal = ((delegate* unmanaged<void*, ushort*, int> )__vtable_native[5])(__this, (ushort*)__name_native);
         }
 
+        System.GC.KeepAlive(this);
         // Unmarshal - Convert native data to managed data.
         System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
     }
@@ -39,6 +40,7 @@ file unsafe partial interface InterfaceImplementation : global::ComInterfaceGene
                 __invokeRetVal = ((delegate* unmanaged<void*, ushort**, int> )__vtable_native[6])(__this, &__retVal_native);
             }
 
+            System.GC.KeepAlive(this);
             // Unmarshal - Convert native data to managed data.
             System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
             __retVal = global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller.ConvertToManaged(__retVal_native);
@@ -51,6 +53,41 @@ file unsafe partial interface InterfaceImplementation : global::ComInterfaceGene
 
         return __retVal;
     }
+
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Interop.ComInterfaceGenerator", "42.42.42.42")]
+    [System.Runtime.CompilerServices.SkipLocalsInitAttribute]
+    int global::ComInterfaceGenerator.Tests.IDerivedComInterface.GetData()
+    {
+        var(__this, __vtable_native) = ((System.Runtime.InteropServices.Marshalling.IUnmanagedVirtualMethodTableProvider)this).GetVirtualMethodTableInfoForKey(typeof(global::ComInterfaceGenerator.Tests.IDerivedComInterface));
+        int __retVal;
+        int __invokeRetVal;
+        {
+            __invokeRetVal = ((delegate* unmanaged<void*, int*, int> )__vtable_native[3])(__this, &__retVal);
+        }
+
+        System.GC.KeepAlive(this);
+        // Unmarshal - Convert native data to managed data.
+        System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
+        return __retVal;
+    }
+
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Interop.ComInterfaceGenerator", "42.42.42.42")]
+    [System.Runtime.CompilerServices.SkipLocalsInitAttribute]
+    void global::ComInterfaceGenerator.Tests.IDerivedComInterface.SetData(int n)
+    {
+        var(__this, __vtable_native) = ((System.Runtime.InteropServices.Marshalling.IUnmanagedVirtualMethodTableProvider)this).GetVirtualMethodTableInfoForKey(typeof(global::ComInterfaceGenerator.Tests.IDerivedComInterface));
+        int __invokeRetVal;
+        {
+            __invokeRetVal = ((delegate* unmanaged<void*, int, int> )__vtable_native[4])(__this, n);
+        }
+
+        System.GC.KeepAlive(this);
+        // Unmarshal - Convert native data to managed data.
+        System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
+    }
+
+    int global::ComInterfaceGenerator.Tests.IComInterface1.GetData() => throw new System.Diagnostics.UnreachableException();
+    void global::ComInterfaceGenerator.Tests.IComInterface1.SetData(int n) => throw new System.Diagnostics.UnreachableException();
 }
 
 file unsafe partial interface InterfaceImplementation
@@ -135,5 +172,14 @@ namespace ComInterfaceGenerator.Tests
     [System.Runtime.InteropServices.Marshalling.IUnknownDerivedAttribute<InterfaceInformation, InterfaceImplementation>]
     public partial interface IDerivedComInterface
     {
+    }
+}
+
+namespace ComInterfaceGenerator.Tests
+{
+    public partial interface IDerivedComInterface
+    {
+        new int GetData() => ((global::ComInterfaceGenerator.Tests.IComInterface1)this).GetData();
+        new void SetData(int n) => ((global::ComInterfaceGenerator.Tests.IComInterface1)this).SetData(n);
     }
 }

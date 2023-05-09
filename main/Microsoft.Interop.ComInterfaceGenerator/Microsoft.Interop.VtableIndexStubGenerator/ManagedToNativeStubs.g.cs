@@ -19,6 +19,7 @@ namespace ComInterfaceGenerator.Tests
                             __retVal = ((delegate* unmanaged<void*, int> )__vtable_native[0])(__this);
                         }
 
+                        System.GC.KeepAlive(this);
                         return __retVal;
                     }
                 }
@@ -44,6 +45,8 @@ namespace ComInterfaceGenerator.Tests
                         {
                             ((delegate* unmanaged<void*, int, void> )__vtable_native[1])(__this, x);
                         }
+
+                        System.GC.KeepAlive(this);
                     }
                 }
             }
@@ -70,6 +73,7 @@ namespace ComInterfaceGenerator.Tests
                             __retVal = ((delegate* unmanaged<int, int, int> )__vtable_native[0])(x, y);
                         }
 
+                        System.GC.KeepAlive(this);
                         return __retVal;
                     }
                 }
@@ -97,6 +101,7 @@ namespace ComInterfaceGenerator.Tests
                             __retVal = ((delegate* unmanaged<int, int, int> )__vtable_native[1])(x, y);
                         }
 
+                        System.GC.KeepAlive(this);
                         return __retVal;
                     }
                 }

@@ -26,6 +26,7 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
                 __invokeRetVal = ((delegate* unmanaged<void*, int**, int> )__vtable_native[3])(__this, &__retVal_native);
             }
 
+            System.GC.KeepAlive(this);
             // Unmarshal - Convert native data to managed data.
             System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
             __retVal_native__numElements = 10;
@@ -102,6 +103,13 @@ file unsafe partial interface InterfaceImplementation
 namespace SharedTypes.ComInterfaces
 {
     [System.Runtime.InteropServices.Marshalling.IUnknownDerivedAttribute<InterfaceInformation, InterfaceImplementation>]
+    partial interface IGetIntArray
+    {
+    }
+}
+
+namespace SharedTypes.ComInterfaces
+{
     partial interface IGetIntArray
     {
     }
