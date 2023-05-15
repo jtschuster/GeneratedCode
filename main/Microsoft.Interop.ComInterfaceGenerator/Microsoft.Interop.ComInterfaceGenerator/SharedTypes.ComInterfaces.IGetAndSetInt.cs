@@ -114,14 +114,14 @@ file unsafe partial interface InterfaceImplementation
 namespace SharedTypes.ComInterfaces
 {
     [System.Runtime.InteropServices.Marshalling.IUnknownDerivedAttribute<InterfaceInformation, InterfaceImplementation>]
-    partial interface IGetAndSetInt
+    internal partial interface IGetAndSetInt
     {
     }
 }
 
 namespace SharedTypes.ComInterfaces
 {
-    partial interface IGetAndSetInt
+    internal partial interface IGetAndSetInt
     {
     }
 }

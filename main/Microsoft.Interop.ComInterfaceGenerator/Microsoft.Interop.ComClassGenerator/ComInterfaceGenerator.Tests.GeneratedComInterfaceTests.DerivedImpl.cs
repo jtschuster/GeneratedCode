@@ -8,13 +8,13 @@
         {
             System.Runtime.InteropServices.ComWrappers.ComInterfaceEntry* vtables = (System.Runtime.InteropServices.ComWrappers.ComInterfaceEntry*)System.Runtime.CompilerServices.RuntimeHelpers.AllocateTypeAssociatedMemory(typeof(ComClassInformation), sizeof(System.Runtime.InteropServices.ComWrappers.ComInterfaceEntry) * 2);
             System.Runtime.InteropServices.Marshalling.IIUnknownDerivedDetails details;
-            details = System.Runtime.InteropServices.Marshalling.StrategyBasedComWrappers.DefaultIUnknownInterfaceDetailsStrategy.GetIUnknownDerivedDetails(typeof(ComInterfaceGenerator.Tests.IDerivedComInterface).TypeHandle);
+            details = System.Runtime.InteropServices.Marshalling.StrategyBasedComWrappers.DefaultIUnknownInterfaceDetailsStrategy.GetIUnknownDerivedDetails(typeof(SharedTypes.ComInterfaces.IDerivedComInterface).TypeHandle);
             vtables[0] = new()
             {
                 IID = details.Iid,
                 Vtable = (nint)details.ManagedVirtualMethodTable
             };
-            details = System.Runtime.InteropServices.Marshalling.StrategyBasedComWrappers.DefaultIUnknownInterfaceDetailsStrategy.GetIUnknownDerivedDetails(typeof(ComInterfaceGenerator.Tests.IComInterface1).TypeHandle);
+            details = System.Runtime.InteropServices.Marshalling.StrategyBasedComWrappers.DefaultIUnknownInterfaceDetailsStrategy.GetIUnknownDerivedDetails(typeof(SharedTypes.ComInterfaces.IGetAndSetInt).TypeHandle);
             vtables[1] = new()
             {
                 IID = details.Iid,

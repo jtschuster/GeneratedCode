@@ -103,14 +103,14 @@ file unsafe partial interface InterfaceImplementation
 namespace SharedTypes.ComInterfaces
 {
     [System.Runtime.InteropServices.Marshalling.IUnknownDerivedAttribute<InterfaceInformation, InterfaceImplementation>]
-    partial interface IGetIntArray
+    internal partial interface IGetIntArray
     {
     }
 }
 
 namespace SharedTypes.ComInterfaces
 {
-    partial interface IGetIntArray
+    internal partial interface IGetIntArray
     {
     }
 }
