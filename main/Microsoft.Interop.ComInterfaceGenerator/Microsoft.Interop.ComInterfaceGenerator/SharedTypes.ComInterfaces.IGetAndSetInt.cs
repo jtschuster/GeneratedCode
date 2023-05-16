@@ -17,7 +17,7 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
         int __retVal;
         int __invokeRetVal;
         {
-            __invokeRetVal = ((delegate* unmanaged<void*, int*, int> )__vtable_native[3])(__this, &__retVal);
+            __invokeRetVal = ((delegate* unmanaged[MemberFunction]<void*, int*, int> )__vtable_native[3])(__this, &__retVal);
         }
 
         System.GC.KeepAlive(this);
@@ -33,7 +33,7 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
         var(__this, __vtable_native) = ((System.Runtime.InteropServices.Marshalling.IUnmanagedVirtualMethodTableProvider)this).GetVirtualMethodTableInfoForKey(typeof(global::SharedTypes.ComInterfaces.IGetAndSetInt));
         int __invokeRetVal;
         {
-            __invokeRetVal = ((delegate* unmanaged<void*, int, int> )__vtable_native[4])(__this, x);
+            __invokeRetVal = ((delegate* unmanaged[MemberFunction]<void*, int, int> )__vtable_native[4])(__this, x);
         }
 
         System.GC.KeepAlive(this);
@@ -44,7 +44,7 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
 
 file unsafe partial interface InterfaceImplementation
 {
-    [System.Runtime.InteropServices.UnmanagedCallersOnlyAttribute]
+    [System.Runtime.InteropServices.UnmanagedCallersOnlyAttribute(CallConvs = new[] { typeof(System.Runtime.CompilerServices.CallConvMemberFunction) })]
     internal static int ABI_GetInt(System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch* __this_native, int* __invokeRetValUnmanaged__param)
     {
         global::SharedTypes.ComInterfaces.IGetAndSetInt @this = default;
@@ -68,7 +68,7 @@ file unsafe partial interface InterfaceImplementation
         return __retVal;
     }
 
-    [System.Runtime.InteropServices.UnmanagedCallersOnlyAttribute]
+    [System.Runtime.InteropServices.UnmanagedCallersOnlyAttribute(CallConvs = new[] { typeof(System.Runtime.CompilerServices.CallConvMemberFunction) })]
     internal static int ABI_SetInt(System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch* __this_native, int x)
     {
         global::SharedTypes.ComInterfaces.IGetAndSetInt @this = default;
@@ -103,8 +103,8 @@ file unsafe partial interface InterfaceImplementation
         }
 
         {
-            vtable[3] = (void*)(delegate* unmanaged<System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch*, int*, int> )&ABI_GetInt;
-            vtable[4] = (void*)(delegate* unmanaged<System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch*, int, int> )&ABI_SetInt;
+            vtable[3] = (void*)(delegate* unmanaged[MemberFunction]<System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch*, int*, int> )&ABI_GetInt;
+            vtable[4] = (void*)(delegate* unmanaged[MemberFunction]<System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch*, int, int> )&ABI_SetInt;
         }
 
         return vtable;

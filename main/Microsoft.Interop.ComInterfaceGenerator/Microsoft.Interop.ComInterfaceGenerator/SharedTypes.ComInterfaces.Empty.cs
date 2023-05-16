@@ -19,7 +19,19 @@ file unsafe partial interface InterfaceImplementation
 {
     internal static void** CreateManagedVirtualFunctionTable()
     {
-        return null;
+        void** vtable = (void**)System.Runtime.CompilerServices.RuntimeHelpers.AllocateTypeAssociatedMemory(typeof(global::SharedTypes.ComInterfaces.Empty), sizeof(void*) * 3);
+        {
+            nint v0, v1, v2;
+            System.Runtime.InteropServices.ComWrappers.GetIUnknownImpl(out v0, out v1, out v2);
+            vtable[0] = (void*)v0;
+            vtable[1] = (void*)v1;
+            vtable[2] = (void*)v2;
+        }
+
+        {
+        }
+
+        return vtable;
     }
 }
 

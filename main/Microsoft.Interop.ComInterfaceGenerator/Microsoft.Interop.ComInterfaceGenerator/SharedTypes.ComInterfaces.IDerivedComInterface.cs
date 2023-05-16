@@ -18,7 +18,7 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
         // Pin - Pin data in preparation for calling the P/Invoke.
         fixed (void* __name_native = &global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller.GetPinnableReference(name))
         {
-            __invokeRetVal = ((delegate* unmanaged<void*, ushort*, int> )__vtable_native[5])(__this, (ushort*)__name_native);
+            __invokeRetVal = ((delegate* unmanaged[MemberFunction]<void*, ushort*, int> )__vtable_native[5])(__this, (ushort*)__name_native);
         }
 
         System.GC.KeepAlive(this);
@@ -37,7 +37,7 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
         try
         {
             {
-                __invokeRetVal = ((delegate* unmanaged<void*, ushort**, int> )__vtable_native[6])(__this, &__retVal_native);
+                __invokeRetVal = ((delegate* unmanaged[MemberFunction]<void*, ushort**, int> )__vtable_native[6])(__this, &__retVal_native);
             }
 
             System.GC.KeepAlive(this);
@@ -62,7 +62,7 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
         int __retVal;
         int __invokeRetVal;
         {
-            __invokeRetVal = ((delegate* unmanaged<void*, int*, int> )__vtable_native[3])(__this, &__retVal);
+            __invokeRetVal = ((delegate* unmanaged[MemberFunction]<void*, int*, int> )__vtable_native[3])(__this, &__retVal);
         }
 
         System.GC.KeepAlive(this);
@@ -78,7 +78,7 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
         var(__this, __vtable_native) = ((System.Runtime.InteropServices.Marshalling.IUnmanagedVirtualMethodTableProvider)this).GetVirtualMethodTableInfoForKey(typeof(global::SharedTypes.ComInterfaces.IDerivedComInterface));
         int __invokeRetVal;
         {
-            __invokeRetVal = ((delegate* unmanaged<void*, int, int> )__vtable_native[4])(__this, x);
+            __invokeRetVal = ((delegate* unmanaged[MemberFunction]<void*, int, int> )__vtable_native[4])(__this, x);
         }
 
         System.GC.KeepAlive(this);
@@ -92,7 +92,7 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
 
 file unsafe partial interface InterfaceImplementation
 {
-    [System.Runtime.InteropServices.UnmanagedCallersOnlyAttribute]
+    [System.Runtime.InteropServices.UnmanagedCallersOnlyAttribute(CallConvs = new[] { typeof(System.Runtime.CompilerServices.CallConvMemberFunction) })]
     internal static int ABI_SetName(System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch* __this_native, ushort* __name_native)
     {
         global::SharedTypes.ComInterfaces.IDerivedComInterface @this = default;
@@ -119,7 +119,7 @@ file unsafe partial interface InterfaceImplementation
         return __retVal;
     }
 
-    [System.Runtime.InteropServices.UnmanagedCallersOnlyAttribute]
+    [System.Runtime.InteropServices.UnmanagedCallersOnlyAttribute(CallConvs = new[] { typeof(System.Runtime.CompilerServices.CallConvMemberFunction) })]
     internal static int ABI_GetName(System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch* __this_native, ushort** __invokeRetValUnmanaged__param)
     {
         global::SharedTypes.ComInterfaces.IDerivedComInterface @this = default;
@@ -159,8 +159,8 @@ file unsafe partial interface InterfaceImplementation
         }
 
         {
-            vtable[5] = (void*)(delegate* unmanaged<System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch*, ushort*, int> )&ABI_SetName;
-            vtable[6] = (void*)(delegate* unmanaged<System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch*, ushort**, int> )&ABI_GetName;
+            vtable[5] = (void*)(delegate* unmanaged[MemberFunction]<System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch*, ushort*, int> )&ABI_SetName;
+            vtable[6] = (void*)(delegate* unmanaged[MemberFunction]<System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch*, ushort**, int> )&ABI_GetName;
         }
 
         return vtable;
