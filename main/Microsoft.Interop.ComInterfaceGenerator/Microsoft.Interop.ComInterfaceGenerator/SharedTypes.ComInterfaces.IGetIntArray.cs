@@ -23,9 +23,10 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
         try
         {
             {
-                __invokeRetVal = ((delegate* unmanaged<void*, int**, int> )__vtable_native[3])(__this, &__retVal_native);
+                __invokeRetVal = ((delegate* unmanaged[MemberFunction]<void*, int**, int> )__vtable_native[3])(__this, &__retVal_native);
             }
 
+            System.GC.KeepAlive(this);
             // Unmarshal - Convert native data to managed data.
             System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
             __retVal_native__numElements = 10;
@@ -44,7 +45,7 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
 
 file unsafe partial interface InterfaceImplementation
 {
-    [System.Runtime.InteropServices.UnmanagedCallersOnlyAttribute]
+    [System.Runtime.InteropServices.UnmanagedCallersOnlyAttribute(CallConvs = new[] { typeof(System.Runtime.CompilerServices.CallConvMemberFunction) })]
     internal static int ABI_GetInts(System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch* __this_native, int** __invokeRetValUnmanaged__param)
     {
         global::SharedTypes.ComInterfaces.IGetIntArray @this = default;
@@ -92,7 +93,7 @@ file unsafe partial interface InterfaceImplementation
         }
 
         {
-            vtable[3] = (void*)(delegate* unmanaged<System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch*, int**, int> )&ABI_GetInts;
+            vtable[3] = (void*)(delegate* unmanaged[MemberFunction]<System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch*, int**, int> )&ABI_GetInts;
         }
 
         return vtable;
@@ -102,7 +103,14 @@ file unsafe partial interface InterfaceImplementation
 namespace SharedTypes.ComInterfaces
 {
     [System.Runtime.InteropServices.Marshalling.IUnknownDerivedAttribute<InterfaceInformation, InterfaceImplementation>]
-    partial interface IGetIntArray
+    internal partial interface IGetIntArray
+    {
+    }
+}
+
+namespace SharedTypes.ComInterfaces
+{
+    internal partial interface IGetIntArray
     {
     }
 }
