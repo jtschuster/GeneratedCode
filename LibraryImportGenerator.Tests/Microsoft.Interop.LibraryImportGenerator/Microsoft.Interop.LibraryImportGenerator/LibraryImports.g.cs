@@ -462,7 +462,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 // Setup - Perform required setup.
                 int __retVal_native__numElements;
                 System.Runtime.CompilerServices.Unsafe.SkipInit(out __retVal_native__numElements);
-                int __retVal_native__lastIndexMarshalled = 0;
+                ;
                 scoped global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<string, System.IntPtr>.ManagedToUnmanagedIn __strArray_native__marshaller = new();
                 int __strArray_native__numElements;
                 int __strArray_native__lastIndexMarshalled = 0;
@@ -507,7 +507,7 @@ namespace LibraryImportGenerator.IntegrationTests
                     __retVal_native__numElements = numElements;
                     {
                         System.ReadOnlySpan<System.IntPtr> __retVal_native__nativeSpan = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<string, System.IntPtr>.GetUnmanagedValuesDestination(__retVal_native, __retVal_native__numElements);
-                        for (int __i0 = 0; __i0 < __retVal_native__lastIndexMarshalled; ++__i0)
+                        for (int __i0 = 0; __i0 < __retVal_native__nativeSpan.Length; ++__i0)
                         {
                             global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller.Free((ushort*)__retVal_native__nativeSpan[__i0]);
                         }
@@ -1148,7 +1148,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 // Setup - Perform required setup.
                 int __retVal_native__numElements;
                 System.Runtime.CompilerServices.Unsafe.SkipInit(out __retVal_native__numElements);
-                int __retVal_native__lastIndexMarshalled = 0;
+                ;
                 scoped global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int[], System.IntPtr>.ManagedToUnmanagedIn __matrix_native__marshaller = new();
                 int __matrix_native__numElements;
                 int __matrix_native__lastIndexMarshalled = 0;
@@ -1202,7 +1202,7 @@ namespace LibraryImportGenerator.IntegrationTests
                     __retVal_native__numElements = numColumns;
                     {
                         System.ReadOnlySpan<System.IntPtr> __retVal_native__nativeSpan = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int[], System.IntPtr>.GetUnmanagedValuesDestination(__retVal_native, __retVal_native__numElements);
-                        for (int __i0 = 0; __i0 < __retVal_native__lastIndexMarshalled; ++__i0)
+                        for (int __i0 = 0; __i0 < __retVal_native__nativeSpan.Length; ++__i0)
                         {
                             int __retVal_native__nativeSpan____i0__numElements;
                             System.Runtime.CompilerServices.Unsafe.SkipInit(out __retVal_native__nativeSpan____i0__numElements);
@@ -2678,7 +2678,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 // Setup - Perform required setup.
                 scoped global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.IntStructWrapper, nint>.ManagedToUnmanagedIn __array_native__marshaller = new();
                 int __array_native__numElements;
-                ;
+                int __array_native__lastIndexMarshalled = 0;
                 System.Runtime.CompilerServices.Unsafe.SkipInit(out __array_native__numElements);
                 try
                 {
@@ -2710,7 +2710,7 @@ namespace LibraryImportGenerator.IntegrationTests
                     // Cleanup - Perform required cleanup.
                     {
                         System.ReadOnlySpan<nint> __array_native__nativeSpan = __array_native__marshaller.GetUnmanagedValuesDestination();
-                        for (int __i0 = 0; __i0 < __array_native__nativeSpan.Length; ++__i0)
+                        for (int __i0 = 0; __i0 < __array_native__lastIndexMarshalled; ++__i0)
                         {
                             global::LibraryImportGenerator.IntegrationTests.EnforceAllElementsCleanedUpIntStruct.Free(__array_native__nativeSpan[__i0]);
                         }
@@ -2743,7 +2743,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 // Setup - Perform required setup.
                 scoped global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.IntStructWrapper[], System.IntPtr>.ManagedToUnmanagedIn __array_native__marshaller = new();
                 int __array_native__numElements;
-                ;
+                int __array_native__lastIndexMarshalled = 0;
                 System.Runtime.CompilerServices.Unsafe.SkipInit(out __array_native__numElements);
                 try
                 {
@@ -2788,7 +2788,7 @@ namespace LibraryImportGenerator.IntegrationTests
                     // Cleanup - Perform required cleanup.
                     {
                         System.ReadOnlySpan<System.IntPtr> __array_native__nativeSpan = __array_native__marshaller.GetUnmanagedValuesDestination();
-                        for (int __i0 = 0; __i0 < __array_native__nativeSpan.Length; ++__i0)
+                        for (int __i0 = 0; __i0 < __array_native__lastIndexMarshalled; ++__i0)
                         {
                             int __array_native__nativeSpan____i0__numElements;
                             System.Runtime.CompilerServices.Unsafe.SkipInit(out __array_native__nativeSpan____i0__numElements);
