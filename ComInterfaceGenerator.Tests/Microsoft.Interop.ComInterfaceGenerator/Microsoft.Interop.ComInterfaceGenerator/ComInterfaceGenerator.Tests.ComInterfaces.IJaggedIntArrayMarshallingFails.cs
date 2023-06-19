@@ -74,6 +74,7 @@ file unsafe partial interface InterfaceImplementation : global::ComInterfaceGene
                     int __retVal_native__nativeSpan____i0__numElements;
                     System.Runtime.CompilerServices.Unsafe.SkipInit(out __retVal_native__nativeSpan____i0__numElements);
                     ;
+                    __retVal_native__nativeSpan____i0__numElements = widths[__i0];
                     global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, nint>.Free((nint*)__retVal_native__nativeSpan[__i0]);
                 }
             }
@@ -146,6 +147,7 @@ file unsafe partial interface InterfaceImplementation : global::ComInterfaceGene
                     int __array_native__nativeSpan____i0__numElements;
                     System.Runtime.CompilerServices.Unsafe.SkipInit(out __array_native__nativeSpan____i0__numElements);
                     ;
+                    __array_native__nativeSpan____i0__numElements = widths[__i0];
                     global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, nint>.Free((nint*)__array_native__nativeSpan[__i0]);
                 }
             }
@@ -215,6 +217,7 @@ file unsafe partial interface InterfaceImplementation : global::ComInterfaceGene
                     int __array_native__nativeSpan____i0__numElements;
                     System.Runtime.CompilerServices.Unsafe.SkipInit(out __array_native__nativeSpan____i0__numElements);
                     ;
+                    __array_native__nativeSpan____i0__numElements = 0;
                     global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, nint>.Free((nint*)__array_native__nativeSpan[__i0]);
                 }
             }
