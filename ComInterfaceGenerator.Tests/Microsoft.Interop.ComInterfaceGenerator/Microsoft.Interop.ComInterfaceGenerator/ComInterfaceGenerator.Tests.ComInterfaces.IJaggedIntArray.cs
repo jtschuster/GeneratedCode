@@ -59,9 +59,7 @@ file unsafe partial interface InterfaceImplementation : global::ComInterfaceGene
         finally
         {
             // Cleanup - Perform required cleanup.
-            __widths_native__numElements = length;
             global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.Free(__widths_native);
-            __retVal_native__numElements = length;
             {
                 System.ReadOnlySpan<System.IntPtr> __retVal_native__nativeSpan = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int[], System.IntPtr>.GetUnmanagedValuesDestination(__retVal_native, __retVal_native__numElements);
                 for (int __i0 = 0; __i0 < __retVal_native__nativeSpan.Length; ++__i0)
@@ -69,7 +67,6 @@ file unsafe partial interface InterfaceImplementation : global::ComInterfaceGene
                     int __retVal_native__nativeSpan____i0__numElements;
                     System.Runtime.CompilerServices.Unsafe.SkipInit(out __retVal_native__nativeSpan____i0__numElements);
                     ;
-                    __retVal_native__nativeSpan____i0__numElements = widths[__i0];
                     global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.Free((int*)__retVal_native__nativeSpan[__i0]);
                 }
             }
@@ -127,9 +124,7 @@ file unsafe partial interface InterfaceImplementation : global::ComInterfaceGene
         finally
         {
             // Cleanup - Perform required cleanup.
-            __widths_native__numElements = __retVal;
             global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.Free(__widths_native);
-            __array_native__numElements = __retVal;
             {
                 System.ReadOnlySpan<System.IntPtr> __array_native__nativeSpan = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int[], System.IntPtr>.GetUnmanagedValuesDestination(__array_native, __array_native__numElements);
                 for (int __i0 = 0; __i0 < __array_native__nativeSpan.Length; ++__i0)
@@ -137,7 +132,6 @@ file unsafe partial interface InterfaceImplementation : global::ComInterfaceGene
                     int __array_native__nativeSpan____i0__numElements;
                     System.Runtime.CompilerServices.Unsafe.SkipInit(out __array_native__nativeSpan____i0__numElements);
                     ;
-                    __array_native__nativeSpan____i0__numElements = widths[__i0];
                     global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.Free((int*)__array_native__nativeSpan[__i0]);
                 }
             }
@@ -199,7 +193,6 @@ file unsafe partial interface InterfaceImplementation : global::ComInterfaceGene
                 {
                     int __array_native__nativeSpan____i0__numElements;
                     System.Runtime.CompilerServices.Unsafe.SkipInit(out __array_native__nativeSpan____i0__numElements);
-                    ;
                     ;
                     global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.Free((int*)__array_native__nativeSpan[__i0]);
                 }

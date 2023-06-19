@@ -153,7 +153,6 @@ namespace ComInterfaceGenerator.Tests
                             // Cleanup - Perform required cleanup.
                             if (__values_native__ownOriginal)
                             {
-                                __values_native__numElements = numValues;
                                 global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.Free(__values_native__original);
                             }
                         }
@@ -392,7 +391,6 @@ namespace ComInterfaceGenerator.Tests
                             // Cleanup - Perform required cleanup.
                             if (__values_native__ownOriginal)
                             {
-                                __values_native__numElements = numValues;
                                 {
                                     System.ReadOnlySpan<int> __values_native__nativeSpan = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.IntWrapper, int>.GetUnmanagedValuesSource(__values_native__original, __values_native__numElements);
                                     for (int __i0 = 0; __i0 < __values_native__nativeSpan.Length; ++__i0)

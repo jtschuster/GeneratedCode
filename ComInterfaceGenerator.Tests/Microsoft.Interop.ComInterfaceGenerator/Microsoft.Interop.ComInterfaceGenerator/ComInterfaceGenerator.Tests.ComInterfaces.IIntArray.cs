@@ -40,7 +40,6 @@ file unsafe partial interface InterfaceImplementation : global::ComInterfaceGene
         finally
         {
             // Cleanup - Perform required cleanup.
-            __retVal_native__numElements = size;
             global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.Free(__retVal_native);
         }
 
@@ -75,7 +74,6 @@ file unsafe partial interface InterfaceImplementation : global::ComInterfaceGene
         finally
         {
             // Cleanup - Perform required cleanup.
-            __array_native__numElements = __retVal;
             global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.Free(__array_native);
         }
 

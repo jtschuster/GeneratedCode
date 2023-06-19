@@ -44,7 +44,6 @@ file unsafe partial interface InterfaceImplementation : global::ComInterfaceGene
         finally
         {
             // Cleanup - Perform required cleanup.
-            __retVal_native__numElements = 10;
             global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, nint>.Free(__retVal_native);
         }
 
