@@ -16,9 +16,9 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
     {
         var(__this, __vtable_native) = ((System.Runtime.InteropServices.Marshalling.IUnmanagedVirtualMethodTableProvider)this).GetVirtualMethodTableInfoForKey(typeof(global::SharedTypes.ComInterfaces.IStringMarshallingOverride));
         byte* __input_native = default;
-        string __retVal;
+        string __retVal = default;
         byte* __retVal_native = default;
-        int __invokeRetVal;
+        int __invokeRetVal = default;
         // Setup - Perform required setup.
         scoped global::System.Runtime.InteropServices.Marshalling.Utf8StringMarshaller.ManagedToUnmanagedIn __input_native__marshaller = new();
         try
@@ -51,9 +51,9 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
     string global::SharedTypes.ComInterfaces.IStringMarshallingOverride.MarshalAsLPWString(string input)
     {
         var(__this, __vtable_native) = ((System.Runtime.InteropServices.Marshalling.IUnmanagedVirtualMethodTableProvider)this).GetVirtualMethodTableInfoForKey(typeof(global::SharedTypes.ComInterfaces.IStringMarshallingOverride));
-        string __retVal;
+        string __retVal = default;
         ushort* __retVal_native = default;
-        int __invokeRetVal;
+        int __invokeRetVal = default;
         try
         {
             // Pin - Pin data in preparation for calling the P/Invoke.
@@ -81,9 +81,9 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
     string global::SharedTypes.ComInterfaces.IStringMarshallingOverride.MarshalUsingUtf16(string input)
     {
         var(__this, __vtable_native) = ((System.Runtime.InteropServices.Marshalling.IUnmanagedVirtualMethodTableProvider)this).GetVirtualMethodTableInfoForKey(typeof(global::SharedTypes.ComInterfaces.IStringMarshallingOverride));
-        string __retVal;
+        string __retVal = default;
         ushort* __retVal_native = default;
-        int __invokeRetVal;
+        int __invokeRetVal = default;
         try
         {
             // Pin - Pin data in preparation for calling the P/Invoke.

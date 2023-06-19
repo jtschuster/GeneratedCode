@@ -32,9 +32,9 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
     string global::SharedTypes.ComInterfaces.IDerived.GetName()
     {
         var(__this, __vtable_native) = ((System.Runtime.InteropServices.Marshalling.IUnmanagedVirtualMethodTableProvider)this).GetVirtualMethodTableInfoForKey(typeof(global::SharedTypes.ComInterfaces.IDerived));
-        string __retVal;
+        string __retVal = default;
         ushort* __retVal_native = default;
-        int __invokeRetVal;
+        int __invokeRetVal = default;
         try
         {
             {

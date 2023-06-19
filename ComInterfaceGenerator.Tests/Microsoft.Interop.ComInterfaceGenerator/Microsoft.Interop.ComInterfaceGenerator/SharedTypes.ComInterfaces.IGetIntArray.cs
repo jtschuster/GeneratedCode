@@ -15,9 +15,9 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
     int[] global::SharedTypes.ComInterfaces.IGetIntArray.GetInts()
     {
         var(__this, __vtable_native) = ((System.Runtime.InteropServices.Marshalling.IUnmanagedVirtualMethodTableProvider)this).GetVirtualMethodTableInfoForKey(typeof(global::SharedTypes.ComInterfaces.IGetIntArray));
-        int[] __retVal;
+        int[] __retVal = default;
         int* __retVal_native = default;
-        int __invokeRetVal;
+        int __invokeRetVal = default;
         // Setup - Perform required setup.
         int __retVal_native__numElements;
         System.Runtime.CompilerServices.Unsafe.SkipInit(out __retVal_native__numElements);
@@ -37,6 +37,7 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
         finally
         {
             // Cleanup - Perform required cleanup.
+            __retVal_native__numElements = 10;
             global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.Free(__retVal_native);
         }
 
@@ -56,6 +57,7 @@ file unsafe partial interface InterfaceImplementation
         // Setup - Perform required setup.
         int __invokeRetValUnmanaged__numElements;
         System.Runtime.CompilerServices.Unsafe.SkipInit(out __invokeRetValUnmanaged__numElements);
+        ;
         try
         {
             // Unmarshal - Convert native data to managed data.

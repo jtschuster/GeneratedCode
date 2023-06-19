@@ -332,10 +332,11 @@ namespace ComInterfaceGenerator.Tests
             {
                 System.Runtime.CompilerServices.Unsafe.SkipInit(out oldValue);
                 int* __arr_native = default;
-                int __retVal;
+                int __retVal = default;
                 // Setup - Perform required setup.
                 int __arr_native__numElements;
                 System.Runtime.CompilerServices.Unsafe.SkipInit(out __arr_native__numElements);
+                ;
                 try
                 {
                     // Marshal - Convert managed data to native data.
@@ -355,6 +356,7 @@ namespace ComInterfaceGenerator.Tests
                 finally
                 {
                     // Cleanup - Perform required cleanup.
+                    __arr_native__numElements = numValues;
                     global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.Free(__arr_native);
                 }
 

@@ -15,9 +15,9 @@ file unsafe partial interface InterfaceImplementation : global::ComInterfaceGene
     int[] global::ComInterfaceGenerator.Tests.ComInterfaces.ICollectionMarshallingFails.Get()
     {
         var(__this, __vtable_native) = ((System.Runtime.InteropServices.Marshalling.IUnmanagedVirtualMethodTableProvider)this).GetVirtualMethodTableInfoForKey(typeof(global::ComInterfaceGenerator.Tests.ComInterfaces.ICollectionMarshallingFails));
-        int[] __retVal;
+        int[] __retVal = default;
         nint* __retVal_native = default;
-        int __invokeRetVal;
+        int __invokeRetVal = default;
         // Setup - Perform required setup.
         int __retVal_native__numElements;
         System.Runtime.CompilerServices.Unsafe.SkipInit(out __retVal_native__numElements);
@@ -44,6 +44,7 @@ file unsafe partial interface InterfaceImplementation : global::ComInterfaceGene
         finally
         {
             // Cleanup - Perform required cleanup.
+            __retVal_native__numElements = 10;
             global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, nint>.Free(__retVal_native);
         }
 
@@ -56,7 +57,7 @@ file unsafe partial interface InterfaceImplementation : global::ComInterfaceGene
     {
         var(__this, __vtable_native) = ((System.Runtime.InteropServices.Marshalling.IUnmanagedVirtualMethodTableProvider)this).GetVirtualMethodTableInfoForKey(typeof(global::ComInterfaceGenerator.Tests.ComInterfaces.ICollectionMarshallingFails));
         nint* __value_native = default;
-        int __invokeRetVal;
+        int __invokeRetVal = default;
         // Setup - Perform required setup.
         scoped global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, nint>.ManagedToUnmanagedIn __value_native__marshaller = new();
         int __value_native__numElements;
@@ -106,6 +107,7 @@ file unsafe partial interface InterfaceImplementation
         // Setup - Perform required setup.
         int __invokeRetValUnmanaged__numElements;
         System.Runtime.CompilerServices.Unsafe.SkipInit(out __invokeRetValUnmanaged__numElements);
+        ;
         try
         {
             // Unmarshal - Convert native data to managed data.
@@ -140,6 +142,7 @@ file unsafe partial interface InterfaceImplementation
         // Setup - Perform required setup.
         int __value_native__numElements;
         System.Runtime.CompilerServices.Unsafe.SkipInit(out __value_native__numElements);
+        ;
         try
         {
             // Unmarshal - Convert native data to managed data.

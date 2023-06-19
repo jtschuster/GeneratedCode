@@ -16,9 +16,9 @@ file unsafe partial interface InterfaceImplementation : global::ComInterfaceGene
     {
         var(__this, __vtable_native) = ((System.Runtime.InteropServices.Marshalling.IUnmanagedVirtualMethodTableProvider)this).GetVirtualMethodTableInfoForKey(typeof(global::ComInterfaceGenerator.Tests.ComInterfaces.IIntArray));
         System.Runtime.CompilerServices.Unsafe.SkipInit(out size);
-        int[] __retVal;
+        int[] __retVal = default;
         int* __retVal_native = default;
-        int __invokeRetVal;
+        int __invokeRetVal = default;
         // Setup - Perform required setup.
         int __retVal_native__numElements;
         System.Runtime.CompilerServices.Unsafe.SkipInit(out __retVal_native__numElements);
@@ -40,6 +40,7 @@ file unsafe partial interface InterfaceImplementation : global::ComInterfaceGene
         finally
         {
             // Cleanup - Perform required cleanup.
+            __retVal_native__numElements = size;
             global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.Free(__retVal_native);
         }
 
@@ -53,8 +54,8 @@ file unsafe partial interface InterfaceImplementation : global::ComInterfaceGene
         var(__this, __vtable_native) = ((System.Runtime.InteropServices.Marshalling.IUnmanagedVirtualMethodTableProvider)this).GetVirtualMethodTableInfoForKey(typeof(global::ComInterfaceGenerator.Tests.ComInterfaces.IIntArray));
         System.Runtime.CompilerServices.Unsafe.SkipInit(out array);
         int* __array_native = default;
-        int __retVal;
-        int __invokeRetVal;
+        int __retVal = default;
+        int __invokeRetVal = default;
         // Setup - Perform required setup.
         int __array_native__numElements;
         System.Runtime.CompilerServices.Unsafe.SkipInit(out __array_native__numElements);
@@ -74,6 +75,7 @@ file unsafe partial interface InterfaceImplementation : global::ComInterfaceGene
         finally
         {
             // Cleanup - Perform required cleanup.
+            __array_native__numElements = __retVal;
             global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.Free(__array_native);
         }
 
@@ -112,6 +114,7 @@ file unsafe partial interface InterfaceImplementation
         // Setup - Perform required setup.
         int __invokeRetValUnmanaged__numElements;
         System.Runtime.CompilerServices.Unsafe.SkipInit(out __invokeRetValUnmanaged__numElements);
+        ;
         try
         {
             // Unmarshal - Convert native data to managed data.
@@ -143,6 +146,7 @@ file unsafe partial interface InterfaceImplementation
         // Setup - Perform required setup.
         int __array_native__numElements;
         System.Runtime.CompilerServices.Unsafe.SkipInit(out __array_native__numElements);
+        ;
         try
         {
             // Unmarshal - Convert native data to managed data.
@@ -171,6 +175,7 @@ file unsafe partial interface InterfaceImplementation
         // Setup - Perform required setup.
         int __array_native__numElements;
         System.Runtime.CompilerServices.Unsafe.SkipInit(out __array_native__numElements);
+        ;
         try
         {
             // Unmarshal - Convert native data to managed data.
