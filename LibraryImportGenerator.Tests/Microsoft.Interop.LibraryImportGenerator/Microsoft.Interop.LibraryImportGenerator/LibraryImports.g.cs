@@ -1194,7 +1194,6 @@ namespace LibraryImportGenerator.IntegrationTests
                             int __retVal_native__nativeSpan____i0__numElements;
                             System.Runtime.CompilerServices.Unsafe.SkipInit(out __retVal_native__nativeSpan____i0__numElements);
                             ;
-                            __retVal_native__nativeSpan____i0__numElements = numRows[__i0];
                             global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.Free((int*)__retVal_native__nativeSpan[__i0]);
                         }
                     }
@@ -1207,7 +1206,6 @@ namespace LibraryImportGenerator.IntegrationTests
                             int __matrix_native__nativeSpan____i0__numElements;
                             System.Runtime.CompilerServices.Unsafe.SkipInit(out __matrix_native__nativeSpan____i0__numElements);
                             ;
-                            __matrix_native__nativeSpan____i0__numElements = 0;
                             global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.Free((int*)__matrix_native__nativeSpan[__i0]);
                         }
                     }
@@ -2629,7 +2627,6 @@ namespace LibraryImportGenerator.IntegrationTests
                             int __boolStruct_native__nativeSpan____i0__numElements;
                             System.Runtime.CompilerServices.Unsafe.SkipInit(out __boolStruct_native__nativeSpan____i0__numElements);
                             ;
-                            __boolStruct_native__nativeSpan____i0__numElements = 0;
                             global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.BoolStruct, global::SharedTypes.BoolStructMarshaller.BoolStructNative>.Free((global::SharedTypes.BoolStructMarshaller.BoolStructNative*)__boolStruct_native__nativeSpan[__i0]);
                         }
                     }
