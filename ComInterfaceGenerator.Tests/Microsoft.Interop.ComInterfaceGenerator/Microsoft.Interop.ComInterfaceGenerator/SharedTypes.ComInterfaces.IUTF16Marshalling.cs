@@ -8,16 +8,16 @@ file unsafe class InterfaceInformation : System.Runtime.InteropServices.Marshall
 }
 
 [System.Runtime.InteropServices.DynamicInterfaceCastableImplementationAttribute]
-file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComInterfaces.ICustomStringMarshallingUtf16
+file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComInterfaces.IUTF16Marshalling
 {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Interop.ComInterfaceGenerator", "42.42.42.42")]
     [global::System.Runtime.CompilerServices.SkipLocalsInitAttribute]
-    string global::SharedTypes.ComInterfaces.ICustomStringMarshallingUtf16.GetString()
+    string global::SharedTypes.ComInterfaces.IUTF16Marshalling.GetString()
     {
-        var(__this, __vtable_native) = ((System.Runtime.InteropServices.Marshalling.IUnmanagedVirtualMethodTableProvider)this).GetVirtualMethodTableInfoForKey(typeof(global::SharedTypes.ComInterfaces.ICustomStringMarshallingUtf16));
-        string __retVal = default;
+        var(__this, __vtable_native) = ((System.Runtime.InteropServices.Marshalling.IUnmanagedVirtualMethodTableProvider)this).GetVirtualMethodTableInfoForKey(typeof(global::SharedTypes.ComInterfaces.IUTF16Marshalling));
+        string __retVal;
         ushort* __retVal_native = default;
-        int __invokeRetVal = default;
+        int __invokeRetVal;
         try
         {
             {
@@ -40,9 +40,9 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
 
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Interop.ComInterfaceGenerator", "42.42.42.42")]
     [global::System.Runtime.CompilerServices.SkipLocalsInitAttribute]
-    void global::SharedTypes.ComInterfaces.ICustomStringMarshallingUtf16.SetString(string value)
+    void global::SharedTypes.ComInterfaces.IUTF16Marshalling.SetString(string value)
     {
-        var(__this, __vtable_native) = ((System.Runtime.InteropServices.Marshalling.IUnmanagedVirtualMethodTableProvider)this).GetVirtualMethodTableInfoForKey(typeof(global::SharedTypes.ComInterfaces.ICustomStringMarshallingUtf16));
+        var(__this, __vtable_native) = ((System.Runtime.InteropServices.Marshalling.IUnmanagedVirtualMethodTableProvider)this).GetVirtualMethodTableInfoForKey(typeof(global::SharedTypes.ComInterfaces.IUTF16Marshalling));
         int __invokeRetVal;
         // Pin - Pin data in preparation for calling the P/Invoke.
         fixed (void* __value_native = &global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller.GetPinnableReference(value))
@@ -61,7 +61,7 @@ file unsafe partial interface InterfaceImplementation
     [System.Runtime.InteropServices.UnmanagedCallersOnlyAttribute(CallConvs = new[] { typeof(System.Runtime.CompilerServices.CallConvMemberFunction) })]
     internal static int ABI_GetString(System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch* __this_native, ushort** __invokeRetValUnmanaged__param)
     {
-        global::SharedTypes.ComInterfaces.ICustomStringMarshallingUtf16 @this = default;
+        global::SharedTypes.ComInterfaces.IUTF16Marshalling @this = default;
         ref ushort* __invokeRetValUnmanaged = ref *__invokeRetValUnmanaged__param;
         string __invokeRetVal = default;
         int __retVal = default;
@@ -69,7 +69,7 @@ file unsafe partial interface InterfaceImplementation
         {
             // Unmarshal - Convert native data to managed data.
             __retVal = 0; // S_OK
-            @this = System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch.GetInstance<global::SharedTypes.ComInterfaces.ICustomStringMarshallingUtf16>(__this_native);
+            @this = System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch.GetInstance<global::SharedTypes.ComInterfaces.IUTF16Marshalling>(__this_native);
             __invokeRetVal = @this.GetString();
             // Marshal - Convert managed data to native data.
             __invokeRetValUnmanaged = (ushort*)global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller.ConvertToUnmanaged(__invokeRetVal);
@@ -85,7 +85,7 @@ file unsafe partial interface InterfaceImplementation
     [System.Runtime.InteropServices.UnmanagedCallersOnlyAttribute(CallConvs = new[] { typeof(System.Runtime.CompilerServices.CallConvMemberFunction) })]
     internal static int ABI_SetString(System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch* __this_native, ushort* __value_native)
     {
-        global::SharedTypes.ComInterfaces.ICustomStringMarshallingUtf16 @this = default;
+        global::SharedTypes.ComInterfaces.IUTF16Marshalling @this = default;
         string value = default;
         int __retVal = default;
         try
@@ -93,7 +93,7 @@ file unsafe partial interface InterfaceImplementation
             // Unmarshal - Convert native data to managed data.
             __retVal = 0; // S_OK
             value = global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller.ConvertToManaged(__value_native);
-            @this = System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch.GetInstance<global::SharedTypes.ComInterfaces.ICustomStringMarshallingUtf16>(__this_native);
+            @this = System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch.GetInstance<global::SharedTypes.ComInterfaces.IUTF16Marshalling>(__this_native);
             @this.SetString(value);
         }
         catch (System.Exception __exception)
@@ -109,7 +109,7 @@ file unsafe partial interface InterfaceImplementation
 {
     internal static void** CreateManagedVirtualFunctionTable()
     {
-        void** vtable = (void**)System.Runtime.CompilerServices.RuntimeHelpers.AllocateTypeAssociatedMemory(typeof(global::SharedTypes.ComInterfaces.ICustomStringMarshallingUtf16), sizeof(void*) * 5);
+        void** vtable = (void**)System.Runtime.CompilerServices.RuntimeHelpers.AllocateTypeAssociatedMemory(typeof(global::SharedTypes.ComInterfaces.IUTF16Marshalling), sizeof(void*) * 5);
         {
             nint v0, v1, v2;
             System.Runtime.InteropServices.ComWrappers.GetIUnknownImpl(out v0, out v1, out v2);
@@ -130,14 +130,14 @@ file unsafe partial interface InterfaceImplementation
 namespace SharedTypes.ComInterfaces
 {
     [System.Runtime.InteropServices.Marshalling.IUnknownDerivedAttribute<InterfaceInformation, InterfaceImplementation>]
-    internal partial interface ICustomStringMarshallingUtf16
+    internal partial interface IUTF16Marshalling
     {
     }
 }
 
 namespace SharedTypes.ComInterfaces
 {
-    internal partial interface ICustomStringMarshallingUtf16
+    internal partial interface IUTF16Marshalling
     {
     }
 }

@@ -15,9 +15,9 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
     string global::SharedTypes.ComInterfaces.IUTF8Marshalling.GetString()
     {
         var(__this, __vtable_native) = ((System.Runtime.InteropServices.Marshalling.IUnmanagedVirtualMethodTableProvider)this).GetVirtualMethodTableInfoForKey(typeof(global::SharedTypes.ComInterfaces.IUTF8Marshalling));
-        string __retVal = default;
+        string __retVal;
         byte* __retVal_native = default;
-        int __invokeRetVal = default;
+        int __invokeRetVal;
         try
         {
             {
@@ -44,7 +44,7 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
     {
         var(__this, __vtable_native) = ((System.Runtime.InteropServices.Marshalling.IUnmanagedVirtualMethodTableProvider)this).GetVirtualMethodTableInfoForKey(typeof(global::SharedTypes.ComInterfaces.IUTF8Marshalling));
         byte* __value_native = default;
-        int __invokeRetVal = default;
+        int __invokeRetVal;
         // Setup - Perform required setup.
         scoped global::System.Runtime.InteropServices.Marshalling.Utf8StringMarshaller.ManagedToUnmanagedIn __value_native__marshaller = new();
         try

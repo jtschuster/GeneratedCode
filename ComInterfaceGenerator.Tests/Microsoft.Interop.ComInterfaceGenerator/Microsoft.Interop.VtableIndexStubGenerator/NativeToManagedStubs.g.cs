@@ -95,7 +95,6 @@ namespace ComInterfaceGenerator.Tests
                         // Setup - Perform required setup.
                         int __values_native__numElements;
                         System.Runtime.CompilerServices.Unsafe.SkipInit(out __values_native__numElements);
-                        ;
                         // Unmarshal - Convert native data to managed data.
                         __values_native__numElements = numValues;
                         values = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.AllocateContainerForManagedElements(__values_native, __values_native__numElements);
@@ -133,7 +132,6 @@ namespace ComInterfaceGenerator.Tests
                         System.Runtime.CompilerServices.Unsafe.SkipInit(out __values_native__numElements);
                         bool __values_native__ownOriginal = false;
                         int* __values_native__original = __values_native;
-                        ;
                         try
                         {
                             // Unmarshal - Convert native data to managed data.
@@ -153,7 +151,6 @@ namespace ComInterfaceGenerator.Tests
                             // Cleanup - Perform required cleanup.
                             if (__values_native__ownOriginal)
                             {
-                                __values_native__numElements = numValues;
                                 global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.Free(__values_native__original);
                             }
                         }
@@ -181,7 +178,6 @@ namespace ComInterfaceGenerator.Tests
                         // Setup - Perform required setup.
                         int __values_native__numElements;
                         System.Runtime.CompilerServices.Unsafe.SkipInit(out __values_native__numElements);
-                        ;
                         // Unmarshal - Convert native data to managed data.
                         __values_native__numElements = numValues;
                         values = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.AllocateContainerForManagedElements(__values_native, __values_native__numElements);
@@ -310,7 +306,6 @@ namespace ComInterfaceGenerator.Tests
                         // Setup - Perform required setup.
                         int __values_native__numElements;
                         System.Runtime.CompilerServices.Unsafe.SkipInit(out __values_native__numElements);
-                        ;
                         // Unmarshal - Convert native data to managed data.
                         __values_native__numElements = numValues;
                         values = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.IntWrapper, int>.AllocateContainerForManagedElements(__values_native, __values_native__numElements);
@@ -356,7 +351,6 @@ namespace ComInterfaceGenerator.Tests
                         System.Runtime.CompilerServices.Unsafe.SkipInit(out __values_native__numElements);
                         bool __values_native__ownOriginal = false;
                         int* __values_native__original = __values_native;
-                        ;
                         try
                         {
                             // Unmarshal - Convert native data to managed data.
@@ -380,7 +374,6 @@ namespace ComInterfaceGenerator.Tests
                             {
                                 System.ReadOnlySpan<global::SharedTypes.IntWrapper> __values_native__managedSpan = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.IntWrapper, int>.GetManagedValuesSource(values);
                                 System.Span<int> __values_native__nativeSpan = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.IntWrapper, int>.GetUnmanagedValuesDestination(__values_native, __values_native__numElements);
-                                __values_native__nativeSpan.Clear();
                                 for (int __i0 = 0; __i0 < __values_native__managedSpan.Length; ++__i0)
                                 {
                                     __values_native__nativeSpan[__i0] = global::ComInterfaceGenerator.Tests.UnmanagedToManagedCustomMarshallingTests.IntWrapperMarshallerToIntWithFreeCounts.ConvertToUnmanaged(__values_native__managedSpan[__i0]);
@@ -392,7 +385,6 @@ namespace ComInterfaceGenerator.Tests
                             // Cleanup - Perform required cleanup.
                             if (__values_native__ownOriginal)
                             {
-                                __values_native__numElements = numValues;
                                 {
                                     System.ReadOnlySpan<int> __values_native__nativeSpan = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.IntWrapper, int>.GetUnmanagedValuesSource(__values_native__original, __values_native__numElements);
                                     for (int __i0 = 0; __i0 < __values_native__nativeSpan.Length; ++__i0)
@@ -428,7 +420,6 @@ namespace ComInterfaceGenerator.Tests
                         // Setup - Perform required setup.
                         int __values123_native__numElements;
                         System.Runtime.CompilerServices.Unsafe.SkipInit(out __values123_native__numElements);
-                        ;
                         // Unmarshal - Convert native data to managed data.
                         __values123_native__numElements = numValues;
                         values123 = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.IntWrapper, int>.AllocateContainerForManagedElements(__values123_native, __values123_native__numElements);
@@ -481,7 +472,6 @@ namespace ComInterfaceGenerator.Tests
                         // Setup - Perform required setup.
                         global::ComInterfaceGenerator.Tests.UnmanagedToManagedCustomMarshallingTests.StatefulUnmanagedToManagedCollectionMarshaller<global::SharedTypes.IntWrapper, int>.In __values_native__marshaller = new();
                         int __values_native__numElements;
-                        ;
                         System.Runtime.CompilerServices.Unsafe.SkipInit(out __values_native__numElements);
                         try
                         {
@@ -538,7 +528,6 @@ namespace ComInterfaceGenerator.Tests
                         bool __values_native__ownOriginal = false;
                         int* __values_native__original = __values_native;
                         int __values_native__numElements;
-                        ;
                         System.Runtime.CompilerServices.Unsafe.SkipInit(out __values_native__numElements);
                         try
                         {
@@ -567,7 +556,6 @@ namespace ComInterfaceGenerator.Tests
                             {
                                 System.ReadOnlySpan<global::SharedTypes.IntWrapper> __values_native__managedSpan = __values_native__marshaller.GetManagedValuesSource();
                                 System.Span<int> __values_native__nativeSpan = __values_native__marshaller.GetUnmanagedValuesDestination();
-                                __values_native__nativeSpan.Clear();
                                 for (int __i0 = 0; __i0 < __values_native__managedSpan.Length; ++__i0)
                                 {
                                     __values_native__nativeSpan[__i0] = global::ComInterfaceGenerator.Tests.UnmanagedToManagedCustomMarshallingTests.IntWrapperMarshallerToIntWithFreeCounts.ConvertToUnmanaged(__values_native__managedSpan[__i0]);
@@ -614,7 +602,6 @@ namespace ComInterfaceGenerator.Tests
                         // Setup - Perform required setup.
                         global::ComInterfaceGenerator.Tests.UnmanagedToManagedCustomMarshallingTests.StatefulUnmanagedToManagedCollectionMarshaller<global::SharedTypes.IntWrapper, int>.In __values123_native__marshaller = new();
                         int __values123_native__numElements;
-                        ;
                         System.Runtime.CompilerServices.Unsafe.SkipInit(out __values123_native__numElements);
                         try
                         {
