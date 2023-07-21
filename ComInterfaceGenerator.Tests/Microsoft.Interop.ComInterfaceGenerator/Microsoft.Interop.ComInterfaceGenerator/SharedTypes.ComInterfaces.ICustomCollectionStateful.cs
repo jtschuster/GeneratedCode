@@ -153,19 +153,27 @@ file unsafe partial interface InterfaceImplementation
     {
         global::SharedTypes.ComInterfaces.ICustomCollectionStateful @this = default;
         global::SharedTypes.ComInterfaces.TestCollection<global::SharedTypes.ComInterfaces.Element> p = default;
-        ref byte* __pIn_native = ref *__pIn_native__param;
+        byte* __pIn_native = *__pIn_native__param;
         global::SharedTypes.ComInterfaces.TestCollection<global::SharedTypes.ComInterfaces.Element> pIn = default;
-        ref int __pInSize_native = ref *__pInSize_native__param;
+        int __pInSize_native = *__pInSize_native__param;
         int pInSize = default;
-        ref byte* __pRef_native = ref *__pRef_native__param;
+        byte* __pRef_native__out = default;
+        byte* __pRef_native = *__pRef_native__param;
         global::SharedTypes.ComInterfaces.TestCollection<global::SharedTypes.ComInterfaces.Element> pRef = default;
-        ref byte* __pOut_native = ref *__pOut_native__param;
+        byte* __pOut_native__out = default;
+        byte* __pOut_native = *__pOut_native__param;
         global::SharedTypes.ComInterfaces.TestCollection<global::SharedTypes.ComInterfaces.Element> pOut = default;
-        ref int __pOutSize_native = ref *__pOutSize_native__param;
+        int __pOutSize_native__out = default;
+        int __pOutSize_native = *__pOutSize_native__param;
         int pOutSize = default;
-        ref byte* __invokeRetValUnmanaged = ref *__invokeRetValUnmanaged__param;
+        byte* __invokeRetValUnmanaged__out = default;
+        byte* __invokeRetValUnmanaged = *__invokeRetValUnmanaged__param;
         global::SharedTypes.ComInterfaces.TestCollection<global::SharedTypes.ComInterfaces.Element> __invokeRetVal = default;
         int __retVal = default;
+        _ = __pRef_native__out;
+        _ = __pOut_native__out;
+        _ = __pOutSize_native__out;
+        _ = __invokeRetValUnmanaged__out;
         // Setup - Perform required setup.
         scoped global::SharedTypes.ComInterfaces.Marshaller<global::SharedTypes.ComInterfaces.Element, global::SharedTypes.ComInterfaces.ElementMarshaller.Native>.Ref __invokeRetValUnmanaged__marshaller = new();
         int __invokeRetValUnmanaged__numElements;
@@ -174,8 +182,6 @@ file unsafe partial interface InterfaceImplementation
         int __pOut_native__numElements;
         System.Runtime.CompilerServices.Unsafe.SkipInit(out __pOut_native__numElements);
         scoped global::SharedTypes.ComInterfaces.Marshaller<global::SharedTypes.ComInterfaces.Element, global::SharedTypes.ComInterfaces.ElementMarshaller.Native>.Ref __pRef_native__marshaller = new();
-        bool __pRef_native__ownOriginal = false;
-        byte* __pRef_native__original = __pRef_native;
         int __pRef_native__numElements;
         int __pRef_native__lastIndexMarshalled = 0;
         System.Runtime.CompilerServices.Unsafe.SkipInit(out __pRef_native__numElements);
@@ -239,18 +245,20 @@ file unsafe partial interface InterfaceImplementation
                 System.ReadOnlySpan<global::SharedTypes.ComInterfaces.Element> __invokeRetValUnmanaged__managedSpan = __invokeRetValUnmanaged__marshaller.GetManagedValuesSource();
                 System.Span<global::SharedTypes.ComInterfaces.ElementMarshaller.Native> __invokeRetValUnmanaged__nativeSpan = __invokeRetValUnmanaged__marshaller.GetUnmanagedValuesDestination();
                 __invokeRetValUnmanaged__nativeSpan.Clear();
+                __invokeRetValUnmanaged__out = (byte*)System.Runtime.CompilerServices.Unsafe.AsPointer(ref __invokeRetValUnmanaged__nativeSpan.GetPinnableReference());
                 for (int __i0 = 0; __i0 < __invokeRetValUnmanaged__managedSpan.Length; ++__i0)
                 {
                     __invokeRetValUnmanaged__nativeSpan[__i0] = global::SharedTypes.ComInterfaces.ElementMarshaller.ConvertToUnmanaged(__invokeRetValUnmanaged__managedSpan[__i0]);
                 }
             }
 
-            __pOutSize_native = pOutSize;
+            __pOutSize_native__out = pOutSize;
             __pOut_native__marshaller.FromManaged(pOut);
             {
                 System.ReadOnlySpan<global::SharedTypes.ComInterfaces.Element> __pOut_native__managedSpan = __pOut_native__marshaller.GetManagedValuesSource();
                 System.Span<global::SharedTypes.ComInterfaces.ElementMarshaller.Native> __pOut_native__nativeSpan = __pOut_native__marshaller.GetUnmanagedValuesDestination();
                 __pOut_native__nativeSpan.Clear();
+                __pOut_native__out = (byte*)System.Runtime.CompilerServices.Unsafe.AsPointer(ref __pOut_native__nativeSpan.GetPinnableReference());
                 for (int __i0 = 0; __i0 < __pOut_native__managedSpan.Length; ++__i0)
                 {
                     __pOut_native__nativeSpan[__i0] = global::SharedTypes.ComInterfaces.ElementMarshaller.ConvertToUnmanaged(__pOut_native__managedSpan[__i0]);
@@ -258,10 +266,10 @@ file unsafe partial interface InterfaceImplementation
             }
 
             __pRef_native__marshaller.FromManaged(pRef);
-            __pRef_native__ownOriginal = true;
             {
                 System.ReadOnlySpan<global::SharedTypes.ComInterfaces.Element> __pRef_native__managedSpan = __pRef_native__marshaller.GetManagedValuesSource();
                 System.Span<global::SharedTypes.ComInterfaces.ElementMarshaller.Native> __pRef_native__nativeSpan = __pRef_native__marshaller.GetUnmanagedValuesDestination();
+                __pRef_native__out = (byte*)System.Runtime.CompilerServices.Unsafe.AsPointer(ref __pRef_native__nativeSpan.GetPinnableReference());
                 for (int __i0 = 0; __i0 < __pRef_native__managedSpan.Length; ++__i0, ++__pRef_native__lastIndexMarshalled)
                 {
                     __pRef_native__nativeSpan[__i0] = global::SharedTypes.ComInterfaces.ElementMarshaller.ConvertToUnmanaged(__pRef_native__managedSpan[__i0]);
@@ -271,22 +279,22 @@ file unsafe partial interface InterfaceImplementation
         catch (System.Exception __exception)
         {
             __retVal = System.Runtime.InteropServices.Marshalling.ExceptionAsHResultMarshaller<int>.ConvertToUnmanaged(__exception);
-        }
-        finally
-        {
             // Cleanup - Perform required cleanup.
-            __invokeRetValUnmanaged__marshaller.Free();
-            __pOut_native__marshaller.Free();
-            if (__pRef_native__ownOriginal)
-            {
-                _ = __pRef_native__lastIndexMarshalled;
-            }
-
+            _ = __pRef_native__lastIndexMarshalled;
             __pRef_native__marshaller.Free();
-            __pIn_native__marshaller.Free();
-            __p_native__marshaller.Free();
+            return __retVal;
         }
 
+        // AssignOut - Assign to parameters
+        *__invokeRetValUnmanaged__param = __invokeRetValUnmanaged__out;
+        *__pOutSize_native__param = __pOutSize_native__out;
+        *__pOut_native__param = __pOut_native__out;
+        *__pRef_native__param = __pRef_native__out;
+        // Cleanup - Perform required cleanup.
+        _ = __pRef_native__lastIndexMarshalled;
+        __pRef_native__marshaller.Free();
+        __pIn_native__marshaller.Free();
+        __p_native__marshaller.Free();
         return __retVal;
     }
 }

@@ -102,9 +102,11 @@ file unsafe partial interface InterfaceImplementation
     internal static int ABI_Get(System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch* __this_native, int* __invokeRetValUnmanaged__param)
     {
         global::SharedTypes.ComInterfaces.IInt @this = default;
-        ref int __invokeRetValUnmanaged = ref *__invokeRetValUnmanaged__param;
+        int __invokeRetValUnmanaged__out = default;
+        int __invokeRetValUnmanaged = *__invokeRetValUnmanaged__param;
         int __invokeRetVal = default;
         int __retVal = default;
+        _ = __invokeRetValUnmanaged__out;
         try
         {
             // Unmarshal - Convert native data to managed data.
@@ -112,13 +114,16 @@ file unsafe partial interface InterfaceImplementation
             @this = System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch.GetInstance<global::SharedTypes.ComInterfaces.IInt>(__this_native);
             __invokeRetVal = @this.Get();
             // Marshal - Convert managed data to native data.
-            __invokeRetValUnmanaged = __invokeRetVal;
+            __invokeRetValUnmanaged__out = __invokeRetVal;
         }
         catch (System.Exception __exception)
         {
             __retVal = System.Runtime.InteropServices.Marshalling.ExceptionAsHResultMarshaller<int>.ConvertToUnmanaged(__exception);
+            return __retVal;
         }
 
+        // AssignOut - Assign to parameters
+        *__invokeRetValUnmanaged__param = __invokeRetValUnmanaged__out;
         return __retVal;
     }
 
@@ -137,6 +142,7 @@ file unsafe partial interface InterfaceImplementation
         catch (System.Exception __exception)
         {
             __retVal = System.Runtime.InteropServices.Marshalling.ExceptionAsHResultMarshaller<int>.ConvertToUnmanaged(__exception);
+            return __retVal;
         }
 
         return __retVal;
@@ -146,9 +152,11 @@ file unsafe partial interface InterfaceImplementation
     internal static int ABI_SwapRef(System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch* __this_native, int* __value_native__param)
     {
         global::SharedTypes.ComInterfaces.IInt @this = default;
-        ref int __value_native = ref *__value_native__param;
+        int __value_native__out = default;
+        int __value_native = *__value_native__param;
         int value = default;
         int __retVal = default;
+        _ = __value_native__out;
         try
         {
             // Unmarshal - Convert native data to managed data.
@@ -157,13 +165,16 @@ file unsafe partial interface InterfaceImplementation
             @this = System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch.GetInstance<global::SharedTypes.ComInterfaces.IInt>(__this_native);
             @this.SwapRef(ref value);
             // Marshal - Convert managed data to native data.
-            __value_native = value;
+            __value_native__out = value;
         }
         catch (System.Exception __exception)
         {
             __retVal = System.Runtime.InteropServices.Marshalling.ExceptionAsHResultMarshaller<int>.ConvertToUnmanaged(__exception);
+            return __retVal;
         }
 
+        // AssignOut - Assign to parameters
+        *__value_native__param = __value_native__out;
         return __retVal;
     }
 
@@ -171,9 +182,11 @@ file unsafe partial interface InterfaceImplementation
     internal static int ABI_GetOut(System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch* __this_native, int* __value_native__param)
     {
         global::SharedTypes.ComInterfaces.IInt @this = default;
-        ref int __value_native = ref *__value_native__param;
+        int __value_native__out = default;
+        int __value_native = *__value_native__param;
         int value = default;
         int __retVal = default;
+        _ = __value_native__out;
         try
         {
             // Unmarshal - Convert native data to managed data.
@@ -181,13 +194,16 @@ file unsafe partial interface InterfaceImplementation
             @this = System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch.GetInstance<global::SharedTypes.ComInterfaces.IInt>(__this_native);
             @this.GetOut(out value);
             // Marshal - Convert managed data to native data.
-            __value_native = value;
+            __value_native__out = value;
         }
         catch (System.Exception __exception)
         {
             __retVal = System.Runtime.InteropServices.Marshalling.ExceptionAsHResultMarshaller<int>.ConvertToUnmanaged(__exception);
+            return __retVal;
         }
 
+        // AssignOut - Assign to parameters
+        *__value_native__param = __value_native__out;
         return __retVal;
     }
 
@@ -195,7 +211,7 @@ file unsafe partial interface InterfaceImplementation
     internal static int ABI_SetIn(System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch* __this_native, int* __value_native__param)
     {
         global::SharedTypes.ComInterfaces.IInt @this = default;
-        ref int __value_native = ref *__value_native__param;
+        int __value_native = *__value_native__param;
         int value = default;
         int __retVal = default;
         try
@@ -209,6 +225,7 @@ file unsafe partial interface InterfaceImplementation
         catch (System.Exception __exception)
         {
             __retVal = System.Runtime.InteropServices.Marshalling.ExceptionAsHResultMarshaller<int>.ConvertToUnmanaged(__exception);
+            return __retVal;
         }
 
         return __retVal;
