@@ -221,9 +221,6 @@ file unsafe partial interface InterfaceImplementation
         System.IntPtr* __invokeRetValUnmanaged = *__invokeRetValUnmanaged__param;
         int[][] __invokeRetVal = default;
         int __retVal = default;
-        _ = __widths_native__out;
-        _ = __length_native__out;
-        _ = __invokeRetValUnmanaged__out;
         // Setup - Perform required setup.
         int __widths_native__numElements;
         System.Runtime.CompilerServices.Unsafe.SkipInit(out __widths_native__numElements);
@@ -280,9 +277,6 @@ file unsafe partial interface InterfaceImplementation
         int __invokeRetValUnmanaged = *__invokeRetValUnmanaged__param;
         int __invokeRetVal = default;
         int __retVal = default;
-        _ = __array_native__out;
-        _ = __widths_native__out;
-        _ = __invokeRetValUnmanaged__out;
         // Setup - Perform required setup.
         int __widths_native__numElements;
         System.Runtime.CompilerServices.Unsafe.SkipInit(out __widths_native__numElements);

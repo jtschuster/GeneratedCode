@@ -133,7 +133,6 @@ file unsafe partial interface InterfaceImplementation
         uint __pceltFetched_native = *__pceltFetched_native__param;
         uint pceltFetched = default;
         int __retVal = default;
-        _ = __pceltFetched_native__out;
         // Setup - Perform required setup.
         int __rgelt_native__numElements;
         System.Runtime.CompilerServices.Unsafe.SkipInit(out __rgelt_native__numElements);
@@ -225,7 +224,6 @@ file unsafe partial interface InterfaceImplementation
         void* __ppenum_native = *__ppenum_native__param;
         global::SharedTypes.ComInterfaces.IEnumUnknown ppenum = default;
         int __retVal = default;
-        _ = __ppenum_native__out;
         try
         {
             // Unmarshal - Convert native data to managed data.

@@ -59,7 +59,6 @@ file unsafe partial interface InterfaceImplementation
         sbyte __invokeRetValUnmanaged = *__invokeRetValUnmanaged__param;
         bool __invokeRetVal = default;
         int __retVal = default;
-        _ = __invokeRetValUnmanaged__out;
         try
         {
             // Unmarshal - Convert native data to managed data.

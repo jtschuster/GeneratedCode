@@ -414,7 +414,6 @@ file unsafe partial interface InterfaceImplementation
         nint* __value_native = *__value_native__param;
         string[] value = default;
         int __retVal = default;
-        _ = __value_native__out;
         // Setup - Perform required setup.
         int __value_native__numElements;
         System.Runtime.CompilerServices.Unsafe.SkipInit(out __value_native__numElements);
@@ -474,7 +473,6 @@ file unsafe partial interface InterfaceImplementation
         nint* __value_native = *__value_native__param;
         string[] value = default;
         int __retVal = default;
-        _ = __value_native__out;
         // Setup - Perform required setup.
         int __value_native__numElements;
         System.Runtime.CompilerServices.Unsafe.SkipInit(out __value_native__numElements);
@@ -615,7 +613,6 @@ file unsafe partial interface InterfaceImplementation
         nint* __invokeRetValUnmanaged = *__invokeRetValUnmanaged__param;
         string[] __invokeRetVal = default;
         int __retVal = default;
-        _ = __invokeRetValUnmanaged__out;
         // Setup - Perform required setup.
         int __invokeRetValUnmanaged__numElements;
         System.Runtime.CompilerServices.Unsafe.SkipInit(out __invokeRetValUnmanaged__numElements);

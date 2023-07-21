@@ -155,7 +155,6 @@ file unsafe partial interface InterfaceImplementation
         void* __invokeRetValUnmanaged = *__invokeRetValUnmanaged__param;
         global::SharedTypes.ComInterfaces.IInt __invokeRetVal = default;
         int __retVal = default;
-        _ = __invokeRetValUnmanaged__out;
         try
         {
             // Unmarshal - Convert native data to managed data.
@@ -207,7 +206,6 @@ file unsafe partial interface InterfaceImplementation
         void* __value_native = *__value_native__param;
         global::SharedTypes.ComInterfaces.IInt value = default;
         int __retVal = default;
-        _ = __value_native__out;
         try
         {
             // Unmarshal - Convert native data to managed data.
@@ -241,7 +239,6 @@ file unsafe partial interface InterfaceImplementation
         void* __value_native = *__value_native__param;
         global::SharedTypes.ComInterfaces.IInt value = default;
         int __retVal = default;
-        _ = __value_native__out;
         try
         {
             // Unmarshal - Convert native data to managed data.

@@ -64,7 +64,6 @@ namespace ComInterfaceGenerator.Tests
                         int __x_native__out = default;
                         int __x_native = *__x_native__param;
                         int x;
-                        _ = __x_native__out;
                         // Unmarshal - Convert native data to managed data.
                         x = __x_native;
                         @this = (global::ComInterfaceGenerator.Tests.NativeExportsNE.ImplicitThis.INativeObject)System.Runtime.InteropServices.Marshalling.UnmanagedObjectUnwrapper.GetObjectForUnmanagedWrapper<ComInterfaceGenerator.Tests.VTableGCHandlePair<ComInterfaceGenerator.Tests.NativeExportsNE.ImplicitThis.INativeObject>>(__this_native);
@@ -97,7 +96,6 @@ namespace ComInterfaceGenerator.Tests
                         int __oldValue_native__out = default;
                         int __oldValue_native = *__oldValue_native__param;
                         int oldValue;
-                        _ = __oldValue_native__out;
                         // Setup - Perform required setup.
                         int __values_native__numElements;
                         System.Runtime.CompilerServices.Unsafe.SkipInit(out __values_native__numElements);
@@ -137,8 +135,6 @@ namespace ComInterfaceGenerator.Tests
                         int __oldValue_native__out = default;
                         int __oldValue_native = *__oldValue_native__param;
                         int oldValue = default;
-                        _ = __values_native__out;
-                        _ = __oldValue_native__out;
                         // Setup - Perform required setup.
                         int __values_native__numElements;
                         System.Runtime.CompilerServices.Unsafe.SkipInit(out __values_native__numElements);
@@ -264,7 +260,6 @@ namespace ComInterfaceGenerator.Tests
                         int __data_native__out = default;
                         int __data_native = *__data_native__param;
                         global::SharedTypes.IntWrapper data = default;
-                        _ = __data_native__out;
                         // Unmarshal - Convert native data to managed data.
                         data = global::ComInterfaceGenerator.Tests.UnmanagedToManagedCustomMarshallingTests.IntWrapperMarshallerToIntWithFreeCounts.ConvertToManaged(__data_native);
                         @this = (global::ComInterfaceGenerator.Tests.NativeExportsNE.UnmanagedToManagedCustomMarshalling.INativeObject)System.Runtime.InteropServices.Marshalling.UnmanagedObjectUnwrapper.GetObjectForUnmanagedWrapper<ComInterfaceGenerator.Tests.VTableGCHandlePair<ComInterfaceGenerator.Tests.NativeExportsNE.UnmanagedToManagedCustomMarshalling.INativeObject>>(__this_native);
@@ -299,7 +294,6 @@ namespace ComInterfaceGenerator.Tests
                         int __oldValue_native__out = default;
                         int __oldValue_native = *__oldValue_native__param;
                         global::SharedTypes.IntWrapper oldValue;
-                        _ = __oldValue_native__out;
                         // Setup - Perform required setup.
                         int __values_native__numElements;
                         System.Runtime.CompilerServices.Unsafe.SkipInit(out __values_native__numElements);
@@ -347,8 +341,6 @@ namespace ComInterfaceGenerator.Tests
                         int __oldValue_native__out = default;
                         int __oldValue_native = *__oldValue_native__param;
                         global::SharedTypes.IntWrapper oldValue = default;
-                        _ = __values_native__out;
-                        _ = __oldValue_native__out;
                         // Setup - Perform required setup.
                         int __values_native__numElements;
                         System.Runtime.CompilerServices.Unsafe.SkipInit(out __values_native__numElements);
@@ -476,7 +468,6 @@ namespace ComInterfaceGenerator.Tests
                         int __oldValue_native__out = default;
                         int __oldValue_native = *__oldValue_native__param;
                         global::SharedTypes.IntWrapper oldValue = default;
-                        _ = __oldValue_native__out;
                         // Setup - Perform required setup.
                         global::ComInterfaceGenerator.Tests.UnmanagedToManagedCustomMarshallingTests.StatefulUnmanagedToManagedCollectionMarshaller<global::SharedTypes.IntWrapper, int>.In __values_native__marshaller = new();
                         int __values_native__numElements;
@@ -529,8 +520,6 @@ namespace ComInterfaceGenerator.Tests
                         int __oldValue_native__out = default;
                         int __oldValue_native = *__oldValue_native__param;
                         global::SharedTypes.IntWrapper oldValue = default;
-                        _ = __values_native__out;
-                        _ = __oldValue_native__out;
                         // Setup - Perform required setup.
                         global::ComInterfaceGenerator.Tests.UnmanagedToManagedCustomMarshallingTests.StatefulUnmanagedToManagedCollectionMarshaller<global::SharedTypes.IntWrapper, int>.Ref __values_native__marshaller = new();
                         int __values_native__numElements;

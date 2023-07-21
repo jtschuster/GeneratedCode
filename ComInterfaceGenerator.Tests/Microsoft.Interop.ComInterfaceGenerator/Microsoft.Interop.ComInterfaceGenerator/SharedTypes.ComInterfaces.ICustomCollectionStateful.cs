@@ -170,10 +170,6 @@ file unsafe partial interface InterfaceImplementation
         byte* __invokeRetValUnmanaged = *__invokeRetValUnmanaged__param;
         global::SharedTypes.ComInterfaces.TestCollection<global::SharedTypes.ComInterfaces.Element> __invokeRetVal = default;
         int __retVal = default;
-        _ = __pRef_native__out;
-        _ = __pOut_native__out;
-        _ = __pOutSize_native__out;
-        _ = __invokeRetValUnmanaged__out;
         // Setup - Perform required setup.
         scoped global::SharedTypes.ComInterfaces.Marshaller<global::SharedTypes.ComInterfaces.Element, global::SharedTypes.ComInterfaces.ElementMarshaller.Native>.Ref __invokeRetValUnmanaged__marshaller = new();
         int __invokeRetValUnmanaged__numElements;

@@ -106,7 +106,6 @@ file unsafe partial interface InterfaceImplementation
         int __invokeRetValUnmanaged = *__invokeRetValUnmanaged__param;
         int __invokeRetVal = default;
         int __retVal = default;
-        _ = __invokeRetValUnmanaged__out;
         try
         {
             // Unmarshal - Convert native data to managed data.
@@ -156,7 +155,6 @@ file unsafe partial interface InterfaceImplementation
         int __value_native = *__value_native__param;
         int value = default;
         int __retVal = default;
-        _ = __value_native__out;
         try
         {
             // Unmarshal - Convert native data to managed data.
@@ -186,7 +184,6 @@ file unsafe partial interface InterfaceImplementation
         int __value_native = *__value_native__param;
         int value = default;
         int __retVal = default;
-        _ = __value_native__out;
         try
         {
             // Unmarshal - Convert native data to managed data.

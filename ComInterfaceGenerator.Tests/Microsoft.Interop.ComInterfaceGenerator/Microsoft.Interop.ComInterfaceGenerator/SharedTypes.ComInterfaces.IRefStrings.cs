@@ -105,7 +105,6 @@ file unsafe partial interface InterfaceImplementation
         byte* __value_native = *__value_native__param;
         string value = default;
         int __retVal = default;
-        _ = __value_native__out;
         try
         {
             // Unmarshal - Convert native data to managed data.
@@ -163,7 +162,6 @@ file unsafe partial interface InterfaceImplementation
         byte* __value_native = *__value_native__param;
         string value = default;
         int __retVal = default;
-        _ = __value_native__out;
         try
         {
             // Unmarshal - Convert native data to managed data.

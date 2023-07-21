@@ -200,8 +200,6 @@ file unsafe partial interface InterfaceImplementation
         int* __invokeRetValUnmanaged = *__invokeRetValUnmanaged__param;
         int[] __invokeRetVal = default;
         int __retVal = default;
-        _ = __size_native__out;
-        _ = __invokeRetValUnmanaged__out;
         // Setup - Perform required setup.
         int __invokeRetValUnmanaged__numElements;
         System.Runtime.CompilerServices.Unsafe.SkipInit(out __invokeRetValUnmanaged__numElements);
@@ -239,8 +237,6 @@ file unsafe partial interface InterfaceImplementation
         int __invokeRetValUnmanaged = *__invokeRetValUnmanaged__param;
         int __invokeRetVal = default;
         int __retVal = default;
-        _ = __array_native__out;
-        _ = __invokeRetValUnmanaged__out;
         // Setup - Perform required setup.
         int __array_native__numElements;
         System.Runtime.CompilerServices.Unsafe.SkipInit(out __array_native__numElements);
@@ -371,7 +367,6 @@ file unsafe partial interface InterfaceImplementation
         int* __array_native = *__array_native__param;
         int[] array = default;
         int __retVal = default;
-        _ = __array_native__out;
         // Setup - Perform required setup.
         int __array_native__numElements;
         System.Runtime.CompilerServices.Unsafe.SkipInit(out __array_native__numElements);

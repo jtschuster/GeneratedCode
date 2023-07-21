@@ -56,7 +56,6 @@ file unsafe partial interface InterfaceImplementation
         int* __invokeRetValUnmanaged = *__invokeRetValUnmanaged__param;
         int[] __invokeRetVal = default;
         int __retVal = default;
-        _ = __invokeRetValUnmanaged__out;
         // Setup - Perform required setup.
         int __invokeRetValUnmanaged__numElements;
         System.Runtime.CompilerServices.Unsafe.SkipInit(out __invokeRetValUnmanaged__numElements);
