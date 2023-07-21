@@ -64,7 +64,6 @@ namespace LibraryImportGenerator.IntegrationTests
                 // Setup - Perform required setup.
                 scoped global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.ManagedToUnmanagedIn __values_native__marshaller = new();
                 int __values_native__numElements;
-                ;
                 System.Runtime.CompilerServices.Unsafe.SkipInit(out __values_native__numElements);
                 try
                 {
@@ -107,7 +106,6 @@ namespace LibraryImportGenerator.IntegrationTests
                 // Setup - Perform required setup.
                 int __values_native__numElements;
                 System.Runtime.CompilerServices.Unsafe.SkipInit(out __values_native__numElements);
-                ;
                 try
                 {
                     // Marshal - Convert managed data to native data.
@@ -125,6 +123,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 finally
                 {
                     // Cleanup - Perform required cleanup.
+                    __values_native__numElements = numValues;
                     global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.Free(__values_native);
                 }
 
@@ -151,7 +150,6 @@ namespace LibraryImportGenerator.IntegrationTests
                 // Setup - Perform required setup.
                 int __retVal_native__numElements;
                 System.Runtime.CompilerServices.Unsafe.SkipInit(out __retVal_native__numElements);
-                ;
                 try
                 {
                     // Pin - Pin data in preparation for calling the P/Invoke.
@@ -168,6 +166,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 finally
                 {
                     // Cleanup - Perform required cleanup.
+                    __retVal_native__numElements = numValues;
                     global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.Free(__retVal_native);
                 }
 
@@ -195,7 +194,6 @@ namespace LibraryImportGenerator.IntegrationTests
                 // Setup - Perform required setup.
                 int __res_native__numElements;
                 System.Runtime.CompilerServices.Unsafe.SkipInit(out __res_native__numElements);
-                ;
                 try
                 {
                     // Pin - Pin data in preparation for calling the P/Invoke.
@@ -212,6 +210,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 finally
                 {
                     // Cleanup - Perform required cleanup.
+                    __res_native__numElements = numValues;
                     global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.Free(__res_native);
                 }
 
@@ -284,7 +283,6 @@ namespace LibraryImportGenerator.IntegrationTests
                 // Setup - Perform required setup.
                 int __chars_native__numElements;
                 System.Runtime.CompilerServices.Unsafe.SkipInit(out __chars_native__numElements);
-                ;
                 try
                 {
                     // Marshal - Convert managed data to native data.
@@ -302,6 +300,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 finally
                 {
                     // Cleanup - Perform required cleanup.
+                    __chars_native__numElements = numElements;
                     global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<char, char>.Free(__chars_native);
                 }
 
@@ -430,6 +429,7 @@ namespace LibraryImportGenerator.IntegrationTests
                         }
                     }
 
+                    __strArray_native__numElements = numElements;
                     global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<string, System.IntPtr>.Free(__strArray_native);
                 }
 
@@ -457,7 +457,6 @@ namespace LibraryImportGenerator.IntegrationTests
                 // Setup - Perform required setup.
                 int __retVal_native__numElements;
                 System.Runtime.CompilerServices.Unsafe.SkipInit(out __retVal_native__numElements);
-                ;
                 scoped global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<string, System.IntPtr>.ManagedToUnmanagedIn __strArray_native__marshaller = new();
                 int __strArray_native__numElements;
                 int __strArray_native__lastIndexMarshalled = 0;
@@ -507,6 +506,7 @@ namespace LibraryImportGenerator.IntegrationTests
                         }
                     }
 
+                    __retVal_native__numElements = numElements;
                     global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<string, System.IntPtr>.Free(__retVal_native);
                     {
                         System.ReadOnlySpan<System.IntPtr> __strArray_native__nativeSpan = __strArray_native__marshaller.GetUnmanagedValuesDestination();
@@ -544,7 +544,6 @@ namespace LibraryImportGenerator.IntegrationTests
                 // Setup - Perform required setup.
                 int __res_native__numElements;
                 System.Runtime.CompilerServices.Unsafe.SkipInit(out __res_native__numElements);
-                ;
                 scoped global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<string, System.IntPtr>.ManagedToUnmanagedIn __strArray_native__marshaller = new();
                 int __strArray_native__numElements;
                 int __strArray_native__lastIndexMarshalled = 0;
@@ -594,6 +593,7 @@ namespace LibraryImportGenerator.IntegrationTests
                         }
                     }
 
+                    __res_native__numElements = numElements;
                     global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<string, System.IntPtr>.Free(__res_native);
                     {
                         System.ReadOnlySpan<System.IntPtr> __strArray_native__nativeSpan = __strArray_native__marshaller.GetUnmanagedValuesDestination();
@@ -628,7 +628,6 @@ namespace LibraryImportGenerator.IntegrationTests
                 // Setup - Perform required setup.
                 int __retVal_native__numElements;
                 System.Runtime.CompilerServices.Unsafe.SkipInit(out __retVal_native__numElements);
-                ;
                 try
                 {
                     {
@@ -643,6 +642,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 finally
                 {
                     // Cleanup - Perform required cleanup.
+                    __retVal_native__numElements = 8;
                     global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<byte, byte>.Free(__retVal_native);
                 }
 
@@ -668,7 +668,6 @@ namespace LibraryImportGenerator.IntegrationTests
                 // Setup - Perform required setup.
                 int __values_native__numElements;
                 System.Runtime.CompilerServices.Unsafe.SkipInit(out __values_native__numElements);
-                ;
                 try
                 {
                     // Marshal - Convert managed data to native data.
@@ -686,6 +685,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 finally
                 {
                     // Cleanup - Perform required cleanup.
+                    __values_native__numElements = checked(1 + numOriginalValues);
                     global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.Free(__values_native);
                 }
 
@@ -712,7 +712,6 @@ namespace LibraryImportGenerator.IntegrationTests
                 // Setup - Perform required setup.
                 scoped global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.IntStructWrapper, global::SharedTypes.IntStructWrapperNative>.ManagedToUnmanagedIn __array_native__marshaller = new();
                 int __array_native__numElements;
-                ;
                 System.Runtime.CompilerServices.Unsafe.SkipInit(out __array_native__numElements);
                 try
                 {
@@ -767,7 +766,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 // Setup - Perform required setup.
                 scoped global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.IntStructWrapper, global::SharedTypes.IntStructWrapperNative>.ManagedToUnmanagedIn __array_native__marshaller = new();
                 int __array_native__numElements;
-                ;
+                int __array_native__lastIndexMarshalled = 0;
                 System.Runtime.CompilerServices.Unsafe.SkipInit(out __array_native__numElements);
                 try
                 {
@@ -776,7 +775,7 @@ namespace LibraryImportGenerator.IntegrationTests
                     {
                         System.ReadOnlySpan<global::SharedTypes.IntStructWrapper> __array_native__managedSpan = __array_native__marshaller.GetManagedValuesSource();
                         System.Span<global::SharedTypes.IntStructWrapperNative> __array_native__nativeSpan = __array_native__marshaller.GetUnmanagedValuesDestination();
-                        for (int __i0 = 0; __i0 < __array_native__managedSpan.Length; ++__i0)
+                        for (int __i0 = 0; __i0 < __array_native__managedSpan.Length; ++__i0, ++__array_native__lastIndexMarshalled)
                         {
                             __array_native__nativeSpan[__i0] = global::SharedTypes.IntStructWrapperMarshaller.ConvertToUnmanaged(__array_native__managedSpan[__i0]);
                         }
@@ -804,6 +803,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 finally
                 {
                     // Cleanup - Perform required cleanup.
+                    _ = __array_native__lastIndexMarshalled;
                     __array_native__marshaller.Free();
                 }
 
@@ -830,7 +830,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 // Setup - Perform required setup.
                 scoped global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.BoolStruct, global::SharedTypes.BoolStructMarshaller.BoolStructNative>.ManagedToUnmanagedIn __pArray_native__marshaller = new();
                 int __pArray_native__numElements;
-                ;
+                int __pArray_native__lastIndexMarshalled = 0;
                 System.Runtime.CompilerServices.Unsafe.SkipInit(out __pArray_native__numElements);
                 try
                 {
@@ -839,7 +839,7 @@ namespace LibraryImportGenerator.IntegrationTests
                     {
                         System.ReadOnlySpan<global::SharedTypes.BoolStruct> __pArray_native__managedSpan = __pArray_native__marshaller.GetManagedValuesSource();
                         System.Span<global::SharedTypes.BoolStructMarshaller.BoolStructNative> __pArray_native__nativeSpan = __pArray_native__marshaller.GetUnmanagedValuesDestination();
-                        for (int __i0 = 0; __i0 < __pArray_native__managedSpan.Length; ++__i0)
+                        for (int __i0 = 0; __i0 < __pArray_native__managedSpan.Length; ++__i0, ++__pArray_native__lastIndexMarshalled)
                         {
                             __pArray_native__nativeSpan[__i0] = global::SharedTypes.BoolStructMarshaller.ConvertToUnmanaged(__pArray_native__managedSpan[__i0]);
                         }
@@ -859,6 +859,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 finally
                 {
                     // Cleanup - Perform required cleanup.
+                    _ = __pArray_native__lastIndexMarshalled;
                     __pArray_native__marshaller.Free();
                 }
 
@@ -886,7 +887,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 // Setup - Perform required setup.
                 scoped global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.BoolStruct, global::SharedTypes.BoolStructMarshaller.BoolStructNative>.ManagedToUnmanagedIn __pArray_native__marshaller = new();
                 int __pArray_native__numElements;
-                ;
+                int __pArray_native__lastIndexMarshalled = 0;
                 System.Runtime.CompilerServices.Unsafe.SkipInit(out __pArray_native__numElements);
                 try
                 {
@@ -895,7 +896,7 @@ namespace LibraryImportGenerator.IntegrationTests
                     {
                         System.ReadOnlySpan<global::SharedTypes.BoolStruct> __pArray_native__managedSpan = __pArray_native__marshaller.GetManagedValuesSource();
                         System.Span<global::SharedTypes.BoolStructMarshaller.BoolStructNative> __pArray_native__nativeSpan = __pArray_native__marshaller.GetUnmanagedValuesDestination();
-                        for (int __i0 = 0; __i0 < __pArray_native__managedSpan.Length; ++__i0)
+                        for (int __i0 = 0; __i0 < __pArray_native__managedSpan.Length; ++__i0, ++__pArray_native__lastIndexMarshalled)
                         {
                             __pArray_native__nativeSpan[__i0] = global::SharedTypes.BoolStructMarshaller.ConvertToUnmanaged(__pArray_native__managedSpan[__i0]);
                         }
@@ -915,6 +916,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 finally
                 {
                     // Cleanup - Perform required cleanup.
+                    _ = __pArray_native__lastIndexMarshalled;
                     __pArray_native__marshaller.Free();
                 }
 
@@ -940,7 +942,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 // Setup - Perform required setup.
                 int __boolStruct_native__numElements;
                 System.Runtime.CompilerServices.Unsafe.SkipInit(out __boolStruct_native__numElements);
-                ;
+                int __boolStruct_native__lastIndexMarshalled = 0;
                 try
                 {
                     // Marshal - Convert managed data to native data.
@@ -948,7 +950,7 @@ namespace LibraryImportGenerator.IntegrationTests
                     {
                         System.ReadOnlySpan<global::SharedTypes.BoolStruct> __boolStruct_native__managedSpan = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.BoolStruct, global::SharedTypes.BoolStructMarshaller.BoolStructNative>.GetManagedValuesSource(boolStruct);
                         System.Span<global::SharedTypes.BoolStructMarshaller.BoolStructNative> __boolStruct_native__nativeSpan = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.BoolStruct, global::SharedTypes.BoolStructMarshaller.BoolStructNative>.GetUnmanagedValuesDestination(__boolStruct_native, __boolStruct_native__numElements);
-                        for (int __i0 = 0; __i0 < __boolStruct_native__managedSpan.Length; ++__i0)
+                        for (int __i0 = 0; __i0 < __boolStruct_native__managedSpan.Length; ++__i0, ++__boolStruct_native__lastIndexMarshalled)
                         {
                             __boolStruct_native__nativeSpan[__i0] = global::SharedTypes.BoolStructMarshaller.ConvertToUnmanaged(__boolStruct_native__managedSpan[__i0]);
                         }
@@ -973,6 +975,8 @@ namespace LibraryImportGenerator.IntegrationTests
                 finally
                 {
                     // Cleanup - Perform required cleanup.
+                    _ = __boolStruct_native__lastIndexMarshalled;
+                    __boolStruct_native__numElements = numValues;
                     global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.BoolStruct, global::SharedTypes.BoolStructMarshaller.BoolStructNative>.Free(__boolStruct_native);
                 }
 
@@ -999,10 +1003,9 @@ namespace LibraryImportGenerator.IntegrationTests
                 // Setup - Perform required setup.
                 int __pBoolStructOut_native__numElements;
                 System.Runtime.CompilerServices.Unsafe.SkipInit(out __pBoolStructOut_native__numElements);
-                ;
                 scoped global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.BoolStruct, global::SharedTypes.BoolStructMarshaller.BoolStructNative>.ManagedToUnmanagedIn __boolStruct_native__marshaller = new();
                 int __boolStruct_native__numElements;
-                ;
+                int __boolStruct_native__lastIndexMarshalled = 0;
                 System.Runtime.CompilerServices.Unsafe.SkipInit(out __boolStruct_native__numElements);
                 try
                 {
@@ -1011,7 +1014,7 @@ namespace LibraryImportGenerator.IntegrationTests
                     {
                         System.ReadOnlySpan<global::SharedTypes.BoolStruct> __boolStruct_native__managedSpan = __boolStruct_native__marshaller.GetManagedValuesSource();
                         System.Span<global::SharedTypes.BoolStructMarshaller.BoolStructNative> __boolStruct_native__nativeSpan = __boolStruct_native__marshaller.GetUnmanagedValuesDestination();
-                        for (int __i0 = 0; __i0 < __boolStruct_native__managedSpan.Length; ++__i0)
+                        for (int __i0 = 0; __i0 < __boolStruct_native__managedSpan.Length; ++__i0, ++__boolStruct_native__lastIndexMarshalled)
                         {
                             __boolStruct_native__nativeSpan[__i0] = global::SharedTypes.BoolStructMarshaller.ConvertToUnmanaged(__boolStruct_native__managedSpan[__i0]);
                         }
@@ -1040,7 +1043,9 @@ namespace LibraryImportGenerator.IntegrationTests
                 finally
                 {
                     // Cleanup - Perform required cleanup.
+                    __pBoolStructOut_native__numElements = numValues;
                     global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.BoolStruct, global::SharedTypes.BoolStructMarshaller.BoolStructNative>.Free(__pBoolStructOut_native);
+                    _ = __boolStruct_native__lastIndexMarshalled;
                     __boolStruct_native__marshaller.Free();
                 }
 
@@ -1067,10 +1072,9 @@ namespace LibraryImportGenerator.IntegrationTests
                 // Setup - Perform required setup.
                 int __retVal_native__numElements;
                 System.Runtime.CompilerServices.Unsafe.SkipInit(out __retVal_native__numElements);
-                ;
                 scoped global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.BoolStruct, global::SharedTypes.BoolStructMarshaller.BoolStructNative>.ManagedToUnmanagedIn __boolStruct_native__marshaller = new();
                 int __boolStruct_native__numElements;
-                ;
+                int __boolStruct_native__lastIndexMarshalled = 0;
                 System.Runtime.CompilerServices.Unsafe.SkipInit(out __boolStruct_native__numElements);
                 try
                 {
@@ -1079,7 +1083,7 @@ namespace LibraryImportGenerator.IntegrationTests
                     {
                         System.ReadOnlySpan<global::SharedTypes.BoolStruct> __boolStruct_native__managedSpan = __boolStruct_native__marshaller.GetManagedValuesSource();
                         System.Span<global::SharedTypes.BoolStructMarshaller.BoolStructNative> __boolStruct_native__nativeSpan = __boolStruct_native__marshaller.GetUnmanagedValuesDestination();
-                        for (int __i0 = 0; __i0 < __boolStruct_native__managedSpan.Length; ++__i0)
+                        for (int __i0 = 0; __i0 < __boolStruct_native__managedSpan.Length; ++__i0, ++__boolStruct_native__lastIndexMarshalled)
                         {
                             __boolStruct_native__nativeSpan[__i0] = global::SharedTypes.BoolStructMarshaller.ConvertToUnmanaged(__boolStruct_native__managedSpan[__i0]);
                         }
@@ -1108,7 +1112,9 @@ namespace LibraryImportGenerator.IntegrationTests
                 finally
                 {
                     // Cleanup - Perform required cleanup.
+                    __retVal_native__numElements = numValues;
                     global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.BoolStruct, global::SharedTypes.BoolStructMarshaller.BoolStructNative>.Free(__retVal_native);
+                    _ = __boolStruct_native__lastIndexMarshalled;
                     __boolStruct_native__marshaller.Free();
                 }
 
@@ -1136,7 +1142,6 @@ namespace LibraryImportGenerator.IntegrationTests
                 // Setup - Perform required setup.
                 int __retVal_native__numElements;
                 System.Runtime.CompilerServices.Unsafe.SkipInit(out __retVal_native__numElements);
-                ;
                 scoped global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int[], System.IntPtr>.ManagedToUnmanagedIn __matrix_native__marshaller = new();
                 int __matrix_native__numElements;
                 int __matrix_native__lastIndexMarshalled = 0;
@@ -1152,7 +1157,6 @@ namespace LibraryImportGenerator.IntegrationTests
                         {
                             int __matrix_native__nativeSpan____i0__numElements;
                             System.Runtime.CompilerServices.Unsafe.SkipInit(out __matrix_native__nativeSpan____i0__numElements);
-                            ;
                             __matrix_native__nativeSpan[__i0] = (System.IntPtr)global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.AllocateContainerForUnmanagedElements(__matrix_native__managedSpan[__i0], out __matrix_native__nativeSpan____i0__numElements);
                             global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.GetManagedValuesSource(__matrix_native__managedSpan[__i0]).CopyTo(global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.GetUnmanagedValuesDestination((int*)__matrix_native__nativeSpan[__i0], __matrix_native__nativeSpan____i0__numElements));
                         }
@@ -1177,7 +1181,6 @@ namespace LibraryImportGenerator.IntegrationTests
                         {
                             int __retVal_native__nativeSpan____i0__numElements;
                             System.Runtime.CompilerServices.Unsafe.SkipInit(out __retVal_native__nativeSpan____i0__numElements);
-                            ;
                             __retVal_native__nativeSpan____i0__numElements = numRows[__i0];
                             __retVal_native__managedSpan[__i0] = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.AllocateContainerForManagedElements((int*)__retVal_native__nativeSpan[__i0], __retVal_native__nativeSpan____i0__numElements);
                             global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.GetUnmanagedValuesSource((int*)__retVal_native__nativeSpan[__i0], __retVal_native__nativeSpan____i0__numElements).CopyTo(global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.GetManagedValuesDestination(__retVal_native__managedSpan[__i0]));
@@ -1193,11 +1196,12 @@ namespace LibraryImportGenerator.IntegrationTests
                         {
                             int __retVal_native__nativeSpan____i0__numElements;
                             System.Runtime.CompilerServices.Unsafe.SkipInit(out __retVal_native__nativeSpan____i0__numElements);
-                            ;
+                            __retVal_native__nativeSpan____i0__numElements = numRows[__i0];
                             global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.Free((int*)__retVal_native__nativeSpan[__i0]);
                         }
                     }
 
+                    __retVal_native__numElements = numColumns;
                     global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int[], System.IntPtr>.Free(__retVal_native);
                     {
                         System.ReadOnlySpan<System.IntPtr> __matrix_native__nativeSpan = __matrix_native__marshaller.GetUnmanagedValuesDestination();
@@ -1261,7 +1265,6 @@ namespace LibraryImportGenerator.IntegrationTests
                 // Setup - Perform required setup.
                 scoped global::System.Runtime.InteropServices.Marshalling.PointerArrayMarshaller<int, nint>.ManagedToUnmanagedIn __values_native__marshaller = new();
                 int __values_native__numElements;
-                ;
                 System.Runtime.CompilerServices.Unsafe.SkipInit(out __values_native__numElements);
                 try
                 {
@@ -1304,7 +1307,6 @@ namespace LibraryImportGenerator.IntegrationTests
                 // Setup - Perform required setup.
                 int __values_native__numElements;
                 System.Runtime.CompilerServices.Unsafe.SkipInit(out __values_native__numElements);
-                ;
                 try
                 {
                     // Marshal - Convert managed data to native data.
@@ -1322,6 +1324,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 finally
                 {
                     // Cleanup - Perform required cleanup.
+                    __values_native__numElements = numValues;
                     global::System.Runtime.InteropServices.Marshalling.PointerArrayMarshaller<int, nint>.Free(__values_native);
                 }
 
@@ -1347,7 +1350,6 @@ namespace LibraryImportGenerator.IntegrationTests
                 // Setup - Perform required setup.
                 int __retVal_native__numElements;
                 System.Runtime.CompilerServices.Unsafe.SkipInit(out __retVal_native__numElements);
-                ;
                 try
                 {
                     // Pin - Pin data in preparation for calling the P/Invoke.
@@ -1364,6 +1366,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 finally
                 {
                     // Cleanup - Perform required cleanup.
+                    __retVal_native__numElements = numValues;
                     global::System.Runtime.InteropServices.Marshalling.PointerArrayMarshaller<int, nint>.Free(__retVal_native);
                 }
 
@@ -2323,11 +2326,11 @@ namespace LibraryImportGenerator.IntegrationTests
                         {
                             int __c_native__nativeSpan____i0__numElements;
                             System.Runtime.CompilerServices.Unsafe.SkipInit(out __c_native__nativeSpan____i0__numElements);
-                            ;
                             __c_native__nativeSpan[__i0] = (System.IntPtr)global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.BoolStruct, nint>.AllocateContainerForUnmanagedElements(__c_native__managedSpan[__i0], out __c_native__nativeSpan____i0__numElements);
                             {
                                 System.ReadOnlySpan<global::SharedTypes.BoolStruct> __c_native__nativeSpan____i0__managedSpan = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.BoolStruct, nint>.GetManagedValuesSource(__c_native__managedSpan[__i0]);
                                 System.Span<nint> __c_native__nativeSpan____i0__nativeSpan = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.BoolStruct, nint>.GetUnmanagedValuesDestination((nint*)__c_native__nativeSpan[__i0], __c_native__nativeSpan____i0__numElements);
+                                __c_native__nativeSpan____i0__nativeSpan.Clear();
                                 for (int __i1 = 0; __i1 < __c_native__nativeSpan____i0__managedSpan.Length; ++__i1)
                                 {
                                     __c_native__nativeSpan____i0__nativeSpan[__i1] = global::LibraryImportGenerator.IntegrationTests.EnforceClearedMemoryCleanup.ConvertToUnmanaged(__c_native__nativeSpan____i0__managedSpan[__i1]);
@@ -2353,7 +2356,6 @@ namespace LibraryImportGenerator.IntegrationTests
                         {
                             int __c_native__nativeSpan____i0__numElements;
                             System.Runtime.CompilerServices.Unsafe.SkipInit(out __c_native__nativeSpan____i0__numElements);
-                            ;
                             __c_native__nativeSpan____i0__numElements = 0;
                             {
                                 System.ReadOnlySpan<nint> __c_native__nativeSpan____i0__nativeSpan = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.BoolStruct, nint>.GetUnmanagedValuesDestination((nint*)__c_native__nativeSpan[__i0], __c_native__nativeSpan____i0__numElements);
@@ -2361,8 +2363,7 @@ namespace LibraryImportGenerator.IntegrationTests
                                 {
                                     global::LibraryImportGenerator.IntegrationTests.EnforceClearedMemoryCleanup.Free(__c_native__nativeSpan____i0__nativeSpan[__i1]);
                                 }
-                            }
-
+                            };
                             global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.BoolStruct, nint>.Free((nint*)__c_native__nativeSpan[__i0]);
                         }
                     }
@@ -2432,6 +2433,7 @@ namespace LibraryImportGenerator.IntegrationTests
                         }
                     }
 
+                    __c_native__numElements = 10;
                     global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.BoolStruct, nint>.Free(__c_native);
                 }
 
@@ -2458,10 +2460,9 @@ namespace LibraryImportGenerator.IntegrationTests
                 // Setup - Perform required setup.
                 int __pBoolStructOut_native__numElements;
                 System.Runtime.CompilerServices.Unsafe.SkipInit(out __pBoolStructOut_native__numElements);
-                ;
                 scoped global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.BoolStruct, global::SharedTypes.BoolStructMarshaller.BoolStructNative>.ManagedToUnmanagedIn __boolStruct_native__marshaller = new();
                 int __boolStruct_native__numElements;
-                ;
+                int __boolStruct_native__lastIndexMarshalled = 0;
                 System.Runtime.CompilerServices.Unsafe.SkipInit(out __boolStruct_native__numElements);
                 try
                 {
@@ -2470,7 +2471,7 @@ namespace LibraryImportGenerator.IntegrationTests
                     {
                         System.ReadOnlySpan<global::SharedTypes.BoolStruct> __boolStruct_native__managedSpan = __boolStruct_native__marshaller.GetManagedValuesSource();
                         System.Span<global::SharedTypes.BoolStructMarshaller.BoolStructNative> __boolStruct_native__nativeSpan = __boolStruct_native__marshaller.GetUnmanagedValuesDestination();
-                        for (int __i0 = 0; __i0 < __boolStruct_native__managedSpan.Length; ++__i0)
+                        for (int __i0 = 0; __i0 < __boolStruct_native__managedSpan.Length; ++__i0, ++__boolStruct_native__lastIndexMarshalled)
                         {
                             __boolStruct_native__nativeSpan[__i0] = global::SharedTypes.BoolStructMarshaller.ConvertToUnmanaged(__boolStruct_native__managedSpan[__i0]);
                         }
@@ -2507,7 +2508,9 @@ namespace LibraryImportGenerator.IntegrationTests
                         }
                     }
 
+                    __pBoolStructOut_native__numElements = numValues;
                     global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.BoolStruct, nint>.Free(__pBoolStructOut_native);
+                    _ = __boolStruct_native__lastIndexMarshalled;
                     __boolStruct_native__marshaller.Free();
                 }
 
@@ -2534,7 +2537,6 @@ namespace LibraryImportGenerator.IntegrationTests
                 // Setup - Perform required setup.
                 int __pBoolStructOut_native__numElements;
                 System.Runtime.CompilerServices.Unsafe.SkipInit(out __pBoolStructOut_native__numElements);
-                ;
                 scoped global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.BoolStruct[], System.IntPtr>.ManagedToUnmanagedIn __boolStruct_native__marshaller = new();
                 int __boolStruct_native__numElements;
                 int __boolStruct_native__lastIndexMarshalled = 0;
@@ -2550,11 +2552,11 @@ namespace LibraryImportGenerator.IntegrationTests
                         {
                             int __boolStruct_native__nativeSpan____i0__numElements;
                             System.Runtime.CompilerServices.Unsafe.SkipInit(out __boolStruct_native__nativeSpan____i0__numElements);
-                            ;
                             __boolStruct_native__nativeSpan[__i0] = (System.IntPtr)global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.BoolStruct, global::SharedTypes.BoolStructMarshaller.BoolStructNative>.AllocateContainerForUnmanagedElements(__boolStruct_native__managedSpan[__i0], out __boolStruct_native__nativeSpan____i0__numElements);
                             {
                                 System.ReadOnlySpan<global::SharedTypes.BoolStruct> __boolStruct_native__nativeSpan____i0__managedSpan = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.BoolStruct, global::SharedTypes.BoolStructMarshaller.BoolStructNative>.GetManagedValuesSource(__boolStruct_native__managedSpan[__i0]);
                                 System.Span<global::SharedTypes.BoolStructMarshaller.BoolStructNative> __boolStruct_native__nativeSpan____i0__nativeSpan = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.BoolStruct, global::SharedTypes.BoolStructMarshaller.BoolStructNative>.GetUnmanagedValuesDestination((global::SharedTypes.BoolStructMarshaller.BoolStructNative*)__boolStruct_native__nativeSpan[__i0], __boolStruct_native__nativeSpan____i0__numElements);
+                                __boolStruct_native__nativeSpan____i0__nativeSpan.Clear();
                                 for (int __i1 = 0; __i1 < __boolStruct_native__nativeSpan____i0__managedSpan.Length; ++__i1)
                                 {
                                     __boolStruct_native__nativeSpan____i0__nativeSpan[__i1] = global::SharedTypes.BoolStructMarshaller.ConvertToUnmanaged(__boolStruct_native__nativeSpan____i0__managedSpan[__i1]);
@@ -2582,7 +2584,6 @@ namespace LibraryImportGenerator.IntegrationTests
                         {
                             int __pBoolStructOut_native__nativeSpan____i0__numElements;
                             System.Runtime.CompilerServices.Unsafe.SkipInit(out __pBoolStructOut_native__nativeSpan____i0__numElements);
-                            ;
                             __pBoolStructOut_native__nativeSpan____i0__numElements = widths[__i0];
                             __pBoolStructOut_native__managedSpan[__i0] = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.BoolStruct, nint>.AllocateContainerForManagedElements((nint*)__pBoolStructOut_native__nativeSpan[__i0], __pBoolStructOut_native__nativeSpan____i0__numElements);
                             {
@@ -2605,7 +2606,6 @@ namespace LibraryImportGenerator.IntegrationTests
                         {
                             int __pBoolStructOut_native__nativeSpan____i0__numElements;
                             System.Runtime.CompilerServices.Unsafe.SkipInit(out __pBoolStructOut_native__nativeSpan____i0__numElements);
-                            ;
                             __pBoolStructOut_native__nativeSpan____i0__numElements = widths[__i0];
                             {
                                 System.ReadOnlySpan<nint> __pBoolStructOut_native__nativeSpan____i0__nativeSpan = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.BoolStruct, nint>.GetUnmanagedValuesDestination((nint*)__pBoolStructOut_native__nativeSpan[__i0], __pBoolStructOut_native__nativeSpan____i0__numElements);
@@ -2615,10 +2615,12 @@ namespace LibraryImportGenerator.IntegrationTests
                                 }
                             }
 
+                            __pBoolStructOut_native__nativeSpan____i0__numElements = widths[__i0];
                             global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.BoolStruct, nint>.Free((nint*)__pBoolStructOut_native__nativeSpan[__i0]);
                         }
                     }
 
+                    __pBoolStructOut_native__numElements = length;
                     global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.BoolStruct[], System.IntPtr>.Free(__pBoolStructOut_native);
                     {
                         System.ReadOnlySpan<System.IntPtr> __boolStruct_native__nativeSpan = __boolStruct_native__marshaller.GetUnmanagedValuesDestination();
@@ -2657,7 +2659,6 @@ namespace LibraryImportGenerator.IntegrationTests
                 // Setup - Perform required setup.
                 scoped global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.IntStructWrapper, nint>.ManagedToUnmanagedIn __array_native__marshaller = new();
                 int __array_native__numElements;
-                int __array_native__lastIndexMarshalled = 0;
                 System.Runtime.CompilerServices.Unsafe.SkipInit(out __array_native__numElements);
                 try
                 {
@@ -2689,7 +2690,7 @@ namespace LibraryImportGenerator.IntegrationTests
                     // Cleanup - Perform required cleanup.
                     {
                         System.ReadOnlySpan<nint> __array_native__nativeSpan = __array_native__marshaller.GetUnmanagedValuesDestination();
-                        for (int __i0 = 0; __i0 < __array_native__lastIndexMarshalled; ++__i0)
+                        for (int __i0 = 0; __i0 < __array_native__nativeSpan.Length; ++__i0)
                         {
                             global::LibraryImportGenerator.IntegrationTests.EnforceAllElementsCleanedUpIntStruct.Free(__array_native__nativeSpan[__i0]);
                         }
@@ -2722,7 +2723,6 @@ namespace LibraryImportGenerator.IntegrationTests
                 // Setup - Perform required setup.
                 scoped global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.IntStructWrapper[], System.IntPtr>.ManagedToUnmanagedIn __array_native__marshaller = new();
                 int __array_native__numElements;
-                int __array_native__lastIndexMarshalled = 0;
                 System.Runtime.CompilerServices.Unsafe.SkipInit(out __array_native__numElements);
                 try
                 {
@@ -2748,7 +2748,6 @@ namespace LibraryImportGenerator.IntegrationTests
                         {
                             int __array_native__nativeSpan____i0__numElements;
                             System.Runtime.CompilerServices.Unsafe.SkipInit(out __array_native__nativeSpan____i0__numElements);
-                            ;
                             __array_native__nativeSpan____i0__numElements = widths[__i0];
                             __array_native__managedSpan[__i0] = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.IntStructWrapper, nint>.AllocateContainerForManagedElements((nint*)__array_native__nativeSpan[__i0], __array_native__nativeSpan____i0__numElements);
                             {
@@ -2767,11 +2766,10 @@ namespace LibraryImportGenerator.IntegrationTests
                     // Cleanup - Perform required cleanup.
                     {
                         System.ReadOnlySpan<System.IntPtr> __array_native__nativeSpan = __array_native__marshaller.GetUnmanagedValuesDestination();
-                        for (int __i0 = 0; __i0 < __array_native__lastIndexMarshalled; ++__i0)
+                        for (int __i0 = 0; __i0 < __array_native__nativeSpan.Length; ++__i0)
                         {
                             int __array_native__nativeSpan____i0__numElements;
                             System.Runtime.CompilerServices.Unsafe.SkipInit(out __array_native__nativeSpan____i0__numElements);
-                            ;
                             __array_native__nativeSpan____i0__numElements = widths[__i0];
                             {
                                 System.ReadOnlySpan<nint> __array_native__nativeSpan____i0__nativeSpan = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.IntStructWrapper, nint>.GetUnmanagedValuesDestination((nint*)__array_native__nativeSpan[__i0], __array_native__nativeSpan____i0__numElements);
@@ -2781,6 +2779,7 @@ namespace LibraryImportGenerator.IntegrationTests
                                 }
                             }
 
+                            __array_native__nativeSpan____i0__numElements = widths[__i0];
                             global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.IntStructWrapper, nint>.Free((nint*)__array_native__nativeSpan[__i0]);
                         }
                     }
@@ -2851,6 +2850,7 @@ namespace LibraryImportGenerator.IntegrationTests
                         }
                     }
 
+                    __boolStruct_native__numElements = numValues;
                     global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.BoolStruct, nint>.Free(__boolStruct_native);
                 }
 
@@ -2916,6 +2916,7 @@ namespace LibraryImportGenerator.IntegrationTests
                         }
                     }
 
+                    __boolStruct_native__numElements = length;
                     global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.BoolStruct[], nint>.Free(__boolStruct_native);
                 }
 
@@ -2952,11 +2953,11 @@ namespace LibraryImportGenerator.IntegrationTests
                         {
                             int __boolStruct_native__nativeSpan____i0__numElements;
                             System.Runtime.CompilerServices.Unsafe.SkipInit(out __boolStruct_native__nativeSpan____i0__numElements);
-                            ;
                             __boolStruct_native__nativeSpan[__i0] = (System.IntPtr)global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.BoolStruct, nint>.AllocateContainerForUnmanagedElements(__boolStruct_native__managedSpan[__i0], out __boolStruct_native__nativeSpan____i0__numElements);
                             {
                                 System.ReadOnlySpan<global::SharedTypes.BoolStruct> __boolStruct_native__nativeSpan____i0__managedSpan = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.BoolStruct, nint>.GetManagedValuesSource(__boolStruct_native__managedSpan[__i0]);
                                 System.Span<nint> __boolStruct_native__nativeSpan____i0__nativeSpan = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.BoolStruct, nint>.GetUnmanagedValuesDestination((nint*)__boolStruct_native__nativeSpan[__i0], __boolStruct_native__nativeSpan____i0__numElements);
+                                __boolStruct_native__nativeSpan____i0__nativeSpan.Clear();
                                 for (int __i1 = 0; __i1 < __boolStruct_native__nativeSpan____i0__managedSpan.Length; ++__i1)
                                 {
                                     __boolStruct_native__nativeSpan____i0__nativeSpan[__i1] = global::LibraryImportGenerator.IntegrationTests.EnforceClearedMemoryCleanup.ConvertToUnmanaged(__boolStruct_native__nativeSpan____i0__managedSpan[__i1]);
@@ -2981,7 +2982,6 @@ namespace LibraryImportGenerator.IntegrationTests
                         {
                             int __boolStruct_native__nativeSpan____i0__numElements;
                             System.Runtime.CompilerServices.Unsafe.SkipInit(out __boolStruct_native__nativeSpan____i0__numElements);
-                            ;
                             __boolStruct_native__nativeSpan____i0__numElements = widths[__i0];
                             __boolStruct_native__managedSpan[__i0] = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.BoolStruct, nint>.AllocateContainerForManagedElements((nint*)__boolStruct_native__nativeSpan[__i0], __boolStruct_native__nativeSpan____i0__numElements);
                             {
@@ -3004,7 +3004,6 @@ namespace LibraryImportGenerator.IntegrationTests
                         {
                             int __boolStruct_native__nativeSpan____i0__numElements;
                             System.Runtime.CompilerServices.Unsafe.SkipInit(out __boolStruct_native__nativeSpan____i0__numElements);
-                            ;
                             __boolStruct_native__nativeSpan____i0__numElements = widths[__i0];
                             {
                                 System.ReadOnlySpan<nint> __boolStruct_native__nativeSpan____i0__nativeSpan = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.BoolStruct, nint>.GetUnmanagedValuesDestination((nint*)__boolStruct_native__nativeSpan[__i0], __boolStruct_native__nativeSpan____i0__numElements);
@@ -3014,10 +3013,12 @@ namespace LibraryImportGenerator.IntegrationTests
                                 }
                             }
 
+                            __boolStruct_native__nativeSpan____i0__numElements = widths[__i0];
                             global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.BoolStruct, nint>.Free((nint*)__boolStruct_native__nativeSpan[__i0]);
                         }
                     }
 
+                    __boolStruct_native__numElements = length;
                     global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.BoolStruct[], System.IntPtr>.Free(__boolStruct_native);
                 }
 
@@ -3045,7 +3046,6 @@ namespace LibraryImportGenerator.IntegrationTests
                     // Setup - Perform required setup.
                     int __values_native__numElements;
                     System.Runtime.CompilerServices.Unsafe.SkipInit(out __values_native__numElements);
-                    ;
                     try
                     {
                         // Marshal - Convert managed data to native data.
@@ -3058,6 +3058,7 @@ namespace LibraryImportGenerator.IntegrationTests
                     finally
                     {
                         // Cleanup - Perform required cleanup.
+                        ;
                         global::SharedTypes.ListMarshaller<int, int>.Free(__values_native);
                     }
 
@@ -3082,18 +3083,25 @@ namespace LibraryImportGenerator.IntegrationTests
                 [global::System.Runtime.CompilerServices.SkipLocalsInitAttribute]
                 public static partial int SumWithBuffer(global::System.Collections.Generic.List<int> values, int numValues)
                 {
-                    byte* __values_native;
-                    int __retVal;
+                    byte* __values_native = default;
+                    int __retVal = default;
                     // Setup - Perform required setup.
                     int __values_native__numElements;
                     System.Runtime.CompilerServices.Unsafe.SkipInit(out __values_native__numElements);
-                    ;
-                    // Marshal - Convert managed data to native data.
-                    System.Span<byte> __values_native__buffer = stackalloc byte[global::SharedTypes.ListMarshallerWithBuffer<int, int>.BufferSize];
-                    __values_native = global::SharedTypes.ListMarshallerWithBuffer<int, int>.AllocateContainerForUnmanagedElements(values, __values_native__buffer, out __values_native__numElements);
-                    global::SharedTypes.ListMarshallerWithBuffer<int, int>.GetManagedValuesSource(values).CopyTo(global::SharedTypes.ListMarshallerWithBuffer<int, int>.GetUnmanagedValuesDestination(__values_native, __values_native__numElements));
+                    try
                     {
-                        __retVal = __PInvoke(__values_native, numValues);
+                        // Marshal - Convert managed data to native data.
+                        System.Span<byte> __values_native__buffer = stackalloc byte[global::SharedTypes.ListMarshallerWithBuffer<int, int>.BufferSize];
+                        __values_native = global::SharedTypes.ListMarshallerWithBuffer<int, int>.AllocateContainerForUnmanagedElements(values, __values_native__buffer, out __values_native__numElements);
+                        global::SharedTypes.ListMarshallerWithBuffer<int, int>.GetManagedValuesSource(values).CopyTo(global::SharedTypes.ListMarshallerWithBuffer<int, int>.GetUnmanagedValuesDestination(__values_native, __values_native__numElements));
+                        {
+                            __retVal = __PInvoke(__values_native, numValues);
+                        }
+                    }
+                    finally
+                    {
+                        // Cleanup - Perform required cleanup.
+                        ;
                     }
 
                     return __retVal;
@@ -3149,8 +3157,7 @@ namespace LibraryImportGenerator.IntegrationTests
                             {
                                 global::SharedTypes.IntWrapperMarshallerWithFreeCounts.Free((int*)__values_native__nativeSpan[__i0]);
                             }
-                        }
-
+                        };
                         global::SharedTypes.ListMarshaller<global::SharedTypes.IntWrapper, System.IntPtr>.Free(__values_native);
                     }
 
@@ -3208,7 +3215,6 @@ namespace LibraryImportGenerator.IntegrationTests
                     // Setup - Perform required setup.
                     int __values_native__numElements;
                     System.Runtime.CompilerServices.Unsafe.SkipInit(out __values_native__numElements);
-                    ;
                     try
                     {
                         // Marshal - Convert managed data to native data.
@@ -3221,6 +3227,7 @@ namespace LibraryImportGenerator.IntegrationTests
                     finally
                     {
                         // Cleanup - Perform required cleanup.
+                        ;
                         global::SharedTypes.ListMarshaller<int, int>.Free(__values_native);
                     }
 
@@ -3249,7 +3256,6 @@ namespace LibraryImportGenerator.IntegrationTests
                     // Setup - Perform required setup.
                     int __values_native__numElements;
                     System.Runtime.CompilerServices.Unsafe.SkipInit(out __values_native__numElements);
-                    ;
                     try
                     {
                         // Marshal - Convert managed data to native data.
@@ -3267,6 +3273,7 @@ namespace LibraryImportGenerator.IntegrationTests
                     finally
                     {
                         // Cleanup - Perform required cleanup.
+                        __values_native__numElements = numValues;
                         global::SharedTypes.ListMarshaller<int, int>.Free(__values_native);
                     }
 
@@ -3296,7 +3303,6 @@ namespace LibraryImportGenerator.IntegrationTests
                     // Setup - Perform required setup.
                     int __retVal_native__numElements;
                     System.Runtime.CompilerServices.Unsafe.SkipInit(out __retVal_native__numElements);
-                    ;
                     try
                     {
                         // Pin - Pin data in preparation for calling the P/Invoke.
@@ -3313,6 +3319,7 @@ namespace LibraryImportGenerator.IntegrationTests
                     finally
                     {
                         // Cleanup - Perform required cleanup.
+                        __retVal_native__numElements = numValues;
                         global::SharedTypes.ListMarshaller<int, int>.Free(__retVal_native);
                     }
 
@@ -3343,7 +3350,6 @@ namespace LibraryImportGenerator.IntegrationTests
                     // Setup - Perform required setup.
                     int __res_native__numElements;
                     System.Runtime.CompilerServices.Unsafe.SkipInit(out __res_native__numElements);
-                    ;
                     try
                     {
                         // Pin - Pin data in preparation for calling the P/Invoke.
@@ -3360,6 +3366,7 @@ namespace LibraryImportGenerator.IntegrationTests
                     finally
                     {
                         // Cleanup - Perform required cleanup.
+                        __res_native__numElements = numValues;
                         global::SharedTypes.ListMarshaller<int, int>.Free(__res_native);
                     }
 
@@ -3388,7 +3395,6 @@ namespace LibraryImportGenerator.IntegrationTests
                     // Setup - Perform required setup.
                     int __retVal_native__numElements;
                     System.Runtime.CompilerServices.Unsafe.SkipInit(out __retVal_native__numElements);
-                    ;
                     try
                     {
                         {
@@ -3403,6 +3409,7 @@ namespace LibraryImportGenerator.IntegrationTests
                     finally
                     {
                         // Cleanup - Perform required cleanup.
+                        __retVal_native__numElements = 8;
                         global::SharedTypes.ListMarshaller<byte, byte>.Free(__retVal_native);
                     }
 
@@ -3433,7 +3440,7 @@ namespace LibraryImportGenerator.IntegrationTests
                     // Setup - Perform required setup.
                     int __pArray_native__numElements;
                     System.Runtime.CompilerServices.Unsafe.SkipInit(out __pArray_native__numElements);
-                    ;
+                    int __pArray_native__lastIndexMarshalled = 0;
                     try
                     {
                         // Marshal - Convert managed data to native data.
@@ -3441,7 +3448,7 @@ namespace LibraryImportGenerator.IntegrationTests
                         {
                             System.ReadOnlySpan<global::SharedTypes.BoolStruct> __pArray_native__managedSpan = global::SharedTypes.ListMarshaller<global::SharedTypes.BoolStruct, global::SharedTypes.BoolStructMarshaller.BoolStructNative>.GetManagedValuesSource(pArray);
                             System.Span<global::SharedTypes.BoolStructMarshaller.BoolStructNative> __pArray_native__nativeSpan = global::SharedTypes.ListMarshaller<global::SharedTypes.BoolStruct, global::SharedTypes.BoolStructMarshaller.BoolStructNative>.GetUnmanagedValuesDestination(__pArray_native, __pArray_native__numElements);
-                            for (int __i0 = 0; __i0 < __pArray_native__managedSpan.Length; ++__i0)
+                            for (int __i0 = 0; __i0 < __pArray_native__managedSpan.Length; ++__i0, ++__pArray_native__lastIndexMarshalled)
                             {
                                 __pArray_native__nativeSpan[__i0] = global::SharedTypes.BoolStructMarshaller.ConvertToUnmanaged(__pArray_native__managedSpan[__i0]);
                             }
@@ -3457,6 +3464,8 @@ namespace LibraryImportGenerator.IntegrationTests
                     finally
                     {
                         // Cleanup - Perform required cleanup.
+                        _ = __pArray_native__lastIndexMarshalled;
+                        ;
                         global::SharedTypes.ListMarshaller<global::SharedTypes.BoolStruct, global::SharedTypes.BoolStructMarshaller.BoolStructNative>.Free(__pArray_native);
                     }
 
@@ -3487,7 +3496,7 @@ namespace LibraryImportGenerator.IntegrationTests
                     // Setup - Perform required setup.
                     int __pArray_native__numElements;
                     System.Runtime.CompilerServices.Unsafe.SkipInit(out __pArray_native__numElements);
-                    ;
+                    int __pArray_native__lastIndexMarshalled = 0;
                     try
                     {
                         // Marshal - Convert managed data to native data.
@@ -3495,7 +3504,7 @@ namespace LibraryImportGenerator.IntegrationTests
                         {
                             System.ReadOnlySpan<global::SharedTypes.BoolStruct> __pArray_native__managedSpan = global::SharedTypes.ListMarshaller<global::SharedTypes.BoolStruct, global::SharedTypes.BoolStructMarshaller.BoolStructNative>.GetManagedValuesSource(pArray);
                             System.Span<global::SharedTypes.BoolStructMarshaller.BoolStructNative> __pArray_native__nativeSpan = global::SharedTypes.ListMarshaller<global::SharedTypes.BoolStruct, global::SharedTypes.BoolStructMarshaller.BoolStructNative>.GetUnmanagedValuesDestination(__pArray_native, __pArray_native__numElements);
-                            for (int __i0 = 0; __i0 < __pArray_native__managedSpan.Length; ++__i0)
+                            for (int __i0 = 0; __i0 < __pArray_native__managedSpan.Length; ++__i0, ++__pArray_native__lastIndexMarshalled)
                             {
                                 __pArray_native__nativeSpan[__i0] = global::SharedTypes.BoolStructMarshaller.ConvertToUnmanaged(__pArray_native__managedSpan[__i0]);
                             }
@@ -3511,6 +3520,8 @@ namespace LibraryImportGenerator.IntegrationTests
                     finally
                     {
                         // Cleanup - Perform required cleanup.
+                        _ = __pArray_native__lastIndexMarshalled;
+                        ;
                         global::SharedTypes.ListMarshaller<global::SharedTypes.BoolStruct, global::SharedTypes.BoolStructMarshaller.BoolStructNative>.Free(__pArray_native);
                     }
 
@@ -3539,7 +3550,7 @@ namespace LibraryImportGenerator.IntegrationTests
                     // Setup - Perform required setup.
                     int __boolStruct_native__numElements;
                     System.Runtime.CompilerServices.Unsafe.SkipInit(out __boolStruct_native__numElements);
-                    ;
+                    int __boolStruct_native__lastIndexMarshalled = 0;
                     try
                     {
                         // Marshal - Convert managed data to native data.
@@ -3547,7 +3558,7 @@ namespace LibraryImportGenerator.IntegrationTests
                         {
                             System.ReadOnlySpan<global::SharedTypes.BoolStruct> __boolStruct_native__managedSpan = global::SharedTypes.ListMarshaller<global::SharedTypes.BoolStruct, global::SharedTypes.BoolStructMarshaller.BoolStructNative>.GetManagedValuesSource(boolStruct);
                             System.Span<global::SharedTypes.BoolStructMarshaller.BoolStructNative> __boolStruct_native__nativeSpan = global::SharedTypes.ListMarshaller<global::SharedTypes.BoolStruct, global::SharedTypes.BoolStructMarshaller.BoolStructNative>.GetUnmanagedValuesDestination(__boolStruct_native, __boolStruct_native__numElements);
-                            for (int __i0 = 0; __i0 < __boolStruct_native__managedSpan.Length; ++__i0)
+                            for (int __i0 = 0; __i0 < __boolStruct_native__managedSpan.Length; ++__i0, ++__boolStruct_native__lastIndexMarshalled)
                             {
                                 __boolStruct_native__nativeSpan[__i0] = global::SharedTypes.BoolStructMarshaller.ConvertToUnmanaged(__boolStruct_native__managedSpan[__i0]);
                             }
@@ -3572,6 +3583,8 @@ namespace LibraryImportGenerator.IntegrationTests
                     finally
                     {
                         // Cleanup - Perform required cleanup.
+                        _ = __boolStruct_native__lastIndexMarshalled;
+                        __boolStruct_native__numElements = numValues;
                         global::SharedTypes.ListMarshaller<global::SharedTypes.BoolStruct, global::SharedTypes.BoolStructMarshaller.BoolStructNative>.Free(__boolStruct_native);
                     }
 
@@ -3601,10 +3614,9 @@ namespace LibraryImportGenerator.IntegrationTests
                     // Setup - Perform required setup.
                     int __pBoolStructOut_native__numElements;
                     System.Runtime.CompilerServices.Unsafe.SkipInit(out __pBoolStructOut_native__numElements);
-                    ;
                     int __boolStruct_native__numElements;
                     System.Runtime.CompilerServices.Unsafe.SkipInit(out __boolStruct_native__numElements);
-                    ;
+                    int __boolStruct_native__lastIndexMarshalled = 0;
                     try
                     {
                         // Marshal - Convert managed data to native data.
@@ -3612,7 +3624,7 @@ namespace LibraryImportGenerator.IntegrationTests
                         {
                             System.ReadOnlySpan<global::SharedTypes.BoolStruct> __boolStruct_native__managedSpan = global::SharedTypes.ListMarshaller<global::SharedTypes.BoolStruct, global::SharedTypes.BoolStructMarshaller.BoolStructNative>.GetManagedValuesSource(boolStruct);
                             System.Span<global::SharedTypes.BoolStructMarshaller.BoolStructNative> __boolStruct_native__nativeSpan = global::SharedTypes.ListMarshaller<global::SharedTypes.BoolStruct, global::SharedTypes.BoolStructMarshaller.BoolStructNative>.GetUnmanagedValuesDestination(__boolStruct_native, __boolStruct_native__numElements);
-                            for (int __i0 = 0; __i0 < __boolStruct_native__managedSpan.Length; ++__i0)
+                            for (int __i0 = 0; __i0 < __boolStruct_native__managedSpan.Length; ++__i0, ++__boolStruct_native__lastIndexMarshalled)
                             {
                                 __boolStruct_native__nativeSpan[__i0] = global::SharedTypes.BoolStructMarshaller.ConvertToUnmanaged(__boolStruct_native__managedSpan[__i0]);
                             }
@@ -3637,7 +3649,10 @@ namespace LibraryImportGenerator.IntegrationTests
                     finally
                     {
                         // Cleanup - Perform required cleanup.
+                        __pBoolStructOut_native__numElements = numValues;
                         global::SharedTypes.ListMarshaller<global::SharedTypes.BoolStruct, global::SharedTypes.BoolStructMarshaller.BoolStructNative>.Free(__pBoolStructOut_native);
+                        _ = __boolStruct_native__lastIndexMarshalled;
+                        ;
                         global::SharedTypes.ListMarshaller<global::SharedTypes.BoolStruct, global::SharedTypes.BoolStructMarshaller.BoolStructNative>.Free(__boolStruct_native);
                     }
 
@@ -3667,10 +3682,9 @@ namespace LibraryImportGenerator.IntegrationTests
                     // Setup - Perform required setup.
                     int __retVal_native__numElements;
                     System.Runtime.CompilerServices.Unsafe.SkipInit(out __retVal_native__numElements);
-                    ;
                     int __boolStruct_native__numElements;
                     System.Runtime.CompilerServices.Unsafe.SkipInit(out __boolStruct_native__numElements);
-                    ;
+                    int __boolStruct_native__lastIndexMarshalled = 0;
                     try
                     {
                         // Marshal - Convert managed data to native data.
@@ -3678,7 +3692,7 @@ namespace LibraryImportGenerator.IntegrationTests
                         {
                             System.ReadOnlySpan<global::SharedTypes.BoolStruct> __boolStruct_native__managedSpan = global::SharedTypes.ListMarshaller<global::SharedTypes.BoolStruct, global::SharedTypes.BoolStructMarshaller.BoolStructNative>.GetManagedValuesSource(boolStruct);
                             System.Span<global::SharedTypes.BoolStructMarshaller.BoolStructNative> __boolStruct_native__nativeSpan = global::SharedTypes.ListMarshaller<global::SharedTypes.BoolStruct, global::SharedTypes.BoolStructMarshaller.BoolStructNative>.GetUnmanagedValuesDestination(__boolStruct_native, __boolStruct_native__numElements);
-                            for (int __i0 = 0; __i0 < __boolStruct_native__managedSpan.Length; ++__i0)
+                            for (int __i0 = 0; __i0 < __boolStruct_native__managedSpan.Length; ++__i0, ++__boolStruct_native__lastIndexMarshalled)
                             {
                                 __boolStruct_native__nativeSpan[__i0] = global::SharedTypes.BoolStructMarshaller.ConvertToUnmanaged(__boolStruct_native__managedSpan[__i0]);
                             }
@@ -3703,7 +3717,10 @@ namespace LibraryImportGenerator.IntegrationTests
                     finally
                     {
                         // Cleanup - Perform required cleanup.
+                        __retVal_native__numElements = numValues;
                         global::SharedTypes.ListMarshaller<global::SharedTypes.BoolStruct, global::SharedTypes.BoolStructMarshaller.BoolStructNative>.Free(__retVal_native);
+                        _ = __boolStruct_native__lastIndexMarshalled;
+                        ;
                         global::SharedTypes.ListMarshaller<global::SharedTypes.BoolStruct, global::SharedTypes.BoolStructMarshaller.BoolStructNative>.Free(__boolStruct_native);
                     }
 
@@ -3736,7 +3753,6 @@ namespace LibraryImportGenerator.IntegrationTests
                     // Setup - Perform required setup.
                     int __ret_native__numElements;
                     System.Runtime.CompilerServices.Unsafe.SkipInit(out __ret_native__numElements);
-                    ;
                     try
                     {
                         {
@@ -3755,6 +3771,9 @@ namespace LibraryImportGenerator.IntegrationTests
                             __ret_native__numElements = 1;
                             ret = global::LibraryImportGenerator.IntegrationTests.NativeExportsNE.Collections.Stateless.ListGuaranteedUnmarshal<int, int>.AllocateContainerForManagedElementsFinally(__ret_native, __ret_native__numElements);
                         }
+
+                        // Cleanup - Perform required cleanup.
+                        __ret_native__numElements = 1;
                     }
 
                     return __retVal;
@@ -3786,7 +3805,6 @@ namespace LibraryImportGenerator.IntegrationTests
                     // Setup - Perform required setup.
                     int __ret_native__numElements;
                     System.Runtime.CompilerServices.Unsafe.SkipInit(out __ret_native__numElements);
-                    ;
                     try
                     {
                         {
@@ -3805,6 +3823,9 @@ namespace LibraryImportGenerator.IntegrationTests
                             __ret_native__numElements = 1;
                             ret = global::LibraryImportGenerator.IntegrationTests.NativeExportsNE.Collections.Stateless.ListGuaranteedUnmarshal<global::SharedTypes.BoolStruct, global::SharedTypes.BoolStructMarshaller.BoolStructNative>.AllocateContainerForManagedElementsFinally(__ret_native, __ret_native__numElements);
                         }
+
+                        // Cleanup - Perform required cleanup.
+                        __ret_native__numElements = 1;
                     }
 
                     return __retVal;
@@ -3833,7 +3854,6 @@ namespace LibraryImportGenerator.IntegrationTests
                     // Setup - Perform required setup.
                     scoped global::SharedTypes.ListMarshallerStateful<int, int>.Marshaller __values_native__marshaller = new();
                     int __values_native__numElements;
-                    ;
                     System.Runtime.CompilerServices.Unsafe.SkipInit(out __values_native__numElements);
                     try
                     {
@@ -3943,7 +3963,6 @@ namespace LibraryImportGenerator.IntegrationTests
                     // Setup - Perform required setup.
                     scoped global::SharedTypes.ListMarshallerStateful<int, int>.Marshaller __values_native__marshaller = new();
                     int __values_native__numElements;
-                    ;
                     System.Runtime.CompilerServices.Unsafe.SkipInit(out __values_native__numElements);
                     try
                     {
@@ -3989,7 +4008,6 @@ namespace LibraryImportGenerator.IntegrationTests
                     // Setup - Perform required setup.
                     scoped global::SharedTypes.ListMarshallerStateful<int, int>.Marshaller __values_native__marshaller = new();
                     int __values_native__numElements;
-                    ;
                     System.Runtime.CompilerServices.Unsafe.SkipInit(out __values_native__numElements);
                     try
                     {
@@ -4041,7 +4059,6 @@ namespace LibraryImportGenerator.IntegrationTests
                     // Setup - Perform required setup.
                     scoped global::SharedTypes.ListMarshallerStateful<int, int>.Marshaller __retVal_native__marshaller = new();
                     int __retVal_native__numElements;
-                    ;
                     System.Runtime.CompilerServices.Unsafe.SkipInit(out __retVal_native__numElements);
                     try
                     {
@@ -4091,7 +4108,6 @@ namespace LibraryImportGenerator.IntegrationTests
                     // Setup - Perform required setup.
                     scoped global::SharedTypes.ListMarshallerStateful<int, int>.Marshaller __res_native__marshaller = new();
                     int __res_native__numElements;
-                    ;
                     System.Runtime.CompilerServices.Unsafe.SkipInit(out __res_native__numElements);
                     try
                     {
@@ -4139,7 +4155,6 @@ namespace LibraryImportGenerator.IntegrationTests
                     // Setup - Perform required setup.
                     scoped global::SharedTypes.ListMarshallerStateful<byte, byte>.Marshaller __retVal_native__marshaller = new();
                     int __retVal_native__numElements;
-                    ;
                     System.Runtime.CompilerServices.Unsafe.SkipInit(out __retVal_native__numElements);
                     try
                     {
@@ -4187,7 +4202,7 @@ namespace LibraryImportGenerator.IntegrationTests
                     // Setup - Perform required setup.
                     scoped global::SharedTypes.ListMarshallerStateful<global::SharedTypes.BoolStruct, global::SharedTypes.BoolStructMarshaller.BoolStructNative>.Marshaller __pArray_native__marshaller = new();
                     int __pArray_native__numElements;
-                    ;
+                    int __pArray_native__lastIndexMarshalled = 0;
                     System.Runtime.CompilerServices.Unsafe.SkipInit(out __pArray_native__numElements);
                     try
                     {
@@ -4196,7 +4211,7 @@ namespace LibraryImportGenerator.IntegrationTests
                         {
                             System.ReadOnlySpan<global::SharedTypes.BoolStruct> __pArray_native__managedSpan = __pArray_native__marshaller.GetManagedValuesSource();
                             System.Span<global::SharedTypes.BoolStructMarshaller.BoolStructNative> __pArray_native__nativeSpan = __pArray_native__marshaller.GetUnmanagedValuesDestination();
-                            for (int __i0 = 0; __i0 < __pArray_native__managedSpan.Length; ++__i0)
+                            for (int __i0 = 0; __i0 < __pArray_native__managedSpan.Length; ++__i0, ++__pArray_native__lastIndexMarshalled)
                             {
                                 __pArray_native__nativeSpan[__i0] = global::SharedTypes.BoolStructMarshaller.ConvertToUnmanaged(__pArray_native__managedSpan[__i0]);
                             }
@@ -4216,6 +4231,7 @@ namespace LibraryImportGenerator.IntegrationTests
                     finally
                     {
                         // Cleanup - Perform required cleanup.
+                        _ = __pArray_native__lastIndexMarshalled;
                         __pArray_native__marshaller.Free();
                     }
 
@@ -4246,7 +4262,7 @@ namespace LibraryImportGenerator.IntegrationTests
                     // Setup - Perform required setup.
                     scoped global::SharedTypes.ListMarshallerStateful<global::SharedTypes.BoolStruct, global::SharedTypes.BoolStructMarshaller.BoolStructNative>.Marshaller __pArray_native__marshaller = new();
                     int __pArray_native__numElements;
-                    ;
+                    int __pArray_native__lastIndexMarshalled = 0;
                     System.Runtime.CompilerServices.Unsafe.SkipInit(out __pArray_native__numElements);
                     try
                     {
@@ -4255,7 +4271,7 @@ namespace LibraryImportGenerator.IntegrationTests
                         {
                             System.ReadOnlySpan<global::SharedTypes.BoolStruct> __pArray_native__managedSpan = __pArray_native__marshaller.GetManagedValuesSource();
                             System.Span<global::SharedTypes.BoolStructMarshaller.BoolStructNative> __pArray_native__nativeSpan = __pArray_native__marshaller.GetUnmanagedValuesDestination();
-                            for (int __i0 = 0; __i0 < __pArray_native__managedSpan.Length; ++__i0)
+                            for (int __i0 = 0; __i0 < __pArray_native__managedSpan.Length; ++__i0, ++__pArray_native__lastIndexMarshalled)
                             {
                                 __pArray_native__nativeSpan[__i0] = global::SharedTypes.BoolStructMarshaller.ConvertToUnmanaged(__pArray_native__managedSpan[__i0]);
                             }
@@ -4275,6 +4291,7 @@ namespace LibraryImportGenerator.IntegrationTests
                     finally
                     {
                         // Cleanup - Perform required cleanup.
+                        _ = __pArray_native__lastIndexMarshalled;
                         __pArray_native__marshaller.Free();
                     }
 
@@ -4303,7 +4320,7 @@ namespace LibraryImportGenerator.IntegrationTests
                     // Setup - Perform required setup.
                     scoped global::SharedTypes.ListMarshallerStateful<global::SharedTypes.BoolStruct, global::SharedTypes.BoolStructMarshaller.BoolStructNative>.Marshaller __boolStruct_native__marshaller = new();
                     int __boolStruct_native__numElements;
-                    ;
+                    int __boolStruct_native__lastIndexMarshalled = 0;
                     System.Runtime.CompilerServices.Unsafe.SkipInit(out __boolStruct_native__numElements);
                     try
                     {
@@ -4312,7 +4329,7 @@ namespace LibraryImportGenerator.IntegrationTests
                         {
                             System.ReadOnlySpan<global::SharedTypes.BoolStruct> __boolStruct_native__managedSpan = __boolStruct_native__marshaller.GetManagedValuesSource();
                             System.Span<global::SharedTypes.BoolStructMarshaller.BoolStructNative> __boolStruct_native__nativeSpan = __boolStruct_native__marshaller.GetUnmanagedValuesDestination();
-                            for (int __i0 = 0; __i0 < __boolStruct_native__managedSpan.Length; ++__i0)
+                            for (int __i0 = 0; __i0 < __boolStruct_native__managedSpan.Length; ++__i0, ++__boolStruct_native__lastIndexMarshalled)
                             {
                                 __boolStruct_native__nativeSpan[__i0] = global::SharedTypes.BoolStructMarshaller.ConvertToUnmanaged(__boolStruct_native__managedSpan[__i0]);
                             }
@@ -4342,6 +4359,7 @@ namespace LibraryImportGenerator.IntegrationTests
                     finally
                     {
                         // Cleanup - Perform required cleanup.
+                        _ = __boolStruct_native__lastIndexMarshalled;
                         __boolStruct_native__marshaller.Free();
                     }
 
@@ -4371,11 +4389,10 @@ namespace LibraryImportGenerator.IntegrationTests
                     // Setup - Perform required setup.
                     scoped global::SharedTypes.ListMarshallerStateful<global::SharedTypes.BoolStruct, global::SharedTypes.BoolStructMarshaller.BoolStructNative>.Marshaller __pBoolStructOut_native__marshaller = new();
                     int __pBoolStructOut_native__numElements;
-                    ;
                     System.Runtime.CompilerServices.Unsafe.SkipInit(out __pBoolStructOut_native__numElements);
                     scoped global::SharedTypes.ListMarshallerStateful<global::SharedTypes.BoolStruct, global::SharedTypes.BoolStructMarshaller.BoolStructNative>.Marshaller __boolStruct_native__marshaller = new();
                     int __boolStruct_native__numElements;
-                    ;
+                    int __boolStruct_native__lastIndexMarshalled = 0;
                     System.Runtime.CompilerServices.Unsafe.SkipInit(out __boolStruct_native__numElements);
                     try
                     {
@@ -4384,7 +4401,7 @@ namespace LibraryImportGenerator.IntegrationTests
                         {
                             System.ReadOnlySpan<global::SharedTypes.BoolStruct> __boolStruct_native__managedSpan = __boolStruct_native__marshaller.GetManagedValuesSource();
                             System.Span<global::SharedTypes.BoolStructMarshaller.BoolStructNative> __boolStruct_native__nativeSpan = __boolStruct_native__marshaller.GetUnmanagedValuesDestination();
-                            for (int __i0 = 0; __i0 < __boolStruct_native__managedSpan.Length; ++__i0)
+                            for (int __i0 = 0; __i0 < __boolStruct_native__managedSpan.Length; ++__i0, ++__boolStruct_native__lastIndexMarshalled)
                             {
                                 __boolStruct_native__nativeSpan[__i0] = global::SharedTypes.BoolStructMarshaller.ConvertToUnmanaged(__boolStruct_native__managedSpan[__i0]);
                             }
@@ -4417,6 +4434,7 @@ namespace LibraryImportGenerator.IntegrationTests
                     {
                         // Cleanup - Perform required cleanup.
                         __pBoolStructOut_native__marshaller.Free();
+                        _ = __boolStruct_native__lastIndexMarshalled;
                         __boolStruct_native__marshaller.Free();
                     }
 
@@ -4446,11 +4464,10 @@ namespace LibraryImportGenerator.IntegrationTests
                     // Setup - Perform required setup.
                     scoped global::SharedTypes.ListMarshallerStateful<global::SharedTypes.BoolStruct, global::SharedTypes.BoolStructMarshaller.BoolStructNative>.Marshaller __retVal_native__marshaller = new();
                     int __retVal_native__numElements;
-                    ;
                     System.Runtime.CompilerServices.Unsafe.SkipInit(out __retVal_native__numElements);
                     scoped global::SharedTypes.ListMarshallerStateful<global::SharedTypes.BoolStruct, global::SharedTypes.BoolStructMarshaller.BoolStructNative>.Marshaller __boolStruct_native__marshaller = new();
                     int __boolStruct_native__numElements;
-                    ;
+                    int __boolStruct_native__lastIndexMarshalled = 0;
                     System.Runtime.CompilerServices.Unsafe.SkipInit(out __boolStruct_native__numElements);
                     try
                     {
@@ -4459,7 +4476,7 @@ namespace LibraryImportGenerator.IntegrationTests
                         {
                             System.ReadOnlySpan<global::SharedTypes.BoolStruct> __boolStruct_native__managedSpan = __boolStruct_native__marshaller.GetManagedValuesSource();
                             System.Span<global::SharedTypes.BoolStructMarshaller.BoolStructNative> __boolStruct_native__nativeSpan = __boolStruct_native__marshaller.GetUnmanagedValuesDestination();
-                            for (int __i0 = 0; __i0 < __boolStruct_native__managedSpan.Length; ++__i0)
+                            for (int __i0 = 0; __i0 < __boolStruct_native__managedSpan.Length; ++__i0, ++__boolStruct_native__lastIndexMarshalled)
                             {
                                 __boolStruct_native__nativeSpan[__i0] = global::SharedTypes.BoolStructMarshaller.ConvertToUnmanaged(__boolStruct_native__managedSpan[__i0]);
                             }
@@ -4492,6 +4509,7 @@ namespace LibraryImportGenerator.IntegrationTests
                     {
                         // Cleanup - Perform required cleanup.
                         __retVal_native__marshaller.Free();
+                        _ = __boolStruct_native__lastIndexMarshalled;
                         __boolStruct_native__marshaller.Free();
                     }
 
@@ -4524,7 +4542,6 @@ namespace LibraryImportGenerator.IntegrationTests
                     // Setup - Perform required setup.
                     global::LibraryImportGenerator.IntegrationTests.NativeExportsNE.Collections.Stateful.ListGuaranteedUnmarshal<int, int>.Marshaller __ret_native__marshaller = new();
                     int __ret_native__numElements;
-                    ;
                     System.Runtime.CompilerServices.Unsafe.SkipInit(out __ret_native__numElements);
                     try
                     {
@@ -4579,7 +4596,6 @@ namespace LibraryImportGenerator.IntegrationTests
                     // Setup - Perform required setup.
                     global::LibraryImportGenerator.IntegrationTests.NativeExportsNE.Collections.Stateful.ListGuaranteedUnmarshal<global::SharedTypes.BoolStruct, global::SharedTypes.BoolStructMarshaller.BoolStructNative>.Marshaller __ret_native__marshaller = new();
                     int __ret_native__numElements;
-                    ;
                     System.Runtime.CompilerServices.Unsafe.SkipInit(out __ret_native__numElements);
                     try
                     {
@@ -5984,7 +6000,6 @@ namespace LibraryImportGenerator.IntegrationTests
                 // Setup - Perform required setup.
                 scoped global::System.Runtime.InteropServices.Marshalling.SpanMarshaller<int, int>.ManagedToUnmanagedIn __values_native__marshaller = new();
                 int __values_native__numElements;
-                ;
                 System.Runtime.CompilerServices.Unsafe.SkipInit(out __values_native__numElements);
                 try
                 {
@@ -6027,7 +6042,6 @@ namespace LibraryImportGenerator.IntegrationTests
                 // Setup - Perform required setup.
                 int __values_native__numElements;
                 System.Runtime.CompilerServices.Unsafe.SkipInit(out __values_native__numElements);
-                ;
                 try
                 {
                     // Marshal - Convert managed data to native data.
@@ -6045,6 +6059,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 finally
                 {
                     // Cleanup - Perform required cleanup.
+                    __values_native__numElements = numValues;
                     global::System.Runtime.InteropServices.Marshalling.SpanMarshaller<int, int>.Free(__values_native);
                 }
 
@@ -6071,7 +6086,6 @@ namespace LibraryImportGenerator.IntegrationTests
                 // Setup - Perform required setup.
                 int __retVal_native__numElements;
                 System.Runtime.CompilerServices.Unsafe.SkipInit(out __retVal_native__numElements);
-                ;
                 try
                 {
                     // Pin - Pin data in preparation for calling the P/Invoke.
@@ -6088,6 +6102,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 finally
                 {
                     // Cleanup - Perform required cleanup.
+                    __retVal_native__numElements = numValues;
                     global::System.Runtime.InteropServices.Marshalling.SpanMarshaller<int, int>.Free(__retVal_native);
                 }
 
@@ -6115,7 +6130,6 @@ namespace LibraryImportGenerator.IntegrationTests
                 // Setup - Perform required setup.
                 int __res_native__numElements;
                 System.Runtime.CompilerServices.Unsafe.SkipInit(out __res_native__numElements);
-                ;
                 try
                 {
                     // Pin - Pin data in preparation for calling the P/Invoke.
@@ -6132,6 +6146,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 finally
                 {
                     // Cleanup - Perform required cleanup.
+                    __res_native__numElements = numValues;
                     global::System.Runtime.InteropServices.Marshalling.SpanMarshaller<int, int>.Free(__res_native);
                 }
 
@@ -6157,7 +6172,6 @@ namespace LibraryImportGenerator.IntegrationTests
                 // Setup - Perform required setup.
                 int __retVal_native__numElements;
                 System.Runtime.CompilerServices.Unsafe.SkipInit(out __retVal_native__numElements);
-                ;
                 try
                 {
                     {
@@ -6172,6 +6186,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 finally
                 {
                     // Cleanup - Perform required cleanup.
+                    __retVal_native__numElements = 8;
                     global::System.Runtime.InteropServices.Marshalling.SpanMarshaller<byte, byte>.Free(__retVal_native);
                 }
 
@@ -6199,7 +6214,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 // Setup - Perform required setup.
                 scoped global::System.Runtime.InteropServices.Marshalling.SpanMarshaller<global::SharedTypes.BoolStruct, global::SharedTypes.BoolStructMarshaller.BoolStructNative>.ManagedToUnmanagedIn __pArray_native__marshaller = new();
                 int __pArray_native__numElements;
-                ;
+                int __pArray_native__lastIndexMarshalled = 0;
                 System.Runtime.CompilerServices.Unsafe.SkipInit(out __pArray_native__numElements);
                 try
                 {
@@ -6208,7 +6223,7 @@ namespace LibraryImportGenerator.IntegrationTests
                     {
                         System.ReadOnlySpan<global::SharedTypes.BoolStruct> __pArray_native__managedSpan = __pArray_native__marshaller.GetManagedValuesSource();
                         System.Span<global::SharedTypes.BoolStructMarshaller.BoolStructNative> __pArray_native__nativeSpan = __pArray_native__marshaller.GetUnmanagedValuesDestination();
-                        for (int __i0 = 0; __i0 < __pArray_native__managedSpan.Length; ++__i0)
+                        for (int __i0 = 0; __i0 < __pArray_native__managedSpan.Length; ++__i0, ++__pArray_native__lastIndexMarshalled)
                         {
                             __pArray_native__nativeSpan[__i0] = global::SharedTypes.BoolStructMarshaller.ConvertToUnmanaged(__pArray_native__managedSpan[__i0]);
                         }
@@ -6228,6 +6243,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 finally
                 {
                     // Cleanup - Perform required cleanup.
+                    _ = __pArray_native__lastIndexMarshalled;
                     __pArray_native__marshaller.Free();
                 }
 

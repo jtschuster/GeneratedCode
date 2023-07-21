@@ -61,14 +61,18 @@ namespace ComInterfaceGenerator.Tests
                     internal static void ABI_ExchangeData(void* __this_native, int* __x_native__param)
                     {
                         global::ComInterfaceGenerator.Tests.NativeExportsNE.ImplicitThis.INativeObject @this;
-                        ref int __x_native = ref *__x_native__param;
+                        int __x_native__out = default;
+                        int __x_native = *__x_native__param;
                         int x;
+                        _ = __x_native__out;
                         // Unmarshal - Convert native data to managed data.
                         x = __x_native;
                         @this = (global::ComInterfaceGenerator.Tests.NativeExportsNE.ImplicitThis.INativeObject)System.Runtime.InteropServices.Marshalling.UnmanagedObjectUnwrapper.GetObjectForUnmanagedWrapper<ComInterfaceGenerator.Tests.VTableGCHandlePair<ComInterfaceGenerator.Tests.NativeExportsNE.ImplicitThis.INativeObject>>(__this_native);
                         @this.ExchangeData(ref x);
                         // Marshal - Convert managed data to native data.
-                        __x_native = x;
+                        __x_native__out = x;
+                        // AssignOut - Assign to parameters
+                        *__x_native__param = __x_native__out;
                     }
                 }
             }
@@ -90,12 +94,13 @@ namespace ComInterfaceGenerator.Tests
                     {
                         global::ComInterfaceGenerator.Tests.NativeExportsNE.ImplicitThis.INativeObject @this;
                         int[] values;
-                        ref int __oldValue_native = ref *__oldValue_native__param;
+                        int __oldValue_native__out = default;
+                        int __oldValue_native = *__oldValue_native__param;
                         int oldValue;
+                        _ = __oldValue_native__out;
                         // Setup - Perform required setup.
                         int __values_native__numElements;
                         System.Runtime.CompilerServices.Unsafe.SkipInit(out __values_native__numElements);
-                        ;
                         // Unmarshal - Convert native data to managed data.
                         __values_native__numElements = numValues;
                         values = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.AllocateContainerForManagedElements(__values_native, __values_native__numElements);
@@ -103,7 +108,9 @@ namespace ComInterfaceGenerator.Tests
                         @this = (global::ComInterfaceGenerator.Tests.NativeExportsNE.ImplicitThis.INativeObject)System.Runtime.InteropServices.Marshalling.UnmanagedObjectUnwrapper.GetObjectForUnmanagedWrapper<ComInterfaceGenerator.Tests.VTableGCHandlePair<ComInterfaceGenerator.Tests.NativeExportsNE.ImplicitThis.INativeObject>>(__this_native);
                         @this.SumAndSetData(values, numValues, out oldValue);
                         // Marshal - Convert managed data to native data.
-                        __oldValue_native = oldValue;
+                        __oldValue_native__out = oldValue;
+                        // AssignOut - Assign to parameters
+                        *__oldValue_native__param = __oldValue_native__out;
                     }
                 }
             }
@@ -124,38 +131,33 @@ namespace ComInterfaceGenerator.Tests
                     internal static void ABI_SumAndSetData(void* __this_native, int** __values_native__param, int numValues, int* __oldValue_native__param)
                     {
                         global::ComInterfaceGenerator.Tests.NativeExportsNE.ImplicitThis.INativeObject @this = default;
-                        ref int* __values_native = ref *__values_native__param;
+                        int* __values_native__out = default;
+                        int* __values_native = *__values_native__param;
                         int[] values = default;
-                        ref int __oldValue_native = ref *__oldValue_native__param;
+                        int __oldValue_native__out = default;
+                        int __oldValue_native = *__oldValue_native__param;
                         int oldValue = default;
+                        _ = __values_native__out;
+                        _ = __oldValue_native__out;
                         // Setup - Perform required setup.
                         int __values_native__numElements;
                         System.Runtime.CompilerServices.Unsafe.SkipInit(out __values_native__numElements);
-                        bool __values_native__ownOriginal = false;
-                        int* __values_native__original = __values_native;
-                        ;
-                        try
-                        {
-                            // Unmarshal - Convert native data to managed data.
-                            __values_native__numElements = numValues;
-                            values = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.AllocateContainerForManagedElements(__values_native, __values_native__numElements);
-                            global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.GetUnmanagedValuesSource(__values_native, __values_native__numElements).CopyTo(global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.GetManagedValuesDestination(values));
-                            @this = (global::ComInterfaceGenerator.Tests.NativeExportsNE.ImplicitThis.INativeObject)System.Runtime.InteropServices.Marshalling.UnmanagedObjectUnwrapper.GetObjectForUnmanagedWrapper<ComInterfaceGenerator.Tests.VTableGCHandlePair<ComInterfaceGenerator.Tests.NativeExportsNE.ImplicitThis.INativeObject>>(__this_native);
-                            @this.SumAndSetData(ref values, numValues, out oldValue);
-                            // Marshal - Convert managed data to native data.
-                            __oldValue_native = oldValue;
-                            __values_native = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.AllocateContainerForUnmanagedElements(values, out __values_native__numElements);
-                            __values_native__ownOriginal = true;
-                            global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.GetManagedValuesSource(values).CopyTo(global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.GetUnmanagedValuesDestination(__values_native, __values_native__numElements));
-                        }
-                        finally
-                        {
-                            // Cleanup - Perform required cleanup.
-                            if (__values_native__ownOriginal)
-                            {
-                                global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.Free(__values_native__original);
-                            }
-                        }
+                        // Unmarshal - Convert native data to managed data.
+                        __values_native__numElements = numValues;
+                        values = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.AllocateContainerForManagedElements(__values_native, __values_native__numElements);
+                        global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.GetUnmanagedValuesSource(__values_native, __values_native__numElements).CopyTo(global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.GetManagedValuesDestination(values));
+                        @this = (global::ComInterfaceGenerator.Tests.NativeExportsNE.ImplicitThis.INativeObject)System.Runtime.InteropServices.Marshalling.UnmanagedObjectUnwrapper.GetObjectForUnmanagedWrapper<ComInterfaceGenerator.Tests.VTableGCHandlePair<ComInterfaceGenerator.Tests.NativeExportsNE.ImplicitThis.INativeObject>>(__this_native);
+                        @this.SumAndSetData(ref values, numValues, out oldValue);
+                        // Marshal - Convert managed data to native data.
+                        __oldValue_native__out = oldValue;
+                        __values_native__out = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.AllocateContainerForUnmanagedElements(values, out __values_native__numElements);
+                        global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.GetManagedValuesSource(values).CopyTo(global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.GetUnmanagedValuesDestination(__values_native__out, __values_native__numElements));
+                        // AssignOut - Assign to parameters
+                        *__oldValue_native__param = __oldValue_native__out;
+                        *__values_native__param = __values_native__out;
+                        // Cleanup - Perform required cleanup.
+                        __values_native__numElements = numValues;
+                        global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.Free(__values_native);
                     }
                 }
             }
@@ -180,7 +182,6 @@ namespace ComInterfaceGenerator.Tests
                         // Setup - Perform required setup.
                         int __values_native__numElements;
                         System.Runtime.CompilerServices.Unsafe.SkipInit(out __values_native__numElements);
-                        ;
                         // Unmarshal - Convert native data to managed data.
                         __values_native__numElements = numValues;
                         values = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.AllocateContainerForManagedElements(__values_native, __values_native__numElements);
@@ -260,29 +261,20 @@ namespace ComInterfaceGenerator.Tests
                     internal static void ABI_ExchangeData(void* __this_native, int* __data_native__param)
                     {
                         global::ComInterfaceGenerator.Tests.NativeExportsNE.UnmanagedToManagedCustomMarshalling.INativeObject @this = default;
-                        ref int __data_native = ref *__data_native__param;
+                        int __data_native__out = default;
+                        int __data_native = *__data_native__param;
                         global::SharedTypes.IntWrapper data = default;
-                        // Setup - Perform required setup.
-                        bool __data_native__ownOriginal = false;
-                        int __data_native__original = __data_native;
-                        try
-                        {
-                            // Unmarshal - Convert native data to managed data.
-                            data = global::ComInterfaceGenerator.Tests.UnmanagedToManagedCustomMarshallingTests.IntWrapperMarshallerToIntWithFreeCounts.ConvertToManaged(__data_native);
-                            @this = (global::ComInterfaceGenerator.Tests.NativeExportsNE.UnmanagedToManagedCustomMarshalling.INativeObject)System.Runtime.InteropServices.Marshalling.UnmanagedObjectUnwrapper.GetObjectForUnmanagedWrapper<ComInterfaceGenerator.Tests.VTableGCHandlePair<ComInterfaceGenerator.Tests.NativeExportsNE.UnmanagedToManagedCustomMarshalling.INativeObject>>(__this_native);
-                            @this.ExchangeData(ref data);
-                            // Marshal - Convert managed data to native data.
-                            __data_native = global::ComInterfaceGenerator.Tests.UnmanagedToManagedCustomMarshallingTests.IntWrapperMarshallerToIntWithFreeCounts.ConvertToUnmanaged(data);
-                            __data_native__ownOriginal = true;
-                        }
-                        finally
-                        {
-                            // Cleanup - Perform required cleanup.
-                            if (__data_native__ownOriginal)
-                            {
-                                global::ComInterfaceGenerator.Tests.UnmanagedToManagedCustomMarshallingTests.IntWrapperMarshallerToIntWithFreeCounts.Free(__data_native__original);
-                            }
-                        }
+                        _ = __data_native__out;
+                        // Unmarshal - Convert native data to managed data.
+                        data = global::ComInterfaceGenerator.Tests.UnmanagedToManagedCustomMarshallingTests.IntWrapperMarshallerToIntWithFreeCounts.ConvertToManaged(__data_native);
+                        @this = (global::ComInterfaceGenerator.Tests.NativeExportsNE.UnmanagedToManagedCustomMarshalling.INativeObject)System.Runtime.InteropServices.Marshalling.UnmanagedObjectUnwrapper.GetObjectForUnmanagedWrapper<ComInterfaceGenerator.Tests.VTableGCHandlePair<ComInterfaceGenerator.Tests.NativeExportsNE.UnmanagedToManagedCustomMarshalling.INativeObject>>(__this_native);
+                        @this.ExchangeData(ref data);
+                        // Marshal - Convert managed data to native data.
+                        __data_native__out = global::ComInterfaceGenerator.Tests.UnmanagedToManagedCustomMarshallingTests.IntWrapperMarshallerToIntWithFreeCounts.ConvertToUnmanaged(data);
+                        // AssignOut - Assign to parameters
+                        *__data_native__param = __data_native__out;
+                        // Cleanup - Perform required cleanup.
+                        global::ComInterfaceGenerator.Tests.UnmanagedToManagedCustomMarshallingTests.IntWrapperMarshallerToIntWithFreeCounts.Free(__data_native);
                     }
                 }
             }
@@ -304,12 +296,13 @@ namespace ComInterfaceGenerator.Tests
                     {
                         global::ComInterfaceGenerator.Tests.NativeExportsNE.UnmanagedToManagedCustomMarshalling.INativeObject @this;
                         global::SharedTypes.IntWrapper[] values;
-                        ref int __oldValue_native = ref *__oldValue_native__param;
+                        int __oldValue_native__out = default;
+                        int __oldValue_native = *__oldValue_native__param;
                         global::SharedTypes.IntWrapper oldValue;
+                        _ = __oldValue_native__out;
                         // Setup - Perform required setup.
                         int __values_native__numElements;
                         System.Runtime.CompilerServices.Unsafe.SkipInit(out __values_native__numElements);
-                        ;
                         // Unmarshal - Convert native data to managed data.
                         __values_native__numElements = numValues;
                         values = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.IntWrapper, int>.AllocateContainerForManagedElements(__values_native, __values_native__numElements);
@@ -325,7 +318,9 @@ namespace ComInterfaceGenerator.Tests
                         @this = (global::ComInterfaceGenerator.Tests.NativeExportsNE.UnmanagedToManagedCustomMarshalling.INativeObject)System.Runtime.InteropServices.Marshalling.UnmanagedObjectUnwrapper.GetObjectForUnmanagedWrapper<ComInterfaceGenerator.Tests.VTableGCHandlePair<ComInterfaceGenerator.Tests.NativeExportsNE.UnmanagedToManagedCustomMarshalling.INativeObject>>(__this_native);
                         @this.SumAndSetData(values, numValues, out oldValue);
                         // Marshal - Convert managed data to native data.
-                        __oldValue_native = global::ComInterfaceGenerator.Tests.UnmanagedToManagedCustomMarshallingTests.IntWrapperMarshallerToIntWithFreeCounts.ConvertToUnmanaged(oldValue);
+                        __oldValue_native__out = global::ComInterfaceGenerator.Tests.UnmanagedToManagedCustomMarshallingTests.IntWrapperMarshallerToIntWithFreeCounts.ConvertToUnmanaged(oldValue);
+                        // AssignOut - Assign to parameters
+                        *__oldValue_native__param = __oldValue_native__out;
                     }
                 }
             }
@@ -346,62 +341,58 @@ namespace ComInterfaceGenerator.Tests
                     internal static void ABI_SumAndSetData(void* __this_native, int** __values_native__param, int numValues, int* __oldValue_native__param)
                     {
                         global::ComInterfaceGenerator.Tests.NativeExportsNE.UnmanagedToManagedCustomMarshalling.INativeObject @this = default;
-                        ref int* __values_native = ref *__values_native__param;
+                        int* __values_native__out = default;
+                        int* __values_native = *__values_native__param;
                         global::SharedTypes.IntWrapper[] values = default;
-                        ref int __oldValue_native = ref *__oldValue_native__param;
+                        int __oldValue_native__out = default;
+                        int __oldValue_native = *__oldValue_native__param;
                         global::SharedTypes.IntWrapper oldValue = default;
+                        _ = __values_native__out;
+                        _ = __oldValue_native__out;
                         // Setup - Perform required setup.
                         int __values_native__numElements;
                         System.Runtime.CompilerServices.Unsafe.SkipInit(out __values_native__numElements);
-                        bool __values_native__ownOriginal = false;
-                        int* __values_native__original = __values_native;
-                        ;
-                        try
+                        int __values_native__lastIndexMarshalled = 0;
+                        // Unmarshal - Convert native data to managed data.
+                        __values_native__numElements = numValues;
+                        values = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.IntWrapper, int>.AllocateContainerForManagedElements(__values_native, __values_native__numElements);
                         {
-                            // Unmarshal - Convert native data to managed data.
-                            __values_native__numElements = numValues;
-                            values = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.IntWrapper, int>.AllocateContainerForManagedElements(__values_native, __values_native__numElements);
+                            System.ReadOnlySpan<int> __values_native__nativeSpan = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.IntWrapper, int>.GetUnmanagedValuesSource(__values_native, __values_native__numElements);
+                            System.Span<global::SharedTypes.IntWrapper> __values_native__managedSpan = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.IntWrapper, int>.GetManagedValuesDestination(values);
+                            for (int __i0 = 0; __i0 < __values_native__numElements; ++__i0)
                             {
-                                System.ReadOnlySpan<int> __values_native__nativeSpan = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.IntWrapper, int>.GetUnmanagedValuesSource(__values_native, __values_native__numElements);
-                                System.Span<global::SharedTypes.IntWrapper> __values_native__managedSpan = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.IntWrapper, int>.GetManagedValuesDestination(values);
-                                for (int __i0 = 0; __i0 < __values_native__numElements; ++__i0)
-                                {
-                                    __values_native__managedSpan[__i0] = global::ComInterfaceGenerator.Tests.UnmanagedToManagedCustomMarshallingTests.IntWrapperMarshallerToIntWithFreeCounts.ConvertToManaged(__values_native__nativeSpan[__i0]);
-                                }
-                            }
-
-                            @this = (global::ComInterfaceGenerator.Tests.NativeExportsNE.UnmanagedToManagedCustomMarshalling.INativeObject)System.Runtime.InteropServices.Marshalling.UnmanagedObjectUnwrapper.GetObjectForUnmanagedWrapper<ComInterfaceGenerator.Tests.VTableGCHandlePair<ComInterfaceGenerator.Tests.NativeExportsNE.UnmanagedToManagedCustomMarshalling.INativeObject>>(__this_native);
-                            @this.SumAndSetData(ref values, numValues, out oldValue);
-                            // Marshal - Convert managed data to native data.
-                            __oldValue_native = global::ComInterfaceGenerator.Tests.UnmanagedToManagedCustomMarshallingTests.IntWrapperMarshallerToIntWithFreeCounts.ConvertToUnmanaged(oldValue);
-                            __values_native = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.IntWrapper, int>.AllocateContainerForUnmanagedElements(values, out __values_native__numElements);
-                            __values_native__ownOriginal = true;
-                            {
-                                System.ReadOnlySpan<global::SharedTypes.IntWrapper> __values_native__managedSpan = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.IntWrapper, int>.GetManagedValuesSource(values);
-                                System.Span<int> __values_native__nativeSpan = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.IntWrapper, int>.GetUnmanagedValuesDestination(__values_native, __values_native__numElements);
-                                __values_native__nativeSpan.Clear();
-                                for (int __i0 = 0; __i0 < __values_native__managedSpan.Length; ++__i0)
-                                {
-                                    __values_native__nativeSpan[__i0] = global::ComInterfaceGenerator.Tests.UnmanagedToManagedCustomMarshallingTests.IntWrapperMarshallerToIntWithFreeCounts.ConvertToUnmanaged(__values_native__managedSpan[__i0]);
-                                }
+                                __values_native__managedSpan[__i0] = global::ComInterfaceGenerator.Tests.UnmanagedToManagedCustomMarshallingTests.IntWrapperMarshallerToIntWithFreeCounts.ConvertToManaged(__values_native__nativeSpan[__i0]);
                             }
                         }
-                        finally
-                        {
-                            // Cleanup - Perform required cleanup.
-                            if (__values_native__ownOriginal)
-                            {
-                                {
-                                    System.ReadOnlySpan<int> __values_native__nativeSpan = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.IntWrapper, int>.GetUnmanagedValuesSource(__values_native__original, __values_native__numElements);
-                                    for (int __i0 = 0; __i0 < __values_native__nativeSpan.Length; ++__i0)
-                                    {
-                                        global::ComInterfaceGenerator.Tests.UnmanagedToManagedCustomMarshallingTests.IntWrapperMarshallerToIntWithFreeCounts.Free(__values_native__nativeSpan[__i0]);
-                                    }
-                                }
 
-                                global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.IntWrapper, int>.Free(__values_native__original);
+                        @this = (global::ComInterfaceGenerator.Tests.NativeExportsNE.UnmanagedToManagedCustomMarshalling.INativeObject)System.Runtime.InteropServices.Marshalling.UnmanagedObjectUnwrapper.GetObjectForUnmanagedWrapper<ComInterfaceGenerator.Tests.VTableGCHandlePair<ComInterfaceGenerator.Tests.NativeExportsNE.UnmanagedToManagedCustomMarshalling.INativeObject>>(__this_native);
+                        @this.SumAndSetData(ref values, numValues, out oldValue);
+                        // Marshal - Convert managed data to native data.
+                        __oldValue_native__out = global::ComInterfaceGenerator.Tests.UnmanagedToManagedCustomMarshallingTests.IntWrapperMarshallerToIntWithFreeCounts.ConvertToUnmanaged(oldValue);
+                        __values_native__out = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.IntWrapper, int>.AllocateContainerForUnmanagedElements(values, out __values_native__numElements);
+                        {
+                            System.ReadOnlySpan<global::SharedTypes.IntWrapper> __values_native__managedSpan = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.IntWrapper, int>.GetManagedValuesSource(values);
+                            System.Span<int> __values_native__nativeSpan = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.IntWrapper, int>.GetUnmanagedValuesDestination(__values_native__out, __values_native__numElements);
+                            for (int __i0 = 0; __i0 < __values_native__managedSpan.Length; ++__i0, ++__values_native__lastIndexMarshalled)
+                            {
+                                __values_native__nativeSpan[__i0] = global::ComInterfaceGenerator.Tests.UnmanagedToManagedCustomMarshallingTests.IntWrapperMarshallerToIntWithFreeCounts.ConvertToUnmanaged(__values_native__managedSpan[__i0]);
                             }
                         }
+
+                        // AssignOut - Assign to parameters
+                        *__oldValue_native__param = __oldValue_native__out;
+                        *__values_native__param = __values_native__out;
+                        // Cleanup - Perform required cleanup.
+                        {
+                            System.ReadOnlySpan<int> __values_native__nativeSpan = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.IntWrapper, int>.GetUnmanagedValuesSource(__values_native, __values_native__numElements);
+                            for (int __i0 = 0; __i0 < __values_native__lastIndexMarshalled; ++__i0)
+                            {
+                                global::ComInterfaceGenerator.Tests.UnmanagedToManagedCustomMarshallingTests.IntWrapperMarshallerToIntWithFreeCounts.Free(__values_native__nativeSpan[__i0]);
+                            }
+                        }
+
+                        __values_native__numElements = numValues;
+                        global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.IntWrapper, int>.Free(__values_native);
                     }
                 }
             }
@@ -421,12 +412,12 @@ namespace ComInterfaceGenerator.Tests
                     [System.Runtime.InteropServices.UnmanagedCallersOnlyAttribute]
                     internal static void ABI_MultiplyWithData(void* __this_native, int* __values123_native, int numValues)
                     {
-                        global::ComInterfaceGenerator.Tests.NativeExportsNE.UnmanagedToManagedCustomMarshalling.INativeObject @this;
-                        global::SharedTypes.IntWrapper[] values123;
+                        global::ComInterfaceGenerator.Tests.NativeExportsNE.UnmanagedToManagedCustomMarshalling.INativeObject @this = default;
+                        global::SharedTypes.IntWrapper[] values123 = default;
                         // Setup - Perform required setup.
                         int __values123_native__numElements;
                         System.Runtime.CompilerServices.Unsafe.SkipInit(out __values123_native__numElements);
-                        ;
+                        System.Span<int> __values123_native__out;
                         // Unmarshal - Convert native data to managed data.
                         __values123_native__numElements = numValues;
                         values123 = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.IntWrapper, int>.AllocateContainerForManagedElements(__values123_native, __values123_native__numElements);
@@ -444,7 +435,10 @@ namespace ComInterfaceGenerator.Tests
                         // Marshal - Convert managed data to native data.
                         {
                             __values123_native__numElements = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.IntWrapper, int>.GetManagedValuesDestination(values123).Length;
-                            System.Span<int> __values123_native__nativeSpan = System.Runtime.InteropServices.MemoryMarshal.CreateSpan(ref System.Runtime.CompilerServices.Unsafe.AsRef(in global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.IntWrapper, int>.GetUnmanagedValuesSource(__values123_native, __values123_native__numElements).GetPinnableReference()), __values123_native__numElements);
+#pragma warning disable CS9081
+                            __values123_native__out = stackalloc int[__values123_native__numElements];
+#pragma warning restore CS9081
+                            System.Span<int> __values123_native__nativeSpan = __values123_native__out;
                             System.Span<global::SharedTypes.IntWrapper> __values123_native__managedSpan = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.IntWrapper, int>.GetManagedValuesDestination(values123);
                             for (int __i0 = 0; __i0 < __values123_native__numElements; ++__i0)
                             {
@@ -453,6 +447,11 @@ namespace ComInterfaceGenerator.Tests
                                 global::ComInterfaceGenerator.Tests.UnmanagedToManagedCustomMarshallingTests.IntWrapperMarshallerToIntWithFreeCounts.Free(__values123_native__nativeSpan____i0__original);
                             }
                         }
+
+                        // AssignOut - Assign to parameters
+                        __values123_native__out.CopyTo(System.Runtime.InteropServices.MemoryMarshal.CreateSpan(ref System.Runtime.CompilerServices.Unsafe.AsRef(in global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.IntWrapper, int>.GetUnmanagedValuesSource(__values123_native, __values123_native__numElements).GetPinnableReference()), __values123_native__numElements));
+                        // Cleanup - Perform required cleanup.
+                        global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.IntWrapper, int>.Free(__values123_native);
                     }
                 }
             }
@@ -474,39 +473,36 @@ namespace ComInterfaceGenerator.Tests
                     {
                         global::ComInterfaceGenerator.Tests.NativeExportsNE.UnmanagedToManagedCustomMarshalling.INativeObjectStateful @this = default;
                         global::SharedTypes.IntWrapper[] values = default;
-                        ref int __oldValue_native = ref *__oldValue_native__param;
+                        int __oldValue_native__out = default;
+                        int __oldValue_native = *__oldValue_native__param;
                         global::SharedTypes.IntWrapper oldValue = default;
+                        _ = __oldValue_native__out;
                         // Setup - Perform required setup.
                         global::ComInterfaceGenerator.Tests.UnmanagedToManagedCustomMarshallingTests.StatefulUnmanagedToManagedCollectionMarshaller<global::SharedTypes.IntWrapper, int>.In __values_native__marshaller = new();
                         int __values_native__numElements;
-                        ;
                         System.Runtime.CompilerServices.Unsafe.SkipInit(out __values_native__numElements);
-                        try
+                        // UnmarshalCapture - Capture the native data into marshaller instances in case conversion to managed data throws an exception.
+                        __values_native__marshaller.FromUnmanaged(__values_native);
+                        // Unmarshal - Convert native data to managed data.
+                        __values_native__numElements = numValues;
                         {
-                            // UnmarshalCapture - Capture the native data into marshaller instances in case conversion to managed data throws an exception.
-                            __values_native__marshaller.FromUnmanaged(__values_native);
-                            // Unmarshal - Convert native data to managed data.
-                            __values_native__numElements = numValues;
+                            System.ReadOnlySpan<int> __values_native__nativeSpan = __values_native__marshaller.GetUnmanagedValuesSource(__values_native__numElements);
+                            System.Span<global::SharedTypes.IntWrapper> __values_native__managedSpan = __values_native__marshaller.GetManagedValuesDestination(__values_native__numElements);
+                            for (int __i0 = 0; __i0 < __values_native__numElements; ++__i0)
                             {
-                                System.ReadOnlySpan<int> __values_native__nativeSpan = __values_native__marshaller.GetUnmanagedValuesSource(__values_native__numElements);
-                                System.Span<global::SharedTypes.IntWrapper> __values_native__managedSpan = __values_native__marshaller.GetManagedValuesDestination(__values_native__numElements);
-                                for (int __i0 = 0; __i0 < __values_native__numElements; ++__i0)
-                                {
-                                    __values_native__managedSpan[__i0] = global::ComInterfaceGenerator.Tests.UnmanagedToManagedCustomMarshallingTests.IntWrapperMarshallerToIntWithFreeCounts.ConvertToManaged(__values_native__nativeSpan[__i0]);
-                                }
+                                __values_native__managedSpan[__i0] = global::ComInterfaceGenerator.Tests.UnmanagedToManagedCustomMarshallingTests.IntWrapperMarshallerToIntWithFreeCounts.ConvertToManaged(__values_native__nativeSpan[__i0]);
                             }
+                        }
 
-                            values = __values_native__marshaller.ToManaged();
-                            @this = (global::ComInterfaceGenerator.Tests.NativeExportsNE.UnmanagedToManagedCustomMarshalling.INativeObjectStateful)System.Runtime.InteropServices.Marshalling.UnmanagedObjectUnwrapper.GetObjectForUnmanagedWrapper<ComInterfaceGenerator.Tests.VTableGCHandlePair<ComInterfaceGenerator.Tests.NativeExportsNE.UnmanagedToManagedCustomMarshalling.INativeObjectStateful>>(__this_native);
-                            @this.SumAndSetData(values, numValues, out oldValue);
-                            // Marshal - Convert managed data to native data.
-                            __oldValue_native = global::ComInterfaceGenerator.Tests.UnmanagedToManagedCustomMarshallingTests.IntWrapperMarshallerToIntWithFreeCounts.ConvertToUnmanaged(oldValue);
-                        }
-                        finally
-                        {
-                            // Cleanup - Perform required cleanup.
-                            __values_native__marshaller.Free();
-                        }
+                        values = __values_native__marshaller.ToManaged();
+                        @this = (global::ComInterfaceGenerator.Tests.NativeExportsNE.UnmanagedToManagedCustomMarshalling.INativeObjectStateful)System.Runtime.InteropServices.Marshalling.UnmanagedObjectUnwrapper.GetObjectForUnmanagedWrapper<ComInterfaceGenerator.Tests.VTableGCHandlePair<ComInterfaceGenerator.Tests.NativeExportsNE.UnmanagedToManagedCustomMarshalling.INativeObjectStateful>>(__this_native);
+                        @this.SumAndSetData(values, numValues, out oldValue);
+                        // Marshal - Convert managed data to native data.
+                        __oldValue_native__out = global::ComInterfaceGenerator.Tests.UnmanagedToManagedCustomMarshallingTests.IntWrapperMarshallerToIntWithFreeCounts.ConvertToUnmanaged(oldValue);
+                        // AssignOut - Assign to parameters
+                        *__oldValue_native__param = __oldValue_native__out;
+                        // Cleanup - Perform required cleanup.
+                        __values_native__marshaller.Free();
                     }
                 }
             }
@@ -527,67 +523,63 @@ namespace ComInterfaceGenerator.Tests
                     internal static void ABI_SumAndSetData(void* __this_native, int** __values_native__param, int numValues, int* __oldValue_native__param)
                     {
                         global::ComInterfaceGenerator.Tests.NativeExportsNE.UnmanagedToManagedCustomMarshalling.INativeObjectStateful @this = default;
-                        ref int* __values_native = ref *__values_native__param;
+                        int* __values_native__out = default;
+                        int* __values_native = *__values_native__param;
                         global::SharedTypes.IntWrapper[] values = default;
-                        ref int __oldValue_native = ref *__oldValue_native__param;
+                        int __oldValue_native__out = default;
+                        int __oldValue_native = *__oldValue_native__param;
                         global::SharedTypes.IntWrapper oldValue = default;
+                        _ = __values_native__out;
+                        _ = __oldValue_native__out;
                         // Setup - Perform required setup.
                         global::ComInterfaceGenerator.Tests.UnmanagedToManagedCustomMarshallingTests.StatefulUnmanagedToManagedCollectionMarshaller<global::SharedTypes.IntWrapper, int>.Ref __values_native__marshaller = new();
-                        bool __values_native__ownOriginal = false;
-                        int* __values_native__original = __values_native;
                         int __values_native__numElements;
-                        ;
+                        int __values_native__lastIndexMarshalled = 0;
                         System.Runtime.CompilerServices.Unsafe.SkipInit(out __values_native__numElements);
-                        try
+                        // UnmarshalCapture - Capture the native data into marshaller instances in case conversion to managed data throws an exception.
+                        __values_native__marshaller.FromUnmanaged(__values_native);
+                        // Unmarshal - Convert native data to managed data.
+                        __values_native__numElements = numValues;
                         {
-                            // UnmarshalCapture - Capture the native data into marshaller instances in case conversion to managed data throws an exception.
-                            __values_native__marshaller.FromUnmanaged(__values_native);
-                            // Unmarshal - Convert native data to managed data.
-                            __values_native__numElements = numValues;
+                            System.ReadOnlySpan<int> __values_native__nativeSpan = __values_native__marshaller.GetUnmanagedValuesSource(__values_native__numElements);
+                            System.Span<global::SharedTypes.IntWrapper> __values_native__managedSpan = __values_native__marshaller.GetManagedValuesDestination(__values_native__numElements);
+                            for (int __i0 = 0; __i0 < __values_native__numElements; ++__i0)
                             {
-                                System.ReadOnlySpan<int> __values_native__nativeSpan = __values_native__marshaller.GetUnmanagedValuesSource(__values_native__numElements);
-                                System.Span<global::SharedTypes.IntWrapper> __values_native__managedSpan = __values_native__marshaller.GetManagedValuesDestination(__values_native__numElements);
-                                for (int __i0 = 0; __i0 < __values_native__numElements; ++__i0)
-                                {
-                                    __values_native__managedSpan[__i0] = global::ComInterfaceGenerator.Tests.UnmanagedToManagedCustomMarshallingTests.IntWrapperMarshallerToIntWithFreeCounts.ConvertToManaged(__values_native__nativeSpan[__i0]);
-                                }
-                            }
-
-                            values = __values_native__marshaller.ToManaged();
-                            @this = (global::ComInterfaceGenerator.Tests.NativeExportsNE.UnmanagedToManagedCustomMarshalling.INativeObjectStateful)System.Runtime.InteropServices.Marshalling.UnmanagedObjectUnwrapper.GetObjectForUnmanagedWrapper<ComInterfaceGenerator.Tests.VTableGCHandlePair<ComInterfaceGenerator.Tests.NativeExportsNE.UnmanagedToManagedCustomMarshalling.INativeObjectStateful>>(__this_native);
-                            @this.SumAndSetData(ref values, numValues, out oldValue);
-                            // PinnedMarshal - Convert managed data to native data that requires the managed data to be pinned.
-                            __values_native = __values_native__marshaller.ToUnmanaged();
-                            // Marshal - Convert managed data to native data.
-                            __oldValue_native = global::ComInterfaceGenerator.Tests.UnmanagedToManagedCustomMarshallingTests.IntWrapperMarshallerToIntWithFreeCounts.ConvertToUnmanaged(oldValue);
-                            __values_native__marshaller.FromManaged(values);
-                            __values_native__ownOriginal = true;
-                            {
-                                System.ReadOnlySpan<global::SharedTypes.IntWrapper> __values_native__managedSpan = __values_native__marshaller.GetManagedValuesSource();
-                                System.Span<int> __values_native__nativeSpan = __values_native__marshaller.GetUnmanagedValuesDestination();
-                                __values_native__nativeSpan.Clear();
-                                for (int __i0 = 0; __i0 < __values_native__managedSpan.Length; ++__i0)
-                                {
-                                    __values_native__nativeSpan[__i0] = global::ComInterfaceGenerator.Tests.UnmanagedToManagedCustomMarshallingTests.IntWrapperMarshallerToIntWithFreeCounts.ConvertToUnmanaged(__values_native__managedSpan[__i0]);
-                                }
+                                __values_native__managedSpan[__i0] = global::ComInterfaceGenerator.Tests.UnmanagedToManagedCustomMarshallingTests.IntWrapperMarshallerToIntWithFreeCounts.ConvertToManaged(__values_native__nativeSpan[__i0]);
                             }
                         }
-                        finally
-                        {
-                            // Cleanup - Perform required cleanup.
-                            if (__values_native__ownOriginal)
-                            {
-                                {
-                                    System.ReadOnlySpan<int> __values_native__nativeSpan = __values_native__marshaller.GetUnmanagedValuesSource(__values_native__numElements);
-                                    for (int __i0 = 0; __i0 < __values_native__nativeSpan.Length; ++__i0)
-                                    {
-                                        global::ComInterfaceGenerator.Tests.UnmanagedToManagedCustomMarshallingTests.IntWrapperMarshallerToIntWithFreeCounts.Free(__values_native__nativeSpan[__i0]);
-                                    }
-                                }
-                            }
 
-                            __values_native__marshaller.Free();
+                        values = __values_native__marshaller.ToManaged();
+                        @this = (global::ComInterfaceGenerator.Tests.NativeExportsNE.UnmanagedToManagedCustomMarshalling.INativeObjectStateful)System.Runtime.InteropServices.Marshalling.UnmanagedObjectUnwrapper.GetObjectForUnmanagedWrapper<ComInterfaceGenerator.Tests.VTableGCHandlePair<ComInterfaceGenerator.Tests.NativeExportsNE.UnmanagedToManagedCustomMarshalling.INativeObjectStateful>>(__this_native);
+                        @this.SumAndSetData(ref values, numValues, out oldValue);
+                        // PinnedMarshal - Convert managed data to native data that requires the managed data to be pinned.
+                        __values_native = __values_native__marshaller.ToUnmanaged();
+                        // Marshal - Convert managed data to native data.
+                        __oldValue_native__out = global::ComInterfaceGenerator.Tests.UnmanagedToManagedCustomMarshallingTests.IntWrapperMarshallerToIntWithFreeCounts.ConvertToUnmanaged(oldValue);
+                        __values_native__marshaller.FromManaged(values);
+                        {
+                            System.ReadOnlySpan<global::SharedTypes.IntWrapper> __values_native__managedSpan = __values_native__marshaller.GetManagedValuesSource();
+                            System.Span<int> __values_native__nativeSpan = __values_native__marshaller.GetUnmanagedValuesDestination();
+                            __values_native__out = (int*)System.Runtime.CompilerServices.Unsafe.AsPointer(ref __values_native__nativeSpan.GetPinnableReference());
+                            for (int __i0 = 0; __i0 < __values_native__managedSpan.Length; ++__i0, ++__values_native__lastIndexMarshalled)
+                            {
+                                __values_native__nativeSpan[__i0] = global::ComInterfaceGenerator.Tests.UnmanagedToManagedCustomMarshallingTests.IntWrapperMarshallerToIntWithFreeCounts.ConvertToUnmanaged(__values_native__managedSpan[__i0]);
+                            }
                         }
+
+                        // AssignOut - Assign to parameters
+                        *__oldValue_native__param = __oldValue_native__out;
+                        *__values_native__param = __values_native__out;
+                        // Cleanup - Perform required cleanup.
+                        {
+                            System.ReadOnlySpan<int> __values_native__nativeSpan = __values_native__marshaller.GetUnmanagedValuesSource(__values_native__numElements);
+                            for (int __i0 = 0; __i0 < __values_native__lastIndexMarshalled; ++__i0)
+                            {
+                                global::ComInterfaceGenerator.Tests.UnmanagedToManagedCustomMarshallingTests.IntWrapperMarshallerToIntWithFreeCounts.Free(__values_native__nativeSpan[__i0]);
+                            }
+                        }
+
+                        __values_native__marshaller.Free();
                     }
                 }
             }
@@ -612,44 +604,52 @@ namespace ComInterfaceGenerator.Tests
                         // Setup - Perform required setup.
                         global::ComInterfaceGenerator.Tests.UnmanagedToManagedCustomMarshallingTests.StatefulUnmanagedToManagedCollectionMarshaller<global::SharedTypes.IntWrapper, int>.In __values123_native__marshaller = new();
                         int __values123_native__numElements;
-                        ;
                         System.Runtime.CompilerServices.Unsafe.SkipInit(out __values123_native__numElements);
-                        try
+                        System.Span<int> __values123_native__out;
+                        // UnmarshalCapture - Capture the native data into marshaller instances in case conversion to managed data throws an exception.
+                        __values123_native__marshaller.FromUnmanaged(__values123_native);
+                        // Unmarshal - Convert native data to managed data.
+                        __values123_native__numElements = numValues;
                         {
-                            // UnmarshalCapture - Capture the native data into marshaller instances in case conversion to managed data throws an exception.
-                            __values123_native__marshaller.FromUnmanaged(__values123_native);
-                            // Unmarshal - Convert native data to managed data.
-                            __values123_native__numElements = numValues;
+                            System.ReadOnlySpan<int> __values123_native__nativeSpan = __values123_native__marshaller.GetUnmanagedValuesSource(__values123_native__numElements);
+                            System.Span<global::SharedTypes.IntWrapper> __values123_native__managedSpan = __values123_native__marshaller.GetManagedValuesDestination(__values123_native__numElements);
+                            for (int __i0 = 0; __i0 < __values123_native__numElements; ++__i0)
                             {
-                                System.ReadOnlySpan<int> __values123_native__nativeSpan = __values123_native__marshaller.GetUnmanagedValuesSource(__values123_native__numElements);
-                                System.Span<global::SharedTypes.IntWrapper> __values123_native__managedSpan = __values123_native__marshaller.GetManagedValuesDestination(__values123_native__numElements);
-                                for (int __i0 = 0; __i0 < __values123_native__numElements; ++__i0)
-                                {
-                                    __values123_native__managedSpan[__i0] = global::ComInterfaceGenerator.Tests.UnmanagedToManagedCustomMarshallingTests.IntWrapperMarshallerToIntWithFreeCounts.ConvertToManaged(__values123_native__nativeSpan[__i0]);
-                                }
+                                __values123_native__managedSpan[__i0] = global::ComInterfaceGenerator.Tests.UnmanagedToManagedCustomMarshallingTests.IntWrapperMarshallerToIntWithFreeCounts.ConvertToManaged(__values123_native__nativeSpan[__i0]);
                             }
+                        }
 
-                            values123 = __values123_native__marshaller.ToManaged();
-                            @this = (global::ComInterfaceGenerator.Tests.NativeExportsNE.UnmanagedToManagedCustomMarshalling.INativeObjectStateful)System.Runtime.InteropServices.Marshalling.UnmanagedObjectUnwrapper.GetObjectForUnmanagedWrapper<ComInterfaceGenerator.Tests.VTableGCHandlePair<ComInterfaceGenerator.Tests.NativeExportsNE.UnmanagedToManagedCustomMarshalling.INativeObjectStateful>>(__this_native);
-                            @this.MultiplyWithData(values123, numValues);
-                            // Marshal - Convert managed data to native data.
+                        values123 = __values123_native__marshaller.ToManaged();
+                        @this = (global::ComInterfaceGenerator.Tests.NativeExportsNE.UnmanagedToManagedCustomMarshalling.INativeObjectStateful)System.Runtime.InteropServices.Marshalling.UnmanagedObjectUnwrapper.GetObjectForUnmanagedWrapper<ComInterfaceGenerator.Tests.VTableGCHandlePair<ComInterfaceGenerator.Tests.NativeExportsNE.UnmanagedToManagedCustomMarshalling.INativeObjectStateful>>(__this_native);
+                        @this.MultiplyWithData(values123, numValues);
+                        // Marshal - Convert managed data to native data.
+                        {
+                            __values123_native__numElements = __values123_native__marshaller.GetManagedValuesDestination(__values123_native__numElements).Length;
+#pragma warning disable CS9081
+                            __values123_native__out = stackalloc int[__values123_native__numElements];
+#pragma warning restore CS9081
+                            System.Span<int> __values123_native__nativeSpan = __values123_native__out;
+                            System.Span<global::SharedTypes.IntWrapper> __values123_native__managedSpan = __values123_native__marshaller.GetManagedValuesDestination(__values123_native__numElements);
+                            for (int __i0 = 0; __i0 < __values123_native__numElements; ++__i0)
                             {
-                                __values123_native__numElements = __values123_native__marshaller.GetManagedValuesDestination(__values123_native__numElements).Length;
-                                System.Span<int> __values123_native__nativeSpan = System.Runtime.InteropServices.MemoryMarshal.CreateSpan(ref System.Runtime.CompilerServices.Unsafe.AsRef(in __values123_native__marshaller.GetUnmanagedValuesSource(__values123_native__numElements).GetPinnableReference()), __values123_native__numElements);
-                                System.Span<global::SharedTypes.IntWrapper> __values123_native__managedSpan = __values123_native__marshaller.GetManagedValuesDestination(__values123_native__numElements);
-                                for (int __i0 = 0; __i0 < __values123_native__numElements; ++__i0)
-                                {
-                                    int __values123_native__nativeSpan____i0__original = __values123_native__nativeSpan[__i0];
-                                    __values123_native__nativeSpan[__i0] = global::ComInterfaceGenerator.Tests.UnmanagedToManagedCustomMarshallingTests.IntWrapperMarshallerToIntWithFreeCounts.ConvertToUnmanaged(__values123_native__managedSpan[__i0]);
-                                    global::ComInterfaceGenerator.Tests.UnmanagedToManagedCustomMarshallingTests.IntWrapperMarshallerToIntWithFreeCounts.Free(__values123_native__nativeSpan____i0__original);
-                                }
+                                int __values123_native__nativeSpan____i0__original = __values123_native__nativeSpan[__i0];
+                                __values123_native__nativeSpan[__i0] = global::ComInterfaceGenerator.Tests.UnmanagedToManagedCustomMarshallingTests.IntWrapperMarshallerToIntWithFreeCounts.ConvertToUnmanaged(__values123_native__managedSpan[__i0]);
+                                global::ComInterfaceGenerator.Tests.UnmanagedToManagedCustomMarshallingTests.IntWrapperMarshallerToIntWithFreeCounts.Free(__values123_native__nativeSpan____i0__original);
                             }
                         }
-                        finally
+
+                        // AssignOut - Assign to parameters
+                        __values123_native__out.CopyTo(System.Runtime.InteropServices.MemoryMarshal.CreateSpan(ref System.Runtime.CompilerServices.Unsafe.AsRef(in __values123_native__marshaller.GetUnmanagedValuesSource(__values123_native__numElements).GetPinnableReference()), __values123_native__numElements));
+                        // Cleanup - Perform required cleanup.
                         {
-                            // Cleanup - Perform required cleanup.
-                            __values123_native__marshaller.Free();
+                            System.ReadOnlySpan<int> __values123_native__nativeSpan = __values123_native__marshaller.GetUnmanagedValuesSource(__values123_native__numElements);
+                            for (int __i0 = 0; __i0 < __values123_native__nativeSpan.Length; ++__i0)
+                            {
+                                global::ComInterfaceGenerator.Tests.UnmanagedToManagedCustomMarshallingTests.IntWrapperMarshallerToIntWithFreeCounts.Free(__values123_native__nativeSpan[__i0]);
+                            }
                         }
+
+                        __values123_native__marshaller.Free();
                     }
                 }
             }

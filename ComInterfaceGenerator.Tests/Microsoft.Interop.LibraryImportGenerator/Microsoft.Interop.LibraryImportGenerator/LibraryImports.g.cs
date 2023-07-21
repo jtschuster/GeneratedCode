@@ -23,11 +23,19 @@ namespace ComInterfaceGenerator.Tests
         [global::System.Runtime.CompilerServices.SkipLocalsInitAttribute]
         public static partial void SetComObjectData(global::SharedTypes.ComInterfaces.IGetAndSetInt obj, int data)
         {
-            void* __obj_native;
-            // Marshal - Convert managed data to native data.
-            __obj_native = (void*)global::System.Runtime.InteropServices.Marshalling.ComInterfaceMarshaller<global::SharedTypes.ComInterfaces.IGetAndSetInt>.ConvertToUnmanaged(obj);
+            void* __obj_native = default;
+            try
             {
-                __PInvoke(__obj_native, data);
+                // Marshal - Convert managed data to native data.
+                __obj_native = (void*)global::System.Runtime.InteropServices.Marshalling.ComInterfaceMarshaller<global::SharedTypes.ComInterfaces.IGetAndSetInt>.ConvertToUnmanaged(obj);
+                {
+                    __PInvoke(__obj_native, data);
+                }
+            }
+            finally
+            {
+                // Cleanup - Perform required cleanup.
+                global::System.Runtime.InteropServices.Marshalling.ComInterfaceMarshaller<global::SharedTypes.ComInterfaces.IGetAndSetInt>.Free(__obj_native);
             }
 
             // Local P/Invoke
@@ -44,18 +52,58 @@ namespace ComInterfaceGenerator.Tests
         [global::System.Runtime.CompilerServices.SkipLocalsInitAttribute]
         public static partial int GetComObjectData(global::SharedTypes.ComInterfaces.IGetAndSetInt obj)
         {
-            void* __obj_native;
-            int __retVal;
-            // Marshal - Convert managed data to native data.
-            __obj_native = (void*)global::System.Runtime.InteropServices.Marshalling.ComInterfaceMarshaller<global::SharedTypes.ComInterfaces.IGetAndSetInt>.ConvertToUnmanaged(obj);
+            void* __obj_native = default;
+            int __retVal = default;
+            try
             {
-                __retVal = __PInvoke(__obj_native);
+                // Marshal - Convert managed data to native data.
+                __obj_native = (void*)global::System.Runtime.InteropServices.Marshalling.ComInterfaceMarshaller<global::SharedTypes.ComInterfaces.IGetAndSetInt>.ConvertToUnmanaged(obj);
+                {
+                    __retVal = __PInvoke(__obj_native);
+                }
+            }
+            finally
+            {
+                // Cleanup - Perform required cleanup.
+                global::System.Runtime.InteropServices.Marshalling.ComInterfaceMarshaller<global::SharedTypes.ComInterfaces.IGetAndSetInt>.Free(__obj_native);
             }
 
             return __retVal;
             // Local P/Invoke
             [System.Runtime.InteropServices.DllImportAttribute("Microsoft.Interop.Tests.NativeExportsNE", EntryPoint = "get_com_object_data", ExactSpelling = true)]
             static extern unsafe int __PInvoke(void* __obj_native);
+        }
+    }
+}
+namespace ComInterfaceGenerator.Tests
+{
+    public unsafe partial class GeneratedComInterfaceComImportInteropTests
+    {
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Interop.LibraryImportGenerator", "42.42.42.42")]
+        [global::System.Runtime.CompilerServices.SkipLocalsInitAttribute]
+        private static partial global::SharedTypes.ComInterfaces.IGetAndSetInt NewNativeObject()
+        {
+            global::SharedTypes.ComInterfaces.IGetAndSetInt __retVal = default;
+            void* __retVal_native = default;
+            try
+            {
+                {
+                    __retVal_native = __PInvoke();
+                }
+
+                // Unmarshal - Convert native data to managed data.
+                __retVal = global::System.Runtime.InteropServices.Marshalling.ComInterfaceMarshaller<global::SharedTypes.ComInterfaces.IGetAndSetInt>.ConvertToManaged(__retVal_native);
+            }
+            finally
+            {
+                // Cleanup - Perform required cleanup.
+                global::System.Runtime.InteropServices.Marshalling.ComInterfaceMarshaller<global::SharedTypes.ComInterfaces.IGetAndSetInt>.Free(__retVal_native);
+            }
+
+            return __retVal;
+            // Local P/Invoke
+            [System.Runtime.InteropServices.DllImportAttribute("Microsoft.Interop.Tests.NativeExportsNE", EntryPoint = "new_get_and_set_int", ExactSpelling = true)]
+            static extern unsafe void* __PInvoke();
         }
     }
 }
@@ -83,14 +131,23 @@ namespace ComInterfaceGenerator.Tests
         [global::System.Runtime.CompilerServices.SkipLocalsInitAttribute]
         internal static partial global::SharedTypes.ComInterfaces.IGetAndSetInt NewNativeObjectWithMarshaller()
         {
-            global::SharedTypes.ComInterfaces.IGetAndSetInt __retVal;
-            void* __retVal_native;
+            global::SharedTypes.ComInterfaces.IGetAndSetInt __retVal = default;
+            void* __retVal_native = default;
+            try
             {
-                __retVal_native = __PInvoke();
+                {
+                    __retVal_native = __PInvoke();
+                }
+
+                // Unmarshal - Convert native data to managed data.
+                __retVal = global::System.Runtime.InteropServices.Marshalling.ComInterfaceMarshaller<global::SharedTypes.ComInterfaces.IGetAndSetInt>.ConvertToManaged(__retVal_native);
+            }
+            finally
+            {
+                // Cleanup - Perform required cleanup.
+                global::System.Runtime.InteropServices.Marshalling.ComInterfaceMarshaller<global::SharedTypes.ComInterfaces.IGetAndSetInt>.Free(__retVal_native);
             }
 
-            // Unmarshal - Convert native data to managed data.
-            __retVal = global::System.Runtime.InteropServices.Marshalling.ComInterfaceMarshaller<global::SharedTypes.ComInterfaces.IGetAndSetInt>.ConvertToManaged(__retVal_native);
             return __retVal;
             // Local P/Invoke
             [System.Runtime.InteropServices.DllImportAttribute("Microsoft.Interop.Tests.NativeExportsNE", EntryPoint = "new_get_and_set_int", ExactSpelling = true)]
@@ -106,14 +163,23 @@ namespace ComInterfaceGenerator.Tests
         [global::System.Runtime.CompilerServices.SkipLocalsInitAttribute]
         internal static partial global::SharedTypes.ComInterfaces.IGetAndSetInt NewNativeObjectWithUniqueMarshaller()
         {
-            global::SharedTypes.ComInterfaces.IGetAndSetInt __retVal;
-            void* __retVal_native;
+            global::SharedTypes.ComInterfaces.IGetAndSetInt __retVal = default;
+            void* __retVal_native = default;
+            try
             {
-                __retVal_native = __PInvoke();
+                {
+                    __retVal_native = __PInvoke();
+                }
+
+                // Unmarshal - Convert native data to managed data.
+                __retVal = global::System.Runtime.InteropServices.Marshalling.UniqueComInterfaceMarshaller<global::SharedTypes.ComInterfaces.IGetAndSetInt>.ConvertToManaged(__retVal_native);
+            }
+            finally
+            {
+                // Cleanup - Perform required cleanup.
+                global::System.Runtime.InteropServices.Marshalling.UniqueComInterfaceMarshaller<global::SharedTypes.ComInterfaces.IGetAndSetInt>.Free(__retVal_native);
             }
 
-            // Unmarshal - Convert native data to managed data.
-            __retVal = global::System.Runtime.InteropServices.Marshalling.UniqueComInterfaceMarshaller<global::SharedTypes.ComInterfaces.IGetAndSetInt>.ConvertToManaged(__retVal_native);
             return __retVal;
             // Local P/Invoke
             [System.Runtime.InteropServices.DllImportAttribute("Microsoft.Interop.Tests.NativeExportsNE", EntryPoint = "new_get_and_set_int", ExactSpelling = true)]
@@ -336,7 +402,6 @@ namespace ComInterfaceGenerator.Tests
                 // Setup - Perform required setup.
                 int __arr_native__numElements;
                 System.Runtime.CompilerServices.Unsafe.SkipInit(out __arr_native__numElements);
-                ;
                 try
                 {
                     // Marshal - Convert managed data to native data.
@@ -356,6 +421,7 @@ namespace ComInterfaceGenerator.Tests
                 finally
                 {
                     // Cleanup - Perform required cleanup.
+                    __arr_native__numElements = numValues;
                     global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.Free(__arr_native);
                 }
 

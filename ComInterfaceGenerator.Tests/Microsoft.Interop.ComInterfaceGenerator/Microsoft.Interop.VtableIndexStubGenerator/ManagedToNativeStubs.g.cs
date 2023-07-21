@@ -151,6 +151,7 @@ namespace ComInterfaceGenerator.Tests
                         finally
                         {
                             // Cleanup - Perform required cleanup.
+                            __values_native__numElements = numValues;
                             global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.Free(__values_native);
                         }
                     }
@@ -492,6 +493,7 @@ namespace ComInterfaceGenerator.Tests
                                 }
                             }
 
+                            __values_native__numElements = numValues;
                             global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.IntWrapper, int>.Free(__values_native);
                         }
                     }
