@@ -151,6 +151,7 @@ namespace ComInterfaceGenerator.Tests
                             // Cleanup - Perform required cleanup.
                             if (__values_native__ownOriginal)
                             {
+                                __values_native__numElements = numValues;
                                 global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.Free(__values_native__original);
                             }
                         }
@@ -351,6 +352,7 @@ namespace ComInterfaceGenerator.Tests
                         System.Runtime.CompilerServices.Unsafe.SkipInit(out __values_native__numElements);
                         bool __values_native__ownOriginal = false;
                         int* __values_native__original = __values_native;
+                        int __values_native__lastIndexMarshalled = 0;
                         try
                         {
                             // Unmarshal - Convert native data to managed data.
@@ -374,7 +376,7 @@ namespace ComInterfaceGenerator.Tests
                             {
                                 System.ReadOnlySpan<global::SharedTypes.IntWrapper> __values_native__managedSpan = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.IntWrapper, int>.GetManagedValuesSource(values);
                                 System.Span<int> __values_native__nativeSpan = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.IntWrapper, int>.GetUnmanagedValuesDestination(__values_native, __values_native__numElements);
-                                for (int __i0 = 0; __i0 < __values_native__managedSpan.Length; ++__i0)
+                                for (int __i0 = 0; __i0 < __values_native__managedSpan.Length; ++__i0, ++__values_native__lastIndexMarshalled)
                                 {
                                     __values_native__nativeSpan[__i0] = global::ComInterfaceGenerator.Tests.UnmanagedToManagedCustomMarshallingTests.IntWrapperMarshallerToIntWithFreeCounts.ConvertToUnmanaged(__values_native__managedSpan[__i0]);
                                 }
@@ -387,12 +389,13 @@ namespace ComInterfaceGenerator.Tests
                             {
                                 {
                                     System.ReadOnlySpan<int> __values_native__nativeSpan = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.IntWrapper, int>.GetUnmanagedValuesSource(__values_native__original, __values_native__numElements);
-                                    for (int __i0 = 0; __i0 < __values_native__nativeSpan.Length; ++__i0)
+                                    for (int __i0 = 0; __i0 < __values_native__lastIndexMarshalled; ++__i0)
                                     {
                                         global::ComInterfaceGenerator.Tests.UnmanagedToManagedCustomMarshallingTests.IntWrapperMarshallerToIntWithFreeCounts.Free(__values_native__nativeSpan[__i0]);
                                     }
                                 }
 
+                                __values_native__numElements = numValues;
                                 global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.IntWrapper, int>.Free(__values_native__original);
                             }
                         }
@@ -528,6 +531,7 @@ namespace ComInterfaceGenerator.Tests
                         bool __values_native__ownOriginal = false;
                         int* __values_native__original = __values_native;
                         int __values_native__numElements;
+                        int __values_native__lastIndexMarshalled = 0;
                         System.Runtime.CompilerServices.Unsafe.SkipInit(out __values_native__numElements);
                         try
                         {
@@ -556,7 +560,7 @@ namespace ComInterfaceGenerator.Tests
                             {
                                 System.ReadOnlySpan<global::SharedTypes.IntWrapper> __values_native__managedSpan = __values_native__marshaller.GetManagedValuesSource();
                                 System.Span<int> __values_native__nativeSpan = __values_native__marshaller.GetUnmanagedValuesDestination();
-                                for (int __i0 = 0; __i0 < __values_native__managedSpan.Length; ++__i0)
+                                for (int __i0 = 0; __i0 < __values_native__managedSpan.Length; ++__i0, ++__values_native__lastIndexMarshalled)
                                 {
                                     __values_native__nativeSpan[__i0] = global::ComInterfaceGenerator.Tests.UnmanagedToManagedCustomMarshallingTests.IntWrapperMarshallerToIntWithFreeCounts.ConvertToUnmanaged(__values_native__managedSpan[__i0]);
                                 }
@@ -569,7 +573,7 @@ namespace ComInterfaceGenerator.Tests
                             {
                                 {
                                     System.ReadOnlySpan<int> __values_native__nativeSpan = __values_native__marshaller.GetUnmanagedValuesSource(__values_native__numElements);
-                                    for (int __i0 = 0; __i0 < __values_native__nativeSpan.Length; ++__i0)
+                                    for (int __i0 = 0; __i0 < __values_native__lastIndexMarshalled; ++__i0)
                                     {
                                         global::ComInterfaceGenerator.Tests.UnmanagedToManagedCustomMarshallingTests.IntWrapperMarshallerToIntWithFreeCounts.Free(__values_native__nativeSpan[__i0]);
                                     }
