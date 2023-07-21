@@ -2,40 +2,45 @@
 #pragma warning disable CS0612, CS0618
 file unsafe class InterfaceInformation : System.Runtime.InteropServices.Marshalling.IIUnknownInterfaceType
 {
-    public static System.Guid Iid { get; } = new(new System.ReadOnlySpan<byte>(new byte[] { 3, 153, 63, 44, 134, 181, 177, 70, 136, 27, 173, 252, 233, 175, 71, 177 }));
+    public static System.Guid Iid { get; } = new(new System.ReadOnlySpan<byte>(new byte[] { 214, 62, 157, 90, 23, 204, 185, 79, 143, 130, 0, 112, 72, 155, 114, 19 }));
 
     private static void** _vtable;
     public static void** ManagedVirtualMethodTable => _vtable != null ? _vtable : (_vtable = InterfaceImplementation.CreateManagedVirtualFunctionTable());
 }
 
 [System.Runtime.InteropServices.DynamicInterfaceCastableImplementationAttribute]
-file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComInterfaces.IGetAndSetInt
+file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComInterfaces.IBool
 {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Interop.ComInterfaceGenerator", "42.42.42.42")]
     [global::System.Runtime.CompilerServices.SkipLocalsInitAttribute]
-    int global::SharedTypes.ComInterfaces.IGetAndSetInt.GetInt()
+    bool global::SharedTypes.ComInterfaces.IBool.Get()
     {
-        var(__this, __vtable_native) = ((System.Runtime.InteropServices.Marshalling.IUnmanagedVirtualMethodTableProvider)this).GetVirtualMethodTableInfoForKey(typeof(global::SharedTypes.ComInterfaces.IGetAndSetInt));
-        int __retVal;
+        var(__this, __vtable_native) = ((System.Runtime.InteropServices.Marshalling.IUnmanagedVirtualMethodTableProvider)this).GetVirtualMethodTableInfoForKey(typeof(global::SharedTypes.ComInterfaces.IBool));
+        bool __retVal;
+        sbyte __retVal_native;
         int __invokeRetVal;
         {
-            __invokeRetVal = ((delegate* unmanaged[MemberFunction]<void*, int*, int> )__vtable_native[3])(__this, &__retVal);
+            __invokeRetVal = ((delegate* unmanaged[MemberFunction]<void*, sbyte*, int> )__vtable_native[3])(__this, &__retVal_native);
         }
 
         System.GC.KeepAlive(this);
         // Unmarshal - Convert native data to managed data.
         System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
+        __retVal = __retVal_native != 0;
         return __retVal;
     }
 
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Interop.ComInterfaceGenerator", "42.42.42.42")]
     [global::System.Runtime.CompilerServices.SkipLocalsInitAttribute]
-    void global::SharedTypes.ComInterfaces.IGetAndSetInt.SetInt(int x)
+    void global::SharedTypes.ComInterfaces.IBool.Set(bool value)
     {
-        var(__this, __vtable_native) = ((System.Runtime.InteropServices.Marshalling.IUnmanagedVirtualMethodTableProvider)this).GetVirtualMethodTableInfoForKey(typeof(global::SharedTypes.ComInterfaces.IGetAndSetInt));
+        var(__this, __vtable_native) = ((System.Runtime.InteropServices.Marshalling.IUnmanagedVirtualMethodTableProvider)this).GetVirtualMethodTableInfoForKey(typeof(global::SharedTypes.ComInterfaces.IBool));
+        sbyte __value_native;
         int __invokeRetVal;
+        // Marshal - Convert managed data to native data.
+        __value_native = (sbyte)(value ? 1 : 0);
         {
-            __invokeRetVal = ((delegate* unmanaged[MemberFunction]<void*, int, int> )__vtable_native[4])(__this, x);
+            __invokeRetVal = ((delegate* unmanaged[MemberFunction]<void*, sbyte, int> )__vtable_native[4])(__this, __value_native);
         }
 
         System.GC.KeepAlive(this);
@@ -47,22 +52,22 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
 file unsafe partial interface InterfaceImplementation
 {
     [System.Runtime.InteropServices.UnmanagedCallersOnlyAttribute(CallConvs = new[] { typeof(System.Runtime.CompilerServices.CallConvMemberFunction) })]
-    internal static int ABI_GetInt(System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch* __this_native, int* __invokeRetValUnmanaged__param)
+    internal static int ABI_Get(System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch* __this_native, sbyte* __invokeRetValUnmanaged__param)
     {
-        global::SharedTypes.ComInterfaces.IGetAndSetInt @this = default;
-        int __invokeRetValUnmanaged__out = default;
-        int __invokeRetValUnmanaged = *__invokeRetValUnmanaged__param;
-        int __invokeRetVal = default;
+        global::SharedTypes.ComInterfaces.IBool @this = default;
+        sbyte __invokeRetValUnmanaged__out = default;
+        sbyte __invokeRetValUnmanaged = *__invokeRetValUnmanaged__param;
+        bool __invokeRetVal = default;
         int __retVal = default;
         _ = __invokeRetValUnmanaged__out;
         try
         {
             // Unmarshal - Convert native data to managed data.
             __retVal = 0; // S_OK
-            @this = System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch.GetInstance<global::SharedTypes.ComInterfaces.IGetAndSetInt>(__this_native);
-            __invokeRetVal = @this.GetInt();
+            @this = System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch.GetInstance<global::SharedTypes.ComInterfaces.IBool>(__this_native);
+            __invokeRetVal = @this.Get();
             // Marshal - Convert managed data to native data.
-            __invokeRetValUnmanaged__out = __invokeRetVal;
+            __invokeRetValUnmanaged__out = (sbyte)(__invokeRetVal ? 1 : 0);
         }
         catch (System.Exception __exception)
         {
@@ -76,16 +81,18 @@ file unsafe partial interface InterfaceImplementation
     }
 
     [System.Runtime.InteropServices.UnmanagedCallersOnlyAttribute(CallConvs = new[] { typeof(System.Runtime.CompilerServices.CallConvMemberFunction) })]
-    internal static int ABI_SetInt(System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch* __this_native, int x)
+    internal static int ABI_Set(System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch* __this_native, sbyte __value_native)
     {
-        global::SharedTypes.ComInterfaces.IGetAndSetInt @this = default;
+        global::SharedTypes.ComInterfaces.IBool @this = default;
+        bool value = default;
         int __retVal = default;
         try
         {
             // Unmarshal - Convert native data to managed data.
             __retVal = 0; // S_OK
-            @this = System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch.GetInstance<global::SharedTypes.ComInterfaces.IGetAndSetInt>(__this_native);
-            @this.SetInt(x);
+            value = __value_native != 0;
+            @this = System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch.GetInstance<global::SharedTypes.ComInterfaces.IBool>(__this_native);
+            @this.Set(value);
         }
         catch (System.Exception __exception)
         {
@@ -101,7 +108,7 @@ file unsafe partial interface InterfaceImplementation
 {
     internal static void** CreateManagedVirtualFunctionTable()
     {
-        void** vtable = (void**)System.Runtime.CompilerServices.RuntimeHelpers.AllocateTypeAssociatedMemory(typeof(global::SharedTypes.ComInterfaces.IGetAndSetInt), sizeof(void*) * 5);
+        void** vtable = (void**)System.Runtime.CompilerServices.RuntimeHelpers.AllocateTypeAssociatedMemory(typeof(global::SharedTypes.ComInterfaces.IBool), sizeof(void*) * 5);
         {
             nint v0, v1, v2;
             System.Runtime.InteropServices.ComWrappers.GetIUnknownImpl(out v0, out v1, out v2);
@@ -111,8 +118,8 @@ file unsafe partial interface InterfaceImplementation
         }
 
         {
-            vtable[3] = (void*)(delegate* unmanaged[MemberFunction]<System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch*, int*, int> )&ABI_GetInt;
-            vtable[4] = (void*)(delegate* unmanaged[MemberFunction]<System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch*, int, int> )&ABI_SetInt;
+            vtable[3] = (void*)(delegate* unmanaged[MemberFunction]<System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch*, sbyte*, int> )&ABI_Get;
+            vtable[4] = (void*)(delegate* unmanaged[MemberFunction]<System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch*, sbyte, int> )&ABI_Set;
         }
 
         return vtable;
@@ -122,14 +129,14 @@ file unsafe partial interface InterfaceImplementation
 namespace SharedTypes.ComInterfaces
 {
     [System.Runtime.InteropServices.Marshalling.IUnknownDerivedAttribute<InterfaceInformation, InterfaceImplementation>]
-    internal partial interface IGetAndSetInt
+    internal partial interface IBool
     {
     }
 }
 
 namespace SharedTypes.ComInterfaces
 {
-    internal partial interface IGetAndSetInt
+    internal partial interface IBool
     {
     }
 }

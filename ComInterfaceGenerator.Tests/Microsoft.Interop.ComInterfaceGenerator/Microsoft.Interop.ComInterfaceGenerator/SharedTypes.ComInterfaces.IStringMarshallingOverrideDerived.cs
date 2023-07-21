@@ -215,9 +215,11 @@ file unsafe partial interface InterfaceImplementation
     {
         global::SharedTypes.ComInterfaces.IStringMarshallingOverrideDerived @this = default;
         string input = default;
-        ref byte* __invokeRetValUnmanaged = ref *__invokeRetValUnmanaged__param;
+        byte* __invokeRetValUnmanaged__out = default;
+        byte* __invokeRetValUnmanaged = *__invokeRetValUnmanaged__param;
         string __invokeRetVal = default;
         int __retVal = default;
+        _ = __invokeRetValUnmanaged__out;
         try
         {
             // Unmarshal - Convert native data to managed data.
@@ -226,13 +228,16 @@ file unsafe partial interface InterfaceImplementation
             @this = System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch.GetInstance<global::SharedTypes.ComInterfaces.IStringMarshallingOverrideDerived>(__this_native);
             __invokeRetVal = @this.StringMarshallingUtf8_2(input);
             // Marshal - Convert managed data to native data.
-            __invokeRetValUnmanaged = (byte*)global::System.Runtime.InteropServices.Marshalling.Utf8StringMarshaller.ConvertToUnmanaged(__invokeRetVal);
+            __invokeRetValUnmanaged__out = (byte*)global::System.Runtime.InteropServices.Marshalling.Utf8StringMarshaller.ConvertToUnmanaged(__invokeRetVal);
         }
         catch (System.Exception __exception)
         {
             __retVal = System.Runtime.InteropServices.Marshalling.ExceptionAsHResultMarshaller<int>.ConvertToUnmanaged(__exception);
+            return __retVal;
         }
 
+        // AssignOut - Assign to parameters
+        *__invokeRetValUnmanaged__param = __invokeRetValUnmanaged__out;
         return __retVal;
     }
 
@@ -241,9 +246,11 @@ file unsafe partial interface InterfaceImplementation
     {
         global::SharedTypes.ComInterfaces.IStringMarshallingOverrideDerived @this = default;
         string input = default;
-        ref ushort* __invokeRetValUnmanaged = ref *__invokeRetValUnmanaged__param;
+        ushort* __invokeRetValUnmanaged__out = default;
+        ushort* __invokeRetValUnmanaged = *__invokeRetValUnmanaged__param;
         string __invokeRetVal = default;
         int __retVal = default;
+        _ = __invokeRetValUnmanaged__out;
         try
         {
             // Unmarshal - Convert native data to managed data.
@@ -252,13 +259,16 @@ file unsafe partial interface InterfaceImplementation
             @this = System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch.GetInstance<global::SharedTypes.ComInterfaces.IStringMarshallingOverrideDerived>(__this_native);
             __invokeRetVal = @this.MarshalAsLPWString_2(input);
             // Marshal - Convert managed data to native data.
-            __invokeRetValUnmanaged = (ushort*)global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller.ConvertToUnmanaged(__invokeRetVal);
+            __invokeRetValUnmanaged__out = (ushort*)global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller.ConvertToUnmanaged(__invokeRetVal);
         }
         catch (System.Exception __exception)
         {
             __retVal = System.Runtime.InteropServices.Marshalling.ExceptionAsHResultMarshaller<int>.ConvertToUnmanaged(__exception);
+            return __retVal;
         }
 
+        // AssignOut - Assign to parameters
+        *__invokeRetValUnmanaged__param = __invokeRetValUnmanaged__out;
         return __retVal;
     }
 
@@ -267,9 +277,11 @@ file unsafe partial interface InterfaceImplementation
     {
         global::SharedTypes.ComInterfaces.IStringMarshallingOverrideDerived @this = default;
         string input = default;
-        ref ushort* __invokeRetValUnmanaged = ref *__invokeRetValUnmanaged__param;
+        ushort* __invokeRetValUnmanaged__out = default;
+        ushort* __invokeRetValUnmanaged = *__invokeRetValUnmanaged__param;
         string __invokeRetVal = default;
         int __retVal = default;
+        _ = __invokeRetValUnmanaged__out;
         try
         {
             // Unmarshal - Convert native data to managed data.
@@ -278,13 +290,16 @@ file unsafe partial interface InterfaceImplementation
             @this = System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch.GetInstance<global::SharedTypes.ComInterfaces.IStringMarshallingOverrideDerived>(__this_native);
             __invokeRetVal = @this.MarshalUsingUtf16_2(input);
             // Marshal - Convert managed data to native data.
-            __invokeRetValUnmanaged = (ushort*)global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller.ConvertToUnmanaged(__invokeRetVal);
+            __invokeRetValUnmanaged__out = (ushort*)global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller.ConvertToUnmanaged(__invokeRetVal);
         }
         catch (System.Exception __exception)
         {
             __retVal = System.Runtime.InteropServices.Marshalling.ExceptionAsHResultMarshaller<int>.ConvertToUnmanaged(__exception);
+            return __retVal;
         }
 
+        // AssignOut - Assign to parameters
+        *__invokeRetValUnmanaged__param = __invokeRetValUnmanaged__out;
         return __retVal;
     }
 }
