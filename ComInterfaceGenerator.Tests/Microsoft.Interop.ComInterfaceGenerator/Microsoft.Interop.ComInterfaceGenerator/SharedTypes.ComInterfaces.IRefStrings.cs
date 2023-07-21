@@ -101,11 +101,12 @@ file unsafe partial interface InterfaceImplementation
     internal static int ABI_RefString(System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch* __this_native, byte** __value_native__param)
     {
         global::SharedTypes.ComInterfaces.IRefStrings @this = default;
-        byte* __value_native__out = default;
-        byte* __value_native = *__value_native__param;
+        ref byte* __value_native = ref *__value_native__param;
         string value = default;
         int __retVal = default;
-        _ = __value_native__out;
+        // Setup - Perform required setup.
+        bool __value_native__ownOriginal = false;
+        byte* __value_native__original = __value_native;
         try
         {
             // Unmarshal - Convert native data to managed data.
@@ -114,20 +115,22 @@ file unsafe partial interface InterfaceImplementation
             @this = System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch.GetInstance<global::SharedTypes.ComInterfaces.IRefStrings>(__this_native);
             @this.RefString(ref value);
             // Marshal - Convert managed data to native data.
-            __value_native__out = (byte*)global::System.Runtime.InteropServices.Marshalling.Utf8StringMarshaller.ConvertToUnmanaged(value);
+            __value_native = (byte*)global::System.Runtime.InteropServices.Marshalling.Utf8StringMarshaller.ConvertToUnmanaged(value);
+            __value_native__ownOriginal = true;
         }
         catch (System.Exception __exception)
         {
             __retVal = System.Runtime.InteropServices.Marshalling.ExceptionAsHResultMarshaller<int>.ConvertToUnmanaged(__exception);
+        }
+        finally
+        {
             // Cleanup - Perform required cleanup.
-            global::System.Runtime.InteropServices.Marshalling.Utf8StringMarshaller.Free(__value_native__out);
-            return __retVal;
+            if (__value_native__ownOriginal)
+            {
+                global::System.Runtime.InteropServices.Marshalling.Utf8StringMarshaller.Free(__value_native__original);
+            }
         }
 
-        // AssignOut - Assign to parameters
-        *__value_native__param = __value_native__out;
-        // Cleanup - Perform required cleanup.
-        global::System.Runtime.InteropServices.Marshalling.Utf8StringMarshaller.Free(__value_native);
         return __retVal;
     }
 
@@ -135,7 +138,7 @@ file unsafe partial interface InterfaceImplementation
     internal static int ABI_InString(System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch* __this_native, byte** __value_native__param)
     {
         global::SharedTypes.ComInterfaces.IRefStrings @this = default;
-        byte* __value_native = *__value_native__param;
+        ref byte* __value_native = ref *__value_native__param;
         string value = default;
         int __retVal = default;
         try
@@ -149,7 +152,6 @@ file unsafe partial interface InterfaceImplementation
         catch (System.Exception __exception)
         {
             __retVal = System.Runtime.InteropServices.Marshalling.ExceptionAsHResultMarshaller<int>.ConvertToUnmanaged(__exception);
-            return __retVal;
         }
 
         return __retVal;
@@ -159,11 +161,9 @@ file unsafe partial interface InterfaceImplementation
     internal static int ABI_OutString(System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch* __this_native, byte** __value_native__param)
     {
         global::SharedTypes.ComInterfaces.IRefStrings @this = default;
-        byte* __value_native__out = default;
-        byte* __value_native = *__value_native__param;
+        ref byte* __value_native = ref *__value_native__param;
         string value = default;
         int __retVal = default;
-        _ = __value_native__out;
         try
         {
             // Unmarshal - Convert native data to managed data.
@@ -171,16 +171,13 @@ file unsafe partial interface InterfaceImplementation
             @this = System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch.GetInstance<global::SharedTypes.ComInterfaces.IRefStrings>(__this_native);
             @this.OutString(out value);
             // Marshal - Convert managed data to native data.
-            __value_native__out = (byte*)global::System.Runtime.InteropServices.Marshalling.Utf8StringMarshaller.ConvertToUnmanaged(value);
+            __value_native = (byte*)global::System.Runtime.InteropServices.Marshalling.Utf8StringMarshaller.ConvertToUnmanaged(value);
         }
         catch (System.Exception __exception)
         {
             __retVal = System.Runtime.InteropServices.Marshalling.ExceptionAsHResultMarshaller<int>.ConvertToUnmanaged(__exception);
-            return __retVal;
         }
 
-        // AssignOut - Assign to parameters
-        *__value_native__param = __value_native__out;
         return __retVal;
     }
 }
