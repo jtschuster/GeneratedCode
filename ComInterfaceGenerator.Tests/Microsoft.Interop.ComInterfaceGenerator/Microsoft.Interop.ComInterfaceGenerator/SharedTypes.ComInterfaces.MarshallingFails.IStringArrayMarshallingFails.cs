@@ -470,7 +470,6 @@ file unsafe partial interface InterfaceImplementation
     {
         global::SharedTypes.ComInterfaces.MarshallingFails.IStringArrayMarshallingFails @this = default;
         nint* __value_native__out = default;
-        nint* __value_native = *__value_native__param;
         string[] value = default;
         int __retVal = default;
         // Setup - Perform required setup.
@@ -610,7 +609,6 @@ file unsafe partial interface InterfaceImplementation
     {
         global::SharedTypes.ComInterfaces.MarshallingFails.IStringArrayMarshallingFails @this = default;
         nint* __invokeRetValUnmanaged__out = default;
-        nint* __invokeRetValUnmanaged = *__invokeRetValUnmanaged__param;
         string[] __invokeRetVal = default;
         int __retVal = default;
         // Setup - Perform required setup.

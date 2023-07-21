@@ -161,13 +161,10 @@ file unsafe partial interface InterfaceImplementation
         byte* __pRef_native = *__pRef_native__param;
         global::SharedTypes.ComInterfaces.TestCollection<global::SharedTypes.ComInterfaces.Element> pRef = default;
         byte* __pOut_native__out = default;
-        byte* __pOut_native = *__pOut_native__param;
         global::SharedTypes.ComInterfaces.TestCollection<global::SharedTypes.ComInterfaces.Element> pOut = default;
         int __pOutSize_native__out = default;
-        int __pOutSize_native = *__pOutSize_native__param;
         int pOutSize = default;
         byte* __invokeRetValUnmanaged__out = default;
-        byte* __invokeRetValUnmanaged = *__invokeRetValUnmanaged__param;
         global::SharedTypes.ComInterfaces.TestCollection<global::SharedTypes.ComInterfaces.Element> __invokeRetVal = default;
         int __retVal = default;
         // Setup - Perform required setup.
@@ -232,9 +229,9 @@ file unsafe partial interface InterfaceImplementation
             @this = System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch.GetInstance<global::SharedTypes.ComInterfaces.ICustomCollectionStateful>(__this_native);
             __invokeRetVal = @this.Method(p, pSize, in pIn, in pInSize, pRefSize, ref pRef, out pOut, out pOutSize);
             // PinnedMarshal - Convert managed data to native data that requires the managed data to be pinned.
-            __invokeRetValUnmanaged = __invokeRetValUnmanaged__marshaller.ToUnmanaged();
-            __pOut_native = __pOut_native__marshaller.ToUnmanaged();
-            __pRef_native = __pRef_native__marshaller.ToUnmanaged();
+            __invokeRetValUnmanaged__out = __invokeRetValUnmanaged__marshaller.ToUnmanaged();
+            __pOut_native__out = __pOut_native__marshaller.ToUnmanaged();
+            __pRef_native__out = __pRef_native__marshaller.ToUnmanaged();
             // Marshal - Convert managed data to native data.
             __invokeRetValUnmanaged__marshaller.FromManaged(__invokeRetVal);
             {

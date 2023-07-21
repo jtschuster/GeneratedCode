@@ -77,7 +77,6 @@ file unsafe partial interface InterfaceImplementation
     {
         global::SharedTypes.ComInterfaces.IUTF8Marshalling @this = default;
         byte* __invokeRetValUnmanaged__out = default;
-        byte* __invokeRetValUnmanaged = *__invokeRetValUnmanaged__param;
         string __invokeRetVal = default;
         int __retVal = default;
         try

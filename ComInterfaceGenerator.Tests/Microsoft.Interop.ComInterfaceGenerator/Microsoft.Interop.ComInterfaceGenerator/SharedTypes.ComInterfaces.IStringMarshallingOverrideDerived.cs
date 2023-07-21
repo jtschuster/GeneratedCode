@@ -216,7 +216,6 @@ file unsafe partial interface InterfaceImplementation
         global::SharedTypes.ComInterfaces.IStringMarshallingOverrideDerived @this = default;
         string input = default;
         byte* __invokeRetValUnmanaged__out = default;
-        byte* __invokeRetValUnmanaged = *__invokeRetValUnmanaged__param;
         string __invokeRetVal = default;
         int __retVal = default;
         try
@@ -246,7 +245,6 @@ file unsafe partial interface InterfaceImplementation
         global::SharedTypes.ComInterfaces.IStringMarshallingOverrideDerived @this = default;
         string input = default;
         ushort* __invokeRetValUnmanaged__out = default;
-        ushort* __invokeRetValUnmanaged = *__invokeRetValUnmanaged__param;
         string __invokeRetVal = default;
         int __retVal = default;
         try
@@ -276,7 +274,6 @@ file unsafe partial interface InterfaceImplementation
         global::SharedTypes.ComInterfaces.IStringMarshallingOverrideDerived @this = default;
         string input = default;
         ushort* __invokeRetValUnmanaged__out = default;
-        ushort* __invokeRetValUnmanaged = *__invokeRetValUnmanaged__param;
         string __invokeRetVal = default;
         int __retVal = default;
         try

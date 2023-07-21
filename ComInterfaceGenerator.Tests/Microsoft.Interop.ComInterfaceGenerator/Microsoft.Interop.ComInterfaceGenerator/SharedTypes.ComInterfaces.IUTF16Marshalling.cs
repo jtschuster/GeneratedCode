@@ -64,7 +64,6 @@ file unsafe partial interface InterfaceImplementation
     {
         global::SharedTypes.ComInterfaces.IUTF16Marshalling @this = default;
         ushort* __invokeRetValUnmanaged__out = default;
-        ushort* __invokeRetValUnmanaged = *__invokeRetValUnmanaged__param;
         string __invokeRetVal = default;
         int __retVal = default;
         try

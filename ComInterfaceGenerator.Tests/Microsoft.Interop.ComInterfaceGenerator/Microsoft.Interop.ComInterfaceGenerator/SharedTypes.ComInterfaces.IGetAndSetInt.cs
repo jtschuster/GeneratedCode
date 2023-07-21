@@ -51,7 +51,6 @@ file unsafe partial interface InterfaceImplementation
     {
         global::SharedTypes.ComInterfaces.IGetAndSetInt @this = default;
         int __invokeRetValUnmanaged__out = default;
-        int __invokeRetValUnmanaged = *__invokeRetValUnmanaged__param;
         int __invokeRetVal = default;
         int __retVal = default;
         try

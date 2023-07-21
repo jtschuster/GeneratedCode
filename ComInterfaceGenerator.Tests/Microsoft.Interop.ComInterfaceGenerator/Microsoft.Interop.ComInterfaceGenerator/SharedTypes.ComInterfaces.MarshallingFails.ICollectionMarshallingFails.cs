@@ -123,10 +123,8 @@ file unsafe partial interface InterfaceImplementation
     {
         global::SharedTypes.ComInterfaces.MarshallingFails.ICollectionMarshallingFails @this = default;
         int __size_native__out = default;
-        int __size_native = *__size_native__param;
         int size = default;
         nint* __invokeRetValUnmanaged__out = default;
-        nint* __invokeRetValUnmanaged = *__invokeRetValUnmanaged__param;
         int[] __invokeRetVal = default;
         int __retVal = default;
         // Setup - Perform required setup.

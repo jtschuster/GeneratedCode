@@ -130,7 +130,6 @@ file unsafe partial interface InterfaceImplementation
         global::SharedTypes.ComInterfaces.IEnumUnknown @this = default;
         object[] rgelt = default;
         uint __pceltFetched_native__out = default;
-        uint __pceltFetched_native = *__pceltFetched_native__param;
         uint pceltFetched = default;
         int __retVal = default;
         // Setup - Perform required setup.
@@ -221,7 +220,6 @@ file unsafe partial interface InterfaceImplementation
     {
         global::SharedTypes.ComInterfaces.IEnumUnknown @this = default;
         void* __ppenum_native__out = default;
-        void* __ppenum_native = *__ppenum_native__param;
         global::SharedTypes.ComInterfaces.IEnumUnknown ppenum = default;
         int __retVal = default;
         try

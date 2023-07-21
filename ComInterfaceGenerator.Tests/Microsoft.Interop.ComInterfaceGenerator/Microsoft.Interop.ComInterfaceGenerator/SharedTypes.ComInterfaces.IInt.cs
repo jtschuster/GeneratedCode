@@ -103,7 +103,6 @@ file unsafe partial interface InterfaceImplementation
     {
         global::SharedTypes.ComInterfaces.IInt @this = default;
         int __invokeRetValUnmanaged__out = default;
-        int __invokeRetValUnmanaged = *__invokeRetValUnmanaged__param;
         int __invokeRetVal = default;
         int __retVal = default;
         try
@@ -181,7 +180,6 @@ file unsafe partial interface InterfaceImplementation
     {
         global::SharedTypes.ComInterfaces.IInt @this = default;
         int __value_native__out = default;
-        int __value_native = *__value_native__param;
         int value = default;
         int __retVal = default;
         try

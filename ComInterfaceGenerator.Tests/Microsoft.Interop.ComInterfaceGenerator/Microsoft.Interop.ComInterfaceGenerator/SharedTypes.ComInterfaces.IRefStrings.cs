@@ -159,7 +159,6 @@ file unsafe partial interface InterfaceImplementation
     {
         global::SharedTypes.ComInterfaces.IRefStrings @this = default;
         byte* __value_native__out = default;
-        byte* __value_native = *__value_native__param;
         string value = default;
         int __retVal = default;
         try

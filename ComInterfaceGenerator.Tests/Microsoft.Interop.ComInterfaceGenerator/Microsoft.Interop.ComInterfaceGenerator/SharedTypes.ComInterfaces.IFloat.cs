@@ -51,7 +51,6 @@ file unsafe partial interface InterfaceImplementation
     {
         global::SharedTypes.ComInterfaces.IFloat @this = default;
         float __invokeRetValUnmanaged__out = default;
-        float __invokeRetValUnmanaged = *__invokeRetValUnmanaged__param;
         float __invokeRetVal = default;
         int __retVal = default;
         try

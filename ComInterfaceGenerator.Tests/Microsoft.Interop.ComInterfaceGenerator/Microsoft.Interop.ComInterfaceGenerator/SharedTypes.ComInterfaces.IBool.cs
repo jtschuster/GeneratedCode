@@ -56,7 +56,6 @@ file unsafe partial interface InterfaceImplementation
     {
         global::SharedTypes.ComInterfaces.IBool @this = default;
         sbyte __invokeRetValUnmanaged__out = default;
-        sbyte __invokeRetValUnmanaged = *__invokeRetValUnmanaged__param;
         bool __invokeRetVal = default;
         int __retVal = default;
         try

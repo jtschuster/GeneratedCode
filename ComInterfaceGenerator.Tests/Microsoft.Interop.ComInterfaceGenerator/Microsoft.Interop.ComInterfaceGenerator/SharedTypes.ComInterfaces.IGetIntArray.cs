@@ -53,7 +53,6 @@ file unsafe partial interface InterfaceImplementation
     {
         global::SharedTypes.ComInterfaces.IGetIntArray @this = default;
         int* __invokeRetValUnmanaged__out = default;
-        int* __invokeRetValUnmanaged = *__invokeRetValUnmanaged__param;
         int[] __invokeRetVal = default;
         int __retVal = default;
         // Setup - Perform required setup.

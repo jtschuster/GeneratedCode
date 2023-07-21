@@ -212,13 +212,10 @@ file unsafe partial interface InterfaceImplementation
     {
         global::SharedTypes.ComInterfaces.IJaggedIntArray @this = default;
         int* __widths_native__out = default;
-        int* __widths_native = *__widths_native__param;
         int[] widths = default;
         int __length_native__out = default;
-        int __length_native = *__length_native__param;
         int length = default;
         System.IntPtr* __invokeRetValUnmanaged__out = default;
-        System.IntPtr* __invokeRetValUnmanaged = *__invokeRetValUnmanaged__param;
         int[][] __invokeRetVal = default;
         int __retVal = default;
         // Setup - Perform required setup.
@@ -268,13 +265,10 @@ file unsafe partial interface InterfaceImplementation
     {
         global::SharedTypes.ComInterfaces.IJaggedIntArray @this = default;
         System.IntPtr* __array_native__out = default;
-        System.IntPtr* __array_native = *__array_native__param;
         int[][] array = default;
         int* __widths_native__out = default;
-        int* __widths_native = *__widths_native__param;
         int[] widths = default;
         int __invokeRetValUnmanaged__out = default;
-        int __invokeRetValUnmanaged = *__invokeRetValUnmanaged__param;
         int __invokeRetVal = default;
         int __retVal = default;
         // Setup - Perform required setup.
