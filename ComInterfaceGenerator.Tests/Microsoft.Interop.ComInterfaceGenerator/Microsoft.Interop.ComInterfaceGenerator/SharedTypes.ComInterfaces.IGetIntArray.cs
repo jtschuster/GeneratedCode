@@ -44,23 +44,6 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
 
         return __retVal;
     }
-
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Interop.ComInterfaceGenerator", "42.42.42.42")]
-    [global::System.Runtime.CompilerServices.SkipLocalsInitAttribute]
-    void global::SharedTypes.ComInterfaces.IGetIntArray.PassArray(int[] array, int size)
-    {
-        var(__this, __vtable_native) = ((System.Runtime.InteropServices.Marshalling.IUnmanagedVirtualMethodTableProvider)this).GetVirtualMethodTableInfoForKey(typeof(global::SharedTypes.ComInterfaces.IGetIntArray));
-        int __invokeRetVal;
-        // Pin - Pin data in preparation for calling the P/Invoke.
-        fixed (void* __array_native = &global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.ManagedToUnmanagedIn.GetPinnableReference(array))
-        {
-            __invokeRetVal = ((delegate* unmanaged[MemberFunction]<void*, int*, int, int> )__vtable_native[4])(__this, (int*)__array_native, size);
-        }
-
-        System.GC.KeepAlive(this);
-        // Unmarshal - Convert native data to managed data.
-        System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
-    }
 }
 
 file unsafe partial interface InterfaceImplementation
@@ -92,40 +75,13 @@ file unsafe partial interface InterfaceImplementation
 
         return __retVal;
     }
-
-    [System.Runtime.InteropServices.UnmanagedCallersOnlyAttribute(CallConvs = new[] { typeof(System.Runtime.CompilerServices.CallConvMemberFunction) })]
-    internal static int ABI_PassArray(System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch* __this_native, int* __array_native, int size)
-    {
-        global::SharedTypes.ComInterfaces.IGetIntArray @this = default;
-        int[] array = default;
-        int __retVal = default;
-        // Setup - Perform required setup.
-        int __array_native__numElements;
-        System.Runtime.CompilerServices.Unsafe.SkipInit(out __array_native__numElements);
-        try
-        {
-            // Unmarshal - Convert native data to managed data.
-            __retVal = 0; // S_OK
-            __array_native__numElements = size;
-            array = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.AllocateContainerForManagedElements(__array_native, __array_native__numElements);
-            global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.GetUnmanagedValuesSource(__array_native, __array_native__numElements).CopyTo(global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.GetManagedValuesDestination(array));
-            @this = System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch.GetInstance<global::SharedTypes.ComInterfaces.IGetIntArray>(__this_native);
-            @this.PassArray(array, size);
-        }
-        catch (System.Exception __exception)
-        {
-            __retVal = System.Runtime.InteropServices.Marshalling.ExceptionAsHResultMarshaller<int>.ConvertToUnmanaged(__exception);
-        }
-
-        return __retVal;
-    }
 }
 
 file unsafe partial interface InterfaceImplementation
 {
     internal static void** CreateManagedVirtualFunctionTable()
     {
-        void** vtable = (void**)System.Runtime.CompilerServices.RuntimeHelpers.AllocateTypeAssociatedMemory(typeof(global::SharedTypes.ComInterfaces.IGetIntArray), sizeof(void*) * 5);
+        void** vtable = (void**)System.Runtime.CompilerServices.RuntimeHelpers.AllocateTypeAssociatedMemory(typeof(global::SharedTypes.ComInterfaces.IGetIntArray), sizeof(void*) * 4);
         {
             nint v0, v1, v2;
             System.Runtime.InteropServices.ComWrappers.GetIUnknownImpl(out v0, out v1, out v2);
@@ -136,7 +92,6 @@ file unsafe partial interface InterfaceImplementation
 
         {
             vtable[3] = (void*)(delegate* unmanaged[MemberFunction]<System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch*, int**, int> )&ABI_GetInts;
-            vtable[4] = (void*)(delegate* unmanaged[MemberFunction]<System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch*, int*, int, int> )&ABI_PassArray;
         }
 
         return vtable;
