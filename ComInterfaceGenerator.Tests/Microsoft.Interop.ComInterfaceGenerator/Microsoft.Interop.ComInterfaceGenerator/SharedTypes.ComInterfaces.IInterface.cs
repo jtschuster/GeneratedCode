@@ -218,7 +218,7 @@ file unsafe partial interface InterfaceImplementation
         catch (System.Exception __exception)
         {
             __retVal = System.Runtime.InteropServices.Marshalling.ExceptionAsHResultMarshaller<int>.ConvertToUnmanaged(__exception);
-            // Cleanup - Perform required cleanup.
+            // CleanupFailure - Perform required cleanup.
             global::System.Runtime.InteropServices.Marshalling.ComInterfaceMarshaller<global::SharedTypes.ComInterfaces.IInt>.Free(__value_native__out);
             return __retVal;
         }

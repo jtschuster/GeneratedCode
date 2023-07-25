@@ -168,8 +168,6 @@ file unsafe partial interface InterfaceImplementation
         // AssignOut - Assign to parameters
         *__pceltFetched_native__param = __pceltFetched_native__out;
         __rgelt_native__out.CopyTo(System.Runtime.InteropServices.MemoryMarshal.CreateSpan(ref System.Runtime.CompilerServices.Unsafe.AsRef(in global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<object, System.IntPtr>.GetUnmanagedValuesSource(__rgelt_native, __rgelt_native__numElements).GetPinnableReference()), __rgelt_native__numElements));
-        // Cleanup - Perform required cleanup.
-        global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<object, System.IntPtr>.Free(__rgelt_native);
         return __retVal;
     }
 

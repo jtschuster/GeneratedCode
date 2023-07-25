@@ -321,8 +321,6 @@ file unsafe partial interface InterfaceImplementation
 
         // AssignOut - Assign to parameters
         __array_native__out.CopyTo(System.Runtime.InteropServices.MemoryMarshal.CreateSpan(ref System.Runtime.CompilerServices.Unsafe.AsRef(in global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.GetUnmanagedValuesSource(__array_native, __array_native__numElements).GetPinnableReference()), __array_native__numElements));
-        // Cleanup - Perform required cleanup.
-        global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.Free(__array_native);
         return __retVal;
     }
 
@@ -382,7 +380,7 @@ file unsafe partial interface InterfaceImplementation
         catch (System.Exception __exception)
         {
             __retVal = System.Runtime.InteropServices.Marshalling.ExceptionAsHResultMarshaller<int>.ConvertToUnmanaged(__exception);
-            // Cleanup - Perform required cleanup.
+            // CleanupFailure - Perform required cleanup.
             __array_native__numElements = size;
             global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.Free(__array_native__out);
             return __retVal;

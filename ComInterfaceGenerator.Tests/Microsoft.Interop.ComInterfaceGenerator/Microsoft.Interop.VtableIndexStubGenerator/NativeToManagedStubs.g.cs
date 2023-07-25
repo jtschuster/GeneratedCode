@@ -400,8 +400,8 @@ namespace ComInterfaceGenerator.Tests
                     [System.Runtime.InteropServices.UnmanagedCallersOnlyAttribute]
                     internal static void ABI_MultiplyWithData(void* __this_native, int* __values123_native, int numValues)
                     {
-                        global::ComInterfaceGenerator.Tests.NativeExportsNE.UnmanagedToManagedCustomMarshalling.INativeObject @this = default;
-                        global::SharedTypes.IntWrapper[] values123 = default;
+                        global::ComInterfaceGenerator.Tests.NativeExportsNE.UnmanagedToManagedCustomMarshalling.INativeObject @this;
+                        global::SharedTypes.IntWrapper[] values123;
                         // Setup - Perform required setup.
                         int __values123_native__numElements;
                         System.Runtime.CompilerServices.Unsafe.SkipInit(out __values123_native__numElements);
@@ -438,8 +438,6 @@ namespace ComInterfaceGenerator.Tests
 
                         // AssignOut - Assign to parameters
                         __values123_native__out.CopyTo(System.Runtime.InteropServices.MemoryMarshal.CreateSpan(ref System.Runtime.CompilerServices.Unsafe.AsRef(in global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.IntWrapper, int>.GetUnmanagedValuesSource(__values123_native, __values123_native__numElements).GetPinnableReference()), __values123_native__numElements));
-                        // Cleanup - Perform required cleanup.
-                        global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.IntWrapper, int>.Free(__values123_native);
                     }
                 }
             }
@@ -535,21 +533,20 @@ namespace ComInterfaceGenerator.Tests
                         values = __values_native__marshaller.ToManaged();
                         @this = (global::ComInterfaceGenerator.Tests.NativeExportsNE.UnmanagedToManagedCustomMarshalling.INativeObjectStateful)System.Runtime.InteropServices.Marshalling.UnmanagedObjectUnwrapper.GetObjectForUnmanagedWrapper<ComInterfaceGenerator.Tests.VTableGCHandlePair<ComInterfaceGenerator.Tests.NativeExportsNE.UnmanagedToManagedCustomMarshalling.INativeObjectStateful>>(__this_native);
                         @this.SumAndSetData(ref values, numValues, out oldValue);
-                        // PinnedMarshal - Convert managed data to native data that requires the managed data to be pinned.
-                        __values_native__out = __values_native__marshaller.ToUnmanaged();
                         // Marshal - Convert managed data to native data.
                         __oldValue_native__out = global::ComInterfaceGenerator.Tests.UnmanagedToManagedCustomMarshallingTests.IntWrapperMarshallerToIntWithFreeCounts.ConvertToUnmanaged(oldValue);
                         __values_native__marshaller.FromManaged(values);
                         {
                             System.ReadOnlySpan<global::SharedTypes.IntWrapper> __values_native__managedSpan = __values_native__marshaller.GetManagedValuesSource();
                             System.Span<int> __values_native__nativeSpan = __values_native__marshaller.GetUnmanagedValuesDestination();
-                            __values_native__out = (int*)System.Runtime.CompilerServices.Unsafe.AsPointer(ref __values_native__nativeSpan.GetPinnableReference());
                             for (int __i0 = 0; __i0 < __values_native__managedSpan.Length; ++__i0, ++__values_native__lastIndexMarshalled)
                             {
                                 __values_native__nativeSpan[__i0] = global::ComInterfaceGenerator.Tests.UnmanagedToManagedCustomMarshallingTests.IntWrapperMarshallerToIntWithFreeCounts.ConvertToUnmanaged(__values_native__managedSpan[__i0]);
                             }
                         }
 
+                        // PinnedMarshal - Convert managed data to native data that requires the managed data to be pinned.
+                        __values_native__out = __values_native__marshaller.ToUnmanaged();
                         // AssignOut - Assign to parameters
                         *__oldValue_native__param = __oldValue_native__out;
                         *__values_native__param = __values_native__out;
@@ -624,14 +621,6 @@ namespace ComInterfaceGenerator.Tests
                         // AssignOut - Assign to parameters
                         __values123_native__out.CopyTo(System.Runtime.InteropServices.MemoryMarshal.CreateSpan(ref System.Runtime.CompilerServices.Unsafe.AsRef(in __values123_native__marshaller.GetUnmanagedValuesSource(__values123_native__numElements).GetPinnableReference()), __values123_native__numElements));
                         // Cleanup - Perform required cleanup.
-                        {
-                            System.ReadOnlySpan<int> __values123_native__nativeSpan = __values123_native__marshaller.GetUnmanagedValuesSource(__values123_native__numElements);
-                            for (int __i0 = 0; __i0 < __values123_native__nativeSpan.Length; ++__i0)
-                            {
-                                global::ComInterfaceGenerator.Tests.UnmanagedToManagedCustomMarshallingTests.IntWrapperMarshallerToIntWithFreeCounts.Free(__values123_native__nativeSpan[__i0]);
-                            }
-                        }
-
                         __values123_native__marshaller.Free();
                     }
                 }
