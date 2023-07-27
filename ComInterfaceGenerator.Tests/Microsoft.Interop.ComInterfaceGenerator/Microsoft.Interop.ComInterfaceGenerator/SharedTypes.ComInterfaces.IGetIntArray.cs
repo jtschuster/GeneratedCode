@@ -38,7 +38,6 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
         finally
         {
             // Cleanup - Perform required cleanup.
-            __retVal_native__numElements = 10;
             global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.Free(__retVal_native);
         }
 
@@ -52,7 +51,7 @@ file unsafe partial interface InterfaceImplementation
     internal static int ABI_GetInts(System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch* __this_native, int** __invokeRetValUnmanaged__param)
     {
         global::SharedTypes.ComInterfaces.IGetIntArray @this = default;
-        ref int* __invokeRetValUnmanaged = ref *__invokeRetValUnmanaged__param;
+        int* __invokeRetValUnmanaged__out = default;
         int[] __invokeRetVal = default;
         int __retVal = default;
         // Setup - Perform required setup.
@@ -65,12 +64,17 @@ file unsafe partial interface InterfaceImplementation
             @this = System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch.GetInstance<global::SharedTypes.ComInterfaces.IGetIntArray>(__this_native);
             __invokeRetVal = @this.GetInts();
             // Marshal - Convert managed data to native data.
-            __invokeRetValUnmanaged = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.AllocateContainerForUnmanagedElements(__invokeRetVal, out __invokeRetValUnmanaged__numElements);
-            global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.GetManagedValuesSource(__invokeRetVal).CopyTo(global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.GetUnmanagedValuesDestination(__invokeRetValUnmanaged, __invokeRetValUnmanaged__numElements));
+            __invokeRetValUnmanaged__out = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.AllocateContainerForUnmanagedElements(__invokeRetVal, out __invokeRetValUnmanaged__numElements);
+            global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.GetManagedValuesSource(__invokeRetVal).CopyTo(global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.GetUnmanagedValuesDestination(__invokeRetValUnmanaged__out, __invokeRetValUnmanaged__numElements));
+            // AssignOut - Assign to parameters
+            *__invokeRetValUnmanaged__param = __invokeRetValUnmanaged__out;
         }
         catch (System.Exception __exception)
         {
             __retVal = System.Runtime.InteropServices.Marshalling.ExceptionAsHResultMarshaller<int>.ConvertToUnmanaged(__exception);
+            // CleanupFailure - Perform required cleanup.
+            global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.Free(__invokeRetValUnmanaged__out);
+            return __retVal;
         }
 
         return __retVal;

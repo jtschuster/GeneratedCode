@@ -421,7 +421,6 @@ namespace ComInterfaceGenerator.Tests
                 finally
                 {
                     // Cleanup - Perform required cleanup.
-                    __arr_native__numElements = numValues;
                     global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.Free(__arr_native);
                 }
 

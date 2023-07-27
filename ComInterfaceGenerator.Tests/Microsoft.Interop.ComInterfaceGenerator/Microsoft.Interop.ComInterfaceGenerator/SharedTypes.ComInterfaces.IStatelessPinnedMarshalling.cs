@@ -181,6 +181,7 @@ file unsafe partial interface InterfaceImplementation
         catch (System.Exception __exception)
         {
             __retVal = System.Runtime.InteropServices.Marshalling.ExceptionAsHResultMarshaller<int>.ConvertToUnmanaged(__exception);
+            return __retVal;
         }
 
         return __retVal;
@@ -190,7 +191,7 @@ file unsafe partial interface InterfaceImplementation
     internal static int ABI_MethodIn(System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch* __this_native, nint* __param_native__param, int size)
     {
         global::SharedTypes.ComInterfaces.IStatelessPinnedMarshalling @this = default;
-        ref nint __param_native = ref *__param_native__param;
+        nint __param_native = *__param_native__param;
         global::SharedTypes.ComInterfaces.StatelessPinnedType param = default;
         int __retVal = default;
         try
@@ -204,6 +205,7 @@ file unsafe partial interface InterfaceImplementation
         catch (System.Exception __exception)
         {
             __retVal = System.Runtime.InteropServices.Marshalling.ExceptionAsHResultMarshaller<int>.ConvertToUnmanaged(__exception);
+            return __retVal;
         }
 
         return __retVal;
@@ -213,7 +215,7 @@ file unsafe partial interface InterfaceImplementation
     internal static int ABI_MethodOut(System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch* __this_native, nint* __param_native__param, int size)
     {
         global::SharedTypes.ComInterfaces.IStatelessPinnedMarshalling @this = default;
-        ref nint __param_native = ref *__param_native__param;
+        nint __param_native__out = default;
         global::SharedTypes.ComInterfaces.StatelessPinnedType param = default;
         int __retVal = default;
         try
@@ -223,11 +225,16 @@ file unsafe partial interface InterfaceImplementation
             @this = System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch.GetInstance<global::SharedTypes.ComInterfaces.IStatelessPinnedMarshalling>(__this_native);
             @this.MethodOut(out param, size);
             // Marshal - Convert managed data to native data.
-            __param_native = global::SharedTypes.ComInterfaces.StatelessPinnedTypeMarshaller.ConvertToUnmanaged(param);
+            __param_native__out = global::SharedTypes.ComInterfaces.StatelessPinnedTypeMarshaller.ConvertToUnmanaged(param);
+            // AssignOut - Assign to parameters
+            *__param_native__param = __param_native__out;
         }
         catch (System.Exception __exception)
         {
             __retVal = System.Runtime.InteropServices.Marshalling.ExceptionAsHResultMarshaller<int>.ConvertToUnmanaged(__exception);
+            // CleanupFailure - Perform required cleanup.
+            global::SharedTypes.ComInterfaces.StatelessPinnedTypeMarshaller.Free(__param_native__out);
+            return __retVal;
         }
 
         return __retVal;
@@ -237,12 +244,10 @@ file unsafe partial interface InterfaceImplementation
     internal static int ABI_MethodRef(System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch* __this_native, nint* __param_native__param, int size)
     {
         global::SharedTypes.ComInterfaces.IStatelessPinnedMarshalling @this = default;
-        ref nint __param_native = ref *__param_native__param;
+        nint __param_native__out = default;
+        nint __param_native = *__param_native__param;
         global::SharedTypes.ComInterfaces.StatelessPinnedType param = default;
         int __retVal = default;
-        // Setup - Perform required setup.
-        bool __param_native__ownOriginal = false;
-        nint __param_native__original = __param_native;
         try
         {
             // Unmarshal - Convert native data to managed data.
@@ -251,20 +256,18 @@ file unsafe partial interface InterfaceImplementation
             @this = System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch.GetInstance<global::SharedTypes.ComInterfaces.IStatelessPinnedMarshalling>(__this_native);
             @this.MethodRef(ref param, size);
             // Marshal - Convert managed data to native data.
-            __param_native = global::SharedTypes.ComInterfaces.StatelessPinnedTypeMarshaller.ConvertToUnmanaged(param);
-            __param_native__ownOriginal = true;
+            __param_native__out = global::SharedTypes.ComInterfaces.StatelessPinnedTypeMarshaller.ConvertToUnmanaged(param);
+            // AssignOut - Assign to parameters
+            *__param_native__param = __param_native__out;
+            // Cleanup - Perform required cleanup.
+            global::SharedTypes.ComInterfaces.StatelessPinnedTypeMarshaller.Free(__param_native);
         }
         catch (System.Exception __exception)
         {
             __retVal = System.Runtime.InteropServices.Marshalling.ExceptionAsHResultMarshaller<int>.ConvertToUnmanaged(__exception);
-        }
-        finally
-        {
-            // Cleanup - Perform required cleanup.
-            if (__param_native__ownOriginal)
-            {
-                global::SharedTypes.ComInterfaces.StatelessPinnedTypeMarshaller.Free(__param_native__original);
-            }
+            // CleanupFailure - Perform required cleanup.
+            global::SharedTypes.ComInterfaces.StatelessPinnedTypeMarshaller.Free(__param_native__out);
+            return __retVal;
         }
 
         return __retVal;
@@ -274,7 +277,7 @@ file unsafe partial interface InterfaceImplementation
     internal static int ABI_Return(System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch* __this_native, nint* __invokeRetValUnmanaged__param)
     {
         global::SharedTypes.ComInterfaces.IStatelessPinnedMarshalling @this = default;
-        ref nint __invokeRetValUnmanaged = ref *__invokeRetValUnmanaged__param;
+        nint __invokeRetValUnmanaged__out = default;
         global::SharedTypes.ComInterfaces.StatelessPinnedType __invokeRetVal = default;
         int __retVal = default;
         try
@@ -284,11 +287,16 @@ file unsafe partial interface InterfaceImplementation
             @this = System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch.GetInstance<global::SharedTypes.ComInterfaces.IStatelessPinnedMarshalling>(__this_native);
             __invokeRetVal = @this.Return();
             // Marshal - Convert managed data to native data.
-            __invokeRetValUnmanaged = global::SharedTypes.ComInterfaces.StatelessPinnedTypeMarshaller.ConvertToUnmanaged(__invokeRetVal);
+            __invokeRetValUnmanaged__out = global::SharedTypes.ComInterfaces.StatelessPinnedTypeMarshaller.ConvertToUnmanaged(__invokeRetVal);
+            // AssignOut - Assign to parameters
+            *__invokeRetValUnmanaged__param = __invokeRetValUnmanaged__out;
         }
         catch (System.Exception __exception)
         {
             __retVal = System.Runtime.InteropServices.Marshalling.ExceptionAsHResultMarshaller<int>.ConvertToUnmanaged(__exception);
+            // CleanupFailure - Perform required cleanup.
+            global::SharedTypes.ComInterfaces.StatelessPinnedTypeMarshaller.Free(__invokeRetValUnmanaged__out);
+            return __retVal;
         }
 
         return __retVal;
@@ -311,6 +319,7 @@ file unsafe partial interface InterfaceImplementation
         catch (System.Exception __exception)
         {
             __retVal_native = System.Runtime.InteropServices.Marshalling.ExceptionAsDefaultMarshaller<nint>.ConvertToUnmanaged(__exception);
+            return __retVal_native;
         }
 
         return __retVal_native;

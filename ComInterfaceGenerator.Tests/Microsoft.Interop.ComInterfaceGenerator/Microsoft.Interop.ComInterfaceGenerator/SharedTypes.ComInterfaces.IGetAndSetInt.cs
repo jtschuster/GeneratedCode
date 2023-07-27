@@ -50,7 +50,7 @@ file unsafe partial interface InterfaceImplementation
     internal static int ABI_GetInt(System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch* __this_native, int* __invokeRetValUnmanaged__param)
     {
         global::SharedTypes.ComInterfaces.IGetAndSetInt @this = default;
-        ref int __invokeRetValUnmanaged = ref *__invokeRetValUnmanaged__param;
+        int __invokeRetValUnmanaged__out = default;
         int __invokeRetVal = default;
         int __retVal = default;
         try
@@ -60,11 +60,14 @@ file unsafe partial interface InterfaceImplementation
             @this = System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch.GetInstance<global::SharedTypes.ComInterfaces.IGetAndSetInt>(__this_native);
             __invokeRetVal = @this.GetInt();
             // Marshal - Convert managed data to native data.
-            __invokeRetValUnmanaged = __invokeRetVal;
+            __invokeRetValUnmanaged__out = __invokeRetVal;
+            // AssignOut - Assign to parameters
+            *__invokeRetValUnmanaged__param = __invokeRetValUnmanaged__out;
         }
         catch (System.Exception __exception)
         {
             __retVal = System.Runtime.InteropServices.Marshalling.ExceptionAsHResultMarshaller<int>.ConvertToUnmanaged(__exception);
+            return __retVal;
         }
 
         return __retVal;
@@ -85,6 +88,7 @@ file unsafe partial interface InterfaceImplementation
         catch (System.Exception __exception)
         {
             __retVal = System.Runtime.InteropServices.Marshalling.ExceptionAsHResultMarshaller<int>.ConvertToUnmanaged(__exception);
+            return __retVal;
         }
 
         return __retVal;

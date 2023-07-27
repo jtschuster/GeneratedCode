@@ -76,7 +76,7 @@ file unsafe partial interface InterfaceImplementation
     internal static int ABI_GetString(System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch* __this_native, byte** __invokeRetValUnmanaged__param)
     {
         global::SharedTypes.ComInterfaces.IUTF8Marshalling @this = default;
-        ref byte* __invokeRetValUnmanaged = ref *__invokeRetValUnmanaged__param;
+        byte* __invokeRetValUnmanaged__out = default;
         string __invokeRetVal = default;
         int __retVal = default;
         try
@@ -86,11 +86,16 @@ file unsafe partial interface InterfaceImplementation
             @this = System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch.GetInstance<global::SharedTypes.ComInterfaces.IUTF8Marshalling>(__this_native);
             __invokeRetVal = @this.GetString();
             // Marshal - Convert managed data to native data.
-            __invokeRetValUnmanaged = (byte*)global::System.Runtime.InteropServices.Marshalling.Utf8StringMarshaller.ConvertToUnmanaged(__invokeRetVal);
+            __invokeRetValUnmanaged__out = (byte*)global::System.Runtime.InteropServices.Marshalling.Utf8StringMarshaller.ConvertToUnmanaged(__invokeRetVal);
+            // AssignOut - Assign to parameters
+            *__invokeRetValUnmanaged__param = __invokeRetValUnmanaged__out;
         }
         catch (System.Exception __exception)
         {
             __retVal = System.Runtime.InteropServices.Marshalling.ExceptionAsHResultMarshaller<int>.ConvertToUnmanaged(__exception);
+            // CleanupFailure - Perform required cleanup.
+            global::System.Runtime.InteropServices.Marshalling.Utf8StringMarshaller.Free(__invokeRetValUnmanaged__out);
+            return __retVal;
         }
 
         return __retVal;
@@ -113,6 +118,7 @@ file unsafe partial interface InterfaceImplementation
         catch (System.Exception __exception)
         {
             __retVal = System.Runtime.InteropServices.Marshalling.ExceptionAsHResultMarshaller<int>.ConvertToUnmanaged(__exception);
+            return __retVal;
         }
 
         return __retVal;

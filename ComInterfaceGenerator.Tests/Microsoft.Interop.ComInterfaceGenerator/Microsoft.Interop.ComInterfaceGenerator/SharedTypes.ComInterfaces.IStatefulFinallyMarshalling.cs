@@ -229,7 +229,6 @@ file unsafe partial interface InterfaceImplementation
     [System.Runtime.InteropServices.UnmanagedCallersOnlyAttribute(CallConvs = new[] { typeof(System.Runtime.CompilerServices.CallConvMemberFunction) })]
     internal static int ABI_Method(System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch* __this_native, nint __param_native)
     {
-        bool __invokeSucceeded = default;
         global::SharedTypes.ComInterfaces.IStatefulFinallyMarshalling @this = default;
         global::SharedTypes.ComInterfaces.StatefulFinallyType param = default;
         int __retVal = default;
@@ -242,23 +241,16 @@ file unsafe partial interface InterfaceImplementation
             // Unmarshal - Convert native data to managed data.
             __retVal = 0; // S_OK
             @this = System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch.GetInstance<global::SharedTypes.ComInterfaces.IStatefulFinallyMarshalling>(__this_native);
+            // GuaranteedUnmarshal - Convert native data to managed data even in the case of an exception during the non-cleanup phases.
+            param = __param_native__marshaller.ToManagedFinally();
             @this.Method(param);
-            __invokeSucceeded = true;
+            // Cleanup - Perform required cleanup.
+            __param_native__marshaller.Free();
         }
         catch (System.Exception __exception)
         {
             __retVal = System.Runtime.InteropServices.Marshalling.ExceptionAsHResultMarshaller<int>.ConvertToUnmanaged(__exception);
-        }
-        finally
-        {
-            if (__invokeSucceeded)
-            {
-                // GuaranteedUnmarshal - Convert native data to managed data even in the case of an exception during the non-cleanup phases.
-                param = __param_native__marshaller.ToManagedFinally();
-            }
-
-            // Cleanup - Perform required cleanup.
-            __param_native__marshaller.Free();
+            return __retVal;
         }
 
         return __retVal;
@@ -267,9 +259,8 @@ file unsafe partial interface InterfaceImplementation
     [System.Runtime.InteropServices.UnmanagedCallersOnlyAttribute(CallConvs = new[] { typeof(System.Runtime.CompilerServices.CallConvMemberFunction) })]
     internal static int ABI_MethodIn(System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch* __this_native, nint* __param_native__param)
     {
-        bool __invokeSucceeded = default;
         global::SharedTypes.ComInterfaces.IStatefulFinallyMarshalling @this = default;
-        ref nint __param_native = ref *__param_native__param;
+        nint __param_native = *__param_native__param;
         global::SharedTypes.ComInterfaces.StatefulFinallyType param = default;
         int __retVal = default;
         // Setup - Perform required setup.
@@ -281,23 +272,16 @@ file unsafe partial interface InterfaceImplementation
             // Unmarshal - Convert native data to managed data.
             __retVal = 0; // S_OK
             @this = System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch.GetInstance<global::SharedTypes.ComInterfaces.IStatefulFinallyMarshalling>(__this_native);
+            // GuaranteedUnmarshal - Convert native data to managed data even in the case of an exception during the non-cleanup phases.
+            param = __param_native__marshaller.ToManagedFinally();
             @this.MethodIn(in param);
-            __invokeSucceeded = true;
+            // Cleanup - Perform required cleanup.
+            __param_native__marshaller.Free();
         }
         catch (System.Exception __exception)
         {
             __retVal = System.Runtime.InteropServices.Marshalling.ExceptionAsHResultMarshaller<int>.ConvertToUnmanaged(__exception);
-        }
-        finally
-        {
-            if (__invokeSucceeded)
-            {
-                // GuaranteedUnmarshal - Convert native data to managed data even in the case of an exception during the non-cleanup phases.
-                param = __param_native__marshaller.ToManagedFinally();
-            }
-
-            // Cleanup - Perform required cleanup.
-            __param_native__marshaller.Free();
+            return __retVal;
         }
 
         return __retVal;
@@ -307,7 +291,7 @@ file unsafe partial interface InterfaceImplementation
     internal static int ABI_MethodOut(System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch* __this_native, nint* __param_native__param)
     {
         global::SharedTypes.ComInterfaces.IStatefulFinallyMarshalling @this = default;
-        ref nint __param_native = ref *__param_native__param;
+        nint __param_native__out = default;
         global::SharedTypes.ComInterfaces.StatefulFinallyType param = default;
         int __retVal = default;
         // Setup - Perform required setup.
@@ -318,19 +302,19 @@ file unsafe partial interface InterfaceImplementation
             __retVal = 0; // S_OK
             @this = System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch.GetInstance<global::SharedTypes.ComInterfaces.IStatefulFinallyMarshalling>(__this_native);
             @this.MethodOut(out param);
-            // PinnedMarshal - Convert managed data to native data that requires the managed data to be pinned.
-            __param_native = __param_native__marshaller.ToUnmanaged();
             // Marshal - Convert managed data to native data.
             __param_native__marshaller.FromManaged(param);
+            // PinnedMarshal - Convert managed data to native data that requires the managed data to be pinned.
+            __param_native__out = __param_native__marshaller.ToUnmanaged();
+            // AssignOut - Assign to parameters
+            *__param_native__param = __param_native__out;
         }
         catch (System.Exception __exception)
         {
             __retVal = System.Runtime.InteropServices.Marshalling.ExceptionAsHResultMarshaller<int>.ConvertToUnmanaged(__exception);
-        }
-        finally
-        {
-            // Cleanup - Perform required cleanup.
+            // CleanupFailure - Perform required cleanup.
             __param_native__marshaller.Free();
+            return __retVal;
         }
 
         return __retVal;
@@ -339,9 +323,9 @@ file unsafe partial interface InterfaceImplementation
     [System.Runtime.InteropServices.UnmanagedCallersOnlyAttribute(CallConvs = new[] { typeof(System.Runtime.CompilerServices.CallConvMemberFunction) })]
     internal static int ABI_MethodRef(System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch* __this_native, nint* __param_native__param)
     {
-        bool __invokeSucceeded = default;
         global::SharedTypes.ComInterfaces.IStatefulFinallyMarshalling @this = default;
-        ref nint __param_native = ref *__param_native__param;
+        nint __param_native__out = default;
+        nint __param_native = *__param_native__param;
         global::SharedTypes.ComInterfaces.StatefulFinallyType param = default;
         int __retVal = default;
         // Setup - Perform required setup.
@@ -353,27 +337,24 @@ file unsafe partial interface InterfaceImplementation
             // Unmarshal - Convert native data to managed data.
             __retVal = 0; // S_OK
             @this = System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch.GetInstance<global::SharedTypes.ComInterfaces.IStatefulFinallyMarshalling>(__this_native);
+            // GuaranteedUnmarshal - Convert native data to managed data even in the case of an exception during the non-cleanup phases.
+            param = __param_native__marshaller.ToManagedFinally();
             @this.MethodRef(ref param);
-            __invokeSucceeded = true;
-            // PinnedMarshal - Convert managed data to native data that requires the managed data to be pinned.
-            __param_native = __param_native__marshaller.ToUnmanaged();
             // Marshal - Convert managed data to native data.
             __param_native__marshaller.FromManaged(param);
+            // PinnedMarshal - Convert managed data to native data that requires the managed data to be pinned.
+            __param_native__out = __param_native__marshaller.ToUnmanaged();
+            // AssignOut - Assign to parameters
+            *__param_native__param = __param_native__out;
+            // Cleanup - Perform required cleanup.
+            __param_native__marshaller.Free();
         }
         catch (System.Exception __exception)
         {
             __retVal = System.Runtime.InteropServices.Marshalling.ExceptionAsHResultMarshaller<int>.ConvertToUnmanaged(__exception);
-        }
-        finally
-        {
-            if (__invokeSucceeded)
-            {
-                // GuaranteedUnmarshal - Convert native data to managed data even in the case of an exception during the non-cleanup phases.
-                param = __param_native__marshaller.ToManagedFinally();
-            }
-
-            // Cleanup - Perform required cleanup.
+            // CleanupFailure - Perform required cleanup.
             __param_native__marshaller.Free();
+            return __retVal;
         }
 
         return __retVal;
@@ -383,7 +364,7 @@ file unsafe partial interface InterfaceImplementation
     internal static int ABI_Return(System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch* __this_native, nint* __invokeRetValUnmanaged__param)
     {
         global::SharedTypes.ComInterfaces.IStatefulFinallyMarshalling @this = default;
-        ref nint __invokeRetValUnmanaged = ref *__invokeRetValUnmanaged__param;
+        nint __invokeRetValUnmanaged__out = default;
         global::SharedTypes.ComInterfaces.StatefulFinallyType __invokeRetVal = default;
         int __retVal = default;
         // Setup - Perform required setup.
@@ -394,19 +375,19 @@ file unsafe partial interface InterfaceImplementation
             __retVal = 0; // S_OK
             @this = System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch.GetInstance<global::SharedTypes.ComInterfaces.IStatefulFinallyMarshalling>(__this_native);
             __invokeRetVal = @this.Return();
-            // PinnedMarshal - Convert managed data to native data that requires the managed data to be pinned.
-            __invokeRetValUnmanaged = __invokeRetValUnmanaged__marshaller.ToUnmanaged();
             // Marshal - Convert managed data to native data.
             __invokeRetValUnmanaged__marshaller.FromManaged(__invokeRetVal);
+            // PinnedMarshal - Convert managed data to native data that requires the managed data to be pinned.
+            __invokeRetValUnmanaged__out = __invokeRetValUnmanaged__marshaller.ToUnmanaged();
+            // AssignOut - Assign to parameters
+            *__invokeRetValUnmanaged__param = __invokeRetValUnmanaged__out;
         }
         catch (System.Exception __exception)
         {
             __retVal = System.Runtime.InteropServices.Marshalling.ExceptionAsHResultMarshaller<int>.ConvertToUnmanaged(__exception);
-        }
-        finally
-        {
-            // Cleanup - Perform required cleanup.
+            // CleanupFailure - Perform required cleanup.
             __invokeRetValUnmanaged__marshaller.Free();
+            return __retVal;
         }
 
         return __retVal;
@@ -425,19 +406,17 @@ file unsafe partial interface InterfaceImplementation
             // Unmarshal - Convert native data to managed data.
             @this = System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch.GetInstance<global::SharedTypes.ComInterfaces.IStatefulFinallyMarshalling>(__this_native);
             __retVal = @this.ReturnPreserveSig();
-            // PinnedMarshal - Convert managed data to native data that requires the managed data to be pinned.
-            __retVal_native = __retVal_native__marshaller.ToUnmanaged();
             // Marshal - Convert managed data to native data.
             __retVal_native__marshaller.FromManaged(__retVal);
+            // PinnedMarshal - Convert managed data to native data that requires the managed data to be pinned.
+            __retVal_native = __retVal_native__marshaller.ToUnmanaged();
+            // Cleanup - Perform required cleanup.
+            __retVal_native__marshaller.Free();
         }
         catch (System.Exception __exception)
         {
             __retVal_native = System.Runtime.InteropServices.Marshalling.ExceptionAsDefaultMarshaller<nint>.ConvertToUnmanaged(__exception);
-        }
-        finally
-        {
-            // Cleanup - Perform required cleanup.
-            __retVal_native__marshaller.Free();
+            return __retVal_native;
         }
 
         return __retVal_native;
