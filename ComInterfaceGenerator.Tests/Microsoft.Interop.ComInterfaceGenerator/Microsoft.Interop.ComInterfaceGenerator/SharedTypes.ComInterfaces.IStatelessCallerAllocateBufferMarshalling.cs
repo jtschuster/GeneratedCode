@@ -9,19 +9,20 @@ file unsafe class InterfaceInformation : System.Runtime.InteropServices.Marshall
 }
 
 [System.Runtime.InteropServices.DynamicInterfaceCastableImplementationAttribute]
-file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComInterfaces.IStatelessMarshalling
+file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComInterfaces.IStatelessCallerAllocateBufferMarshalling
 {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Interop.ComInterfaceGenerator", "42.42.42.42")]
     [global::System.Runtime.CompilerServices.SkipLocalsInitAttribute]
-    void global::SharedTypes.ComInterfaces.IStatelessMarshalling.Method(global::SharedTypes.ComInterfaces.StatelessType param, int size)
+    void global::SharedTypes.ComInterfaces.IStatelessCallerAllocateBufferMarshalling.Method(global::SharedTypes.ComInterfaces.StatelessCallerAllocatedBufferType param, int size)
     {
-        var(__this, __vtable_native) = ((System.Runtime.InteropServices.Marshalling.IUnmanagedVirtualMethodTableProvider)this).GetVirtualMethodTableInfoForKey(typeof(global::SharedTypes.ComInterfaces.IStatelessMarshalling));
+        var(__this, __vtable_native) = ((System.Runtime.InteropServices.Marshalling.IUnmanagedVirtualMethodTableProvider)this).GetVirtualMethodTableInfoForKey(typeof(global::SharedTypes.ComInterfaces.IStatelessCallerAllocateBufferMarshalling));
         nint __param_native = default;
         int __invokeRetVal = default;
         try
         {
             // Marshal - Convert managed data to native data.
-            __param_native = global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.ConvertToUnmanaged(param);
+            System.Span<byte> __param_native__buffer = stackalloc byte[global::SharedTypes.ComInterfaces.StatelessCallerAllocatedBufferTypeMarshaller.BufferSize];
+            __param_native = global::SharedTypes.ComInterfaces.StatelessCallerAllocatedBufferTypeMarshaller.ConvertToUnmanaged(param, __param_native__buffer);
             {
                 __invokeRetVal = ((delegate* unmanaged[MemberFunction]<void*, nint, int, int> )__vtable_native[3])(__this, __param_native, size);
             }
@@ -33,21 +34,22 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
         finally
         {
             // Cleanup - Perform required cleanup.
-            global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.Free(__param_native);
+            global::SharedTypes.ComInterfaces.StatelessCallerAllocatedBufferTypeMarshaller.Free(__param_native);
         }
     }
 
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Interop.ComInterfaceGenerator", "42.42.42.42")]
     [global::System.Runtime.CompilerServices.SkipLocalsInitAttribute]
-    void global::SharedTypes.ComInterfaces.IStatelessMarshalling.MethodIn(in global::SharedTypes.ComInterfaces.StatelessType param, int size)
+    void global::SharedTypes.ComInterfaces.IStatelessCallerAllocateBufferMarshalling.MethodIn(in global::SharedTypes.ComInterfaces.StatelessCallerAllocatedBufferType param, int size)
     {
-        var(__this, __vtable_native) = ((System.Runtime.InteropServices.Marshalling.IUnmanagedVirtualMethodTableProvider)this).GetVirtualMethodTableInfoForKey(typeof(global::SharedTypes.ComInterfaces.IStatelessMarshalling));
+        var(__this, __vtable_native) = ((System.Runtime.InteropServices.Marshalling.IUnmanagedVirtualMethodTableProvider)this).GetVirtualMethodTableInfoForKey(typeof(global::SharedTypes.ComInterfaces.IStatelessCallerAllocateBufferMarshalling));
         nint __param_native = default;
         int __invokeRetVal = default;
         try
         {
             // Marshal - Convert managed data to native data.
-            __param_native = global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.ConvertToUnmanaged(param);
+            System.Span<byte> __param_native__buffer = stackalloc byte[global::SharedTypes.ComInterfaces.StatelessCallerAllocatedBufferTypeMarshaller.BufferSize];
+            __param_native = global::SharedTypes.ComInterfaces.StatelessCallerAllocatedBufferTypeMarshaller.ConvertToUnmanaged(param, __param_native__buffer);
             {
                 __invokeRetVal = ((delegate* unmanaged[MemberFunction]<void*, nint*, int, int> )__vtable_native[4])(__this, &__param_native, size);
             }
@@ -59,47 +61,47 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
         finally
         {
             // Cleanup - Perform required cleanup.
-            global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.Free(__param_native);
+            global::SharedTypes.ComInterfaces.StatelessCallerAllocatedBufferTypeMarshaller.Free(__param_native);
         }
     }
 
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Interop.ComInterfaceGenerator", "42.42.42.42")]
     [global::System.Runtime.CompilerServices.SkipLocalsInitAttribute]
-    void global::SharedTypes.ComInterfaces.IStatelessMarshalling.MethodOut(out global::SharedTypes.ComInterfaces.StatelessType paramyBoi, int size)
+    void global::SharedTypes.ComInterfaces.IStatelessCallerAllocateBufferMarshalling.MethodOut(out global::SharedTypes.ComInterfaces.StatelessCallerAllocatedBufferType param, int size)
     {
-        var(__this, __vtable_native) = ((System.Runtime.InteropServices.Marshalling.IUnmanagedVirtualMethodTableProvider)this).GetVirtualMethodTableInfoForKey(typeof(global::SharedTypes.ComInterfaces.IStatelessMarshalling));
-        System.Runtime.CompilerServices.Unsafe.SkipInit(out paramyBoi);
-        nint __paramyBoi_native = default;
+        var(__this, __vtable_native) = ((System.Runtime.InteropServices.Marshalling.IUnmanagedVirtualMethodTableProvider)this).GetVirtualMethodTableInfoForKey(typeof(global::SharedTypes.ComInterfaces.IStatelessCallerAllocateBufferMarshalling));
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out param);
+        nint __param_native = default;
         int __invokeRetVal = default;
         try
         {
             {
-                __invokeRetVal = ((delegate* unmanaged[MemberFunction]<void*, nint*, int, int> )__vtable_native[5])(__this, &__paramyBoi_native, size);
+                __invokeRetVal = ((delegate* unmanaged[MemberFunction]<void*, nint*, int, int> )__vtable_native[5])(__this, &__param_native, size);
             }
 
             System.GC.KeepAlive(this);
             // Unmarshal - Convert native data to managed data.
             System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
-            paramyBoi = global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.ConvertToManaged(__paramyBoi_native);
+            param = global::SharedTypes.ComInterfaces.StatelessCallerAllocatedBufferTypeMarshaller.ConvertToManaged(__param_native);
         }
         finally
         {
             // Cleanup - Perform required cleanup.
-            global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.Free(__paramyBoi_native);
+            global::SharedTypes.ComInterfaces.StatelessCallerAllocatedBufferTypeMarshaller.Free(__param_native);
         }
     }
 
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Interop.ComInterfaceGenerator", "42.42.42.42")]
     [global::System.Runtime.CompilerServices.SkipLocalsInitAttribute]
-    void global::SharedTypes.ComInterfaces.IStatelessMarshalling.MethodRef(ref global::SharedTypes.ComInterfaces.StatelessType param, int size)
+    void global::SharedTypes.ComInterfaces.IStatelessCallerAllocateBufferMarshalling.MethodRef(ref global::SharedTypes.ComInterfaces.StatelessCallerAllocatedBufferType param, int size)
     {
-        var(__this, __vtable_native) = ((System.Runtime.InteropServices.Marshalling.IUnmanagedVirtualMethodTableProvider)this).GetVirtualMethodTableInfoForKey(typeof(global::SharedTypes.ComInterfaces.IStatelessMarshalling));
+        var(__this, __vtable_native) = ((System.Runtime.InteropServices.Marshalling.IUnmanagedVirtualMethodTableProvider)this).GetVirtualMethodTableInfoForKey(typeof(global::SharedTypes.ComInterfaces.IStatelessCallerAllocateBufferMarshalling));
         nint __param_native = default;
         int __invokeRetVal = default;
         try
         {
             // Marshal - Convert managed data to native data.
-            __param_native = global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.ConvertToUnmanaged(param);
+            __param_native = global::SharedTypes.ComInterfaces.StatelessCallerAllocatedBufferTypeMarshaller.ConvertToUnmanaged(param);
             {
                 __invokeRetVal = ((delegate* unmanaged[MemberFunction]<void*, nint*, int, int> )__vtable_native[6])(__this, &__param_native, size);
             }
@@ -107,21 +109,21 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
             System.GC.KeepAlive(this);
             // Unmarshal - Convert native data to managed data.
             System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
-            param = global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.ConvertToManaged(__param_native);
+            param = global::SharedTypes.ComInterfaces.StatelessCallerAllocatedBufferTypeMarshaller.ConvertToManaged(__param_native);
         }
         finally
         {
             // Cleanup - Perform required cleanup.
-            global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.Free(__param_native);
+            global::SharedTypes.ComInterfaces.StatelessCallerAllocatedBufferTypeMarshaller.Free(__param_native);
         }
     }
 
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Interop.ComInterfaceGenerator", "42.42.42.42")]
     [global::System.Runtime.CompilerServices.SkipLocalsInitAttribute]
-    global::SharedTypes.ComInterfaces.StatelessType global::SharedTypes.ComInterfaces.IStatelessMarshalling.Return()
+    global::SharedTypes.ComInterfaces.StatelessCallerAllocatedBufferType global::SharedTypes.ComInterfaces.IStatelessCallerAllocateBufferMarshalling.Return()
     {
-        var(__this, __vtable_native) = ((System.Runtime.InteropServices.Marshalling.IUnmanagedVirtualMethodTableProvider)this).GetVirtualMethodTableInfoForKey(typeof(global::SharedTypes.ComInterfaces.IStatelessMarshalling));
-        global::SharedTypes.ComInterfaces.StatelessType __retVal = default;
+        var(__this, __vtable_native) = ((System.Runtime.InteropServices.Marshalling.IUnmanagedVirtualMethodTableProvider)this).GetVirtualMethodTableInfoForKey(typeof(global::SharedTypes.ComInterfaces.IStatelessCallerAllocateBufferMarshalling));
+        global::SharedTypes.ComInterfaces.StatelessCallerAllocatedBufferType __retVal = default;
         nint __retVal_native = default;
         int __invokeRetVal = default;
         try
@@ -133,12 +135,12 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
             System.GC.KeepAlive(this);
             // Unmarshal - Convert native data to managed data.
             System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
-            __retVal = global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.ConvertToManaged(__retVal_native);
+            __retVal = global::SharedTypes.ComInterfaces.StatelessCallerAllocatedBufferTypeMarshaller.ConvertToManaged(__retVal_native);
         }
         finally
         {
             // Cleanup - Perform required cleanup.
-            global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.Free(__retVal_native);
+            global::SharedTypes.ComInterfaces.StatelessCallerAllocatedBufferTypeMarshaller.Free(__retVal_native);
         }
 
         return __retVal;
@@ -146,10 +148,10 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
 
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Interop.ComInterfaceGenerator", "42.42.42.42")]
     [global::System.Runtime.CompilerServices.SkipLocalsInitAttribute]
-    global::SharedTypes.ComInterfaces.StatelessType global::SharedTypes.ComInterfaces.IStatelessMarshalling.ReturnPreserveSig()
+    global::SharedTypes.ComInterfaces.StatelessCallerAllocatedBufferType global::SharedTypes.ComInterfaces.IStatelessCallerAllocateBufferMarshalling.ReturnPreserveSig()
     {
-        var(__this, __vtable_native) = ((System.Runtime.InteropServices.Marshalling.IUnmanagedVirtualMethodTableProvider)this).GetVirtualMethodTableInfoForKey(typeof(global::SharedTypes.ComInterfaces.IStatelessMarshalling));
-        global::SharedTypes.ComInterfaces.StatelessType __retVal = default;
+        var(__this, __vtable_native) = ((System.Runtime.InteropServices.Marshalling.IUnmanagedVirtualMethodTableProvider)this).GetVirtualMethodTableInfoForKey(typeof(global::SharedTypes.ComInterfaces.IStatelessCallerAllocateBufferMarshalling));
+        global::SharedTypes.ComInterfaces.StatelessCallerAllocatedBufferType __retVal = default;
         nint __retVal_native = default;
         try
         {
@@ -159,12 +161,12 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
 
             System.GC.KeepAlive(this);
             // Unmarshal - Convert native data to managed data.
-            __retVal = global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.ConvertToManaged(__retVal_native);
+            __retVal = global::SharedTypes.ComInterfaces.StatelessCallerAllocatedBufferTypeMarshaller.ConvertToManaged(__retVal_native);
         }
         finally
         {
             // Cleanup - Perform required cleanup.
-            global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.Free(__retVal_native);
+            global::SharedTypes.ComInterfaces.StatelessCallerAllocatedBufferTypeMarshaller.Free(__retVal_native);
         }
 
         return __retVal;
@@ -176,15 +178,15 @@ file unsafe partial interface InterfaceImplementation
     [System.Runtime.InteropServices.UnmanagedCallersOnlyAttribute(CallConvs = new[] { typeof(System.Runtime.CompilerServices.CallConvMemberFunction) })]
     internal static int ABI_Method(System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch* __this_native, nint __param_native, int size)
     {
-        global::SharedTypes.ComInterfaces.IStatelessMarshalling @this = default;
-        global::SharedTypes.ComInterfaces.StatelessType param = default;
+        global::SharedTypes.ComInterfaces.IStatelessCallerAllocateBufferMarshalling @this = default;
+        global::SharedTypes.ComInterfaces.StatelessCallerAllocatedBufferType param = default;
         int __retVal = default;
         try
         {
             // Unmarshal - Convert native data to managed data.
             __retVal = 0; // S_OK
-            param = global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.ConvertToManaged(__param_native);
-            @this = System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch.GetInstance<global::SharedTypes.ComInterfaces.IStatelessMarshalling>(__this_native);
+            param = global::SharedTypes.ComInterfaces.StatelessCallerAllocatedBufferTypeMarshaller.ConvertToManaged(__param_native);
+            @this = System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch.GetInstance<global::SharedTypes.ComInterfaces.IStatelessCallerAllocateBufferMarshalling>(__this_native);
             @this.Method(param, size);
         }
         catch (System.Exception __exception)
@@ -199,16 +201,16 @@ file unsafe partial interface InterfaceImplementation
     [System.Runtime.InteropServices.UnmanagedCallersOnlyAttribute(CallConvs = new[] { typeof(System.Runtime.CompilerServices.CallConvMemberFunction) })]
     internal static int ABI_MethodIn(System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch* __this_native, nint* __param_native__param, int size)
     {
-        global::SharedTypes.ComInterfaces.IStatelessMarshalling @this = default;
+        global::SharedTypes.ComInterfaces.IStatelessCallerAllocateBufferMarshalling @this = default;
         nint __param_native = *__param_native__param;
-        global::SharedTypes.ComInterfaces.StatelessType param = default;
+        global::SharedTypes.ComInterfaces.StatelessCallerAllocatedBufferType param = default;
         int __retVal = default;
         try
         {
             // Unmarshal - Convert native data to managed data.
             __retVal = 0; // S_OK
-            param = global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.ConvertToManaged(__param_native);
-            @this = System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch.GetInstance<global::SharedTypes.ComInterfaces.IStatelessMarshalling>(__this_native);
+            param = global::SharedTypes.ComInterfaces.StatelessCallerAllocatedBufferTypeMarshaller.ConvertToManaged(__param_native);
+            @this = System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch.GetInstance<global::SharedTypes.ComInterfaces.IStatelessCallerAllocateBufferMarshalling>(__this_native);
             @this.MethodIn(in param, size);
         }
         catch (System.Exception __exception)
@@ -221,28 +223,28 @@ file unsafe partial interface InterfaceImplementation
     }
 
     [System.Runtime.InteropServices.UnmanagedCallersOnlyAttribute(CallConvs = new[] { typeof(System.Runtime.CompilerServices.CallConvMemberFunction) })]
-    internal static int ABI_MethodOut(System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch* __this_native, nint* __paramyBoi_native__param, int size)
+    internal static int ABI_MethodOut(System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch* __this_native, nint* __param_native__param, int size)
     {
-        global::SharedTypes.ComInterfaces.IStatelessMarshalling @this = default;
-        nint __paramyBoi_native__out = default;
-        global::SharedTypes.ComInterfaces.StatelessType paramyBoi = default;
+        global::SharedTypes.ComInterfaces.IStatelessCallerAllocateBufferMarshalling @this = default;
+        nint __param_native__out = default;
+        global::SharedTypes.ComInterfaces.StatelessCallerAllocatedBufferType param = default;
         int __retVal = default;
         try
         {
             // Unmarshal - Convert native data to managed data.
             __retVal = 0; // S_OK
-            @this = System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch.GetInstance<global::SharedTypes.ComInterfaces.IStatelessMarshalling>(__this_native);
-            @this.MethodOut(out paramyBoi, size);
+            @this = System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch.GetInstance<global::SharedTypes.ComInterfaces.IStatelessCallerAllocateBufferMarshalling>(__this_native);
+            @this.MethodOut(out param, size);
             // Marshal - Convert managed data to native data.
-            __paramyBoi_native__out = global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.ConvertToUnmanaged(paramyBoi);
+            __param_native__out = global::SharedTypes.ComInterfaces.StatelessCallerAllocatedBufferTypeMarshaller.ConvertToUnmanaged(param);
             // AssignOut - Assign to parameters
-            *__paramyBoi_native__param = __paramyBoi_native__out;
+            *__param_native__param = __param_native__out;
         }
         catch (System.Exception __exception)
         {
             __retVal = System.Runtime.InteropServices.Marshalling.ExceptionAsHResultMarshaller<int>.ConvertToUnmanaged(__exception);
             // CleanupFailure - Perform required cleanup.
-            global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.Free(__paramyBoi_native__out);
+            global::SharedTypes.ComInterfaces.StatelessCallerAllocatedBufferTypeMarshaller.Free(__param_native__out);
             return __retVal;
         }
 
@@ -252,30 +254,30 @@ file unsafe partial interface InterfaceImplementation
     [System.Runtime.InteropServices.UnmanagedCallersOnlyAttribute(CallConvs = new[] { typeof(System.Runtime.CompilerServices.CallConvMemberFunction) })]
     internal static int ABI_MethodRef(System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch* __this_native, nint* __param_native__param, int size)
     {
-        global::SharedTypes.ComInterfaces.IStatelessMarshalling @this = default;
+        global::SharedTypes.ComInterfaces.IStatelessCallerAllocateBufferMarshalling @this = default;
         nint __param_native__out = default;
         nint __param_native = *__param_native__param;
-        global::SharedTypes.ComInterfaces.StatelessType param = default;
+        global::SharedTypes.ComInterfaces.StatelessCallerAllocatedBufferType param = default;
         int __retVal = default;
         try
         {
             // Unmarshal - Convert native data to managed data.
             __retVal = 0; // S_OK
-            param = global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.ConvertToManaged(__param_native);
-            @this = System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch.GetInstance<global::SharedTypes.ComInterfaces.IStatelessMarshalling>(__this_native);
+            param = global::SharedTypes.ComInterfaces.StatelessCallerAllocatedBufferTypeMarshaller.ConvertToManaged(__param_native);
+            @this = System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch.GetInstance<global::SharedTypes.ComInterfaces.IStatelessCallerAllocateBufferMarshalling>(__this_native);
             @this.MethodRef(ref param, size);
             // Marshal - Convert managed data to native data.
-            __param_native__out = global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.ConvertToUnmanaged(param);
+            __param_native__out = global::SharedTypes.ComInterfaces.StatelessCallerAllocatedBufferTypeMarshaller.ConvertToUnmanaged(param);
             // AssignOut - Assign to parameters
             *__param_native__param = __param_native__out;
             // Cleanup - Perform required cleanup.
-            global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.Free(__param_native);
+            global::SharedTypes.ComInterfaces.StatelessCallerAllocatedBufferTypeMarshaller.Free(__param_native);
         }
         catch (System.Exception __exception)
         {
             __retVal = System.Runtime.InteropServices.Marshalling.ExceptionAsHResultMarshaller<int>.ConvertToUnmanaged(__exception);
             // CleanupFailure - Perform required cleanup.
-            global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.Free(__param_native__out);
+            global::SharedTypes.ComInterfaces.StatelessCallerAllocatedBufferTypeMarshaller.Free(__param_native__out);
             return __retVal;
         }
 
@@ -285,18 +287,18 @@ file unsafe partial interface InterfaceImplementation
     [System.Runtime.InteropServices.UnmanagedCallersOnlyAttribute(CallConvs = new[] { typeof(System.Runtime.CompilerServices.CallConvMemberFunction) })]
     internal static int ABI_Return(System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch* __this_native, nint* __invokeRetValUnmanaged__param)
     {
-        global::SharedTypes.ComInterfaces.IStatelessMarshalling @this = default;
+        global::SharedTypes.ComInterfaces.IStatelessCallerAllocateBufferMarshalling @this = default;
         nint __invokeRetValUnmanaged__out = default;
-        global::SharedTypes.ComInterfaces.StatelessType __invokeRetVal = default;
+        global::SharedTypes.ComInterfaces.StatelessCallerAllocatedBufferType __invokeRetVal = default;
         int __retVal = default;
         try
         {
             // Unmarshal - Convert native data to managed data.
             __retVal = 0; // S_OK
-            @this = System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch.GetInstance<global::SharedTypes.ComInterfaces.IStatelessMarshalling>(__this_native);
+            @this = System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch.GetInstance<global::SharedTypes.ComInterfaces.IStatelessCallerAllocateBufferMarshalling>(__this_native);
             __invokeRetVal = @this.Return();
             // Marshal - Convert managed data to native data.
-            __invokeRetValUnmanaged__out = global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.ConvertToUnmanaged(__invokeRetVal);
+            __invokeRetValUnmanaged__out = global::SharedTypes.ComInterfaces.StatelessCallerAllocatedBufferTypeMarshaller.ConvertToUnmanaged(__invokeRetVal);
             // AssignOut - Assign to parameters
             *__invokeRetValUnmanaged__param = __invokeRetValUnmanaged__out;
         }
@@ -304,7 +306,7 @@ file unsafe partial interface InterfaceImplementation
         {
             __retVal = System.Runtime.InteropServices.Marshalling.ExceptionAsHResultMarshaller<int>.ConvertToUnmanaged(__exception);
             // CleanupFailure - Perform required cleanup.
-            global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.Free(__invokeRetValUnmanaged__out);
+            global::SharedTypes.ComInterfaces.StatelessCallerAllocatedBufferTypeMarshaller.Free(__invokeRetValUnmanaged__out);
             return __retVal;
         }
 
@@ -314,16 +316,16 @@ file unsafe partial interface InterfaceImplementation
     [System.Runtime.InteropServices.UnmanagedCallersOnlyAttribute(CallConvs = new[] { typeof(System.Runtime.CompilerServices.CallConvMemberFunction) })]
     internal static nint ABI_ReturnPreserveSig(System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch* __this_native)
     {
-        global::SharedTypes.ComInterfaces.IStatelessMarshalling @this = default;
-        global::SharedTypes.ComInterfaces.StatelessType __retVal = default;
+        global::SharedTypes.ComInterfaces.IStatelessCallerAllocateBufferMarshalling @this = default;
+        global::SharedTypes.ComInterfaces.StatelessCallerAllocatedBufferType __retVal = default;
         nint __retVal_native = default;
         try
         {
             // Unmarshal - Convert native data to managed data.
-            @this = System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch.GetInstance<global::SharedTypes.ComInterfaces.IStatelessMarshalling>(__this_native);
+            @this = System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch.GetInstance<global::SharedTypes.ComInterfaces.IStatelessCallerAllocateBufferMarshalling>(__this_native);
             __retVal = @this.ReturnPreserveSig();
             // Marshal - Convert managed data to native data.
-            __retVal_native = global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.ConvertToUnmanaged(__retVal);
+            __retVal_native = global::SharedTypes.ComInterfaces.StatelessCallerAllocatedBufferTypeMarshaller.ConvertToUnmanaged(__retVal);
         }
         catch (System.Exception __exception)
         {
@@ -339,7 +341,7 @@ file unsafe partial interface InterfaceImplementation
 {
     internal static void** CreateManagedVirtualFunctionTable()
     {
-        void** vtable = (void**)System.Runtime.CompilerServices.RuntimeHelpers.AllocateTypeAssociatedMemory(typeof(global::SharedTypes.ComInterfaces.IStatelessMarshalling), sizeof(void*) * 9);
+        void** vtable = (void**)System.Runtime.CompilerServices.RuntimeHelpers.AllocateTypeAssociatedMemory(typeof(global::SharedTypes.ComInterfaces.IStatelessCallerAllocateBufferMarshalling), sizeof(void*) * 9);
         {
             nint v0, v1, v2;
             System.Runtime.InteropServices.ComWrappers.GetIUnknownImpl(out v0, out v1, out v2);
@@ -364,14 +366,14 @@ file unsafe partial interface InterfaceImplementation
 namespace SharedTypes.ComInterfaces
 {
     [System.Runtime.InteropServices.Marshalling.IUnknownDerivedAttribute<InterfaceInformation, InterfaceImplementation>]
-    internal partial interface IStatelessMarshalling
+    internal partial interface IStatelessCallerAllocateBufferMarshalling
     {
     }
 }
 
 namespace SharedTypes.ComInterfaces
 {
-    internal partial interface IStatelessMarshalling
+    internal partial interface IStatelessCallerAllocateBufferMarshalling
     {
     }
 }

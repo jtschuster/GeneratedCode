@@ -74,16 +74,24 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
     {
         var(__this, __vtable_native) = ((System.Runtime.InteropServices.Marshalling.IUnmanagedVirtualMethodTableProvider)this).GetVirtualMethodTableInfoForKey(typeof(global::SharedTypes.ComInterfaces.IRefStrings));
         System.Runtime.CompilerServices.Unsafe.SkipInit(out value);
-        byte* __value_native;
-        int __invokeRetVal;
+        byte* __value_native = default;
+        int __invokeRetVal = default;
+        try
         {
-            __invokeRetVal = ((delegate* unmanaged[MemberFunction]<void*, byte**, int> )__vtable_native[5])(__this, &__value_native);
-        }
+            {
+                __invokeRetVal = ((delegate* unmanaged[MemberFunction]<void*, byte**, int> )__vtable_native[5])(__this, &__value_native);
+            }
 
-        System.GC.KeepAlive(this);
-        // Unmarshal - Convert native data to managed data.
-        System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
-        value = global::System.Runtime.InteropServices.Marshalling.Utf8StringMarshaller.ConvertToManaged(__value_native);
+            System.GC.KeepAlive(this);
+            // Unmarshal - Convert native data to managed data.
+            System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
+            value = global::System.Runtime.InteropServices.Marshalling.Utf8StringMarshaller.ConvertToManaged(__value_native);
+        }
+        finally
+        {
+            // Cleanup - Perform required cleanup.
+            global::System.Runtime.InteropServices.Marshalling.Utf8StringMarshaller.Free(__value_native);
+        }
     }
 }
 
@@ -106,6 +114,10 @@ file unsafe partial interface InterfaceImplementation
             @this.RefString(ref value);
             // Marshal - Convert managed data to native data.
             __value_native__out = (byte*)global::System.Runtime.InteropServices.Marshalling.Utf8StringMarshaller.ConvertToUnmanaged(value);
+            // AssignOut - Assign to parameters
+            *__value_native__param = __value_native__out;
+            // Cleanup - Perform required cleanup.
+            global::System.Runtime.InteropServices.Marshalling.Utf8StringMarshaller.Free(__value_native);
         }
         catch (System.Exception __exception)
         {
@@ -115,10 +127,6 @@ file unsafe partial interface InterfaceImplementation
             return __retVal;
         }
 
-        // AssignOut - Assign to parameters
-        *__value_native__param = __value_native__out;
-        // Cleanup - Perform required cleanup.
-        global::System.Runtime.InteropServices.Marshalling.Utf8StringMarshaller.Free(__value_native);
         return __retVal;
     }
 
@@ -161,15 +169,17 @@ file unsafe partial interface InterfaceImplementation
             @this.OutString(out value);
             // Marshal - Convert managed data to native data.
             __value_native__out = (byte*)global::System.Runtime.InteropServices.Marshalling.Utf8StringMarshaller.ConvertToUnmanaged(value);
+            // AssignOut - Assign to parameters
+            *__value_native__param = __value_native__out;
         }
         catch (System.Exception __exception)
         {
             __retVal = System.Runtime.InteropServices.Marshalling.ExceptionAsHResultMarshaller<int>.ConvertToUnmanaged(__exception);
+            // CleanupFailure - Perform required cleanup.
+            global::System.Runtime.InteropServices.Marshalling.Utf8StringMarshaller.Free(__value_native__out);
             return __retVal;
         }
 
-        // AssignOut - Assign to parameters
-        *__value_native__param = __value_native__out;
         return __retVal;
     }
 }

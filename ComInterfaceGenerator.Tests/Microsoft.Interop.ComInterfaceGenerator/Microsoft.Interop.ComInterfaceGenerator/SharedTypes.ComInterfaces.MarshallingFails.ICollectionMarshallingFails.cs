@@ -17,30 +17,46 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
     {
         var(__this, __vtable_native) = ((System.Runtime.InteropServices.Marshalling.IUnmanagedVirtualMethodTableProvider)this).GetVirtualMethodTableInfoForKey(typeof(global::SharedTypes.ComInterfaces.MarshallingFails.ICollectionMarshallingFails));
         System.Runtime.CompilerServices.Unsafe.SkipInit(out size);
-        int[] __retVal;
-        nint* __retVal_native;
-        int __invokeRetVal;
+        int[] __retVal = default;
+        nint* __retVal_native = default;
+        int __invokeRetVal = default;
         // Setup - Perform required setup.
         int __retVal_native__numElements;
         System.Runtime.CompilerServices.Unsafe.SkipInit(out __retVal_native__numElements);
-        // Pin - Pin data in preparation for calling the P/Invoke.
-        fixed (int* __size_native = &size)
+        try
         {
-            __invokeRetVal = ((delegate* unmanaged[MemberFunction]<void*, int*, nint**, int> )__vtable_native[3])(__this, __size_native, &__retVal_native);
-        }
-
-        System.GC.KeepAlive(this);
-        // Unmarshal - Convert native data to managed data.
-        System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
-        __retVal_native__numElements = size;
-        __retVal = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, nint>.AllocateContainerForManagedElements(__retVal_native, __retVal_native__numElements);
-        {
-            System.ReadOnlySpan<nint> __retVal_native__nativeSpan = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, nint>.GetUnmanagedValuesSource(__retVal_native, __retVal_native__numElements);
-            System.Span<int> __retVal_native__managedSpan = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, nint>.GetManagedValuesDestination(__retVal);
-            for (int __i0 = 0; __i0 < __retVal_native__numElements; ++__i0)
+            // Pin - Pin data in preparation for calling the P/Invoke.
+            fixed (int* __size_native = &size)
             {
-                __retVal_native__managedSpan[__i0] = global::SharedTypes.ComInterfaces.MarshallingFails.ThrowOn4thElementMarshalled.ConvertToManaged(__retVal_native__nativeSpan[__i0]);
+                __invokeRetVal = ((delegate* unmanaged[MemberFunction]<void*, int*, nint**, int> )__vtable_native[3])(__this, __size_native, &__retVal_native);
             }
+
+            System.GC.KeepAlive(this);
+            // Unmarshal - Convert native data to managed data.
+            System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
+            __retVal_native__numElements = size;
+            __retVal = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, nint>.AllocateContainerForManagedElements(__retVal_native, __retVal_native__numElements);
+            {
+                System.ReadOnlySpan<nint> __retVal_native__nativeSpan = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, nint>.GetUnmanagedValuesSource(__retVal_native, __retVal_native__numElements);
+                System.Span<int> __retVal_native__managedSpan = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, nint>.GetManagedValuesDestination(__retVal);
+                for (int __i0 = 0; __i0 < __retVal_native__numElements; ++__i0)
+                {
+                    __retVal_native__managedSpan[__i0] = global::SharedTypes.ComInterfaces.MarshallingFails.ThrowOn4thElementMarshalled.ConvertToManaged(__retVal_native__nativeSpan[__i0]);
+                }
+            }
+        }
+        finally
+        {
+            // Cleanup - Perform required cleanup.
+            {
+                System.ReadOnlySpan<nint> __retVal_native__nativeSpan = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, nint>.GetUnmanagedValuesDestination(__retVal_native, __retVal_native__numElements);
+                for (int __i0 = 0; __i0 < __retVal_native__nativeSpan.Length; ++__i0)
+                {
+                    global::SharedTypes.ComInterfaces.MarshallingFails.ThrowOn4thElementMarshalled.Free(__retVal_native__nativeSpan[__i0]);
+                }
+            }
+
+            global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, nint>.Free(__retVal_native);
         }
 
         return __retVal;
@@ -131,6 +147,10 @@ file unsafe partial interface InterfaceImplementation
                     __invokeRetValUnmanaged__nativeSpan[__i0] = global::SharedTypes.ComInterfaces.MarshallingFails.ThrowOn4thElementMarshalled.ConvertToUnmanaged(__invokeRetValUnmanaged__managedSpan[__i0]);
                 }
             }
+
+            // AssignOut - Assign to parameters
+            *__size_native__param = __size_native__out;
+            *__invokeRetValUnmanaged__param = __invokeRetValUnmanaged__out;
         }
         catch (System.Exception __exception)
         {
@@ -142,13 +162,12 @@ file unsafe partial interface InterfaceImplementation
                 {
                     global::SharedTypes.ComInterfaces.MarshallingFails.ThrowOn4thElementMarshalled.Free(__invokeRetValUnmanaged__nativeSpan[__i0]);
                 }
-            };
+            }
+
+            global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, nint>.Free(__invokeRetValUnmanaged__out);
             return __retVal;
         }
 
-        // AssignOut - Assign to parameters
-        *__size_native__param = __size_native__out;
-        *__invokeRetValUnmanaged__param = __invokeRetValUnmanaged__out;
         return __retVal;
     }
 

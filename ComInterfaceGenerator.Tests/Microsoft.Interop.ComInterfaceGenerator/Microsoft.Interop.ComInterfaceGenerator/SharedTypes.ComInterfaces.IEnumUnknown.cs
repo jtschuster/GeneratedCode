@@ -53,6 +53,14 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
         finally
         {
             // Cleanup - Perform required cleanup.
+            {
+                System.ReadOnlySpan<System.IntPtr> __rgelt_native__nativeSpan = __rgelt_native__marshaller.GetUnmanagedValuesDestination();
+                for (int __i0 = 0; __i0 < __rgelt_native__nativeSpan.Length; ++__i0)
+                {
+                    global::System.Runtime.InteropServices.Marshalling.ComInterfaceMarshaller<object>.Free((void*)__rgelt_native__nativeSpan[__i0]);
+                }
+            }
+
             __rgelt_native__marshaller.Free();
         }
     }
@@ -93,16 +101,24 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
     {
         var(__this, __vtable_native) = ((System.Runtime.InteropServices.Marshalling.IUnmanagedVirtualMethodTableProvider)this).GetVirtualMethodTableInfoForKey(typeof(global::SharedTypes.ComInterfaces.IEnumUnknown));
         System.Runtime.CompilerServices.Unsafe.SkipInit(out ppenum);
-        void* __ppenum_native;
-        int __invokeRetVal;
+        void* __ppenum_native = default;
+        int __invokeRetVal = default;
+        try
         {
-            __invokeRetVal = ((delegate* unmanaged[MemberFunction]<void*, void**, int> )__vtable_native[6])(__this, &__ppenum_native);
-        }
+            {
+                __invokeRetVal = ((delegate* unmanaged[MemberFunction]<void*, void**, int> )__vtable_native[6])(__this, &__ppenum_native);
+            }
 
-        System.GC.KeepAlive(this);
-        // Unmarshal - Convert native data to managed data.
-        System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
-        ppenum = global::System.Runtime.InteropServices.Marshalling.ComInterfaceMarshaller<global::SharedTypes.ComInterfaces.IEnumUnknown>.ConvertToManaged(__ppenum_native);
+            System.GC.KeepAlive(this);
+            // Unmarshal - Convert native data to managed data.
+            System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
+            ppenum = global::System.Runtime.InteropServices.Marshalling.ComInterfaceMarshaller<global::SharedTypes.ComInterfaces.IEnumUnknown>.ConvertToManaged(__ppenum_native);
+        }
+        finally
+        {
+            // Cleanup - Perform required cleanup.
+            global::System.Runtime.InteropServices.Marshalling.ComInterfaceMarshaller<global::SharedTypes.ComInterfaces.IEnumUnknown>.Free(__ppenum_native);
+        }
     }
 }
 
@@ -119,21 +135,21 @@ file unsafe partial interface InterfaceImplementation
         // Setup - Perform required setup.
         int __rgelt_native__numElements;
         System.Runtime.CompilerServices.Unsafe.SkipInit(out __rgelt_native__numElements);
-        System.Span<System.IntPtr> __rgelt_native__out;
+        scoped System.Span<System.IntPtr> __rgelt_native__out = default;
         try
         {
             // Unmarshal - Convert native data to managed data.
             __retVal = 0; // S_OK
             global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<object, System.IntPtr>.GetManagedValuesDestination(rgelt).Clear();
+            __rgelt_native__numElements = -1;
+            rgelt = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<object, System.IntPtr>.AllocateContainerForManagedElements(__rgelt_native, __rgelt_native__numElements);
             @this = System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch.GetInstance<global::SharedTypes.ComInterfaces.IEnumUnknown>(__this_native);
             @this.Next(celt, rgelt, out pceltFetched);
             // Marshal - Convert managed data to native data.
             __pceltFetched_native__out = pceltFetched;
             {
                 __rgelt_native__numElements = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<object, System.IntPtr>.GetManagedValuesDestination(rgelt).Length;
-#pragma warning disable CS9081
                 __rgelt_native__out = stackalloc System.IntPtr[__rgelt_native__numElements];
-#pragma warning restore CS9081
                 System.Span<System.IntPtr> __rgelt_native__nativeSpan = __rgelt_native__out;
                 System.Span<object> __rgelt_native__managedSpan = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<object, System.IntPtr>.GetManagedValuesDestination(rgelt);
                 for (int __i0 = 0; __i0 < __rgelt_native__numElements; ++__i0)
@@ -142,16 +158,27 @@ file unsafe partial interface InterfaceImplementation
                     __rgelt_native__nativeSpan[__i0] = (System.IntPtr)(void*)global::System.Runtime.InteropServices.Marshalling.ComInterfaceMarshaller<object>.ConvertToUnmanaged(__rgelt_native__managedSpan[__i0]);
                 }
             }
+
+            // AssignOut - Assign to parameters
+            *__pceltFetched_native__param = __pceltFetched_native__out;
+            __rgelt_native__out.CopyTo(System.Runtime.InteropServices.MemoryMarshal.CreateSpan(ref System.Runtime.CompilerServices.Unsafe.AsRef(in global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<object, System.IntPtr>.GetUnmanagedValuesSource(__rgelt_native, __rgelt_native__numElements).GetPinnableReference()), __rgelt_native__numElements));
         }
         catch (System.Exception __exception)
         {
             __retVal = System.Runtime.InteropServices.Marshalling.ExceptionAsHResultMarshaller<int>.ConvertToUnmanaged(__exception);
+            // CleanupFailure - Perform required cleanup.
+            {
+                System.ReadOnlySpan<System.IntPtr> __rgelt_native__nativeSpan = __rgelt_native__out;
+                for (int __i0 = 0; __i0 < __rgelt_native__nativeSpan.Length; ++__i0)
+                {
+                    global::System.Runtime.InteropServices.Marshalling.ComInterfaceMarshaller<object>.Free((void*)__rgelt_native__nativeSpan[__i0]);
+                }
+            }
+
+            __rgelt_native__numElements = -1;
             return __retVal;
         }
 
-        // AssignOut - Assign to parameters
-        *__pceltFetched_native__param = __pceltFetched_native__out;
-        __rgelt_native__out.CopyTo(System.Runtime.InteropServices.MemoryMarshal.CreateSpan(ref System.Runtime.CompilerServices.Unsafe.AsRef(in global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<object, System.IntPtr>.GetUnmanagedValuesSource(__rgelt_native, __rgelt_native__numElements).GetPinnableReference()), __rgelt_native__numElements));
         return __retVal;
     }
 
@@ -212,15 +239,17 @@ file unsafe partial interface InterfaceImplementation
             @this.Clone(out ppenum);
             // Marshal - Convert managed data to native data.
             __ppenum_native__out = (void*)global::System.Runtime.InteropServices.Marshalling.ComInterfaceMarshaller<global::SharedTypes.ComInterfaces.IEnumUnknown>.ConvertToUnmanaged(ppenum);
+            // AssignOut - Assign to parameters
+            *__ppenum_native__param = __ppenum_native__out;
         }
         catch (System.Exception __exception)
         {
             __retVal = System.Runtime.InteropServices.Marshalling.ExceptionAsHResultMarshaller<int>.ConvertToUnmanaged(__exception);
+            // CleanupFailure - Perform required cleanup.
+            global::System.Runtime.InteropServices.Marshalling.ComInterfaceMarshaller<global::SharedTypes.ComInterfaces.IEnumUnknown>.Free(__ppenum_native__out);
             return __retVal;
         }
 
-        // AssignOut - Assign to parameters
-        *__ppenum_native__param = __ppenum_native__out;
         return __retVal;
     }
 }

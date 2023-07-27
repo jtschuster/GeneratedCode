@@ -16,22 +16,31 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
     int[] global::SharedTypes.ComInterfaces.IGetIntArray.GetInts()
     {
         var(__this, __vtable_native) = ((System.Runtime.InteropServices.Marshalling.IUnmanagedVirtualMethodTableProvider)this).GetVirtualMethodTableInfoForKey(typeof(global::SharedTypes.ComInterfaces.IGetIntArray));
-        int[] __retVal;
-        int* __retVal_native;
-        int __invokeRetVal;
+        int[] __retVal = default;
+        int* __retVal_native = default;
+        int __invokeRetVal = default;
         // Setup - Perform required setup.
         int __retVal_native__numElements;
         System.Runtime.CompilerServices.Unsafe.SkipInit(out __retVal_native__numElements);
+        try
         {
-            __invokeRetVal = ((delegate* unmanaged[MemberFunction]<void*, int**, int> )__vtable_native[3])(__this, &__retVal_native);
+            {
+                __invokeRetVal = ((delegate* unmanaged[MemberFunction]<void*, int**, int> )__vtable_native[3])(__this, &__retVal_native);
+            }
+
+            System.GC.KeepAlive(this);
+            // Unmarshal - Convert native data to managed data.
+            System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
+            __retVal_native__numElements = 10;
+            __retVal = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.AllocateContainerForManagedElements(__retVal_native, __retVal_native__numElements);
+            global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.GetUnmanagedValuesSource(__retVal_native, __retVal_native__numElements).CopyTo(global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.GetManagedValuesDestination(__retVal));
+        }
+        finally
+        {
+            // Cleanup - Perform required cleanup.
+            global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.Free(__retVal_native);
         }
 
-        System.GC.KeepAlive(this);
-        // Unmarshal - Convert native data to managed data.
-        System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
-        __retVal_native__numElements = 10;
-        __retVal = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.AllocateContainerForManagedElements(__retVal_native, __retVal_native__numElements);
-        global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.GetUnmanagedValuesSource(__retVal_native, __retVal_native__numElements).CopyTo(global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.GetManagedValuesDestination(__retVal));
         return __retVal;
     }
 }
@@ -57,17 +66,17 @@ file unsafe partial interface InterfaceImplementation
             // Marshal - Convert managed data to native data.
             __invokeRetValUnmanaged__out = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.AllocateContainerForUnmanagedElements(__invokeRetVal, out __invokeRetValUnmanaged__numElements);
             global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.GetManagedValuesSource(__invokeRetVal).CopyTo(global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.GetUnmanagedValuesDestination(__invokeRetValUnmanaged__out, __invokeRetValUnmanaged__numElements));
+            // AssignOut - Assign to parameters
+            *__invokeRetValUnmanaged__param = __invokeRetValUnmanaged__out;
         }
         catch (System.Exception __exception)
         {
             __retVal = System.Runtime.InteropServices.Marshalling.ExceptionAsHResultMarshaller<int>.ConvertToUnmanaged(__exception);
             // CleanupFailure - Perform required cleanup.
-            ;
+            global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.Free(__invokeRetValUnmanaged__out);
             return __retVal;
         }
 
-        // AssignOut - Assign to parameters
-        *__invokeRetValUnmanaged__param = __invokeRetValUnmanaged__out;
         return __retVal;
     }
 }

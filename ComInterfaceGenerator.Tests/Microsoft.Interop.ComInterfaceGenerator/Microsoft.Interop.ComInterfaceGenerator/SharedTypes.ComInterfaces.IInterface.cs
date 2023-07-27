@@ -16,17 +16,26 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
     global::SharedTypes.ComInterfaces.IInt global::SharedTypes.ComInterfaces.IInterface.Get()
     {
         var(__this, __vtable_native) = ((System.Runtime.InteropServices.Marshalling.IUnmanagedVirtualMethodTableProvider)this).GetVirtualMethodTableInfoForKey(typeof(global::SharedTypes.ComInterfaces.IInterface));
-        global::SharedTypes.ComInterfaces.IInt __retVal;
-        void* __retVal_native;
-        int __invokeRetVal;
+        global::SharedTypes.ComInterfaces.IInt __retVal = default;
+        void* __retVal_native = default;
+        int __invokeRetVal = default;
+        try
         {
-            __invokeRetVal = ((delegate* unmanaged[MemberFunction]<void*, void**, int> )__vtable_native[3])(__this, &__retVal_native);
+            {
+                __invokeRetVal = ((delegate* unmanaged[MemberFunction]<void*, void**, int> )__vtable_native[3])(__this, &__retVal_native);
+            }
+
+            System.GC.KeepAlive(this);
+            // Unmarshal - Convert native data to managed data.
+            System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
+            __retVal = global::System.Runtime.InteropServices.Marshalling.ComInterfaceMarshaller<global::SharedTypes.ComInterfaces.IInt>.ConvertToManaged(__retVal_native);
+        }
+        finally
+        {
+            // Cleanup - Perform required cleanup.
+            global::System.Runtime.InteropServices.Marshalling.ComInterfaceMarshaller<global::SharedTypes.ComInterfaces.IInt>.Free(__retVal_native);
         }
 
-        System.GC.KeepAlive(this);
-        // Unmarshal - Convert native data to managed data.
-        System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
-        __retVal = global::System.Runtime.InteropServices.Marshalling.ComInterfaceMarshaller<global::SharedTypes.ComInterfaces.IInt>.ConvertToManaged(__retVal_native);
         return __retVal;
     }
 
@@ -89,16 +98,24 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
     {
         var(__this, __vtable_native) = ((System.Runtime.InteropServices.Marshalling.IUnmanagedVirtualMethodTableProvider)this).GetVirtualMethodTableInfoForKey(typeof(global::SharedTypes.ComInterfaces.IInterface));
         System.Runtime.CompilerServices.Unsafe.SkipInit(out value);
-        void* __value_native;
-        int __invokeRetVal;
+        void* __value_native = default;
+        int __invokeRetVal = default;
+        try
         {
-            __invokeRetVal = ((delegate* unmanaged[MemberFunction]<void*, void**, int> )__vtable_native[6])(__this, &__value_native);
-        }
+            {
+                __invokeRetVal = ((delegate* unmanaged[MemberFunction]<void*, void**, int> )__vtable_native[6])(__this, &__value_native);
+            }
 
-        System.GC.KeepAlive(this);
-        // Unmarshal - Convert native data to managed data.
-        System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
-        value = global::System.Runtime.InteropServices.Marshalling.ComInterfaceMarshaller<global::SharedTypes.ComInterfaces.IInt>.ConvertToManaged(__value_native);
+            System.GC.KeepAlive(this);
+            // Unmarshal - Convert native data to managed data.
+            System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
+            value = global::System.Runtime.InteropServices.Marshalling.ComInterfaceMarshaller<global::SharedTypes.ComInterfaces.IInt>.ConvertToManaged(__value_native);
+        }
+        finally
+        {
+            // Cleanup - Perform required cleanup.
+            global::System.Runtime.InteropServices.Marshalling.ComInterfaceMarshaller<global::SharedTypes.ComInterfaces.IInt>.Free(__value_native);
+        }
     }
 
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Interop.ComInterfaceGenerator", "42.42.42.42")]
@@ -145,15 +162,17 @@ file unsafe partial interface InterfaceImplementation
             __invokeRetVal = @this.Get();
             // Marshal - Convert managed data to native data.
             __invokeRetValUnmanaged__out = (void*)global::System.Runtime.InteropServices.Marshalling.ComInterfaceMarshaller<global::SharedTypes.ComInterfaces.IInt>.ConvertToUnmanaged(__invokeRetVal);
+            // AssignOut - Assign to parameters
+            *__invokeRetValUnmanaged__param = __invokeRetValUnmanaged__out;
         }
         catch (System.Exception __exception)
         {
             __retVal = System.Runtime.InteropServices.Marshalling.ExceptionAsHResultMarshaller<int>.ConvertToUnmanaged(__exception);
+            // CleanupFailure - Perform required cleanup.
+            global::System.Runtime.InteropServices.Marshalling.ComInterfaceMarshaller<global::SharedTypes.ComInterfaces.IInt>.Free(__invokeRetValUnmanaged__out);
             return __retVal;
         }
 
-        // AssignOut - Assign to parameters
-        *__invokeRetValUnmanaged__param = __invokeRetValUnmanaged__out;
         return __retVal;
     }
 
@@ -197,6 +216,10 @@ file unsafe partial interface InterfaceImplementation
             @this.SwapRef(ref value);
             // Marshal - Convert managed data to native data.
             __value_native__out = (void*)global::System.Runtime.InteropServices.Marshalling.ComInterfaceMarshaller<global::SharedTypes.ComInterfaces.IInt>.ConvertToUnmanaged(value);
+            // AssignOut - Assign to parameters
+            *__value_native__param = __value_native__out;
+            // Cleanup - Perform required cleanup.
+            global::System.Runtime.InteropServices.Marshalling.ComInterfaceMarshaller<global::SharedTypes.ComInterfaces.IInt>.Free(__value_native);
         }
         catch (System.Exception __exception)
         {
@@ -206,10 +229,6 @@ file unsafe partial interface InterfaceImplementation
             return __retVal;
         }
 
-        // AssignOut - Assign to parameters
-        *__value_native__param = __value_native__out;
-        // Cleanup - Perform required cleanup.
-        global::System.Runtime.InteropServices.Marshalling.ComInterfaceMarshaller<global::SharedTypes.ComInterfaces.IInt>.Free(__value_native);
         return __retVal;
     }
 
@@ -228,15 +247,17 @@ file unsafe partial interface InterfaceImplementation
             @this.GetOut(out value);
             // Marshal - Convert managed data to native data.
             __value_native__out = (void*)global::System.Runtime.InteropServices.Marshalling.ComInterfaceMarshaller<global::SharedTypes.ComInterfaces.IInt>.ConvertToUnmanaged(value);
+            // AssignOut - Assign to parameters
+            *__value_native__param = __value_native__out;
         }
         catch (System.Exception __exception)
         {
             __retVal = System.Runtime.InteropServices.Marshalling.ExceptionAsHResultMarshaller<int>.ConvertToUnmanaged(__exception);
+            // CleanupFailure - Perform required cleanup.
+            global::System.Runtime.InteropServices.Marshalling.ComInterfaceMarshaller<global::SharedTypes.ComInterfaces.IInt>.Free(__value_native__out);
             return __retVal;
         }
 
-        // AssignOut - Assign to parameters
-        *__value_native__param = __value_native__out;
         return __retVal;
     }
 

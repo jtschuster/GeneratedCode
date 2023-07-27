@@ -40,6 +40,7 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
         finally
         {
             // Cleanup - Perform required cleanup.
+            global::System.Runtime.InteropServices.Marshalling.Utf8StringMarshaller.Free(__retVal_native);
             __input_native__marshaller.Free();
         }
 
@@ -51,19 +52,28 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
     string global::SharedTypes.ComInterfaces.IStringMarshallingOverrideDerived.MarshalAsLPWString_2(string input)
     {
         var(__this, __vtable_native) = ((System.Runtime.InteropServices.Marshalling.IUnmanagedVirtualMethodTableProvider)this).GetVirtualMethodTableInfoForKey(typeof(global::SharedTypes.ComInterfaces.IStringMarshallingOverrideDerived));
-        string __retVal;
-        ushort* __retVal_native;
-        int __invokeRetVal;
-        // Pin - Pin data in preparation for calling the P/Invoke.
-        fixed (void* __input_native = &global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller.GetPinnableReference(input))
+        string __retVal = default;
+        ushort* __retVal_native = default;
+        int __invokeRetVal = default;
+        try
         {
-            __invokeRetVal = ((delegate* unmanaged[MemberFunction]<void*, ushort*, ushort**, int> )__vtable_native[7])(__this, (ushort*)__input_native, &__retVal_native);
+            // Pin - Pin data in preparation for calling the P/Invoke.
+            fixed (void* __input_native = &global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller.GetPinnableReference(input))
+            {
+                __invokeRetVal = ((delegate* unmanaged[MemberFunction]<void*, ushort*, ushort**, int> )__vtable_native[7])(__this, (ushort*)__input_native, &__retVal_native);
+            }
+
+            System.GC.KeepAlive(this);
+            // Unmarshal - Convert native data to managed data.
+            System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
+            __retVal = global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller.ConvertToManaged(__retVal_native);
+        }
+        finally
+        {
+            // Cleanup - Perform required cleanup.
+            global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller.Free(__retVal_native);
         }
 
-        System.GC.KeepAlive(this);
-        // Unmarshal - Convert native data to managed data.
-        System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
-        __retVal = global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller.ConvertToManaged(__retVal_native);
         return __retVal;
     }
 
@@ -72,19 +82,28 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
     string global::SharedTypes.ComInterfaces.IStringMarshallingOverrideDerived.MarshalUsingUtf16_2(string input)
     {
         var(__this, __vtable_native) = ((System.Runtime.InteropServices.Marshalling.IUnmanagedVirtualMethodTableProvider)this).GetVirtualMethodTableInfoForKey(typeof(global::SharedTypes.ComInterfaces.IStringMarshallingOverrideDerived));
-        string __retVal;
-        ushort* __retVal_native;
-        int __invokeRetVal;
-        // Pin - Pin data in preparation for calling the P/Invoke.
-        fixed (void* __input_native = &global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller.GetPinnableReference(input))
+        string __retVal = default;
+        ushort* __retVal_native = default;
+        int __invokeRetVal = default;
+        try
         {
-            __invokeRetVal = ((delegate* unmanaged[MemberFunction]<void*, ushort*, ushort**, int> )__vtable_native[8])(__this, (ushort*)__input_native, &__retVal_native);
+            // Pin - Pin data in preparation for calling the P/Invoke.
+            fixed (void* __input_native = &global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller.GetPinnableReference(input))
+            {
+                __invokeRetVal = ((delegate* unmanaged[MemberFunction]<void*, ushort*, ushort**, int> )__vtable_native[8])(__this, (ushort*)__input_native, &__retVal_native);
+            }
+
+            System.GC.KeepAlive(this);
+            // Unmarshal - Convert native data to managed data.
+            System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
+            __retVal = global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller.ConvertToManaged(__retVal_native);
+        }
+        finally
+        {
+            // Cleanup - Perform required cleanup.
+            global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller.Free(__retVal_native);
         }
 
-        System.GC.KeepAlive(this);
-        // Unmarshal - Convert native data to managed data.
-        System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
-        __retVal = global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller.ConvertToManaged(__retVal_native);
         return __retVal;
     }
 
@@ -117,6 +136,7 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
         finally
         {
             // Cleanup - Perform required cleanup.
+            global::System.Runtime.InteropServices.Marshalling.Utf8StringMarshaller.Free(__retVal_native);
             __input_native__marshaller.Free();
         }
 
@@ -128,19 +148,28 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
     string global::SharedTypes.ComInterfaces.IStringMarshallingOverrideDerived.MarshalAsLPWString(string input)
     {
         var(__this, __vtable_native) = ((System.Runtime.InteropServices.Marshalling.IUnmanagedVirtualMethodTableProvider)this).GetVirtualMethodTableInfoForKey(typeof(global::SharedTypes.ComInterfaces.IStringMarshallingOverrideDerived));
-        string __retVal;
-        ushort* __retVal_native;
-        int __invokeRetVal;
-        // Pin - Pin data in preparation for calling the P/Invoke.
-        fixed (void* __input_native = &global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller.GetPinnableReference(input))
+        string __retVal = default;
+        ushort* __retVal_native = default;
+        int __invokeRetVal = default;
+        try
         {
-            __invokeRetVal = ((delegate* unmanaged[MemberFunction]<void*, ushort*, ushort**, int> )__vtable_native[4])(__this, (ushort*)__input_native, &__retVal_native);
+            // Pin - Pin data in preparation for calling the P/Invoke.
+            fixed (void* __input_native = &global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller.GetPinnableReference(input))
+            {
+                __invokeRetVal = ((delegate* unmanaged[MemberFunction]<void*, ushort*, ushort**, int> )__vtable_native[4])(__this, (ushort*)__input_native, &__retVal_native);
+            }
+
+            System.GC.KeepAlive(this);
+            // Unmarshal - Convert native data to managed data.
+            System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
+            __retVal = global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller.ConvertToManaged(__retVal_native);
+        }
+        finally
+        {
+            // Cleanup - Perform required cleanup.
+            global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller.Free(__retVal_native);
         }
 
-        System.GC.KeepAlive(this);
-        // Unmarshal - Convert native data to managed data.
-        System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
-        __retVal = global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller.ConvertToManaged(__retVal_native);
         return __retVal;
     }
 
@@ -149,19 +178,28 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
     string global::SharedTypes.ComInterfaces.IStringMarshallingOverrideDerived.MarshalUsingUtf16(string input)
     {
         var(__this, __vtable_native) = ((System.Runtime.InteropServices.Marshalling.IUnmanagedVirtualMethodTableProvider)this).GetVirtualMethodTableInfoForKey(typeof(global::SharedTypes.ComInterfaces.IStringMarshallingOverrideDerived));
-        string __retVal;
-        ushort* __retVal_native;
-        int __invokeRetVal;
-        // Pin - Pin data in preparation for calling the P/Invoke.
-        fixed (void* __input_native = &global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller.GetPinnableReference(input))
+        string __retVal = default;
+        ushort* __retVal_native = default;
+        int __invokeRetVal = default;
+        try
         {
-            __invokeRetVal = ((delegate* unmanaged[MemberFunction]<void*, ushort*, ushort**, int> )__vtable_native[5])(__this, (ushort*)__input_native, &__retVal_native);
+            // Pin - Pin data in preparation for calling the P/Invoke.
+            fixed (void* __input_native = &global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller.GetPinnableReference(input))
+            {
+                __invokeRetVal = ((delegate* unmanaged[MemberFunction]<void*, ushort*, ushort**, int> )__vtable_native[5])(__this, (ushort*)__input_native, &__retVal_native);
+            }
+
+            System.GC.KeepAlive(this);
+            // Unmarshal - Convert native data to managed data.
+            System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
+            __retVal = global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller.ConvertToManaged(__retVal_native);
+        }
+        finally
+        {
+            // Cleanup - Perform required cleanup.
+            global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller.Free(__retVal_native);
         }
 
-        System.GC.KeepAlive(this);
-        // Unmarshal - Convert native data to managed data.
-        System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
-        __retVal = global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller.ConvertToManaged(__retVal_native);
         return __retVal;
     }
 
@@ -189,15 +227,17 @@ file unsafe partial interface InterfaceImplementation
             __invokeRetVal = @this.StringMarshallingUtf8_2(input);
             // Marshal - Convert managed data to native data.
             __invokeRetValUnmanaged__out = (byte*)global::System.Runtime.InteropServices.Marshalling.Utf8StringMarshaller.ConvertToUnmanaged(__invokeRetVal);
+            // AssignOut - Assign to parameters
+            *__invokeRetValUnmanaged__param = __invokeRetValUnmanaged__out;
         }
         catch (System.Exception __exception)
         {
             __retVal = System.Runtime.InteropServices.Marshalling.ExceptionAsHResultMarshaller<int>.ConvertToUnmanaged(__exception);
+            // CleanupFailure - Perform required cleanup.
+            global::System.Runtime.InteropServices.Marshalling.Utf8StringMarshaller.Free(__invokeRetValUnmanaged__out);
             return __retVal;
         }
 
-        // AssignOut - Assign to parameters
-        *__invokeRetValUnmanaged__param = __invokeRetValUnmanaged__out;
         return __retVal;
     }
 
@@ -218,15 +258,17 @@ file unsafe partial interface InterfaceImplementation
             __invokeRetVal = @this.MarshalAsLPWString_2(input);
             // Marshal - Convert managed data to native data.
             __invokeRetValUnmanaged__out = (ushort*)global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller.ConvertToUnmanaged(__invokeRetVal);
+            // AssignOut - Assign to parameters
+            *__invokeRetValUnmanaged__param = __invokeRetValUnmanaged__out;
         }
         catch (System.Exception __exception)
         {
             __retVal = System.Runtime.InteropServices.Marshalling.ExceptionAsHResultMarshaller<int>.ConvertToUnmanaged(__exception);
+            // CleanupFailure - Perform required cleanup.
+            global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller.Free(__invokeRetValUnmanaged__out);
             return __retVal;
         }
 
-        // AssignOut - Assign to parameters
-        *__invokeRetValUnmanaged__param = __invokeRetValUnmanaged__out;
         return __retVal;
     }
 
@@ -247,15 +289,17 @@ file unsafe partial interface InterfaceImplementation
             __invokeRetVal = @this.MarshalUsingUtf16_2(input);
             // Marshal - Convert managed data to native data.
             __invokeRetValUnmanaged__out = (ushort*)global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller.ConvertToUnmanaged(__invokeRetVal);
+            // AssignOut - Assign to parameters
+            *__invokeRetValUnmanaged__param = __invokeRetValUnmanaged__out;
         }
         catch (System.Exception __exception)
         {
             __retVal = System.Runtime.InteropServices.Marshalling.ExceptionAsHResultMarshaller<int>.ConvertToUnmanaged(__exception);
+            // CleanupFailure - Perform required cleanup.
+            global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller.Free(__invokeRetValUnmanaged__out);
             return __retVal;
         }
 
-        // AssignOut - Assign to parameters
-        *__invokeRetValUnmanaged__param = __invokeRetValUnmanaged__out;
         return __retVal;
     }
 }

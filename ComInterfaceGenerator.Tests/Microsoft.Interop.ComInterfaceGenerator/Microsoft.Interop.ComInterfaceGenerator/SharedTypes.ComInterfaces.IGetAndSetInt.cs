@@ -61,6 +61,8 @@ file unsafe partial interface InterfaceImplementation
             __invokeRetVal = @this.GetInt();
             // Marshal - Convert managed data to native data.
             __invokeRetValUnmanaged__out = __invokeRetVal;
+            // AssignOut - Assign to parameters
+            *__invokeRetValUnmanaged__param = __invokeRetValUnmanaged__out;
         }
         catch (System.Exception __exception)
         {
@@ -68,8 +70,6 @@ file unsafe partial interface InterfaceImplementation
             return __retVal;
         }
 
-        // AssignOut - Assign to parameters
-        *__invokeRetValUnmanaged__param = __invokeRetValUnmanaged__out;
         return __retVal;
     }
 

@@ -113,6 +113,8 @@ file unsafe partial interface InterfaceImplementation
             __invokeRetVal = @this.Get();
             // Marshal - Convert managed data to native data.
             __invokeRetValUnmanaged__out = __invokeRetVal;
+            // AssignOut - Assign to parameters
+            *__invokeRetValUnmanaged__param = __invokeRetValUnmanaged__out;
         }
         catch (System.Exception __exception)
         {
@@ -120,8 +122,6 @@ file unsafe partial interface InterfaceImplementation
             return __retVal;
         }
 
-        // AssignOut - Assign to parameters
-        *__invokeRetValUnmanaged__param = __invokeRetValUnmanaged__out;
         return __retVal;
     }
 
@@ -163,6 +163,8 @@ file unsafe partial interface InterfaceImplementation
             @this.SwapRef(ref value);
             // Marshal - Convert managed data to native data.
             __value_native__out = value;
+            // AssignOut - Assign to parameters
+            *__value_native__param = __value_native__out;
         }
         catch (System.Exception __exception)
         {
@@ -170,8 +172,6 @@ file unsafe partial interface InterfaceImplementation
             return __retVal;
         }
 
-        // AssignOut - Assign to parameters
-        *__value_native__param = __value_native__out;
         return __retVal;
     }
 
@@ -190,6 +190,8 @@ file unsafe partial interface InterfaceImplementation
             @this.GetOut(out value);
             // Marshal - Convert managed data to native data.
             __value_native__out = value;
+            // AssignOut - Assign to parameters
+            *__value_native__param = __value_native__out;
         }
         catch (System.Exception __exception)
         {
@@ -197,8 +199,6 @@ file unsafe partial interface InterfaceImplementation
             return __retVal;
         }
 
-        // AssignOut - Assign to parameters
-        *__value_native__param = __value_native__out;
         return __retVal;
     }
 

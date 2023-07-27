@@ -124,26 +124,34 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
         var(__this, __vtable_native) = ((System.Runtime.InteropServices.Marshalling.IUnmanagedVirtualMethodTableProvider)this).GetVirtualMethodTableInfoForKey(typeof(global::SharedTypes.ComInterfaces.IStatefulCollectionBlittableElement));
         System.Runtime.CompilerServices.Unsafe.SkipInit(out pOut);
         System.Runtime.CompilerServices.Unsafe.SkipInit(out size);
-        byte* __pOut_native;
-        int __invokeRetVal;
+        byte* __pOut_native = default;
+        int __invokeRetVal = default;
         // Setup - Perform required setup.
         scoped global::SharedTypes.ComInterfaces.StatefulCollectionMarshaller<int, int>.Default __pOut_native__marshaller = new();
         int __pOut_native__numElements;
         System.Runtime.CompilerServices.Unsafe.SkipInit(out __pOut_native__numElements);
-        // Pin - Pin data in preparation for calling the P/Invoke.
-        fixed (int* __size_native = &size)
+        try
         {
-            __invokeRetVal = ((delegate* unmanaged[MemberFunction]<void*, byte**, int*, int> )__vtable_native[6])(__this, &__pOut_native, __size_native);
-        }
+            // Pin - Pin data in preparation for calling the P/Invoke.
+            fixed (int* __size_native = &size)
+            {
+                __invokeRetVal = ((delegate* unmanaged[MemberFunction]<void*, byte**, int*, int> )__vtable_native[6])(__this, &__pOut_native, __size_native);
+            }
 
-        System.GC.KeepAlive(this);
-        // UnmarshalCapture - Capture the native data into marshaller instances in case conversion to managed data throws an exception.
-        __pOut_native__marshaller.FromUnmanaged(__pOut_native);
-        // Unmarshal - Convert native data to managed data.
-        System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
-        __pOut_native__numElements = size;
-        __pOut_native__marshaller.GetUnmanagedValuesSource(__pOut_native__numElements).CopyTo(__pOut_native__marshaller.GetManagedValuesDestination(__pOut_native__numElements));
-        pOut = __pOut_native__marshaller.ToManaged();
+            System.GC.KeepAlive(this);
+            // UnmarshalCapture - Capture the native data into marshaller instances in case conversion to managed data throws an exception.
+            __pOut_native__marshaller.FromUnmanaged(__pOut_native);
+            // Unmarshal - Convert native data to managed data.
+            System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
+            __pOut_native__numElements = size;
+            __pOut_native__marshaller.GetUnmanagedValuesSource(__pOut_native__numElements).CopyTo(__pOut_native__marshaller.GetManagedValuesDestination(__pOut_native__numElements));
+            pOut = __pOut_native__marshaller.ToManaged();
+        }
+        finally
+        {
+            // Cleanup - Perform required cleanup.
+            __pOut_native__marshaller.Free();
+        }
     }
 
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Interop.ComInterfaceGenerator", "42.42.42.42")]
@@ -151,25 +159,34 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
     global::SharedTypes.ComInterfaces.StatefulCollection<int> global::SharedTypes.ComInterfaces.IStatefulCollectionBlittableElement.Return(int size)
     {
         var(__this, __vtable_native) = ((System.Runtime.InteropServices.Marshalling.IUnmanagedVirtualMethodTableProvider)this).GetVirtualMethodTableInfoForKey(typeof(global::SharedTypes.ComInterfaces.IStatefulCollectionBlittableElement));
-        global::SharedTypes.ComInterfaces.StatefulCollection<int> __retVal;
-        byte* __retVal_native;
-        int __invokeRetVal;
+        global::SharedTypes.ComInterfaces.StatefulCollection<int> __retVal = default;
+        byte* __retVal_native = default;
+        int __invokeRetVal = default;
         // Setup - Perform required setup.
         scoped global::SharedTypes.ComInterfaces.StatefulCollectionMarshaller<int, int>.Default __retVal_native__marshaller = new();
         int __retVal_native__numElements;
         System.Runtime.CompilerServices.Unsafe.SkipInit(out __retVal_native__numElements);
+        try
         {
-            __invokeRetVal = ((delegate* unmanaged[MemberFunction]<void*, int, byte**, int> )__vtable_native[7])(__this, size, &__retVal_native);
+            {
+                __invokeRetVal = ((delegate* unmanaged[MemberFunction]<void*, int, byte**, int> )__vtable_native[7])(__this, size, &__retVal_native);
+            }
+
+            System.GC.KeepAlive(this);
+            // UnmarshalCapture - Capture the native data into marshaller instances in case conversion to managed data throws an exception.
+            __retVal_native__marshaller.FromUnmanaged(__retVal_native);
+            // Unmarshal - Convert native data to managed data.
+            System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
+            __retVal_native__numElements = size;
+            __retVal_native__marshaller.GetUnmanagedValuesSource(__retVal_native__numElements).CopyTo(__retVal_native__marshaller.GetManagedValuesDestination(__retVal_native__numElements));
+            __retVal = __retVal_native__marshaller.ToManaged();
+        }
+        finally
+        {
+            // Cleanup - Perform required cleanup.
+            __retVal_native__marshaller.Free();
         }
 
-        System.GC.KeepAlive(this);
-        // UnmarshalCapture - Capture the native data into marshaller instances in case conversion to managed data throws an exception.
-        __retVal_native__marshaller.FromUnmanaged(__retVal_native);
-        // Unmarshal - Convert native data to managed data.
-        System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
-        __retVal_native__numElements = size;
-        __retVal_native__marshaller.GetUnmanagedValuesSource(__retVal_native__numElements).CopyTo(__retVal_native__marshaller.GetManagedValuesDestination(__retVal_native__numElements));
-        __retVal = __retVal_native__marshaller.ToManaged();
         return __retVal;
     }
 
@@ -231,6 +248,8 @@ file unsafe partial interface InterfaceImplementation
             p = __p_native__marshaller.ToManaged();
             @this = System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch.GetInstance<global::SharedTypes.ComInterfaces.IStatefulCollectionBlittableElement>(__this_native);
             @this.Method(p, size);
+            // Cleanup - Perform required cleanup.
+            __p_native__marshaller.Free();
         }
         catch (System.Exception __exception)
         {
@@ -238,8 +257,6 @@ file unsafe partial interface InterfaceImplementation
             return __retVal;
         }
 
-        // Cleanup - Perform required cleanup.
-        __p_native__marshaller.Free();
         return __retVal;
     }
 
@@ -268,6 +285,8 @@ file unsafe partial interface InterfaceImplementation
             pIn = __pIn_native__marshaller.ToManaged();
             @this = System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch.GetInstance<global::SharedTypes.ComInterfaces.IStatefulCollectionBlittableElement>(__this_native);
             @this.MethodIn(in pIn, in size);
+            // Cleanup - Perform required cleanup.
+            __pIn_native__marshaller.Free();
         }
         catch (System.Exception __exception)
         {
@@ -275,8 +294,6 @@ file unsafe partial interface InterfaceImplementation
             return __retVal;
         }
 
-        // Cleanup - Perform required cleanup.
-        __pIn_native__marshaller.Free();
         return __retVal;
     }
 
@@ -308,6 +325,10 @@ file unsafe partial interface InterfaceImplementation
             __pRef_native__marshaller.GetManagedValuesSource().CopyTo(__pRef_native__marshaller.GetUnmanagedValuesDestination());
             // PinnedMarshal - Convert managed data to native data that requires the managed data to be pinned.
             __pRef_native__out = __pRef_native__marshaller.ToUnmanaged();
+            // AssignOut - Assign to parameters
+            *__pRef_native__param = __pRef_native__out;
+            // Cleanup - Perform required cleanup.
+            __pRef_native__marshaller.Free();
         }
         catch (System.Exception __exception)
         {
@@ -317,10 +338,6 @@ file unsafe partial interface InterfaceImplementation
             return __retVal;
         }
 
-        // AssignOut - Assign to parameters
-        *__pRef_native__param = __pRef_native__out;
-        // Cleanup - Perform required cleanup.
-        __pRef_native__marshaller.Free();
         return __retVal;
     }
 
@@ -349,6 +366,9 @@ file unsafe partial interface InterfaceImplementation
             __pOut_native__marshaller.GetManagedValuesSource().CopyTo(__pOut_native__marshaller.GetUnmanagedValuesDestination());
             // PinnedMarshal - Convert managed data to native data that requires the managed data to be pinned.
             __pOut_native__out = __pOut_native__marshaller.ToUnmanaged();
+            // AssignOut - Assign to parameters
+            *__size_native__param = __size_native__out;
+            *__pOut_native__param = __pOut_native__out;
         }
         catch (System.Exception __exception)
         {
@@ -358,9 +378,6 @@ file unsafe partial interface InterfaceImplementation
             return __retVal;
         }
 
-        // AssignOut - Assign to parameters
-        *__size_native__param = __size_native__out;
-        *__pOut_native__param = __pOut_native__out;
         return __retVal;
     }
 
@@ -386,6 +403,8 @@ file unsafe partial interface InterfaceImplementation
             __invokeRetValUnmanaged__marshaller.GetManagedValuesSource().CopyTo(__invokeRetValUnmanaged__marshaller.GetUnmanagedValuesDestination());
             // PinnedMarshal - Convert managed data to native data that requires the managed data to be pinned.
             __invokeRetValUnmanaged__out = __invokeRetValUnmanaged__marshaller.ToUnmanaged();
+            // AssignOut - Assign to parameters
+            *__invokeRetValUnmanaged__param = __invokeRetValUnmanaged__out;
         }
         catch (System.Exception __exception)
         {
@@ -395,8 +414,6 @@ file unsafe partial interface InterfaceImplementation
             return __retVal;
         }
 
-        // AssignOut - Assign to parameters
-        *__invokeRetValUnmanaged__param = __invokeRetValUnmanaged__out;
         return __retVal;
     }
 
@@ -420,6 +437,8 @@ file unsafe partial interface InterfaceImplementation
             __retVal_native__marshaller.GetManagedValuesSource().CopyTo(__retVal_native__marshaller.GetUnmanagedValuesDestination());
             // PinnedMarshal - Convert managed data to native data that requires the managed data to be pinned.
             __retVal_native = __retVal_native__marshaller.ToUnmanaged();
+            // Cleanup - Perform required cleanup.
+            __retVal_native__marshaller.Free();
         }
         catch (System.Exception __exception)
         {
@@ -427,8 +446,6 @@ file unsafe partial interface InterfaceImplementation
             return __retVal_native;
         }
 
-        // Cleanup - Perform required cleanup.
-        __retVal_native__marshaller.Free();
         return __retVal_native;
     }
 }

@@ -151,7 +151,6 @@ namespace ComInterfaceGenerator.Tests
                         finally
                         {
                             // Cleanup - Perform required cleanup.
-                            __values_native__numElements = numValues;
                             global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.Free(__values_native);
                         }
                     }
@@ -411,6 +410,7 @@ namespace ComInterfaceGenerator.Tests
                         finally
                         {
                             // Cleanup - Perform required cleanup.
+                            global::ComInterfaceGenerator.Tests.UnmanagedToManagedCustomMarshallingTests.IntWrapperMarshallerToIntWithFreeCounts.Free(__oldValue_native);
                             {
                                 System.ReadOnlySpan<int> __values_native__nativeSpan = __values_native__marshaller.GetUnmanagedValuesDestination();
                                 for (int __i0 = 0; __i0 < __values_native__lastIndexMarshalled; ++__i0)
@@ -483,6 +483,7 @@ namespace ComInterfaceGenerator.Tests
                         finally
                         {
                             // Cleanup - Perform required cleanup.
+                            global::ComInterfaceGenerator.Tests.UnmanagedToManagedCustomMarshallingTests.IntWrapperMarshallerToIntWithFreeCounts.Free(__oldValue_native);
                             {
                                 System.ReadOnlySpan<int> __values_native__nativeSpan = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.IntWrapper, int>.GetUnmanagedValuesDestination(__values_native, __values_native__numElements);
                                 for (int __i0 = 0; __i0 < __values_native__lastIndexMarshalled; ++__i0)
@@ -491,7 +492,6 @@ namespace ComInterfaceGenerator.Tests
                                 }
                             }
 
-                            __values_native__numElements = numValues;
                             global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.IntWrapper, int>.Free(__values_native);
                         }
                     }

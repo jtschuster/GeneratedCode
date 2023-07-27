@@ -75,20 +75,28 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
     {
         var(__this, __vtable_native) = ((System.Runtime.InteropServices.Marshalling.IUnmanagedVirtualMethodTableProvider)this).GetVirtualMethodTableInfoForKey(typeof(global::SharedTypes.ComInterfaces.ISafeFileHandle));
         System.Runtime.CompilerServices.Unsafe.SkipInit(out p);
-        nint __p_native;
-        int __invokeRetVal;
+        nint __p_native = default;
+        int __invokeRetVal = default;
         // Setup - Perform required setup.
         global::System.Runtime.InteropServices.Marshalling.SafeHandleMarshaller<global::Microsoft.Win32.SafeHandles.SafeFileHandle>.ManagedToUnmanagedOut __p_native__marshaller = new();
+        try
         {
-            __invokeRetVal = ((delegate* unmanaged[MemberFunction]<void*, nint*, int> )__vtable_native[5])(__this, &__p_native);
-        }
+            {
+                __invokeRetVal = ((delegate* unmanaged[MemberFunction]<void*, nint*, int> )__vtable_native[5])(__this, &__p_native);
+            }
 
-        System.GC.KeepAlive(this);
-        // UnmarshalCapture - Capture the native data into marshaller instances in case conversion to managed data throws an exception.
-        __p_native__marshaller.FromUnmanaged(__p_native);
-        // Unmarshal - Convert native data to managed data.
-        System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
-        p = __p_native__marshaller.ToManaged();
+            System.GC.KeepAlive(this);
+            // UnmarshalCapture - Capture the native data into marshaller instances in case conversion to managed data throws an exception.
+            __p_native__marshaller.FromUnmanaged(__p_native);
+            // Unmarshal - Convert native data to managed data.
+            System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
+            p = __p_native__marshaller.ToManaged();
+        }
+        finally
+        {
+            // Cleanup - Perform required cleanup.
+            __p_native__marshaller.Free();
+        }
     }
 
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Interop.ComInterfaceGenerator", "42.42.42.42")]

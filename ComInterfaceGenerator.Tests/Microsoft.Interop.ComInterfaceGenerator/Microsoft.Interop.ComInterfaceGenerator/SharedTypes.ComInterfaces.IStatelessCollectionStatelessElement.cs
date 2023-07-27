@@ -52,7 +52,8 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
                 {
                     global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.Free(__p_native__nativeSpan[__i0]);
                 }
-            };
+            }
+
             global::SharedTypes.ComInterfaces.StatelessCollectionMarshaller<global::SharedTypes.ComInterfaces.StatelessType, nint>.Default.Free(__p_native);
         }
     }
@@ -100,7 +101,8 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
                 {
                     global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.Free(__pIn_native__nativeSpan[__i0]);
                 }
-            };
+            }
+
             global::SharedTypes.ComInterfaces.StatelessCollectionMarshaller<global::SharedTypes.ComInterfaces.StatelessType, nint>.Default.Free(__pIn_native);
         }
     }
@@ -158,7 +160,6 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
                 }
             }
 
-            __pRef_native__numElements = size;
             global::SharedTypes.ComInterfaces.StatelessCollectionMarshaller<global::SharedTypes.ComInterfaces.StatelessType, nint>.Default.Free(__pRef_native);
         }
     }
@@ -170,29 +171,45 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
         var(__this, __vtable_native) = ((System.Runtime.InteropServices.Marshalling.IUnmanagedVirtualMethodTableProvider)this).GetVirtualMethodTableInfoForKey(typeof(global::SharedTypes.ComInterfaces.IStatelessCollectionStatelessElement));
         System.Runtime.CompilerServices.Unsafe.SkipInit(out pOut);
         System.Runtime.CompilerServices.Unsafe.SkipInit(out size);
-        nint __pOut_native;
-        int __invokeRetVal;
+        nint __pOut_native = default;
+        int __invokeRetVal = default;
         // Setup - Perform required setup.
         int __pOut_native__numElements;
         System.Runtime.CompilerServices.Unsafe.SkipInit(out __pOut_native__numElements);
-        // Pin - Pin data in preparation for calling the P/Invoke.
-        fixed (int* __size_native = &size)
+        try
         {
-            __invokeRetVal = ((delegate* unmanaged[MemberFunction]<void*, nint*, int*, int> )__vtable_native[6])(__this, &__pOut_native, __size_native);
-        }
-
-        System.GC.KeepAlive(this);
-        // Unmarshal - Convert native data to managed data.
-        System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
-        __pOut_native__numElements = size;
-        pOut = global::SharedTypes.ComInterfaces.StatelessCollectionMarshaller<global::SharedTypes.ComInterfaces.StatelessType, nint>.Default.AllocateContainerForManagedElements(__pOut_native, __pOut_native__numElements);
-        {
-            System.ReadOnlySpan<nint> __pOut_native__nativeSpan = global::SharedTypes.ComInterfaces.StatelessCollectionMarshaller<global::SharedTypes.ComInterfaces.StatelessType, nint>.Default.GetUnmanagedValuesSource(__pOut_native, __pOut_native__numElements);
-            System.Span<global::SharedTypes.ComInterfaces.StatelessType> __pOut_native__managedSpan = global::SharedTypes.ComInterfaces.StatelessCollectionMarshaller<global::SharedTypes.ComInterfaces.StatelessType, nint>.Default.GetManagedValuesDestination(pOut);
-            for (int __i0 = 0; __i0 < __pOut_native__numElements; ++__i0)
+            // Pin - Pin data in preparation for calling the P/Invoke.
+            fixed (int* __size_native = &size)
             {
-                __pOut_native__managedSpan[__i0] = global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.ConvertToManaged(__pOut_native__nativeSpan[__i0]);
+                __invokeRetVal = ((delegate* unmanaged[MemberFunction]<void*, nint*, int*, int> )__vtable_native[6])(__this, &__pOut_native, __size_native);
             }
+
+            System.GC.KeepAlive(this);
+            // Unmarshal - Convert native data to managed data.
+            System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
+            __pOut_native__numElements = size;
+            pOut = global::SharedTypes.ComInterfaces.StatelessCollectionMarshaller<global::SharedTypes.ComInterfaces.StatelessType, nint>.Default.AllocateContainerForManagedElements(__pOut_native, __pOut_native__numElements);
+            {
+                System.ReadOnlySpan<nint> __pOut_native__nativeSpan = global::SharedTypes.ComInterfaces.StatelessCollectionMarshaller<global::SharedTypes.ComInterfaces.StatelessType, nint>.Default.GetUnmanagedValuesSource(__pOut_native, __pOut_native__numElements);
+                System.Span<global::SharedTypes.ComInterfaces.StatelessType> __pOut_native__managedSpan = global::SharedTypes.ComInterfaces.StatelessCollectionMarshaller<global::SharedTypes.ComInterfaces.StatelessType, nint>.Default.GetManagedValuesDestination(pOut);
+                for (int __i0 = 0; __i0 < __pOut_native__numElements; ++__i0)
+                {
+                    __pOut_native__managedSpan[__i0] = global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.ConvertToManaged(__pOut_native__nativeSpan[__i0]);
+                }
+            }
+        }
+        finally
+        {
+            // Cleanup - Perform required cleanup.
+            {
+                System.ReadOnlySpan<nint> __pOut_native__nativeSpan = global::SharedTypes.ComInterfaces.StatelessCollectionMarshaller<global::SharedTypes.ComInterfaces.StatelessType, nint>.Default.GetUnmanagedValuesDestination(__pOut_native, __pOut_native__numElements);
+                for (int __i0 = 0; __i0 < __pOut_native__nativeSpan.Length; ++__i0)
+                {
+                    global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.Free(__pOut_native__nativeSpan[__i0]);
+                }
+            }
+
+            global::SharedTypes.ComInterfaces.StatelessCollectionMarshaller<global::SharedTypes.ComInterfaces.StatelessType, nint>.Default.Free(__pOut_native);
         }
     }
 
@@ -201,28 +218,44 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
     global::SharedTypes.ComInterfaces.StatelessCollection<global::SharedTypes.ComInterfaces.StatelessType> global::SharedTypes.ComInterfaces.IStatelessCollectionStatelessElement.Return(int size)
     {
         var(__this, __vtable_native) = ((System.Runtime.InteropServices.Marshalling.IUnmanagedVirtualMethodTableProvider)this).GetVirtualMethodTableInfoForKey(typeof(global::SharedTypes.ComInterfaces.IStatelessCollectionStatelessElement));
-        global::SharedTypes.ComInterfaces.StatelessCollection<global::SharedTypes.ComInterfaces.StatelessType> __retVal;
-        nint __retVal_native;
-        int __invokeRetVal;
+        global::SharedTypes.ComInterfaces.StatelessCollection<global::SharedTypes.ComInterfaces.StatelessType> __retVal = default;
+        nint __retVal_native = default;
+        int __invokeRetVal = default;
         // Setup - Perform required setup.
         int __retVal_native__numElements;
         System.Runtime.CompilerServices.Unsafe.SkipInit(out __retVal_native__numElements);
+        try
         {
-            __invokeRetVal = ((delegate* unmanaged[MemberFunction]<void*, int, nint*, int> )__vtable_native[7])(__this, size, &__retVal_native);
-        }
-
-        System.GC.KeepAlive(this);
-        // Unmarshal - Convert native data to managed data.
-        System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
-        __retVal_native__numElements = size;
-        __retVal = global::SharedTypes.ComInterfaces.StatelessCollectionMarshaller<global::SharedTypes.ComInterfaces.StatelessType, nint>.Default.AllocateContainerForManagedElements(__retVal_native, __retVal_native__numElements);
-        {
-            System.ReadOnlySpan<nint> __retVal_native__nativeSpan = global::SharedTypes.ComInterfaces.StatelessCollectionMarshaller<global::SharedTypes.ComInterfaces.StatelessType, nint>.Default.GetUnmanagedValuesSource(__retVal_native, __retVal_native__numElements);
-            System.Span<global::SharedTypes.ComInterfaces.StatelessType> __retVal_native__managedSpan = global::SharedTypes.ComInterfaces.StatelessCollectionMarshaller<global::SharedTypes.ComInterfaces.StatelessType, nint>.Default.GetManagedValuesDestination(__retVal);
-            for (int __i0 = 0; __i0 < __retVal_native__numElements; ++__i0)
             {
-                __retVal_native__managedSpan[__i0] = global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.ConvertToManaged(__retVal_native__nativeSpan[__i0]);
+                __invokeRetVal = ((delegate* unmanaged[MemberFunction]<void*, int, nint*, int> )__vtable_native[7])(__this, size, &__retVal_native);
             }
+
+            System.GC.KeepAlive(this);
+            // Unmarshal - Convert native data to managed data.
+            System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
+            __retVal_native__numElements = size;
+            __retVal = global::SharedTypes.ComInterfaces.StatelessCollectionMarshaller<global::SharedTypes.ComInterfaces.StatelessType, nint>.Default.AllocateContainerForManagedElements(__retVal_native, __retVal_native__numElements);
+            {
+                System.ReadOnlySpan<nint> __retVal_native__nativeSpan = global::SharedTypes.ComInterfaces.StatelessCollectionMarshaller<global::SharedTypes.ComInterfaces.StatelessType, nint>.Default.GetUnmanagedValuesSource(__retVal_native, __retVal_native__numElements);
+                System.Span<global::SharedTypes.ComInterfaces.StatelessType> __retVal_native__managedSpan = global::SharedTypes.ComInterfaces.StatelessCollectionMarshaller<global::SharedTypes.ComInterfaces.StatelessType, nint>.Default.GetManagedValuesDestination(__retVal);
+                for (int __i0 = 0; __i0 < __retVal_native__numElements; ++__i0)
+                {
+                    __retVal_native__managedSpan[__i0] = global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.ConvertToManaged(__retVal_native__nativeSpan[__i0]);
+                }
+            }
+        }
+        finally
+        {
+            // Cleanup - Perform required cleanup.
+            {
+                System.ReadOnlySpan<nint> __retVal_native__nativeSpan = global::SharedTypes.ComInterfaces.StatelessCollectionMarshaller<global::SharedTypes.ComInterfaces.StatelessType, nint>.Default.GetUnmanagedValuesDestination(__retVal_native, __retVal_native__numElements);
+                for (int __i0 = 0; __i0 < __retVal_native__nativeSpan.Length; ++__i0)
+                {
+                    global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.Free(__retVal_native__nativeSpan[__i0]);
+                }
+            }
+
+            global::SharedTypes.ComInterfaces.StatelessCollectionMarshaller<global::SharedTypes.ComInterfaces.StatelessType, nint>.Default.Free(__retVal_native);
         }
 
         return __retVal;
@@ -268,7 +301,6 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
                 }
             }
 
-            __retVal_native__numElements = size;
             global::SharedTypes.ComInterfaces.StatelessCollectionMarshaller<global::SharedTypes.ComInterfaces.StatelessType, nint>.Default.Free(__retVal_native);
         }
 
@@ -393,6 +425,19 @@ file unsafe partial interface InterfaceImplementation
                     __pRef_native__nativeSpan[__i0] = global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.ConvertToUnmanaged(__pRef_native__managedSpan[__i0]);
                 }
             }
+
+            // AssignOut - Assign to parameters
+            *__pRef_native__param = __pRef_native__out;
+            // Cleanup - Perform required cleanup.
+            {
+                System.ReadOnlySpan<nint> __pRef_native__nativeSpan = global::SharedTypes.ComInterfaces.StatelessCollectionMarshaller<global::SharedTypes.ComInterfaces.StatelessType, nint>.Default.GetUnmanagedValuesSource(__pRef_native, __pRef_native__numElements);
+                for (int __i0 = 0; __i0 < __pRef_native__lastIndexMarshalled; ++__i0)
+                {
+                    global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.Free(__pRef_native__nativeSpan[__i0]);
+                }
+            }
+
+            global::SharedTypes.ComInterfaces.StatelessCollectionMarshaller<global::SharedTypes.ComInterfaces.StatelessType, nint>.Default.Free(__pRef_native);
         }
         catch (System.Exception __exception)
         {
@@ -406,24 +451,10 @@ file unsafe partial interface InterfaceImplementation
                 }
             }
 
-            __pRef_native__numElements = size;
             global::SharedTypes.ComInterfaces.StatelessCollectionMarshaller<global::SharedTypes.ComInterfaces.StatelessType, nint>.Default.Free(__pRef_native__out);
             return __retVal;
         }
 
-        // AssignOut - Assign to parameters
-        *__pRef_native__param = __pRef_native__out;
-        // Cleanup - Perform required cleanup.
-        {
-            System.ReadOnlySpan<nint> __pRef_native__nativeSpan = global::SharedTypes.ComInterfaces.StatelessCollectionMarshaller<global::SharedTypes.ComInterfaces.StatelessType, nint>.Default.GetUnmanagedValuesSource(__pRef_native, __pRef_native__numElements);
-            for (int __i0 = 0; __i0 < __pRef_native__lastIndexMarshalled; ++__i0)
-            {
-                global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.Free(__pRef_native__nativeSpan[__i0]);
-            }
-        }
-
-        __pRef_native__numElements = size;
-        global::SharedTypes.ComInterfaces.StatelessCollectionMarshaller<global::SharedTypes.ComInterfaces.StatelessType, nint>.Default.Free(__pRef_native);
         return __retVal;
     }
 
@@ -457,6 +488,10 @@ file unsafe partial interface InterfaceImplementation
                     __pOut_native__nativeSpan[__i0] = global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.ConvertToUnmanaged(__pOut_native__managedSpan[__i0]);
                 }
             }
+
+            // AssignOut - Assign to parameters
+            *__size_native__param = __size_native__out;
+            *__pOut_native__param = __pOut_native__out;
         }
         catch (System.Exception __exception)
         {
@@ -468,13 +503,12 @@ file unsafe partial interface InterfaceImplementation
                 {
                     global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.Free(__pOut_native__nativeSpan[__i0]);
                 }
-            };
+            }
+
+            global::SharedTypes.ComInterfaces.StatelessCollectionMarshaller<global::SharedTypes.ComInterfaces.StatelessType, nint>.Default.Free(__pOut_native__out);
             return __retVal;
         }
 
-        // AssignOut - Assign to parameters
-        *__size_native__param = __size_native__out;
-        *__pOut_native__param = __pOut_native__out;
         return __retVal;
     }
 
@@ -505,6 +539,9 @@ file unsafe partial interface InterfaceImplementation
                     __invokeRetValUnmanaged__nativeSpan[__i0] = global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.ConvertToUnmanaged(__invokeRetValUnmanaged__managedSpan[__i0]);
                 }
             }
+
+            // AssignOut - Assign to parameters
+            *__invokeRetValUnmanaged__param = __invokeRetValUnmanaged__out;
         }
         catch (System.Exception __exception)
         {
@@ -516,12 +553,12 @@ file unsafe partial interface InterfaceImplementation
                 {
                     global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.Free(__invokeRetValUnmanaged__nativeSpan[__i0]);
                 }
-            };
+            }
+
+            global::SharedTypes.ComInterfaces.StatelessCollectionMarshaller<global::SharedTypes.ComInterfaces.StatelessType, nint>.Default.Free(__invokeRetValUnmanaged__out);
             return __retVal;
         }
 
-        // AssignOut - Assign to parameters
-        *__invokeRetValUnmanaged__param = __invokeRetValUnmanaged__out;
         return __retVal;
     }
 
