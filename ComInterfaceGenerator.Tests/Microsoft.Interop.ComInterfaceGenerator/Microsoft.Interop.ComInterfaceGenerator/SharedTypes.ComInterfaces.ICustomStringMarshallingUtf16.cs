@@ -16,6 +16,7 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
     string global::SharedTypes.ComInterfaces.ICustomStringMarshallingUtf16.GetString()
     {
         var(__this, __vtable_native) = ((System.Runtime.InteropServices.Marshalling.IUnmanagedVirtualMethodTableProvider)this).GetVirtualMethodTableInfoForKey(typeof(global::SharedTypes.ComInterfaces.ICustomStringMarshallingUtf16));
+        bool __invokeSucceeded = default;
         string __retVal = default;
         ushort* __retVal_native = default;
         int __invokeRetVal = default;
@@ -25,6 +26,7 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
                 __invokeRetVal = ((delegate* unmanaged[MemberFunction]<void*, ushort**, int> )__vtable_native[3])(__this, &__retVal_native);
             }
 
+            __invokeSucceeded = true;
             System.GC.KeepAlive(this);
             // Unmarshal - Convert native data to managed data.
             System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
@@ -32,8 +34,11 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
         }
         finally
         {
-            // Cleanup - Perform required cleanup.
-            global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller.Free(__retVal_native);
+            if (__invokeSucceeded)
+            {
+                // CleanupCalleeAllocated - Perform cleanup of callee allocated resources.
+                global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller.Free(__retVal_native);
+            }
         }
 
         return __retVal;

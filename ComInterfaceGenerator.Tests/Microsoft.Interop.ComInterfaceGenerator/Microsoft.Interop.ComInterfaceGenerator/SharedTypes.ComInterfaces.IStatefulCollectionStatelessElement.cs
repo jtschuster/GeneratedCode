@@ -48,7 +48,7 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
         }
         finally
         {
-            // Cleanup - Perform required cleanup.
+            // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
             {
                 System.ReadOnlySpan<nint> __p_native__nativeSpan = __p_native__marshaller.GetUnmanagedValuesDestination();
                 for (int __i0 = 0; __i0 < __p_native__lastIndexMarshalled; ++__i0)
@@ -100,7 +100,7 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
         }
         finally
         {
-            // Cleanup - Perform required cleanup.
+            // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
             {
                 System.ReadOnlySpan<nint> __pIn_native__nativeSpan = __pIn_native__marshaller.GetUnmanagedValuesDestination();
                 for (int __i0 = 0; __i0 < __pIn_native__lastIndexMarshalled; ++__i0)
@@ -163,7 +163,7 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
         }
         finally
         {
-            // Cleanup - Perform required cleanup.
+            // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
             {
                 System.ReadOnlySpan<nint> __pRef_native__nativeSpan = __pRef_native__marshaller.GetUnmanagedValuesDestination();
                 for (int __i0 = 0; __i0 < __pRef_native__lastIndexMarshalled; ++__i0)
@@ -181,6 +181,7 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
     void global::SharedTypes.ComInterfaces.IStatefulCollectionStatelessElement.MethodOut(out global::SharedTypes.ComInterfaces.StatefulCollection<global::SharedTypes.ComInterfaces.StatelessType> pOut, out int size)
     {
         var(__this, __vtable_native) = ((System.Runtime.InteropServices.Marshalling.IUnmanagedVirtualMethodTableProvider)this).GetVirtualMethodTableInfoForKey(typeof(global::SharedTypes.ComInterfaces.IStatefulCollectionStatelessElement));
+        bool __invokeSucceeded = default;
         System.Runtime.CompilerServices.Unsafe.SkipInit(out pOut);
         System.Runtime.CompilerServices.Unsafe.SkipInit(out size);
         byte* __pOut_native = default;
@@ -197,6 +198,7 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
                 __invokeRetVal = ((delegate* unmanaged[MemberFunction]<void*, byte**, int*, int> )__vtable_native[6])(__this, &__pOut_native, __size_native);
             }
 
+            __invokeSucceeded = true;
             System.GC.KeepAlive(this);
             // UnmarshalCapture - Capture the native data into marshaller instances in case conversion to managed data throws an exception.
             __pOut_native__marshaller.FromUnmanaged(__pOut_native);
@@ -216,16 +218,19 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
         }
         finally
         {
-            // Cleanup - Perform required cleanup.
+            if (__invokeSucceeded)
             {
-                System.ReadOnlySpan<nint> __pOut_native__nativeSpan = __pOut_native__marshaller.GetUnmanagedValuesDestination();
-                for (int __i0 = 0; __i0 < __pOut_native__nativeSpan.Length; ++__i0)
+                // CleanupCalleeAllocated - Perform cleanup of callee allocated resources.
                 {
-                    global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.Free(__pOut_native__nativeSpan[__i0]);
+                    System.ReadOnlySpan<nint> __pOut_native__nativeSpan = __pOut_native__marshaller.GetUnmanagedValuesDestination();
+                    for (int __i0 = 0; __i0 < __pOut_native__nativeSpan.Length; ++__i0)
+                    {
+                        global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.Free(__pOut_native__nativeSpan[__i0]);
+                    }
                 }
-            }
 
-            __pOut_native__marshaller.Free();
+                __pOut_native__marshaller.Free();
+            }
         }
     }
 
@@ -234,6 +239,7 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
     global::SharedTypes.ComInterfaces.StatefulCollection<global::SharedTypes.ComInterfaces.StatelessType> global::SharedTypes.ComInterfaces.IStatefulCollectionStatelessElement.Return(int size)
     {
         var(__this, __vtable_native) = ((System.Runtime.InteropServices.Marshalling.IUnmanagedVirtualMethodTableProvider)this).GetVirtualMethodTableInfoForKey(typeof(global::SharedTypes.ComInterfaces.IStatefulCollectionStatelessElement));
+        bool __invokeSucceeded = default;
         global::SharedTypes.ComInterfaces.StatefulCollection<global::SharedTypes.ComInterfaces.StatelessType> __retVal = default;
         byte* __retVal_native = default;
         int __invokeRetVal = default;
@@ -247,6 +253,7 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
                 __invokeRetVal = ((delegate* unmanaged[MemberFunction]<void*, int, byte**, int> )__vtable_native[7])(__this, size, &__retVal_native);
             }
 
+            __invokeSucceeded = true;
             System.GC.KeepAlive(this);
             // UnmarshalCapture - Capture the native data into marshaller instances in case conversion to managed data throws an exception.
             __retVal_native__marshaller.FromUnmanaged(__retVal_native);
@@ -266,16 +273,19 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
         }
         finally
         {
-            // Cleanup - Perform required cleanup.
+            if (__invokeSucceeded)
             {
-                System.ReadOnlySpan<nint> __retVal_native__nativeSpan = __retVal_native__marshaller.GetUnmanagedValuesDestination();
-                for (int __i0 = 0; __i0 < __retVal_native__nativeSpan.Length; ++__i0)
+                // CleanupCalleeAllocated - Perform cleanup of callee allocated resources.
                 {
-                    global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.Free(__retVal_native__nativeSpan[__i0]);
+                    System.ReadOnlySpan<nint> __retVal_native__nativeSpan = __retVal_native__marshaller.GetUnmanagedValuesDestination();
+                    for (int __i0 = 0; __i0 < __retVal_native__nativeSpan.Length; ++__i0)
+                    {
+                        global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.Free(__retVal_native__nativeSpan[__i0]);
+                    }
                 }
-            }
 
-            __retVal_native__marshaller.Free();
+                __retVal_native__marshaller.Free();
+            }
         }
 
         return __retVal;
@@ -286,6 +296,7 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
     global::SharedTypes.ComInterfaces.StatefulCollection<global::SharedTypes.ComInterfaces.StatelessType> global::SharedTypes.ComInterfaces.IStatefulCollectionStatelessElement.ReturnPreserveSig(int size)
     {
         var(__this, __vtable_native) = ((System.Runtime.InteropServices.Marshalling.IUnmanagedVirtualMethodTableProvider)this).GetVirtualMethodTableInfoForKey(typeof(global::SharedTypes.ComInterfaces.IStatefulCollectionStatelessElement));
+        bool __invokeSucceeded = default;
         global::SharedTypes.ComInterfaces.StatefulCollection<global::SharedTypes.ComInterfaces.StatelessType> __retVal = default;
         byte* __retVal_native = default;
         // Setup - Perform required setup.
@@ -298,6 +309,7 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
                 __retVal_native = ((delegate* unmanaged[MemberFunction]<void*, int, byte*> )__vtable_native[8])(__this, size);
             }
 
+            __invokeSucceeded = true;
             System.GC.KeepAlive(this);
             // UnmarshalCapture - Capture the native data into marshaller instances in case conversion to managed data throws an exception.
             __retVal_native__marshaller.FromUnmanaged(__retVal_native);
@@ -316,16 +328,19 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
         }
         finally
         {
-            // Cleanup - Perform required cleanup.
+            if (__invokeSucceeded)
             {
-                System.ReadOnlySpan<nint> __retVal_native__nativeSpan = __retVal_native__marshaller.GetUnmanagedValuesDestination();
-                for (int __i0 = 0; __i0 < __retVal_native__nativeSpan.Length; ++__i0)
+                // CleanupCalleeAllocated - Perform cleanup of callee allocated resources.
                 {
-                    global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.Free(__retVal_native__nativeSpan[__i0]);
+                    System.ReadOnlySpan<nint> __retVal_native__nativeSpan = __retVal_native__marshaller.GetUnmanagedValuesDestination();
+                    for (int __i0 = 0; __i0 < __retVal_native__nativeSpan.Length; ++__i0)
+                    {
+                        global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.Free(__retVal_native__nativeSpan[__i0]);
+                    }
                 }
-            }
 
-            __retVal_native__marshaller.Free();
+                __retVal_native__marshaller.Free();
+            }
         }
 
         return __retVal;
@@ -370,7 +385,7 @@ file unsafe partial interface InterfaceImplementation
         }
         finally
         {
-            // Cleanup - Perform required cleanup.
+            // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
             __p_native__marshaller.Free();
         }
 
@@ -417,7 +432,7 @@ file unsafe partial interface InterfaceImplementation
         }
         finally
         {
-            // Cleanup - Perform required cleanup.
+            // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
             __pIn_native__marshaller.Free();
         }
 
@@ -477,7 +492,7 @@ file unsafe partial interface InterfaceImplementation
         }
         finally
         {
-            // Cleanup - Perform required cleanup.
+            // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
             if (__pRef_native__ownOriginal)
             {
                 {
@@ -535,7 +550,7 @@ file unsafe partial interface InterfaceImplementation
         }
         finally
         {
-            // Cleanup - Perform required cleanup.
+            // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
             __pOut_native__marshaller.Free();
         }
 
@@ -579,7 +594,7 @@ file unsafe partial interface InterfaceImplementation
         }
         finally
         {
-            // Cleanup - Perform required cleanup.
+            // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
             __invokeRetValUnmanaged__marshaller.Free();
         }
 
@@ -621,7 +636,7 @@ file unsafe partial interface InterfaceImplementation
         }
         finally
         {
-            // Cleanup - Perform required cleanup.
+            // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
             __retVal_native__marshaller.Free();
         }
 

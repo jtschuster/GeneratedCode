@@ -80,7 +80,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
+                    // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                     __values_native__marshaller.Free();
                 }
 
@@ -122,7 +122,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
+                    // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                     __values_native__numElements = numValues;
                     global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.Free(__values_native);
                 }
@@ -144,6 +144,7 @@ namespace LibraryImportGenerator.IntegrationTests
             [global::System.Runtime.CompilerServices.SkipLocalsInitAttribute]
             public static partial int[] CreateRange(int start, int end, out int numValues)
             {
+                bool __invokeSucceeded = default;
                 System.Runtime.CompilerServices.Unsafe.SkipInit(out numValues);
                 int[] __retVal = default;
                 int* __retVal_native = default;
@@ -158,6 +159,7 @@ namespace LibraryImportGenerator.IntegrationTests
                         __retVal_native = __PInvoke(start, end, __numValues_native);
                     }
 
+                    __invokeSucceeded = true;
                     // Unmarshal - Convert native data to managed data.
                     __retVal_native__numElements = numValues;
                     __retVal = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.AllocateContainerForManagedElements(__retVal_native, __retVal_native__numElements);
@@ -165,9 +167,12 @@ namespace LibraryImportGenerator.IntegrationTests
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
-                    __retVal_native__numElements = numValues;
-                    global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.Free(__retVal_native);
+                    if (__invokeSucceeded)
+                    {
+                        // CleanupCalleeAllocated - Perform cleanup of callee allocated resources.
+                        __retVal_native__numElements = numValues;
+                        global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.Free(__retVal_native);
+                    }
                 }
 
                 return __retVal;
@@ -188,6 +193,7 @@ namespace LibraryImportGenerator.IntegrationTests
             [global::System.Runtime.CompilerServices.SkipLocalsInitAttribute]
             public static partial void CreateRange_Out(int start, int end, out int numValues, out int[] res)
             {
+                bool __invokeSucceeded = default;
                 System.Runtime.CompilerServices.Unsafe.SkipInit(out numValues);
                 System.Runtime.CompilerServices.Unsafe.SkipInit(out res);
                 int* __res_native = default;
@@ -202,6 +208,7 @@ namespace LibraryImportGenerator.IntegrationTests
                         __PInvoke(start, end, __numValues_native, &__res_native);
                     }
 
+                    __invokeSucceeded = true;
                     // Unmarshal - Convert native data to managed data.
                     __res_native__numElements = numValues;
                     res = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.AllocateContainerForManagedElements(__res_native, __res_native__numElements);
@@ -209,9 +216,12 @@ namespace LibraryImportGenerator.IntegrationTests
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
-                    __res_native__numElements = numValues;
-                    global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.Free(__res_native);
+                    if (__invokeSucceeded)
+                    {
+                        // CleanupCalleeAllocated - Perform cleanup of callee allocated resources.
+                        __res_native__numElements = numValues;
+                        global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.Free(__res_native);
+                    }
                 }
 
                 // Local P/Invoke
@@ -299,7 +309,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
+                    // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                     __chars_native__numElements = numElements;
                     global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<char, char>.Free(__chars_native);
                 }
@@ -351,7 +361,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
+                    // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                     {
                         System.ReadOnlySpan<System.IntPtr> __strArray_native__nativeSpan = __strArray_native__marshaller.GetUnmanagedValuesDestination();
                         for (int __i0 = 0; __i0 < __strArray_native__lastIndexMarshalled; ++__i0)
@@ -420,7 +430,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
+                    // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                     {
                         System.ReadOnlySpan<System.IntPtr> __strArray_native__nativeSpan = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<string, System.IntPtr>.GetUnmanagedValuesDestination(__strArray_native, __strArray_native__numElements);
                         for (int __i0 = 0; __i0 < __strArray_native__lastIndexMarshalled; ++__i0)
@@ -450,6 +460,7 @@ namespace LibraryImportGenerator.IntegrationTests
             [global::System.Runtime.CompilerServices.SkipLocalsInitAttribute]
             public static partial string[] ReverseStrings_Return(string[] strArray, out int numElements)
             {
+                bool __invokeSucceeded = default;
                 System.Runtime.CompilerServices.Unsafe.SkipInit(out numElements);
                 System.IntPtr* __strArray_native = default;
                 string[] __retVal = default;
@@ -483,6 +494,7 @@ namespace LibraryImportGenerator.IntegrationTests
                         __retVal_native = __PInvoke(__strArray_native, __numElements_native);
                     }
 
+                    __invokeSucceeded = true;
                     // Unmarshal - Convert native data to managed data.
                     __retVal_native__numElements = numElements;
                     __retVal = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<string, System.IntPtr>.AllocateContainerForManagedElements(__retVal_native, __retVal_native__numElements);
@@ -497,17 +509,22 @@ namespace LibraryImportGenerator.IntegrationTests
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
+                    if (__invokeSucceeded)
                     {
-                        System.ReadOnlySpan<System.IntPtr> __retVal_native__nativeSpan = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<string, System.IntPtr>.GetUnmanagedValuesDestination(__retVal_native, __retVal_native__numElements);
-                        for (int __i0 = 0; __i0 < __retVal_native__nativeSpan.Length; ++__i0)
+                        // CleanupCalleeAllocated - Perform cleanup of callee allocated resources.
                         {
-                            global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller.Free((ushort*)__retVal_native__nativeSpan[__i0]);
+                            System.ReadOnlySpan<System.IntPtr> __retVal_native__nativeSpan = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<string, System.IntPtr>.GetUnmanagedValuesDestination(__retVal_native, __retVal_native__numElements);
+                            for (int __i0 = 0; __i0 < __retVal_native__nativeSpan.Length; ++__i0)
+                            {
+                                global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller.Free((ushort*)__retVal_native__nativeSpan[__i0]);
+                            }
                         }
+
+                        __retVal_native__numElements = numElements;
+                        global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<string, System.IntPtr>.Free(__retVal_native);
                     }
 
-                    __retVal_native__numElements = numElements;
-                    global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<string, System.IntPtr>.Free(__retVal_native);
+                    // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                     {
                         System.ReadOnlySpan<System.IntPtr> __strArray_native__nativeSpan = __strArray_native__marshaller.GetUnmanagedValuesDestination();
                         for (int __i0 = 0; __i0 < __strArray_native__lastIndexMarshalled; ++__i0)
@@ -537,6 +554,7 @@ namespace LibraryImportGenerator.IntegrationTests
             [global::System.Runtime.CompilerServices.SkipLocalsInitAttribute]
             public static partial void ReverseStrings_Out(string[] strArray, out int numElements, out string[] res)
             {
+                bool __invokeSucceeded = default;
                 System.Runtime.CompilerServices.Unsafe.SkipInit(out numElements);
                 System.Runtime.CompilerServices.Unsafe.SkipInit(out res);
                 System.IntPtr* __strArray_native = default;
@@ -570,6 +588,7 @@ namespace LibraryImportGenerator.IntegrationTests
                         __PInvoke(__strArray_native, __numElements_native, &__res_native);
                     }
 
+                    __invokeSucceeded = true;
                     // Unmarshal - Convert native data to managed data.
                     __res_native__numElements = numElements;
                     res = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<string, System.IntPtr>.AllocateContainerForManagedElements(__res_native, __res_native__numElements);
@@ -584,17 +603,22 @@ namespace LibraryImportGenerator.IntegrationTests
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
+                    if (__invokeSucceeded)
                     {
-                        System.ReadOnlySpan<System.IntPtr> __res_native__nativeSpan = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<string, System.IntPtr>.GetUnmanagedValuesDestination(__res_native, __res_native__numElements);
-                        for (int __i0 = 0; __i0 < __res_native__nativeSpan.Length; ++__i0)
+                        // CleanupCalleeAllocated - Perform cleanup of callee allocated resources.
                         {
-                            global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller.Free((ushort*)__res_native__nativeSpan[__i0]);
+                            System.ReadOnlySpan<System.IntPtr> __res_native__nativeSpan = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<string, System.IntPtr>.GetUnmanagedValuesDestination(__res_native, __res_native__numElements);
+                            for (int __i0 = 0; __i0 < __res_native__nativeSpan.Length; ++__i0)
+                            {
+                                global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller.Free((ushort*)__res_native__nativeSpan[__i0]);
+                            }
                         }
+
+                        __res_native__numElements = numElements;
+                        global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<string, System.IntPtr>.Free(__res_native);
                     }
 
-                    __res_native__numElements = numElements;
-                    global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<string, System.IntPtr>.Free(__res_native);
+                    // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                     {
                         System.ReadOnlySpan<System.IntPtr> __strArray_native__nativeSpan = __strArray_native__marshaller.GetUnmanagedValuesDestination();
                         for (int __i0 = 0; __i0 < __strArray_native__lastIndexMarshalled; ++__i0)
@@ -623,6 +647,7 @@ namespace LibraryImportGenerator.IntegrationTests
             [global::System.Runtime.CompilerServices.SkipLocalsInitAttribute]
             public static partial byte[] GetLongBytes(long l)
             {
+                bool __invokeSucceeded = default;
                 byte[] __retVal = default;
                 byte* __retVal_native = default;
                 // Setup - Perform required setup.
@@ -634,6 +659,7 @@ namespace LibraryImportGenerator.IntegrationTests
                         __retVal_native = __PInvoke(l);
                     }
 
+                    __invokeSucceeded = true;
                     // Unmarshal - Convert native data to managed data.
                     __retVal_native__numElements = 8;
                     __retVal = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<byte, byte>.AllocateContainerForManagedElements(__retVal_native, __retVal_native__numElements);
@@ -641,9 +667,12 @@ namespace LibraryImportGenerator.IntegrationTests
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
-                    __retVal_native__numElements = 8;
-                    global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<byte, byte>.Free(__retVal_native);
+                    if (__invokeSucceeded)
+                    {
+                        // CleanupCalleeAllocated - Perform cleanup of callee allocated resources.
+                        __retVal_native__numElements = 8;
+                        global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<byte, byte>.Free(__retVal_native);
+                    }
                 }
 
                 return __retVal;
@@ -684,7 +713,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
+                    // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                     __values_native__numElements = checked(1 + numOriginalValues);
                     global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.Free(__values_native);
                 }
@@ -740,7 +769,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
+                    // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                     __array_native__marshaller.Free();
                 }
 
@@ -802,7 +831,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
+                    // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                     _ = __array_native__lastIndexMarshalled;
                     __array_native__marshaller.Free();
                 }
@@ -858,7 +887,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
+                    // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                     _ = __pArray_native__lastIndexMarshalled;
                     __pArray_native__marshaller.Free();
                 }
@@ -915,7 +944,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
+                    // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                     _ = __pArray_native__lastIndexMarshalled;
                     __pArray_native__marshaller.Free();
                 }
@@ -974,7 +1003,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
+                    // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                     _ = __boolStruct_native__lastIndexMarshalled;
                     __boolStruct_native__numElements = numValues;
                     global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.BoolStruct, global::SharedTypes.BoolStructMarshaller.BoolStructNative>.Free(__boolStruct_native);
@@ -997,6 +1026,7 @@ namespace LibraryImportGenerator.IntegrationTests
             [global::System.Runtime.CompilerServices.SkipLocalsInitAttribute]
             public static partial void NegateBools(global::SharedTypes.BoolStruct[] boolStruct, int numValues, out global::SharedTypes.BoolStruct[] pBoolStructOut)
             {
+                bool __invokeSucceeded = default;
                 System.Runtime.CompilerServices.Unsafe.SkipInit(out pBoolStructOut);
                 global::SharedTypes.BoolStructMarshaller.BoolStructNative* __boolStruct_native = default;
                 global::SharedTypes.BoolStructMarshaller.BoolStructNative* __pBoolStructOut_native = default;
@@ -1028,6 +1058,7 @@ namespace LibraryImportGenerator.IntegrationTests
                         __PInvoke(__boolStruct_native, numValues, &__pBoolStructOut_native);
                     }
 
+                    __invokeSucceeded = true;
                     // Unmarshal - Convert native data to managed data.
                     __pBoolStructOut_native__numElements = numValues;
                     pBoolStructOut = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.BoolStruct, global::SharedTypes.BoolStructMarshaller.BoolStructNative>.AllocateContainerForManagedElements(__pBoolStructOut_native, __pBoolStructOut_native__numElements);
@@ -1042,9 +1073,14 @@ namespace LibraryImportGenerator.IntegrationTests
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
-                    __pBoolStructOut_native__numElements = numValues;
-                    global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.BoolStruct, global::SharedTypes.BoolStructMarshaller.BoolStructNative>.Free(__pBoolStructOut_native);
+                    if (__invokeSucceeded)
+                    {
+                        // CleanupCalleeAllocated - Perform cleanup of callee allocated resources.
+                        __pBoolStructOut_native__numElements = numValues;
+                        global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.BoolStruct, global::SharedTypes.BoolStructMarshaller.BoolStructNative>.Free(__pBoolStructOut_native);
+                    }
+
+                    // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                     _ = __boolStruct_native__lastIndexMarshalled;
                     __boolStruct_native__marshaller.Free();
                 }
@@ -1066,6 +1102,7 @@ namespace LibraryImportGenerator.IntegrationTests
             [global::System.Runtime.CompilerServices.SkipLocalsInitAttribute]
             public static partial global::SharedTypes.BoolStruct[] NegateBools(global::SharedTypes.BoolStruct[] boolStruct, int numValues)
             {
+                bool __invokeSucceeded = default;
                 global::SharedTypes.BoolStructMarshaller.BoolStructNative* __boolStruct_native = default;
                 global::SharedTypes.BoolStruct[] __retVal = default;
                 global::SharedTypes.BoolStructMarshaller.BoolStructNative* __retVal_native = default;
@@ -1097,6 +1134,7 @@ namespace LibraryImportGenerator.IntegrationTests
                         __retVal_native = __PInvoke(__boolStruct_native, numValues);
                     }
 
+                    __invokeSucceeded = true;
                     // Unmarshal - Convert native data to managed data.
                     __retVal_native__numElements = numValues;
                     __retVal = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.BoolStruct, global::SharedTypes.BoolStructMarshaller.BoolStructNative>.AllocateContainerForManagedElements(__retVal_native, __retVal_native__numElements);
@@ -1111,9 +1149,14 @@ namespace LibraryImportGenerator.IntegrationTests
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
-                    __retVal_native__numElements = numValues;
-                    global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.BoolStruct, global::SharedTypes.BoolStructMarshaller.BoolStructNative>.Free(__retVal_native);
+                    if (__invokeSucceeded)
+                    {
+                        // CleanupCalleeAllocated - Perform cleanup of callee allocated resources.
+                        __retVal_native__numElements = numValues;
+                        global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.BoolStruct, global::SharedTypes.BoolStructMarshaller.BoolStructNative>.Free(__retVal_native);
+                    }
+
+                    // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                     _ = __boolStruct_native__lastIndexMarshalled;
                     __boolStruct_native__marshaller.Free();
                 }
@@ -1136,6 +1179,7 @@ namespace LibraryImportGenerator.IntegrationTests
             [global::System.Runtime.CompilerServices.SkipLocalsInitAttribute]
             public static partial int[][] TransposeMatrix(int[][] matrix, int[] numRows, int numColumns)
             {
+                bool __invokeSucceeded = default;
                 System.IntPtr* __matrix_native = default;
                 int[][] __retVal = default;
                 System.IntPtr* __retVal_native = default;
@@ -1171,6 +1215,7 @@ namespace LibraryImportGenerator.IntegrationTests
                         __retVal_native = __PInvoke(__matrix_native, (int*)__numRows_native, numColumns);
                     }
 
+                    __invokeSucceeded = true;
                     // Unmarshal - Convert native data to managed data.
                     __retVal_native__numElements = numColumns;
                     __retVal = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int[], System.IntPtr>.AllocateContainerForManagedElements(__retVal_native, __retVal_native__numElements);
@@ -1189,20 +1234,25 @@ namespace LibraryImportGenerator.IntegrationTests
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
+                    if (__invokeSucceeded)
                     {
-                        System.ReadOnlySpan<System.IntPtr> __retVal_native__nativeSpan = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int[], System.IntPtr>.GetUnmanagedValuesDestination(__retVal_native, __retVal_native__numElements);
-                        for (int __i0 = 0; __i0 < __retVal_native__nativeSpan.Length; ++__i0)
+                        // CleanupCalleeAllocated - Perform cleanup of callee allocated resources.
                         {
-                            int __retVal_native__nativeSpan____i0__numElements;
-                            System.Runtime.CompilerServices.Unsafe.SkipInit(out __retVal_native__nativeSpan____i0__numElements);
-                            __retVal_native__nativeSpan____i0__numElements = numRows[__i0];
-                            global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.Free((int*)__retVal_native__nativeSpan[__i0]);
+                            System.ReadOnlySpan<System.IntPtr> __retVal_native__nativeSpan = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int[], System.IntPtr>.GetUnmanagedValuesDestination(__retVal_native, __retVal_native__numElements);
+                            for (int __i0 = 0; __i0 < __retVal_native__nativeSpan.Length; ++__i0)
+                            {
+                                int __retVal_native__nativeSpan____i0__numElements;
+                                System.Runtime.CompilerServices.Unsafe.SkipInit(out __retVal_native__nativeSpan____i0__numElements);
+                                __retVal_native__nativeSpan____i0__numElements = numRows[__i0];
+                                global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.Free((int*)__retVal_native__nativeSpan[__i0]);
+                            }
                         }
+
+                        __retVal_native__numElements = numColumns;
+                        global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int[], System.IntPtr>.Free(__retVal_native);
                     }
 
-                    __retVal_native__numElements = numColumns;
-                    global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int[], System.IntPtr>.Free(__retVal_native);
+                    // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                     {
                         System.ReadOnlySpan<System.IntPtr> __matrix_native__nativeSpan = __matrix_native__marshaller.GetUnmanagedValuesDestination();
                         for (int __i0 = 0; __i0 < __matrix_native__lastIndexMarshalled; ++__i0)
@@ -1281,7 +1331,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
+                    // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                     __values_native__marshaller.Free();
                 }
 
@@ -1323,7 +1373,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
+                    // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                     __values_native__numElements = numValues;
                     global::System.Runtime.InteropServices.Marshalling.PointerArrayMarshaller<int, nint>.Free(__values_native);
                 }
@@ -1345,6 +1395,7 @@ namespace LibraryImportGenerator.IntegrationTests
             [global::System.Runtime.CompilerServices.SkipLocalsInitAttribute]
             public static unsafe partial int*[] ReturnDuplicate(int*[] values, int numValues)
             {
+                bool __invokeSucceeded = default;
                 int*[] __retVal = default;
                 nint* __retVal_native = default;
                 // Setup - Perform required setup.
@@ -1358,6 +1409,7 @@ namespace LibraryImportGenerator.IntegrationTests
                         __retVal_native = __PInvoke((nint*)__values_native, numValues);
                     }
 
+                    __invokeSucceeded = true;
                     // Unmarshal - Convert native data to managed data.
                     __retVal_native__numElements = numValues;
                     __retVal = global::System.Runtime.InteropServices.Marshalling.PointerArrayMarshaller<int, nint>.AllocateContainerForManagedElements(__retVal_native, __retVal_native__numElements);
@@ -1365,9 +1417,12 @@ namespace LibraryImportGenerator.IntegrationTests
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
-                    __retVal_native__numElements = numValues;
-                    global::System.Runtime.InteropServices.Marshalling.PointerArrayMarshaller<int, nint>.Free(__retVal_native);
+                    if (__invokeSucceeded)
+                    {
+                        // CleanupCalleeAllocated - Perform cleanup of callee allocated resources.
+                        __retVal_native__numElements = numValues;
+                        global::System.Runtime.InteropServices.Marshalling.PointerArrayMarshaller<int, nint>.Free(__retVal_native);
+                    }
                 }
 
                 return __retVal;
@@ -2106,7 +2161,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
+                    // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                     {
                         System.ReadOnlySpan<System.IntPtr> __s_native__nativeSpan = __s_native__marshaller.GetUnmanagedValuesDestination();
                         for (int __i0 = 0; __i0 < __s_native__lastIndexMarshalled; ++__i0)
@@ -2164,7 +2219,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
+                    // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                     {
                         System.ReadOnlySpan<System.IntPtr> __s_native__nativeSpan = __s_native__marshaller.GetUnmanagedValuesDestination();
                         for (int __i0 = 0; __i0 < __s_native__lastIndexMarshalled; ++__i0)
@@ -2222,7 +2277,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
+                    // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                     {
                         System.ReadOnlySpan<nint> __c_native__nativeSpan = __c_native__marshaller.GetUnmanagedValuesDestination();
                         for (int __i0 = 0; __i0 < __c_native__lastIndexMarshalled; ++__i0)
@@ -2280,7 +2335,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
+                    // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                     {
                         System.ReadOnlySpan<nint> __c_native__nativeSpan = __c_native__marshaller.GetUnmanagedValuesDestination();
                         for (int __i0 = 0; __i0 < __c_native__lastIndexMarshalled; ++__i0)
@@ -2349,7 +2404,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
+                    // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                     {
                         System.ReadOnlySpan<System.IntPtr> __c_native__nativeSpan = __c_native__marshaller.GetUnmanagedValuesDestination();
                         for (int __i0 = 0; __i0 < __c_native__lastIndexMarshalled; ++__i0)
@@ -2424,7 +2479,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
+                    // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                     {
                         System.ReadOnlySpan<nint> __c_native__nativeSpan = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.BoolStruct, nint>.GetUnmanagedValuesDestination(__c_native, __c_native__numElements);
                         for (int __i0 = 0; __i0 < __c_native__lastIndexMarshalled; ++__i0)
@@ -2454,6 +2509,7 @@ namespace LibraryImportGenerator.IntegrationTests
             [global::System.Runtime.CompilerServices.SkipLocalsInitAttribute]
             public static partial void NegateBoolsOut(global::SharedTypes.BoolStruct[] boolStruct, int numValues, out global::SharedTypes.BoolStruct[] pBoolStructOut)
             {
+                bool __invokeSucceeded = default;
                 System.Runtime.CompilerServices.Unsafe.SkipInit(out pBoolStructOut);
                 global::SharedTypes.BoolStructMarshaller.BoolStructNative* __boolStruct_native = default;
                 nint* __pBoolStructOut_native = default;
@@ -2485,6 +2541,7 @@ namespace LibraryImportGenerator.IntegrationTests
                         __PInvoke(__boolStruct_native, numValues, &__pBoolStructOut_native);
                     }
 
+                    __invokeSucceeded = true;
                     // Unmarshal - Convert native data to managed data.
                     __pBoolStructOut_native__numElements = numValues;
                     pBoolStructOut = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.BoolStruct, nint>.AllocateContainerForManagedElements(__pBoolStructOut_native, __pBoolStructOut_native__numElements);
@@ -2499,17 +2556,22 @@ namespace LibraryImportGenerator.IntegrationTests
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
+                    if (__invokeSucceeded)
                     {
-                        System.ReadOnlySpan<nint> __pBoolStructOut_native__nativeSpan = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.BoolStruct, nint>.GetUnmanagedValuesDestination(__pBoolStructOut_native, __pBoolStructOut_native__numElements);
-                        for (int __i0 = 0; __i0 < __pBoolStructOut_native__nativeSpan.Length; ++__i0)
+                        // CleanupCalleeAllocated - Perform cleanup of callee allocated resources.
                         {
-                            global::LibraryImportGenerator.IntegrationTests.EnforceAllElementsCleanedUpBoolStruct.Free(__pBoolStructOut_native__nativeSpan[__i0]);
+                            System.ReadOnlySpan<nint> __pBoolStructOut_native__nativeSpan = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.BoolStruct, nint>.GetUnmanagedValuesDestination(__pBoolStructOut_native, __pBoolStructOut_native__numElements);
+                            for (int __i0 = 0; __i0 < __pBoolStructOut_native__nativeSpan.Length; ++__i0)
+                            {
+                                global::LibraryImportGenerator.IntegrationTests.EnforceAllElementsCleanedUpBoolStruct.Free(__pBoolStructOut_native__nativeSpan[__i0]);
+                            }
                         }
+
+                        __pBoolStructOut_native__numElements = numValues;
+                        global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.BoolStruct, nint>.Free(__pBoolStructOut_native);
                     }
 
-                    __pBoolStructOut_native__numElements = numValues;
-                    global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.BoolStruct, nint>.Free(__pBoolStructOut_native);
+                    // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                     _ = __boolStruct_native__lastIndexMarshalled;
                     __boolStruct_native__marshaller.Free();
                 }
@@ -2531,6 +2593,7 @@ namespace LibraryImportGenerator.IntegrationTests
             [global::System.Runtime.CompilerServices.SkipLocalsInitAttribute]
             public static partial void NegateBoolsOut2D(global::SharedTypes.BoolStruct[][] boolStruct, int length, int[] widths, out global::SharedTypes.BoolStruct[][] pBoolStructOut)
             {
+                bool __invokeSucceeded = default;
                 System.Runtime.CompilerServices.Unsafe.SkipInit(out pBoolStructOut);
                 System.IntPtr* __boolStruct_native = default;
                 System.IntPtr* __pBoolStructOut_native = default;
@@ -2574,6 +2637,7 @@ namespace LibraryImportGenerator.IntegrationTests
                         __PInvoke(__boolStruct_native, length, (int*)__widths_native, &__pBoolStructOut_native);
                     }
 
+                    __invokeSucceeded = true;
                     // Unmarshal - Convert native data to managed data.
                     __pBoolStructOut_native__numElements = length;
                     pBoolStructOut = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.BoolStruct[], System.IntPtr>.AllocateContainerForManagedElements(__pBoolStructOut_native, __pBoolStructOut_native__numElements);
@@ -2599,29 +2663,34 @@ namespace LibraryImportGenerator.IntegrationTests
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
+                    if (__invokeSucceeded)
                     {
-                        System.ReadOnlySpan<System.IntPtr> __pBoolStructOut_native__nativeSpan = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.BoolStruct[], System.IntPtr>.GetUnmanagedValuesDestination(__pBoolStructOut_native, __pBoolStructOut_native__numElements);
-                        for (int __i0 = 0; __i0 < __pBoolStructOut_native__nativeSpan.Length; ++__i0)
+                        // CleanupCalleeAllocated - Perform cleanup of callee allocated resources.
                         {
-                            int __pBoolStructOut_native__nativeSpan____i0__numElements;
-                            System.Runtime.CompilerServices.Unsafe.SkipInit(out __pBoolStructOut_native__nativeSpan____i0__numElements);
-                            __pBoolStructOut_native__nativeSpan____i0__numElements = widths[__i0];
+                            System.ReadOnlySpan<System.IntPtr> __pBoolStructOut_native__nativeSpan = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.BoolStruct[], System.IntPtr>.GetUnmanagedValuesDestination(__pBoolStructOut_native, __pBoolStructOut_native__numElements);
+                            for (int __i0 = 0; __i0 < __pBoolStructOut_native__nativeSpan.Length; ++__i0)
                             {
-                                System.ReadOnlySpan<nint> __pBoolStructOut_native__nativeSpan____i0__nativeSpan = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.BoolStruct, nint>.GetUnmanagedValuesDestination((nint*)__pBoolStructOut_native__nativeSpan[__i0], __pBoolStructOut_native__nativeSpan____i0__numElements);
-                                for (int __i1 = 0; __i1 < __pBoolStructOut_native__nativeSpan____i0__nativeSpan.Length; ++__i1)
+                                int __pBoolStructOut_native__nativeSpan____i0__numElements;
+                                System.Runtime.CompilerServices.Unsafe.SkipInit(out __pBoolStructOut_native__nativeSpan____i0__numElements);
+                                __pBoolStructOut_native__nativeSpan____i0__numElements = widths[__i0];
                                 {
-                                    global::LibraryImportGenerator.IntegrationTests.EnforceAllElementsCleanedUpBoolStruct.Free(__pBoolStructOut_native__nativeSpan____i0__nativeSpan[__i1]);
+                                    System.ReadOnlySpan<nint> __pBoolStructOut_native__nativeSpan____i0__nativeSpan = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.BoolStruct, nint>.GetUnmanagedValuesDestination((nint*)__pBoolStructOut_native__nativeSpan[__i0], __pBoolStructOut_native__nativeSpan____i0__numElements);
+                                    for (int __i1 = 0; __i1 < __pBoolStructOut_native__nativeSpan____i0__nativeSpan.Length; ++__i1)
+                                    {
+                                        global::LibraryImportGenerator.IntegrationTests.EnforceAllElementsCleanedUpBoolStruct.Free(__pBoolStructOut_native__nativeSpan____i0__nativeSpan[__i1]);
+                                    }
                                 }
-                            }
 
-                            __pBoolStructOut_native__nativeSpan____i0__numElements = widths[__i0];
-                            global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.BoolStruct, nint>.Free((nint*)__pBoolStructOut_native__nativeSpan[__i0]);
+                                __pBoolStructOut_native__nativeSpan____i0__numElements = widths[__i0];
+                                global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.BoolStruct, nint>.Free((nint*)__pBoolStructOut_native__nativeSpan[__i0]);
+                            }
                         }
+
+                        __pBoolStructOut_native__numElements = length;
+                        global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.BoolStruct[], System.IntPtr>.Free(__pBoolStructOut_native);
                     }
 
-                    __pBoolStructOut_native__numElements = length;
-                    global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.BoolStruct[], System.IntPtr>.Free(__pBoolStructOut_native);
+                    // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                     {
                         System.ReadOnlySpan<System.IntPtr> __boolStruct_native__nativeSpan = __boolStruct_native__marshaller.GetUnmanagedValuesDestination();
                         for (int __i0 = 0; __i0 < __boolStruct_native__lastIndexMarshalled; ++__i0)
@@ -2687,7 +2756,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
+                    // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                     {
                         System.ReadOnlySpan<nint> __array_native__nativeSpan = __array_native__marshaller.GetUnmanagedValuesDestination();
                         for (int __i0 = 0; __i0 < __array_native__nativeSpan.Length; ++__i0)
@@ -2763,7 +2832,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
+                    // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                     {
                         System.ReadOnlySpan<System.IntPtr> __array_native__nativeSpan = __array_native__marshaller.GetUnmanagedValuesDestination();
                         for (int __i0 = 0; __i0 < __array_native__nativeSpan.Length; ++__i0)
@@ -2841,7 +2910,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
+                    // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                     {
                         System.ReadOnlySpan<nint> __boolStruct_native__nativeSpan = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.BoolStruct, nint>.GetUnmanagedValuesDestination(__boolStruct_native, __boolStruct_native__numElements);
                         for (int __i0 = 0; __i0 < __boolStruct_native__lastIndexMarshalled; ++__i0)
@@ -2907,7 +2976,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
+                    // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                     {
                         System.ReadOnlySpan<nint> __boolStruct_native__nativeSpan = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.BoolStruct[], nint>.GetUnmanagedValuesDestination(__boolStruct_native, __boolStruct_native__numElements);
                         for (int __i0 = 0; __i0 < __boolStruct_native__lastIndexMarshalled; ++__i0)
@@ -2997,7 +3066,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
+                    // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                     {
                         System.ReadOnlySpan<System.IntPtr> __boolStruct_native__nativeSpan = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.BoolStruct[], System.IntPtr>.GetUnmanagedValuesDestination(__boolStruct_native, __boolStruct_native__numElements);
                         for (int __i0 = 0; __i0 < __boolStruct_native__lastIndexMarshalled; ++__i0)
@@ -3057,7 +3126,7 @@ namespace LibraryImportGenerator.IntegrationTests
                     }
                     finally
                     {
-                        // Cleanup - Perform required cleanup.
+                        // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                         ;
                         global::SharedTypes.ListMarshaller<int, int>.Free(__values_native);
                     }
@@ -3100,7 +3169,7 @@ namespace LibraryImportGenerator.IntegrationTests
                     }
                     finally
                     {
-                        // Cleanup - Perform required cleanup.
+                        // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                         ;
                     }
 
@@ -3150,7 +3219,7 @@ namespace LibraryImportGenerator.IntegrationTests
                     }
                     finally
                     {
-                        // Cleanup - Perform required cleanup.
+                        // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                         {
                             System.ReadOnlySpan<System.IntPtr> __values_native__nativeSpan = global::SharedTypes.ListMarshaller<global::SharedTypes.IntWrapper, System.IntPtr>.GetUnmanagedValuesDestination(__values_native, __values_native__numElements);
                             for (int __i0 = 0; __i0 < __values_native__lastIndexMarshalled; ++__i0)
@@ -3226,7 +3295,7 @@ namespace LibraryImportGenerator.IntegrationTests
                     }
                     finally
                     {
-                        // Cleanup - Perform required cleanup.
+                        // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                         ;
                         global::SharedTypes.ListMarshaller<int, int>.Free(__values_native);
                     }
@@ -3272,7 +3341,7 @@ namespace LibraryImportGenerator.IntegrationTests
                     }
                     finally
                     {
-                        // Cleanup - Perform required cleanup.
+                        // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                         __values_native__numElements = numValues;
                         global::SharedTypes.ListMarshaller<int, int>.Free(__values_native);
                     }
@@ -3297,6 +3366,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 [global::System.Runtime.CompilerServices.SkipLocalsInitAttribute]
                 public static partial global::System.Collections.Generic.List<int> CreateRange(int start, int end, out int numValues)
                 {
+                    bool __invokeSucceeded = default;
                     System.Runtime.CompilerServices.Unsafe.SkipInit(out numValues);
                     global::System.Collections.Generic.List<int> __retVal = default;
                     byte* __retVal_native = default;
@@ -3311,6 +3381,7 @@ namespace LibraryImportGenerator.IntegrationTests
                             __retVal_native = __PInvoke(start, end, __numValues_native);
                         }
 
+                        __invokeSucceeded = true;
                         // Unmarshal - Convert native data to managed data.
                         __retVal_native__numElements = numValues;
                         __retVal = global::SharedTypes.ListMarshaller<int, int>.AllocateContainerForManagedElements(__retVal_native, __retVal_native__numElements);
@@ -3318,9 +3389,12 @@ namespace LibraryImportGenerator.IntegrationTests
                     }
                     finally
                     {
-                        // Cleanup - Perform required cleanup.
-                        __retVal_native__numElements = numValues;
-                        global::SharedTypes.ListMarshaller<int, int>.Free(__retVal_native);
+                        if (__invokeSucceeded)
+                        {
+                            // CleanupCalleeAllocated - Perform cleanup of callee allocated resources.
+                            __retVal_native__numElements = numValues;
+                            global::SharedTypes.ListMarshaller<int, int>.Free(__retVal_native);
+                        }
                     }
 
                     return __retVal;
@@ -3344,6 +3418,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 [global::System.Runtime.CompilerServices.SkipLocalsInitAttribute]
                 public static partial void CreateRange_Out(int start, int end, out int numValues, out global::System.Collections.Generic.List<int> res)
                 {
+                    bool __invokeSucceeded = default;
                     System.Runtime.CompilerServices.Unsafe.SkipInit(out numValues);
                     System.Runtime.CompilerServices.Unsafe.SkipInit(out res);
                     byte* __res_native = default;
@@ -3358,6 +3433,7 @@ namespace LibraryImportGenerator.IntegrationTests
                             __PInvoke(start, end, __numValues_native, &__res_native);
                         }
 
+                        __invokeSucceeded = true;
                         // Unmarshal - Convert native data to managed data.
                         __res_native__numElements = numValues;
                         res = global::SharedTypes.ListMarshaller<int, int>.AllocateContainerForManagedElements(__res_native, __res_native__numElements);
@@ -3365,9 +3441,12 @@ namespace LibraryImportGenerator.IntegrationTests
                     }
                     finally
                     {
-                        // Cleanup - Perform required cleanup.
-                        __res_native__numElements = numValues;
-                        global::SharedTypes.ListMarshaller<int, int>.Free(__res_native);
+                        if (__invokeSucceeded)
+                        {
+                            // CleanupCalleeAllocated - Perform cleanup of callee allocated resources.
+                            __res_native__numElements = numValues;
+                            global::SharedTypes.ListMarshaller<int, int>.Free(__res_native);
+                        }
                     }
 
                     // Local P/Invoke
@@ -3390,6 +3469,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 [global::System.Runtime.CompilerServices.SkipLocalsInitAttribute]
                 public static partial global::System.Collections.Generic.List<byte> GetLongBytes(long l)
                 {
+                    bool __invokeSucceeded = default;
                     global::System.Collections.Generic.List<byte> __retVal = default;
                     byte* __retVal_native = default;
                     // Setup - Perform required setup.
@@ -3401,6 +3481,7 @@ namespace LibraryImportGenerator.IntegrationTests
                             __retVal_native = __PInvoke(l);
                         }
 
+                        __invokeSucceeded = true;
                         // Unmarshal - Convert native data to managed data.
                         __retVal_native__numElements = 8;
                         __retVal = global::SharedTypes.ListMarshaller<byte, byte>.AllocateContainerForManagedElements(__retVal_native, __retVal_native__numElements);
@@ -3408,9 +3489,12 @@ namespace LibraryImportGenerator.IntegrationTests
                     }
                     finally
                     {
-                        // Cleanup - Perform required cleanup.
-                        __retVal_native__numElements = 8;
-                        global::SharedTypes.ListMarshaller<byte, byte>.Free(__retVal_native);
+                        if (__invokeSucceeded)
+                        {
+                            // CleanupCalleeAllocated - Perform cleanup of callee allocated resources.
+                            __retVal_native__numElements = 8;
+                            global::SharedTypes.ListMarshaller<byte, byte>.Free(__retVal_native);
+                        }
                     }
 
                     return __retVal;
@@ -3463,7 +3547,7 @@ namespace LibraryImportGenerator.IntegrationTests
                     }
                     finally
                     {
-                        // Cleanup - Perform required cleanup.
+                        // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                         _ = __pArray_native__lastIndexMarshalled;
                         ;
                         global::SharedTypes.ListMarshaller<global::SharedTypes.BoolStruct, global::SharedTypes.BoolStructMarshaller.BoolStructNative>.Free(__pArray_native);
@@ -3519,7 +3603,7 @@ namespace LibraryImportGenerator.IntegrationTests
                     }
                     finally
                     {
-                        // Cleanup - Perform required cleanup.
+                        // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                         _ = __pArray_native__lastIndexMarshalled;
                         ;
                         global::SharedTypes.ListMarshaller<global::SharedTypes.BoolStruct, global::SharedTypes.BoolStructMarshaller.BoolStructNative>.Free(__pArray_native);
@@ -3582,7 +3666,7 @@ namespace LibraryImportGenerator.IntegrationTests
                     }
                     finally
                     {
-                        // Cleanup - Perform required cleanup.
+                        // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                         _ = __boolStruct_native__lastIndexMarshalled;
                         __boolStruct_native__numElements = numValues;
                         global::SharedTypes.ListMarshaller<global::SharedTypes.BoolStruct, global::SharedTypes.BoolStructMarshaller.BoolStructNative>.Free(__boolStruct_native);
@@ -3608,6 +3692,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 [global::System.Runtime.CompilerServices.SkipLocalsInitAttribute]
                 public static partial void NegateBools(global::System.Collections.Generic.List<global::SharedTypes.BoolStruct> boolStruct, int numValues, out global::System.Collections.Generic.List<global::SharedTypes.BoolStruct> pBoolStructOut)
                 {
+                    bool __invokeSucceeded = default;
                     System.Runtime.CompilerServices.Unsafe.SkipInit(out pBoolStructOut);
                     byte* __boolStruct_native = default;
                     byte* __pBoolStructOut_native = default;
@@ -3634,6 +3719,7 @@ namespace LibraryImportGenerator.IntegrationTests
                             __PInvoke(__boolStruct_native, numValues, &__pBoolStructOut_native);
                         }
 
+                        __invokeSucceeded = true;
                         // Unmarshal - Convert native data to managed data.
                         __pBoolStructOut_native__numElements = numValues;
                         pBoolStructOut = global::SharedTypes.ListMarshaller<global::SharedTypes.BoolStruct, global::SharedTypes.BoolStructMarshaller.BoolStructNative>.AllocateContainerForManagedElements(__pBoolStructOut_native, __pBoolStructOut_native__numElements);
@@ -3648,9 +3734,14 @@ namespace LibraryImportGenerator.IntegrationTests
                     }
                     finally
                     {
-                        // Cleanup - Perform required cleanup.
-                        __pBoolStructOut_native__numElements = numValues;
-                        global::SharedTypes.ListMarshaller<global::SharedTypes.BoolStruct, global::SharedTypes.BoolStructMarshaller.BoolStructNative>.Free(__pBoolStructOut_native);
+                        if (__invokeSucceeded)
+                        {
+                            // CleanupCalleeAllocated - Perform cleanup of callee allocated resources.
+                            __pBoolStructOut_native__numElements = numValues;
+                            global::SharedTypes.ListMarshaller<global::SharedTypes.BoolStruct, global::SharedTypes.BoolStructMarshaller.BoolStructNative>.Free(__pBoolStructOut_native);
+                        }
+
+                        // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                         _ = __boolStruct_native__lastIndexMarshalled;
                         ;
                         global::SharedTypes.ListMarshaller<global::SharedTypes.BoolStruct, global::SharedTypes.BoolStructMarshaller.BoolStructNative>.Free(__boolStruct_native);
@@ -3676,6 +3767,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 [global::System.Runtime.CompilerServices.SkipLocalsInitAttribute]
                 public static partial global::System.Collections.Generic.List<global::SharedTypes.BoolStruct> NegateBools(global::System.Collections.Generic.List<global::SharedTypes.BoolStruct> boolStruct, int numValues)
                 {
+                    bool __invokeSucceeded = default;
                     byte* __boolStruct_native = default;
                     global::System.Collections.Generic.List<global::SharedTypes.BoolStruct> __retVal = default;
                     byte* __retVal_native = default;
@@ -3702,6 +3794,7 @@ namespace LibraryImportGenerator.IntegrationTests
                             __retVal_native = __PInvoke(__boolStruct_native, numValues);
                         }
 
+                        __invokeSucceeded = true;
                         // Unmarshal - Convert native data to managed data.
                         __retVal_native__numElements = numValues;
                         __retVal = global::SharedTypes.ListMarshaller<global::SharedTypes.BoolStruct, global::SharedTypes.BoolStructMarshaller.BoolStructNative>.AllocateContainerForManagedElements(__retVal_native, __retVal_native__numElements);
@@ -3716,9 +3809,14 @@ namespace LibraryImportGenerator.IntegrationTests
                     }
                     finally
                     {
-                        // Cleanup - Perform required cleanup.
-                        __retVal_native__numElements = numValues;
-                        global::SharedTypes.ListMarshaller<global::SharedTypes.BoolStruct, global::SharedTypes.BoolStructMarshaller.BoolStructNative>.Free(__retVal_native);
+                        if (__invokeSucceeded)
+                        {
+                            // CleanupCalleeAllocated - Perform cleanup of callee allocated resources.
+                            __retVal_native__numElements = numValues;
+                            global::SharedTypes.ListMarshaller<global::SharedTypes.BoolStruct, global::SharedTypes.BoolStructMarshaller.BoolStructNative>.Free(__retVal_native);
+                        }
+
+                        // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                         _ = __boolStruct_native__lastIndexMarshalled;
                         ;
                         global::SharedTypes.ListMarshaller<global::SharedTypes.BoolStruct, global::SharedTypes.BoolStructMarshaller.BoolStructNative>.Free(__boolStruct_native);
@@ -3770,10 +3868,9 @@ namespace LibraryImportGenerator.IntegrationTests
                             // GuaranteedUnmarshal - Convert native data to managed data even in the case of an exception during the non-cleanup phases.
                             __ret_native__numElements = 1;
                             ret = global::LibraryImportGenerator.IntegrationTests.NativeExportsNE.Collections.Stateless.ListGuaranteedUnmarshal<int, int>.AllocateContainerForManagedElementsFinally(__ret_native, __ret_native__numElements);
+                            // CleanupCalleeAllocated - Perform cleanup of callee allocated resources.
+                            __ret_native__numElements = 1;
                         }
-
-                        // Cleanup - Perform required cleanup.
-                        __ret_native__numElements = 1;
                     }
 
                     return __retVal;
@@ -3822,10 +3919,9 @@ namespace LibraryImportGenerator.IntegrationTests
                             // GuaranteedUnmarshal - Convert native data to managed data even in the case of an exception during the non-cleanup phases.
                             __ret_native__numElements = 1;
                             ret = global::LibraryImportGenerator.IntegrationTests.NativeExportsNE.Collections.Stateless.ListGuaranteedUnmarshal<global::SharedTypes.BoolStruct, global::SharedTypes.BoolStructMarshaller.BoolStructNative>.AllocateContainerForManagedElementsFinally(__ret_native, __ret_native__numElements);
+                            // CleanupCalleeAllocated - Perform cleanup of callee allocated resources.
+                            __ret_native__numElements = 1;
                         }
-
-                        // Cleanup - Perform required cleanup.
-                        __ret_native__numElements = 1;
                     }
 
                     return __retVal;
@@ -3870,7 +3966,7 @@ namespace LibraryImportGenerator.IntegrationTests
                     }
                     finally
                     {
-                        // Cleanup - Perform required cleanup.
+                        // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                         __values_native__marshaller.Free();
                     }
 
@@ -3925,7 +4021,7 @@ namespace LibraryImportGenerator.IntegrationTests
                     }
                     finally
                     {
-                        // Cleanup - Perform required cleanup.
+                        // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                         {
                             System.ReadOnlySpan<System.IntPtr> __values_native__nativeSpan = __values_native__marshaller.GetUnmanagedValuesDestination();
                             for (int __i0 = 0; __i0 < __values_native__lastIndexMarshalled; ++__i0)
@@ -3979,7 +4075,7 @@ namespace LibraryImportGenerator.IntegrationTests
                     }
                     finally
                     {
-                        // Cleanup - Perform required cleanup.
+                        // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                         __values_native__marshaller.Free();
                     }
 
@@ -4029,7 +4125,7 @@ namespace LibraryImportGenerator.IntegrationTests
                     }
                     finally
                     {
-                        // Cleanup - Perform required cleanup.
+                        // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                         __values_native__marshaller.Free();
                     }
 
@@ -4053,6 +4149,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 [global::System.Runtime.CompilerServices.SkipLocalsInitAttribute]
                 public static partial global::System.Collections.Generic.List<int> CreateRange(int start, int end, out int numValues)
                 {
+                    bool __invokeSucceeded = default;
                     System.Runtime.CompilerServices.Unsafe.SkipInit(out numValues);
                     global::System.Collections.Generic.List<int> __retVal = default;
                     byte* __retVal_native = default;
@@ -4068,6 +4165,7 @@ namespace LibraryImportGenerator.IntegrationTests
                             __retVal_native = __PInvoke(start, end, __numValues_native);
                         }
 
+                        __invokeSucceeded = true;
                         // UnmarshalCapture - Capture the native data into marshaller instances in case conversion to managed data throws an exception.
                         __retVal_native__marshaller.FromUnmanaged(__retVal_native);
                         // Unmarshal - Convert native data to managed data.
@@ -4077,8 +4175,11 @@ namespace LibraryImportGenerator.IntegrationTests
                     }
                     finally
                     {
-                        // Cleanup - Perform required cleanup.
-                        __retVal_native__marshaller.Free();
+                        if (__invokeSucceeded)
+                        {
+                            // CleanupCalleeAllocated - Perform cleanup of callee allocated resources.
+                            __retVal_native__marshaller.Free();
+                        }
                     }
 
                     return __retVal;
@@ -4102,6 +4203,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 [global::System.Runtime.CompilerServices.SkipLocalsInitAttribute]
                 public static partial void CreateRange_Out(int start, int end, out int numValues, out global::System.Collections.Generic.List<int> res)
                 {
+                    bool __invokeSucceeded = default;
                     System.Runtime.CompilerServices.Unsafe.SkipInit(out numValues);
                     System.Runtime.CompilerServices.Unsafe.SkipInit(out res);
                     byte* __res_native = default;
@@ -4117,6 +4219,7 @@ namespace LibraryImportGenerator.IntegrationTests
                             __PInvoke(start, end, __numValues_native, &__res_native);
                         }
 
+                        __invokeSucceeded = true;
                         // UnmarshalCapture - Capture the native data into marshaller instances in case conversion to managed data throws an exception.
                         __res_native__marshaller.FromUnmanaged(__res_native);
                         // Unmarshal - Convert native data to managed data.
@@ -4126,8 +4229,11 @@ namespace LibraryImportGenerator.IntegrationTests
                     }
                     finally
                     {
-                        // Cleanup - Perform required cleanup.
-                        __res_native__marshaller.Free();
+                        if (__invokeSucceeded)
+                        {
+                            // CleanupCalleeAllocated - Perform cleanup of callee allocated resources.
+                            __res_native__marshaller.Free();
+                        }
                     }
 
                     // Local P/Invoke
@@ -4150,6 +4256,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 [global::System.Runtime.CompilerServices.SkipLocalsInitAttribute]
                 public static partial global::System.Collections.Generic.List<byte> GetLongBytes(long l)
                 {
+                    bool __invokeSucceeded = default;
                     global::System.Collections.Generic.List<byte> __retVal = default;
                     byte* __retVal_native = default;
                     // Setup - Perform required setup.
@@ -4162,6 +4269,7 @@ namespace LibraryImportGenerator.IntegrationTests
                             __retVal_native = __PInvoke(l);
                         }
 
+                        __invokeSucceeded = true;
                         // UnmarshalCapture - Capture the native data into marshaller instances in case conversion to managed data throws an exception.
                         __retVal_native__marshaller.FromUnmanaged(__retVal_native);
                         // Unmarshal - Convert native data to managed data.
@@ -4171,8 +4279,11 @@ namespace LibraryImportGenerator.IntegrationTests
                     }
                     finally
                     {
-                        // Cleanup - Perform required cleanup.
-                        __retVal_native__marshaller.Free();
+                        if (__invokeSucceeded)
+                        {
+                            // CleanupCalleeAllocated - Perform cleanup of callee allocated resources.
+                            __retVal_native__marshaller.Free();
+                        }
                     }
 
                     return __retVal;
@@ -4230,7 +4341,7 @@ namespace LibraryImportGenerator.IntegrationTests
                     }
                     finally
                     {
-                        // Cleanup - Perform required cleanup.
+                        // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                         _ = __pArray_native__lastIndexMarshalled;
                         __pArray_native__marshaller.Free();
                     }
@@ -4290,7 +4401,7 @@ namespace LibraryImportGenerator.IntegrationTests
                     }
                     finally
                     {
-                        // Cleanup - Perform required cleanup.
+                        // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                         _ = __pArray_native__lastIndexMarshalled;
                         __pArray_native__marshaller.Free();
                     }
@@ -4358,7 +4469,7 @@ namespace LibraryImportGenerator.IntegrationTests
                     }
                     finally
                     {
-                        // Cleanup - Perform required cleanup.
+                        // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                         _ = __boolStruct_native__lastIndexMarshalled;
                         __boolStruct_native__marshaller.Free();
                     }
@@ -4383,6 +4494,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 [global::System.Runtime.CompilerServices.SkipLocalsInitAttribute]
                 public static partial void NegateBools(global::System.Collections.Generic.List<global::SharedTypes.BoolStruct> boolStruct, int numValues, out global::System.Collections.Generic.List<global::SharedTypes.BoolStruct> pBoolStructOut)
                 {
+                    bool __invokeSucceeded = default;
                     System.Runtime.CompilerServices.Unsafe.SkipInit(out pBoolStructOut);
                     byte* __boolStruct_native = default;
                     byte* __pBoolStructOut_native = default;
@@ -4415,6 +4527,7 @@ namespace LibraryImportGenerator.IntegrationTests
                             __PInvoke(__boolStruct_native, numValues, &__pBoolStructOut_native);
                         }
 
+                        __invokeSucceeded = true;
                         // UnmarshalCapture - Capture the native data into marshaller instances in case conversion to managed data throws an exception.
                         __pBoolStructOut_native__marshaller.FromUnmanaged(__pBoolStructOut_native);
                         // Unmarshal - Convert native data to managed data.
@@ -4432,8 +4545,13 @@ namespace LibraryImportGenerator.IntegrationTests
                     }
                     finally
                     {
-                        // Cleanup - Perform required cleanup.
-                        __pBoolStructOut_native__marshaller.Free();
+                        if (__invokeSucceeded)
+                        {
+                            // CleanupCalleeAllocated - Perform cleanup of callee allocated resources.
+                            __pBoolStructOut_native__marshaller.Free();
+                        }
+
+                        // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                         _ = __boolStruct_native__lastIndexMarshalled;
                         __boolStruct_native__marshaller.Free();
                     }
@@ -4458,6 +4576,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 [global::System.Runtime.CompilerServices.SkipLocalsInitAttribute]
                 public static partial global::System.Collections.Generic.List<global::SharedTypes.BoolStruct> NegateBools(global::System.Collections.Generic.List<global::SharedTypes.BoolStruct> boolStruct, int numValues)
                 {
+                    bool __invokeSucceeded = default;
                     byte* __boolStruct_native = default;
                     global::System.Collections.Generic.List<global::SharedTypes.BoolStruct> __retVal = default;
                     byte* __retVal_native = default;
@@ -4490,6 +4609,7 @@ namespace LibraryImportGenerator.IntegrationTests
                             __retVal_native = __PInvoke(__boolStruct_native, numValues);
                         }
 
+                        __invokeSucceeded = true;
                         // UnmarshalCapture - Capture the native data into marshaller instances in case conversion to managed data throws an exception.
                         __retVal_native__marshaller.FromUnmanaged(__retVal_native);
                         // Unmarshal - Convert native data to managed data.
@@ -4507,8 +4627,13 @@ namespace LibraryImportGenerator.IntegrationTests
                     }
                     finally
                     {
-                        // Cleanup - Perform required cleanup.
-                        __retVal_native__marshaller.Free();
+                        if (__invokeSucceeded)
+                        {
+                            // CleanupCalleeAllocated - Perform cleanup of callee allocated resources.
+                            __retVal_native__marshaller.Free();
+                        }
+
+                        // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                         _ = __boolStruct_native__lastIndexMarshalled;
                         __boolStruct_native__marshaller.Free();
                     }
@@ -4561,10 +4686,9 @@ namespace LibraryImportGenerator.IntegrationTests
                         {
                             // GuaranteedUnmarshal - Convert native data to managed data even in the case of an exception during the non-cleanup phases.
                             ret = __ret_native__marshaller.ToManagedFinally();
+                            // CleanupCalleeAllocated - Perform cleanup of callee allocated resources.
+                            __ret_native__marshaller.Free();
                         }
-
-                        // Cleanup - Perform required cleanup.
-                        __ret_native__marshaller.Free();
                     }
 
                     return __retVal;
@@ -4615,10 +4739,9 @@ namespace LibraryImportGenerator.IntegrationTests
                         {
                             // GuaranteedUnmarshal - Convert native data to managed data even in the case of an exception during the non-cleanup phases.
                             ret = __ret_native__marshaller.ToManagedFinally();
+                            // CleanupCalleeAllocated - Perform cleanup of callee allocated resources.
+                            __ret_native__marshaller.Free();
                         }
-
-                        // Cleanup - Perform required cleanup.
-                        __ret_native__marshaller.Free();
                     }
 
                     return __retVal;
@@ -4640,6 +4763,7 @@ namespace LibraryImportGenerator.IntegrationTests
             [global::System.Runtime.CompilerServices.SkipLocalsInitAttribute]
             public static partial void DeepDuplicateStrings(global::SharedTypes.StringContainer strings, out global::SharedTypes.StringContainer pStringsOut)
             {
+                bool __invokeSucceeded = default;
                 System.Runtime.CompilerServices.Unsafe.SkipInit(out pStringsOut);
                 global::SharedTypes.StringContainerMarshaller.StringContainerNative __strings_native = default;
                 global::SharedTypes.StringContainerMarshaller.StringContainerNative __pStringsOut_native = default;
@@ -4651,13 +4775,19 @@ namespace LibraryImportGenerator.IntegrationTests
                         __PInvoke(__strings_native, &__pStringsOut_native);
                     }
 
+                    __invokeSucceeded = true;
                     // Unmarshal - Convert native data to managed data.
                     pStringsOut = global::SharedTypes.StringContainerMarshaller.Out.ConvertToManaged(__pStringsOut_native);
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
-                    global::SharedTypes.StringContainerMarshaller.Out.Free(__pStringsOut_native);
+                    if (__invokeSucceeded)
+                    {
+                        // CleanupCalleeAllocated - Perform cleanup of callee allocated resources.
+                        global::SharedTypes.StringContainerMarshaller.Out.Free(__pStringsOut_native);
+                    }
+
+                    // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                     global::SharedTypes.StringContainerMarshaller.In.Free(__strings_native);
                 }
 
@@ -4692,7 +4822,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
+                    // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                     global::SharedTypes.StringContainerMarshaller.Ref.Free(__strings_native);
                 }
 
@@ -4823,6 +4953,7 @@ namespace LibraryImportGenerator.IntegrationTests
             [global::System.Runtime.CompilerServices.SkipLocalsInitAttribute]
             public static partial global::SharedTypes.IntWrapper DoubleIntRef(global::SharedTypes.IntWrapper pInt)
             {
+                bool __invokeSucceeded = default;
                 int* __pInt_native = default;
                 global::SharedTypes.IntWrapper __retVal = default;
                 int* __retVal_native = default;
@@ -4834,13 +4965,19 @@ namespace LibraryImportGenerator.IntegrationTests
                         __retVal_native = __PInvoke(__pInt_native);
                     }
 
+                    __invokeSucceeded = true;
                     // Unmarshal - Convert native data to managed data.
                     __retVal = global::SharedTypes.IntWrapperMarshaller.ConvertToManaged(__retVal_native);
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
-                    global::SharedTypes.IntWrapperMarshaller.Free(__retVal_native);
+                    if (__invokeSucceeded)
+                    {
+                        // CleanupCalleeAllocated - Perform cleanup of callee allocated resources.
+                        global::SharedTypes.IntWrapperMarshaller.Free(__retVal_native);
+                    }
+
+                    // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                     global::SharedTypes.IntWrapperMarshaller.Free(__pInt_native);
                 }
 
@@ -4862,6 +4999,7 @@ namespace LibraryImportGenerator.IntegrationTests
             [global::System.Runtime.CompilerServices.SkipLocalsInitAttribute]
             public static partial global::SharedTypes.IntWrapperWithoutGetPinnableReference DoubleIntRef(global::SharedTypes.IntWrapperWithoutGetPinnableReference pInt)
             {
+                bool __invokeSucceeded = default;
                 global::SharedTypes.IntWrapperWithoutGetPinnableReference __retVal = default;
                 int* __retVal_native = default;
                 try
@@ -4872,13 +5010,17 @@ namespace LibraryImportGenerator.IntegrationTests
                         __retVal_native = __PInvoke((int*)__pInt_native);
                     }
 
+                    __invokeSucceeded = true;
                     // Unmarshal - Convert native data to managed data.
                     __retVal = global::SharedTypes.IntWrapperWithoutGetPinnableReferenceMarshaller.ConvertToManaged(__retVal_native);
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
-                    global::SharedTypes.IntWrapperWithoutGetPinnableReferenceMarshaller.Free(__retVal_native);
+                    if (__invokeSucceeded)
+                    {
+                        // CleanupCalleeAllocated - Perform cleanup of callee allocated resources.
+                        global::SharedTypes.IntWrapperWithoutGetPinnableReferenceMarshaller.Free(__retVal_native);
+                    }
                 }
 
                 return __retVal;
@@ -5094,6 +5236,7 @@ namespace LibraryImportGenerator.IntegrationTests
             [global::System.Runtime.CompilerServices.SkipLocalsInitAttribute]
             public static partial global::SharedTypes.IntWrapperWithoutGetPinnableReference DoubleIntRef(global::SharedTypes.IntWrapperWithoutGetPinnableReference pInt)
             {
+                bool __invokeSucceeded = default;
                 global::SharedTypes.IntWrapperWithoutGetPinnableReference __retVal = default;
                 int* __retVal_native = default;
                 try
@@ -5104,13 +5247,17 @@ namespace LibraryImportGenerator.IntegrationTests
                         __retVal_native = __PInvoke((int*)__pInt_native);
                     }
 
+                    __invokeSucceeded = true;
                     // Unmarshal - Convert native data to managed data.
                     __retVal = global::SharedTypes.IntWrapperWithoutGetPinnableReferenceMarshaller.ConvertToManaged(__retVal_native);
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
-                    global::SharedTypes.IntWrapperWithoutGetPinnableReferenceMarshaller.Free(__retVal_native);
+                    if (__invokeSucceeded)
+                    {
+                        // CleanupCalleeAllocated - Perform cleanup of callee allocated resources.
+                        global::SharedTypes.IntWrapperWithoutGetPinnableReferenceMarshaller.Free(__retVal_native);
+                    }
                 }
 
                 return __retVal;
@@ -5131,6 +5278,7 @@ namespace LibraryImportGenerator.IntegrationTests
             [global::System.Runtime.CompilerServices.SkipLocalsInitAttribute]
             public static partial global::SharedTypes.IntWrapperWithoutGetPinnableReference DoubleIntRefNoAlloc(global::SharedTypes.IntWrapperWithoutGetPinnableReference pInt)
             {
+                bool __invokeSucceeded = default;
                 int* __pInt_native = default;
                 global::SharedTypes.IntWrapperWithoutGetPinnableReference __retVal = default;
                 int* __retVal_native = default;
@@ -5148,13 +5296,17 @@ namespace LibraryImportGenerator.IntegrationTests
                         __retVal_native = __PInvoke(__pInt_native);
                     }
 
+                    __invokeSucceeded = true;
                     // Unmarshal - Convert native data to managed data.
                     __retVal = global::SharedTypes.IntWrapperWithoutGetPinnableReferenceMarshaller.ConvertToManaged(__retVal_native);
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
-                    global::SharedTypes.IntWrapperWithoutGetPinnableReferenceMarshaller.Free(__retVal_native);
+                    if (__invokeSucceeded)
+                    {
+                        // CleanupCalleeAllocated - Perform cleanup of callee allocated resources.
+                        global::SharedTypes.IntWrapperWithoutGetPinnableReferenceMarshaller.Free(__retVal_native);
+                    }
                 }
 
                 return __retVal;
@@ -5175,6 +5327,7 @@ namespace LibraryImportGenerator.IntegrationTests
             [global::System.Runtime.CompilerServices.SkipLocalsInitAttribute]
             public static partial global::SharedTypes.IntWrapper DoubleIntRef(global::SharedTypes.IntWrapper pInt)
             {
+                bool __invokeSucceeded = default;
                 int* __pInt_native = default;
                 global::SharedTypes.IntWrapper __retVal = default;
                 int* __retVal_native = default;
@@ -5191,6 +5344,7 @@ namespace LibraryImportGenerator.IntegrationTests
                         __retVal_native = __PInvoke(__pInt_native);
                     }
 
+                    __invokeSucceeded = true;
                     // UnmarshalCapture - Capture the native data into marshaller instances in case conversion to managed data throws an exception.
                     __retVal_native__marshaller.FromUnmanaged(__retVal_native);
                     // Unmarshal - Convert native data to managed data.
@@ -5198,8 +5352,13 @@ namespace LibraryImportGenerator.IntegrationTests
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
-                    __retVal_native__marshaller.Free();
+                    if (__invokeSucceeded)
+                    {
+                        // CleanupCalleeAllocated - Perform cleanup of callee allocated resources.
+                        __retVal_native__marshaller.Free();
+                    }
+
+                    // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                     __pInt_native__marshaller.Free();
                 }
 
@@ -5246,10 +5405,9 @@ namespace LibraryImportGenerator.IntegrationTests
                     {
                         // GuaranteedUnmarshal - Convert native data to managed data even in the case of an exception during the non-cleanup phases.
                         __retVal = __retVal_native__marshaller.ToManagedFinally();
+                        // CleanupCalleeAllocated - Perform cleanup of callee allocated resources.
+                        __retVal_native__marshaller.Free();
                     }
-
-                    // Cleanup - Perform required cleanup.
-                    __retVal_native__marshaller.Free();
                 }
 
                 return __retVal;
@@ -5282,7 +5440,7 @@ namespace LibraryImportGenerator.IntegrationTests
             }
             finally
             {
-                // Cleanup - Perform required cleanup.
+                // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                 global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller.Free(__s_native);
             }
 
@@ -5624,6 +5782,7 @@ namespace LibraryImportGenerator.IntegrationTests
             [global::System.Runtime.CompilerServices.SkipLocalsInitAttribute]
             private static partial global::LibraryImportGenerator.IntegrationTests.NativeExportsNE.NativeExportsSafeHandle AllocateHandle()
             {
+                bool __invokeSucceeded = default;
                 global::LibraryImportGenerator.IntegrationTests.NativeExportsNE.NativeExportsSafeHandle __retVal = default;
                 nint __retVal_native = default;
                 // Setup - Perform required setup.
@@ -5634,6 +5793,7 @@ namespace LibraryImportGenerator.IntegrationTests
                         __retVal_native = __PInvoke();
                     }
 
+                    __invokeSucceeded = true;
                     // UnmarshalCapture - Capture the native data into marshaller instances in case conversion to managed data throws an exception.
                     __retVal_native__marshaller.FromUnmanaged(__retVal_native);
                     // Unmarshal - Convert native data to managed data.
@@ -5641,8 +5801,11 @@ namespace LibraryImportGenerator.IntegrationTests
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
-                    __retVal_native__marshaller.Free();
+                    if (__invokeSucceeded)
+                    {
+                        // CleanupCalleeAllocated - Perform cleanup of callee allocated resources.
+                        __retVal_native__marshaller.Free();
+                    }
                 }
 
                 return __retVal;
@@ -5661,6 +5824,7 @@ namespace LibraryImportGenerator.IntegrationTests
         [global::System.Runtime.CompilerServices.SkipLocalsInitAttribute]
         public static partial global::LibraryImportGenerator.IntegrationTests.NativeExportsNE.NativeExportsSafeHandle AllocateHandle()
         {
+            bool __invokeSucceeded = default;
             global::LibraryImportGenerator.IntegrationTests.NativeExportsNE.NativeExportsSafeHandle __retVal = default;
             nint __retVal_native = default;
             // Setup - Perform required setup.
@@ -5671,6 +5835,7 @@ namespace LibraryImportGenerator.IntegrationTests
                     __retVal_native = __PInvoke();
                 }
 
+                __invokeSucceeded = true;
                 // UnmarshalCapture - Capture the native data into marshaller instances in case conversion to managed data throws an exception.
                 __retVal_native__marshaller.FromUnmanaged(__retVal_native);
                 // Unmarshal - Convert native data to managed data.
@@ -5678,8 +5843,11 @@ namespace LibraryImportGenerator.IntegrationTests
             }
             finally
             {
-                // Cleanup - Perform required cleanup.
-                __retVal_native__marshaller.Free();
+                if (__invokeSucceeded)
+                {
+                    // CleanupCalleeAllocated - Perform cleanup of callee allocated resources.
+                    __retVal_native__marshaller.Free();
+                }
             }
 
             return __retVal;
@@ -5697,6 +5865,7 @@ namespace LibraryImportGenerator.IntegrationTests
         [global::System.Runtime.CompilerServices.SkipLocalsInitAttribute]
         public static partial void AllocateHandle(out global::LibraryImportGenerator.IntegrationTests.NativeExportsNE.NativeExportsSafeHandle handle)
         {
+            bool __invokeSucceeded = default;
             System.Runtime.CompilerServices.Unsafe.SkipInit(out handle);
             nint __handle_native = default;
             // Setup - Perform required setup.
@@ -5707,6 +5876,7 @@ namespace LibraryImportGenerator.IntegrationTests
                     __PInvoke(&__handle_native);
                 }
 
+                __invokeSucceeded = true;
                 // UnmarshalCapture - Capture the native data into marshaller instances in case conversion to managed data throws an exception.
                 __handle_native__marshaller.FromUnmanaged(__handle_native);
                 // Unmarshal - Convert native data to managed data.
@@ -5714,8 +5884,11 @@ namespace LibraryImportGenerator.IntegrationTests
             }
             finally
             {
-                // Cleanup - Perform required cleanup.
-                __handle_native__marshaller.Free();
+                if (__invokeSucceeded)
+                {
+                    // CleanupCalleeAllocated - Perform cleanup of callee allocated resources.
+                    __handle_native__marshaller.Free();
+                }
             }
 
             // Local P/Invoke
@@ -5775,7 +5948,7 @@ namespace LibraryImportGenerator.IntegrationTests
             }
             finally
             {
-                // Cleanup - Perform required cleanup.
+                // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                 __handle_native__marshaller.Free();
             }
 
@@ -5824,7 +5997,7 @@ namespace LibraryImportGenerator.IntegrationTests
                     handle = __handle_native__marshaller.ToManagedFinally();
                 }
 
-                // Cleanup - Perform required cleanup.
+                // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                 __handle_native__marshaller.Free();
             }
 
@@ -5902,6 +6075,7 @@ namespace LibraryImportGenerator.IntegrationTests
             public static partial string SetError_NonBlittableSignature(int error, bool shouldSetError, string errorString)
             {
                 int __lastError;
+                bool __invokeSucceeded = default;
                 byte __shouldSetError_native = default;
                 string __retVal = default;
                 ushort* __retVal_native = default;
@@ -5917,13 +6091,17 @@ namespace LibraryImportGenerator.IntegrationTests
                         __lastError = System.Runtime.InteropServices.Marshal.GetLastSystemError();
                     }
 
+                    __invokeSucceeded = true;
                     // Unmarshal - Convert native data to managed data.
                     __retVal = global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller.ConvertToManaged(__retVal_native);
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
-                    global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller.Free(__retVal_native);
+                    if (__invokeSucceeded)
+                    {
+                        // CleanupCalleeAllocated - Perform cleanup of callee allocated resources.
+                        global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller.Free(__retVal_native);
+                    }
                 }
 
                 System.Runtime.InteropServices.Marshal.SetLastPInvokeError(__lastError);
@@ -6016,7 +6194,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
+                    // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                     __values_native__marshaller.Free();
                 }
 
@@ -6058,7 +6236,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
+                    // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                     __values_native__numElements = numValues;
                     global::System.Runtime.InteropServices.Marshalling.SpanMarshaller<int, int>.Free(__values_native);
                 }
@@ -6080,6 +6258,7 @@ namespace LibraryImportGenerator.IntegrationTests
             [global::System.Runtime.CompilerServices.SkipLocalsInitAttribute]
             public static partial global::System.Span<int> CreateRange(int start, int end, out int numValues)
             {
+                bool __invokeSucceeded = default;
                 System.Runtime.CompilerServices.Unsafe.SkipInit(out numValues);
                 global::System.Span<int> __retVal = default;
                 int* __retVal_native = default;
@@ -6094,6 +6273,7 @@ namespace LibraryImportGenerator.IntegrationTests
                         __retVal_native = __PInvoke(start, end, __numValues_native);
                     }
 
+                    __invokeSucceeded = true;
                     // Unmarshal - Convert native data to managed data.
                     __retVal_native__numElements = numValues;
                     __retVal = global::System.Runtime.InteropServices.Marshalling.SpanMarshaller<int, int>.AllocateContainerForManagedElements(__retVal_native, __retVal_native__numElements);
@@ -6101,9 +6281,12 @@ namespace LibraryImportGenerator.IntegrationTests
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
-                    __retVal_native__numElements = numValues;
-                    global::System.Runtime.InteropServices.Marshalling.SpanMarshaller<int, int>.Free(__retVal_native);
+                    if (__invokeSucceeded)
+                    {
+                        // CleanupCalleeAllocated - Perform cleanup of callee allocated resources.
+                        __retVal_native__numElements = numValues;
+                        global::System.Runtime.InteropServices.Marshalling.SpanMarshaller<int, int>.Free(__retVal_native);
+                    }
                 }
 
                 return __retVal;
@@ -6124,6 +6307,7 @@ namespace LibraryImportGenerator.IntegrationTests
             [global::System.Runtime.CompilerServices.SkipLocalsInitAttribute]
             public static partial void CreateRange_Out(int start, int end, out int numValues, out global::System.Span<int> res)
             {
+                bool __invokeSucceeded = default;
                 System.Runtime.CompilerServices.Unsafe.SkipInit(out numValues);
                 res = default;
                 int* __res_native = default;
@@ -6138,6 +6322,7 @@ namespace LibraryImportGenerator.IntegrationTests
                         __PInvoke(start, end, __numValues_native, &__res_native);
                     }
 
+                    __invokeSucceeded = true;
                     // Unmarshal - Convert native data to managed data.
                     __res_native__numElements = numValues;
                     res = global::System.Runtime.InteropServices.Marshalling.SpanMarshaller<int, int>.AllocateContainerForManagedElements(__res_native, __res_native__numElements);
@@ -6145,9 +6330,12 @@ namespace LibraryImportGenerator.IntegrationTests
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
-                    __res_native__numElements = numValues;
-                    global::System.Runtime.InteropServices.Marshalling.SpanMarshaller<int, int>.Free(__res_native);
+                    if (__invokeSucceeded)
+                    {
+                        // CleanupCalleeAllocated - Perform cleanup of callee allocated resources.
+                        __res_native__numElements = numValues;
+                        global::System.Runtime.InteropServices.Marshalling.SpanMarshaller<int, int>.Free(__res_native);
+                    }
                 }
 
                 // Local P/Invoke
@@ -6167,6 +6355,7 @@ namespace LibraryImportGenerator.IntegrationTests
             [global::System.Runtime.CompilerServices.SkipLocalsInitAttribute]
             public static partial global::System.Span<byte> GetLongBytes(long l)
             {
+                bool __invokeSucceeded = default;
                 global::System.Span<byte> __retVal = default;
                 byte* __retVal_native = default;
                 // Setup - Perform required setup.
@@ -6178,6 +6367,7 @@ namespace LibraryImportGenerator.IntegrationTests
                         __retVal_native = __PInvoke(l);
                     }
 
+                    __invokeSucceeded = true;
                     // Unmarshal - Convert native data to managed data.
                     __retVal_native__numElements = 8;
                     __retVal = global::System.Runtime.InteropServices.Marshalling.SpanMarshaller<byte, byte>.AllocateContainerForManagedElements(__retVal_native, __retVal_native__numElements);
@@ -6185,9 +6375,12 @@ namespace LibraryImportGenerator.IntegrationTests
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
-                    __retVal_native__numElements = 8;
-                    global::System.Runtime.InteropServices.Marshalling.SpanMarshaller<byte, byte>.Free(__retVal_native);
+                    if (__invokeSucceeded)
+                    {
+                        // CleanupCalleeAllocated - Perform cleanup of callee allocated resources.
+                        __retVal_native__numElements = 8;
+                        global::System.Runtime.InteropServices.Marshalling.SpanMarshaller<byte, byte>.Free(__retVal_native);
+                    }
                 }
 
                 return __retVal;
@@ -6242,7 +6435,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
+                    // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                     _ = __pArray_native__lastIndexMarshalled;
                     __pArray_native__marshaller.Free();
                 }
@@ -6290,6 +6483,7 @@ namespace LibraryImportGenerator.IntegrationTests
             [global::System.Runtime.CompilerServices.SkipLocalsInitAttribute]
             public static partial string Reverse_Return(string s)
             {
+                bool __invokeSucceeded = default;
                 string __retVal = default;
                 ushort* __retVal_native = default;
                 try
@@ -6300,13 +6494,17 @@ namespace LibraryImportGenerator.IntegrationTests
                         __retVal_native = __PInvoke((ushort*)__s_native);
                     }
 
+                    __invokeSucceeded = true;
                     // Unmarshal - Convert native data to managed data.
                     __retVal = global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller.ConvertToManaged(__retVal_native);
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
-                    global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller.Free(__retVal_native);
+                    if (__invokeSucceeded)
+                    {
+                        // CleanupCalleeAllocated - Perform cleanup of callee allocated resources.
+                        global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller.Free(__retVal_native);
+                    }
                 }
 
                 return __retVal;
@@ -6327,6 +6525,7 @@ namespace LibraryImportGenerator.IntegrationTests
             [global::System.Runtime.CompilerServices.SkipLocalsInitAttribute]
             public static partial void Reverse_Out(string s, out string ret)
             {
+                bool __invokeSucceeded = default;
                 System.Runtime.CompilerServices.Unsafe.SkipInit(out ret);
                 ushort* __ret_native = default;
                 try
@@ -6337,13 +6536,17 @@ namespace LibraryImportGenerator.IntegrationTests
                         __PInvoke((ushort*)__s_native, &__ret_native);
                     }
 
+                    __invokeSucceeded = true;
                     // Unmarshal - Convert native data to managed data.
                     ret = global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller.ConvertToManaged(__ret_native);
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
-                    global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller.Free(__ret_native);
+                    if (__invokeSucceeded)
+                    {
+                        // CleanupCalleeAllocated - Perform cleanup of callee allocated resources.
+                        global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller.Free(__ret_native);
+                    }
                 }
 
                 // Local P/Invoke
@@ -6377,7 +6580,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
+                    // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                     global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller.Free(__s_native);
                 }
 
@@ -6409,7 +6612,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
+                    // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                     global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller.Free(__s_native);
                 }
 
@@ -6444,7 +6647,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
+                    // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                     global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller.Free(__s_native);
                 }
 
@@ -6515,6 +6718,7 @@ namespace LibraryImportGenerator.IntegrationTests
             [global::System.Runtime.CompilerServices.SkipLocalsInitAttribute]
             public static partial string Reverse_Return(string s)
             {
+                bool __invokeSucceeded = default;
                 string __retVal = default;
                 ushort* __retVal_native = default;
                 try
@@ -6525,13 +6729,17 @@ namespace LibraryImportGenerator.IntegrationTests
                         __retVal_native = __PInvoke((ushort*)__s_native);
                     }
 
+                    __invokeSucceeded = true;
                     // Unmarshal - Convert native data to managed data.
                     __retVal = global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller.ConvertToManaged(__retVal_native);
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
-                    global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller.Free(__retVal_native);
+                    if (__invokeSucceeded)
+                    {
+                        // CleanupCalleeAllocated - Perform cleanup of callee allocated resources.
+                        global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller.Free(__retVal_native);
+                    }
                 }
 
                 return __retVal;
@@ -6552,6 +6760,7 @@ namespace LibraryImportGenerator.IntegrationTests
             [global::System.Runtime.CompilerServices.SkipLocalsInitAttribute]
             public static partial void Reverse_Out(string s, out string ret)
             {
+                bool __invokeSucceeded = default;
                 System.Runtime.CompilerServices.Unsafe.SkipInit(out ret);
                 ushort* __ret_native = default;
                 try
@@ -6562,13 +6771,17 @@ namespace LibraryImportGenerator.IntegrationTests
                         __PInvoke((ushort*)__s_native, &__ret_native);
                     }
 
+                    __invokeSucceeded = true;
                     // Unmarshal - Convert native data to managed data.
                     ret = global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller.ConvertToManaged(__ret_native);
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
-                    global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller.Free(__ret_native);
+                    if (__invokeSucceeded)
+                    {
+                        // CleanupCalleeAllocated - Perform cleanup of callee allocated resources.
+                        global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller.Free(__ret_native);
+                    }
                 }
 
                 // Local P/Invoke
@@ -6602,7 +6815,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
+                    // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                     global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller.Free(__s_native);
                 }
 
@@ -6634,7 +6847,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
+                    // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                     global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller.Free(__s_native);
                 }
 
@@ -6669,7 +6882,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
+                    // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                     global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller.Free(__s_native);
                 }
 
@@ -6740,6 +6953,7 @@ namespace LibraryImportGenerator.IntegrationTests
             [global::System.Runtime.CompilerServices.SkipLocalsInitAttribute]
             public static partial string Reverse_Return(string s)
             {
+                bool __invokeSucceeded = default;
                 string __retVal = default;
                 ushort* __retVal_native = default;
                 try
@@ -6750,13 +6964,17 @@ namespace LibraryImportGenerator.IntegrationTests
                         __retVal_native = __PInvoke((ushort*)__s_native);
                     }
 
+                    __invokeSucceeded = true;
                     // Unmarshal - Convert native data to managed data.
                     __retVal = global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller.ConvertToManaged(__retVal_native);
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
-                    global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller.Free(__retVal_native);
+                    if (__invokeSucceeded)
+                    {
+                        // CleanupCalleeAllocated - Perform cleanup of callee allocated resources.
+                        global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller.Free(__retVal_native);
+                    }
                 }
 
                 return __retVal;
@@ -6777,6 +6995,7 @@ namespace LibraryImportGenerator.IntegrationTests
             [global::System.Runtime.CompilerServices.SkipLocalsInitAttribute]
             public static partial void Reverse_Out(string s, out string ret)
             {
+                bool __invokeSucceeded = default;
                 System.Runtime.CompilerServices.Unsafe.SkipInit(out ret);
                 ushort* __ret_native = default;
                 try
@@ -6787,13 +7006,17 @@ namespace LibraryImportGenerator.IntegrationTests
                         __PInvoke((ushort*)__s_native, &__ret_native);
                     }
 
+                    __invokeSucceeded = true;
                     // Unmarshal - Convert native data to managed data.
                     ret = global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller.ConvertToManaged(__ret_native);
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
-                    global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller.Free(__ret_native);
+                    if (__invokeSucceeded)
+                    {
+                        // CleanupCalleeAllocated - Perform cleanup of callee allocated resources.
+                        global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller.Free(__ret_native);
+                    }
                 }
 
                 // Local P/Invoke
@@ -6827,7 +7050,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
+                    // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                     global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller.Free(__s_native);
                 }
 
@@ -6859,7 +7082,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
+                    // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                     global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller.Free(__s_native);
                 }
 
@@ -6894,7 +7117,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
+                    // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                     global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller.Free(__s_native);
                 }
 
@@ -6931,7 +7154,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
+                    // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                     __s_native__marshaller.Free();
                 }
 
@@ -6969,7 +7192,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
+                    // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                     __s_native__marshaller.Free();
                 }
 
@@ -6991,6 +7214,7 @@ namespace LibraryImportGenerator.IntegrationTests
             [global::System.Runtime.CompilerServices.SkipLocalsInitAttribute]
             public static partial string Reverse_Return(string s)
             {
+                bool __invokeSucceeded = default;
                 byte* __s_native = default;
                 string __retVal = default;
                 byte* __retVal_native = default;
@@ -7006,13 +7230,19 @@ namespace LibraryImportGenerator.IntegrationTests
                         __retVal_native = __PInvoke(__s_native);
                     }
 
+                    __invokeSucceeded = true;
                     // Unmarshal - Convert native data to managed data.
                     __retVal = global::System.Runtime.InteropServices.Marshalling.Utf8StringMarshaller.ConvertToManaged(__retVal_native);
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
-                    global::System.Runtime.InteropServices.Marshalling.Utf8StringMarshaller.Free(__retVal_native);
+                    if (__invokeSucceeded)
+                    {
+                        // CleanupCalleeAllocated - Perform cleanup of callee allocated resources.
+                        global::System.Runtime.InteropServices.Marshalling.Utf8StringMarshaller.Free(__retVal_native);
+                    }
+
+                    // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                     __s_native__marshaller.Free();
                 }
 
@@ -7034,6 +7264,7 @@ namespace LibraryImportGenerator.IntegrationTests
             [global::System.Runtime.CompilerServices.SkipLocalsInitAttribute]
             public static partial void Reverse_Out(string s, out string ret)
             {
+                bool __invokeSucceeded = default;
                 System.Runtime.CompilerServices.Unsafe.SkipInit(out ret);
                 byte* __s_native = default;
                 byte* __ret_native = default;
@@ -7049,13 +7280,19 @@ namespace LibraryImportGenerator.IntegrationTests
                         __PInvoke(__s_native, &__ret_native);
                     }
 
+                    __invokeSucceeded = true;
                     // Unmarshal - Convert native data to managed data.
                     ret = global::System.Runtime.InteropServices.Marshalling.Utf8StringMarshaller.ConvertToManaged(__ret_native);
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
-                    global::System.Runtime.InteropServices.Marshalling.Utf8StringMarshaller.Free(__ret_native);
+                    if (__invokeSucceeded)
+                    {
+                        // CleanupCalleeAllocated - Perform cleanup of callee allocated resources.
+                        global::System.Runtime.InteropServices.Marshalling.Utf8StringMarshaller.Free(__ret_native);
+                    }
+
+                    // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                     __s_native__marshaller.Free();
                 }
 
@@ -7091,7 +7328,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
+                    // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                     __s_native__marshaller.Free();
                 }
 
@@ -7126,7 +7363,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
+                    // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                     global::System.Runtime.InteropServices.Marshalling.Utf8StringMarshaller.Free(__s_native);
                 }
 
@@ -7161,7 +7398,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
+                    // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                     global::System.Runtime.InteropServices.Marshalling.Utf8StringMarshaller.Free(__s_native);
                 }
 
@@ -7198,7 +7435,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
+                    // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                     __s_native__marshaller.Free();
                 }
 
@@ -7220,6 +7457,7 @@ namespace LibraryImportGenerator.IntegrationTests
             [global::System.Runtime.CompilerServices.SkipLocalsInitAttribute]
             public static partial string Reverse_Return(string s)
             {
+                bool __invokeSucceeded = default;
                 byte* __s_native = default;
                 string __retVal = default;
                 byte* __retVal_native = default;
@@ -7235,13 +7473,19 @@ namespace LibraryImportGenerator.IntegrationTests
                         __retVal_native = __PInvoke(__s_native);
                     }
 
+                    __invokeSucceeded = true;
                     // Unmarshal - Convert native data to managed data.
                     __retVal = global::System.Runtime.InteropServices.Marshalling.Utf8StringMarshaller.ConvertToManaged(__retVal_native);
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
-                    global::System.Runtime.InteropServices.Marshalling.Utf8StringMarshaller.Free(__retVal_native);
+                    if (__invokeSucceeded)
+                    {
+                        // CleanupCalleeAllocated - Perform cleanup of callee allocated resources.
+                        global::System.Runtime.InteropServices.Marshalling.Utf8StringMarshaller.Free(__retVal_native);
+                    }
+
+                    // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                     __s_native__marshaller.Free();
                 }
 
@@ -7263,6 +7507,7 @@ namespace LibraryImportGenerator.IntegrationTests
             [global::System.Runtime.CompilerServices.SkipLocalsInitAttribute]
             public static partial void Reverse_Out(string s, out string ret)
             {
+                bool __invokeSucceeded = default;
                 System.Runtime.CompilerServices.Unsafe.SkipInit(out ret);
                 byte* __s_native = default;
                 byte* __ret_native = default;
@@ -7278,13 +7523,19 @@ namespace LibraryImportGenerator.IntegrationTests
                         __PInvoke(__s_native, &__ret_native);
                     }
 
+                    __invokeSucceeded = true;
                     // Unmarshal - Convert native data to managed data.
                     ret = global::System.Runtime.InteropServices.Marshalling.Utf8StringMarshaller.ConvertToManaged(__ret_native);
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
-                    global::System.Runtime.InteropServices.Marshalling.Utf8StringMarshaller.Free(__ret_native);
+                    if (__invokeSucceeded)
+                    {
+                        // CleanupCalleeAllocated - Perform cleanup of callee allocated resources.
+                        global::System.Runtime.InteropServices.Marshalling.Utf8StringMarshaller.Free(__ret_native);
+                    }
+
+                    // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                     __s_native__marshaller.Free();
                 }
 
@@ -7319,7 +7570,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
+                    // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                     global::System.Runtime.InteropServices.Marshalling.Utf8StringMarshaller.Free(__s_native);
                 }
 
@@ -7355,7 +7606,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
+                    // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                     __s_native__marshaller.Free();
                 }
 
@@ -7390,7 +7641,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
+                    // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                     global::System.Runtime.InteropServices.Marshalling.Utf8StringMarshaller.Free(__s_native);
                 }
 
@@ -7427,7 +7678,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
+                    // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                     __s_native__marshaller.Free();
                 }
 
@@ -7465,7 +7716,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
+                    // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                     __s_native__marshaller.Free();
                 }
 
@@ -7487,6 +7738,7 @@ namespace LibraryImportGenerator.IntegrationTests
             [global::System.Runtime.CompilerServices.SkipLocalsInitAttribute]
             public static partial string Reverse_Return(string s)
             {
+                bool __invokeSucceeded = default;
                 byte* __s_native = default;
                 string __retVal = default;
                 byte* __retVal_native = default;
@@ -7502,13 +7754,19 @@ namespace LibraryImportGenerator.IntegrationTests
                         __retVal_native = __PInvoke(__s_native);
                     }
 
+                    __invokeSucceeded = true;
                     // Unmarshal - Convert native data to managed data.
                     __retVal = global::System.Runtime.InteropServices.Marshalling.AnsiStringMarshaller.ConvertToManaged(__retVal_native);
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
-                    global::System.Runtime.InteropServices.Marshalling.AnsiStringMarshaller.Free(__retVal_native);
+                    if (__invokeSucceeded)
+                    {
+                        // CleanupCalleeAllocated - Perform cleanup of callee allocated resources.
+                        global::System.Runtime.InteropServices.Marshalling.AnsiStringMarshaller.Free(__retVal_native);
+                    }
+
+                    // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                     __s_native__marshaller.Free();
                 }
 
@@ -7530,6 +7788,7 @@ namespace LibraryImportGenerator.IntegrationTests
             [global::System.Runtime.CompilerServices.SkipLocalsInitAttribute]
             public static partial void Reverse_Out(string s, out string ret)
             {
+                bool __invokeSucceeded = default;
                 System.Runtime.CompilerServices.Unsafe.SkipInit(out ret);
                 byte* __s_native = default;
                 byte* __ret_native = default;
@@ -7545,13 +7804,19 @@ namespace LibraryImportGenerator.IntegrationTests
                         __PInvoke(__s_native, &__ret_native);
                     }
 
+                    __invokeSucceeded = true;
                     // Unmarshal - Convert native data to managed data.
                     ret = global::System.Runtime.InteropServices.Marshalling.AnsiStringMarshaller.ConvertToManaged(__ret_native);
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
-                    global::System.Runtime.InteropServices.Marshalling.AnsiStringMarshaller.Free(__ret_native);
+                    if (__invokeSucceeded)
+                    {
+                        // CleanupCalleeAllocated - Perform cleanup of callee allocated resources.
+                        global::System.Runtime.InteropServices.Marshalling.AnsiStringMarshaller.Free(__ret_native);
+                    }
+
+                    // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                     __s_native__marshaller.Free();
                 }
 
@@ -7586,7 +7851,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
+                    // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                     global::System.Runtime.InteropServices.Marshalling.AnsiStringMarshaller.Free(__s_native);
                 }
 
@@ -7622,7 +7887,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
+                    // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                     __s_native__marshaller.Free();
                 }
 
@@ -7657,7 +7922,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
+                    // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                     global::System.Runtime.InteropServices.Marshalling.AnsiStringMarshaller.Free(__s_native);
                 }
 
@@ -7694,7 +7959,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
+                    // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                     __s_native__marshaller.Free();
                 }
 
@@ -7732,7 +7997,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
+                    // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                     __s_native__marshaller.Free();
                 }
 
@@ -7754,6 +8019,7 @@ namespace LibraryImportGenerator.IntegrationTests
             [global::System.Runtime.CompilerServices.SkipLocalsInitAttribute]
             public static partial string Reverse_Return(string s)
             {
+                bool __invokeSucceeded = default;
                 ushort* __s_native = default;
                 string __retVal = default;
                 ushort* __retVal_native = default;
@@ -7769,13 +8035,19 @@ namespace LibraryImportGenerator.IntegrationTests
                         __retVal_native = __PInvoke(__s_native);
                     }
 
+                    __invokeSucceeded = true;
                     // Unmarshal - Convert native data to managed data.
                     __retVal = global::System.Runtime.InteropServices.Marshalling.BStrStringMarshaller.ConvertToManaged(__retVal_native);
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
-                    global::System.Runtime.InteropServices.Marshalling.BStrStringMarshaller.Free(__retVal_native);
+                    if (__invokeSucceeded)
+                    {
+                        // CleanupCalleeAllocated - Perform cleanup of callee allocated resources.
+                        global::System.Runtime.InteropServices.Marshalling.BStrStringMarshaller.Free(__retVal_native);
+                    }
+
+                    // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                     __s_native__marshaller.Free();
                 }
 
@@ -7797,6 +8069,7 @@ namespace LibraryImportGenerator.IntegrationTests
             [global::System.Runtime.CompilerServices.SkipLocalsInitAttribute]
             public static partial void Reverse_Out(string s, out string ret)
             {
+                bool __invokeSucceeded = default;
                 System.Runtime.CompilerServices.Unsafe.SkipInit(out ret);
                 ushort* __s_native = default;
                 ushort* __ret_native = default;
@@ -7812,13 +8085,19 @@ namespace LibraryImportGenerator.IntegrationTests
                         __PInvoke(__s_native, &__ret_native);
                     }
 
+                    __invokeSucceeded = true;
                     // Unmarshal - Convert native data to managed data.
                     ret = global::System.Runtime.InteropServices.Marshalling.BStrStringMarshaller.ConvertToManaged(__ret_native);
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
-                    global::System.Runtime.InteropServices.Marshalling.BStrStringMarshaller.Free(__ret_native);
+                    if (__invokeSucceeded)
+                    {
+                        // CleanupCalleeAllocated - Perform cleanup of callee allocated resources.
+                        global::System.Runtime.InteropServices.Marshalling.BStrStringMarshaller.Free(__ret_native);
+                    }
+
+                    // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                     __s_native__marshaller.Free();
                 }
 
@@ -7853,7 +8132,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
+                    // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                     global::System.Runtime.InteropServices.Marshalling.BStrStringMarshaller.Free(__s_native);
                 }
 
@@ -7889,7 +8168,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
+                    // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                     __s_native__marshaller.Free();
                 }
 
@@ -7924,7 +8203,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
+                    // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                     global::System.Runtime.InteropServices.Marshalling.BStrStringMarshaller.Free(__s_native);
                 }
 
@@ -7975,6 +8254,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 [global::System.Runtime.CompilerServices.SkipLocalsInitAttribute]
                 public static partial string Reverse_Return(string s)
                 {
+                    bool __invokeSucceeded = default;
                     string __retVal = default;
                     ushort* __retVal_native = default;
                     try
@@ -7985,13 +8265,17 @@ namespace LibraryImportGenerator.IntegrationTests
                             __retVal_native = __PInvoke((ushort*)__s_native);
                         }
 
+                        __invokeSucceeded = true;
                         // Unmarshal - Convert native data to managed data.
                         __retVal = global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller.ConvertToManaged(__retVal_native);
                     }
                     finally
                     {
-                        // Cleanup - Perform required cleanup.
-                        global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller.Free(__retVal_native);
+                        if (__invokeSucceeded)
+                        {
+                            // CleanupCalleeAllocated - Perform cleanup of callee allocated resources.
+                            global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller.Free(__retVal_native);
+                        }
                     }
 
                     return __retVal;
@@ -8015,6 +8299,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 [global::System.Runtime.CompilerServices.SkipLocalsInitAttribute]
                 public static partial void Reverse_Out(string s, out string ret)
                 {
+                    bool __invokeSucceeded = default;
                     System.Runtime.CompilerServices.Unsafe.SkipInit(out ret);
                     ushort* __ret_native = default;
                     try
@@ -8025,13 +8310,17 @@ namespace LibraryImportGenerator.IntegrationTests
                             __PInvoke((ushort*)__s_native, &__ret_native);
                         }
 
+                        __invokeSucceeded = true;
                         // Unmarshal - Convert native data to managed data.
                         ret = global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller.ConvertToManaged(__ret_native);
                     }
                     finally
                     {
-                        // Cleanup - Perform required cleanup.
-                        global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller.Free(__ret_native);
+                        if (__invokeSucceeded)
+                        {
+                            // CleanupCalleeAllocated - Perform cleanup of callee allocated resources.
+                            global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller.Free(__ret_native);
+                        }
                     }
 
                     // Local P/Invoke
@@ -8068,7 +8357,7 @@ namespace LibraryImportGenerator.IntegrationTests
                     }
                     finally
                     {
-                        // Cleanup - Perform required cleanup.
+                        // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                         global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller.Free(__s_native);
                     }
 
@@ -8103,7 +8392,7 @@ namespace LibraryImportGenerator.IntegrationTests
                     }
                     finally
                     {
-                        // Cleanup - Perform required cleanup.
+                        // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                         global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller.Free(__s_native);
                     }
 
@@ -8141,7 +8430,7 @@ namespace LibraryImportGenerator.IntegrationTests
                     }
                     finally
                     {
-                        // Cleanup - Perform required cleanup.
+                        // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                         global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller.Free(__s_native);
                     }
 
@@ -8181,7 +8470,7 @@ namespace LibraryImportGenerator.IntegrationTests
                     }
                     finally
                     {
-                        // Cleanup - Perform required cleanup.
+                        // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                         __s_native__marshaller.Free();
                     }
 
@@ -8206,6 +8495,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 [global::System.Runtime.CompilerServices.SkipLocalsInitAttribute]
                 public static partial string Reverse_Return(string s)
                 {
+                    bool __invokeSucceeded = default;
                     byte* __s_native = default;
                     string __retVal = default;
                     byte* __retVal_native = default;
@@ -8221,13 +8511,19 @@ namespace LibraryImportGenerator.IntegrationTests
                             __retVal_native = __PInvoke(__s_native);
                         }
 
+                        __invokeSucceeded = true;
                         // Unmarshal - Convert native data to managed data.
                         __retVal = global::System.Runtime.InteropServices.Marshalling.Utf8StringMarshaller.ConvertToManaged(__retVal_native);
                     }
                     finally
                     {
-                        // Cleanup - Perform required cleanup.
-                        global::System.Runtime.InteropServices.Marshalling.Utf8StringMarshaller.Free(__retVal_native);
+                        if (__invokeSucceeded)
+                        {
+                            // CleanupCalleeAllocated - Perform cleanup of callee allocated resources.
+                            global::System.Runtime.InteropServices.Marshalling.Utf8StringMarshaller.Free(__retVal_native);
+                        }
+
+                        // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                         __s_native__marshaller.Free();
                     }
 
@@ -8252,6 +8548,7 @@ namespace LibraryImportGenerator.IntegrationTests
                 [global::System.Runtime.CompilerServices.SkipLocalsInitAttribute]
                 public static partial void Reverse_Out(string s, out string ret)
                 {
+                    bool __invokeSucceeded = default;
                     System.Runtime.CompilerServices.Unsafe.SkipInit(out ret);
                     byte* __s_native = default;
                     byte* __ret_native = default;
@@ -8267,13 +8564,19 @@ namespace LibraryImportGenerator.IntegrationTests
                             __PInvoke(__s_native, &__ret_native);
                         }
 
+                        __invokeSucceeded = true;
                         // Unmarshal - Convert native data to managed data.
                         ret = global::System.Runtime.InteropServices.Marshalling.Utf8StringMarshaller.ConvertToManaged(__ret_native);
                     }
                     finally
                     {
-                        // Cleanup - Perform required cleanup.
-                        global::System.Runtime.InteropServices.Marshalling.Utf8StringMarshaller.Free(__ret_native);
+                        if (__invokeSucceeded)
+                        {
+                            // CleanupCalleeAllocated - Perform cleanup of callee allocated resources.
+                            global::System.Runtime.InteropServices.Marshalling.Utf8StringMarshaller.Free(__ret_native);
+                        }
+
+                        // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                         __s_native__marshaller.Free();
                     }
 
@@ -8311,7 +8614,7 @@ namespace LibraryImportGenerator.IntegrationTests
                     }
                     finally
                     {
-                        // Cleanup - Perform required cleanup.
+                        // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                         global::System.Runtime.InteropServices.Marshalling.Utf8StringMarshaller.Free(__s_native);
                     }
 
@@ -8350,7 +8653,7 @@ namespace LibraryImportGenerator.IntegrationTests
                     }
                     finally
                     {
-                        // Cleanup - Perform required cleanup.
+                        // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                         __s_native__marshaller.Free();
                     }
 
@@ -8388,7 +8691,7 @@ namespace LibraryImportGenerator.IntegrationTests
                     }
                     finally
                     {
-                        // Cleanup - Perform required cleanup.
+                        // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                         global::System.Runtime.InteropServices.Marshalling.Utf8StringMarshaller.Free(__s_native);
                     }
 

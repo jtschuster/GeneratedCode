@@ -52,7 +52,7 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
         }
         finally
         {
-            // Cleanup - Perform required cleanup.
+            // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
             {
                 System.ReadOnlySpan<System.IntPtr> __rgelt_native__nativeSpan = __rgelt_native__marshaller.GetUnmanagedValuesDestination();
                 for (int __i0 = 0; __i0 < __rgelt_native__nativeSpan.Length; ++__i0)
@@ -100,6 +100,7 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
     void global::SharedTypes.ComInterfaces.IEnumUnknown.Clone(out global::SharedTypes.ComInterfaces.IEnumUnknown ppenum)
     {
         var(__this, __vtable_native) = ((System.Runtime.InteropServices.Marshalling.IUnmanagedVirtualMethodTableProvider)this).GetVirtualMethodTableInfoForKey(typeof(global::SharedTypes.ComInterfaces.IEnumUnknown));
+        bool __invokeSucceeded = default;
         System.Runtime.CompilerServices.Unsafe.SkipInit(out ppenum);
         void* __ppenum_native = default;
         int __invokeRetVal = default;
@@ -109,6 +110,7 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
                 __invokeRetVal = ((delegate* unmanaged[MemberFunction]<void*, void**, int> )__vtable_native[6])(__this, &__ppenum_native);
             }
 
+            __invokeSucceeded = true;
             System.GC.KeepAlive(this);
             // Unmarshal - Convert native data to managed data.
             System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
@@ -116,8 +118,11 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
         }
         finally
         {
-            // Cleanup - Perform required cleanup.
-            global::System.Runtime.InteropServices.Marshalling.ComInterfaceMarshaller<global::SharedTypes.ComInterfaces.IEnumUnknown>.Free(__ppenum_native);
+            if (__invokeSucceeded)
+            {
+                // CleanupCalleeAllocated - Perform cleanup of callee allocated resources.
+                global::System.Runtime.InteropServices.Marshalling.ComInterfaceMarshaller<global::SharedTypes.ComInterfaces.IEnumUnknown>.Free(__ppenum_native);
+            }
         }
     }
 }

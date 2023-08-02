@@ -16,6 +16,7 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
     int[] global::SharedTypes.ComInterfaces.IIntArray.GetReturn(out int size)
     {
         var(__this, __vtable_native) = ((System.Runtime.InteropServices.Marshalling.IUnmanagedVirtualMethodTableProvider)this).GetVirtualMethodTableInfoForKey(typeof(global::SharedTypes.ComInterfaces.IIntArray));
+        bool __invokeSucceeded = default;
         System.Runtime.CompilerServices.Unsafe.SkipInit(out size);
         int[] __retVal = default;
         int* __retVal_native = default;
@@ -31,6 +32,7 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
                 __invokeRetVal = ((delegate* unmanaged[MemberFunction]<void*, int*, int**, int> )__vtable_native[3])(__this, __size_native, &__retVal_native);
             }
 
+            __invokeSucceeded = true;
             System.GC.KeepAlive(this);
             // Unmarshal - Convert native data to managed data.
             System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
@@ -40,9 +42,12 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
         }
         finally
         {
-            // Cleanup - Perform required cleanup.
-            __retVal_native__numElements = size;
-            global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.Free(__retVal_native);
+            if (__invokeSucceeded)
+            {
+                // CleanupCalleeAllocated - Perform cleanup of callee allocated resources.
+                __retVal_native__numElements = size;
+                global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.Free(__retVal_native);
+            }
         }
 
         return __retVal;
@@ -53,6 +58,7 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
     int global::SharedTypes.ComInterfaces.IIntArray.GetOut(out int[] array)
     {
         var(__this, __vtable_native) = ((System.Runtime.InteropServices.Marshalling.IUnmanagedVirtualMethodTableProvider)this).GetVirtualMethodTableInfoForKey(typeof(global::SharedTypes.ComInterfaces.IIntArray));
+        bool __invokeSucceeded = default;
         System.Runtime.CompilerServices.Unsafe.SkipInit(out array);
         int* __array_native = default;
         int __retVal = default;
@@ -66,6 +72,7 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
                 __invokeRetVal = ((delegate* unmanaged[MemberFunction]<void*, int**, int*, int> )__vtable_native[4])(__this, &__array_native, &__retVal);
             }
 
+            __invokeSucceeded = true;
             System.GC.KeepAlive(this);
             // Unmarshal - Convert native data to managed data.
             System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
@@ -75,9 +82,12 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
         }
         finally
         {
-            // Cleanup - Perform required cleanup.
-            __array_native__numElements = __retVal;
-            global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.Free(__array_native);
+            if (__invokeSucceeded)
+            {
+                // CleanupCalleeAllocated - Perform cleanup of callee allocated resources.
+                __array_native__numElements = __retVal;
+                global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.Free(__array_native);
+            }
         }
 
         return __retVal;
@@ -164,7 +174,7 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
         }
         finally
         {
-            // Cleanup - Perform required cleanup.
+            // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
             __array_native__marshaller.Free();
         }
     }
@@ -197,7 +207,7 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
         }
         finally
         {
-            // Cleanup - Perform required cleanup.
+            // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
             __array_native__numElements = size;
             global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.Free(__array_native);
         }
@@ -409,7 +419,7 @@ file unsafe partial interface InterfaceImplementation
         }
         finally
         {
-            // Cleanup - Perform required cleanup.
+            // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
             if (__array_native__ownOriginal)
             {
                 __array_native__numElements = size;
