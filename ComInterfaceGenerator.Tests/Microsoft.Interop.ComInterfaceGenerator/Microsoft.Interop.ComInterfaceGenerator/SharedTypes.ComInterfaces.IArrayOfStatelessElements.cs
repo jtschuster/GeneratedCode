@@ -50,7 +50,7 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
         }
         finally
         {
-            // Cleanup - Perform required cleanup.
+            // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
             {
                 System.ReadOnlySpan<nint> __param_native__nativeSpan = __param_native__marshaller.GetUnmanagedValuesDestination();
                 for (int __i0 = 0; __i0 < __param_native__lastIndexMarshalled; ++__i0)
@@ -102,7 +102,7 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
         }
         finally
         {
-            // Cleanup - Perform required cleanup.
+            // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
             {
                 System.ReadOnlySpan<nint> __param_native__nativeSpan = __param_native__marshaller.GetUnmanagedValuesDestination();
                 for (int __i0 = 0; __i0 < __param_native__lastIndexMarshalled; ++__i0)
@@ -120,6 +120,7 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
     void global::SharedTypes.ComInterfaces.IArrayOfStatelessElements.MethodOut(out global::SharedTypes.ComInterfaces.StatelessType[] param, int size)
     {
         var(__this, __vtable_native) = ((System.Runtime.InteropServices.Marshalling.IUnmanagedVirtualMethodTableProvider)this).GetVirtualMethodTableInfoForKey(typeof(global::SharedTypes.ComInterfaces.IArrayOfStatelessElements));
+        bool __invokeSucceeded = default;
         System.Runtime.CompilerServices.Unsafe.SkipInit(out param);
         nint* __param_native = default;
         int __invokeRetVal = default;
@@ -132,6 +133,7 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
                 __invokeRetVal = ((delegate* unmanaged[MemberFunction]<void*, nint**, int, int> )__vtable_native[5])(__this, &__param_native, size);
             }
 
+            __invokeSucceeded = true;
             System.GC.KeepAlive(this);
             // Unmarshal - Convert native data to managed data.
             System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
@@ -148,17 +150,20 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
         }
         finally
         {
-            // Cleanup - Perform required cleanup.
+            if (__invokeSucceeded)
             {
-                System.ReadOnlySpan<nint> __param_native__nativeSpan = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.ComInterfaces.StatelessType, nint>.GetUnmanagedValuesDestination(__param_native, __param_native__numElements);
-                for (int __i0 = 0; __i0 < __param_native__nativeSpan.Length; ++__i0)
+                // CleanupCalleeAllocated - Perform cleanup of callee allocated resources.
                 {
-                    global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.Free(__param_native__nativeSpan[__i0]);
+                    System.ReadOnlySpan<nint> __param_native__nativeSpan = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.ComInterfaces.StatelessType, nint>.GetUnmanagedValuesDestination(__param_native, __param_native__numElements);
+                    for (int __i0 = 0; __i0 < __param_native__nativeSpan.Length; ++__i0)
+                    {
+                        global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.Free(__param_native__nativeSpan[__i0]);
+                    }
                 }
-            }
 
-            __param_native__numElements = size;
-            global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.ComInterfaces.StatelessType, nint>.Free(__param_native);
+                __param_native__numElements = size;
+                global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.ComInterfaces.StatelessType, nint>.Free(__param_native);
+            }
         }
     }
 
@@ -206,7 +211,7 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
         }
         finally
         {
-            // Cleanup - Perform required cleanup.
+            // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
             {
                 System.ReadOnlySpan<nint> __param_native__nativeSpan = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.ComInterfaces.StatelessType, nint>.GetUnmanagedValuesDestination(__param_native, __param_native__numElements);
                 for (int __i0 = 0; __i0 < __param_native__lastIndexMarshalled; ++__i0)
@@ -259,7 +264,7 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
         }
         finally
         {
-            // Cleanup - Perform required cleanup.
+            // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
             {
                 System.ReadOnlySpan<nint> __param_native__nativeSpan = __param_native__marshaller.GetUnmanagedValuesDestination();
                 for (int __i0 = 0; __i0 < __param_native__lastIndexMarshalled; ++__i0)
@@ -311,7 +316,7 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
         }
         finally
         {
-            // Cleanup - Perform required cleanup.
+            // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
             {
                 System.ReadOnlySpan<nint> __param_native__nativeSpan = __param_native__marshaller.GetUnmanagedValuesDestination();
                 for (int __i0 = 0; __i0 < __param_native__nativeSpan.Length; ++__i0)
@@ -372,7 +377,7 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
         }
         finally
         {
-            // Cleanup - Perform required cleanup.
+            // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
             {
                 System.ReadOnlySpan<nint> __param_native__nativeSpan = __param_native__marshaller.GetUnmanagedValuesDestination();
                 for (int __i0 = 0; __i0 < __param_native__lastIndexMarshalled; ++__i0)
@@ -543,7 +548,7 @@ file unsafe partial interface InterfaceImplementation
         }
         finally
         {
-            // Cleanup - Perform required cleanup.
+            // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
             if (__param_native__ownOriginal)
             {
                 {

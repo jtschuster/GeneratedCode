@@ -32,7 +32,7 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
         }
         finally
         {
-            // Cleanup - Perform required cleanup.
+            // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
             global::SharedTypes.ComInterfaces.StatelessFinallyTypeMarshaller.Free(__param_native);
         }
     }
@@ -58,7 +58,7 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
         }
         finally
         {
-            // Cleanup - Perform required cleanup.
+            // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
             global::SharedTypes.ComInterfaces.StatelessFinallyTypeMarshaller.Free(__param_native);
         }
     }
@@ -89,10 +89,9 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
             {
                 // GuaranteedUnmarshal - Convert native data to managed data even in the case of an exception during the non-cleanup phases.
                 param = global::SharedTypes.ComInterfaces.StatelessFinallyTypeMarshaller.ConvertToManagedFinally(__param_native);
+                // CleanupCalleeAllocated - Perform cleanup of callee allocated resources.
+                global::SharedTypes.ComInterfaces.StatelessFinallyTypeMarshaller.Free(__param_native);
             }
-
-            // Cleanup - Perform required cleanup.
-            global::SharedTypes.ComInterfaces.StatelessFinallyTypeMarshaller.Free(__param_native);
         }
     }
 
@@ -125,7 +124,7 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
                 param = global::SharedTypes.ComInterfaces.StatelessFinallyTypeMarshaller.ConvertToManagedFinally(__param_native);
             }
 
-            // Cleanup - Perform required cleanup.
+            // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
             global::SharedTypes.ComInterfaces.StatelessFinallyTypeMarshaller.Free(__param_native);
         }
     }
@@ -156,10 +155,9 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
             {
                 // GuaranteedUnmarshal - Convert native data to managed data even in the case of an exception during the non-cleanup phases.
                 __retVal = global::SharedTypes.ComInterfaces.StatelessFinallyTypeMarshaller.ConvertToManagedFinally(__retVal_native);
+                // CleanupCalleeAllocated - Perform cleanup of callee allocated resources.
+                global::SharedTypes.ComInterfaces.StatelessFinallyTypeMarshaller.Free(__retVal_native);
             }
-
-            // Cleanup - Perform required cleanup.
-            global::SharedTypes.ComInterfaces.StatelessFinallyTypeMarshaller.Free(__retVal_native);
         }
 
         return __retVal;
@@ -188,10 +186,9 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
             {
                 // GuaranteedUnmarshal - Convert native data to managed data even in the case of an exception during the non-cleanup phases.
                 __retVal = global::SharedTypes.ComInterfaces.StatelessFinallyTypeMarshaller.ConvertToManagedFinally(__retVal_native);
+                // CleanupCalleeAllocated - Perform cleanup of callee allocated resources.
+                global::SharedTypes.ComInterfaces.StatelessFinallyTypeMarshaller.Free(__retVal_native);
             }
-
-            // Cleanup - Perform required cleanup.
-            global::SharedTypes.ComInterfaces.StatelessFinallyTypeMarshaller.Free(__retVal_native);
         }
 
         return __retVal;
@@ -321,7 +318,7 @@ file unsafe partial interface InterfaceImplementation
                 param = global::SharedTypes.ComInterfaces.StatelessFinallyTypeMarshaller.ConvertToManagedFinally(__param_native);
             }
 
-            // Cleanup - Perform required cleanup.
+            // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
             if (__param_native__ownOriginal)
             {
                 global::SharedTypes.ComInterfaces.StatelessFinallyTypeMarshaller.Free(__param_native__original);

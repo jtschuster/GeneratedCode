@@ -36,7 +36,7 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
         }
         finally
         {
-            // Cleanup - Perform required cleanup.
+            // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
             __param_native__marshaller.Free();
         }
     }
@@ -66,7 +66,7 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
         }
         finally
         {
-            // Cleanup - Perform required cleanup.
+            // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
             __param_native__marshaller.Free();
         }
     }
@@ -101,10 +101,9 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
             {
                 // GuaranteedUnmarshal - Convert native data to managed data even in the case of an exception during the non-cleanup phases.
                 param = __param_native__marshaller.ToManagedFinally();
+                // CleanupCalleeAllocated - Perform cleanup of callee allocated resources.
+                __param_native__marshaller.Free();
             }
-
-            // Cleanup - Perform required cleanup.
-            __param_native__marshaller.Free();
         }
     }
 
@@ -143,7 +142,7 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
                 param = __param_native__marshaller.ToManagedFinally();
             }
 
-            // Cleanup - Perform required cleanup.
+            // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
             __param_native__marshaller.Free();
         }
     }
@@ -178,10 +177,9 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
             {
                 // GuaranteedUnmarshal - Convert native data to managed data even in the case of an exception during the non-cleanup phases.
                 __retVal = __retVal_native__marshaller.ToManagedFinally();
+                // CleanupCalleeAllocated - Perform cleanup of callee allocated resources.
+                __retVal_native__marshaller.Free();
             }
-
-            // Cleanup - Perform required cleanup.
-            __retVal_native__marshaller.Free();
         }
 
         return __retVal;
@@ -214,10 +212,9 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
             {
                 // GuaranteedUnmarshal - Convert native data to managed data even in the case of an exception during the non-cleanup phases.
                 __retVal = __retVal_native__marshaller.ToManagedFinally();
+                // CleanupCalleeAllocated - Perform cleanup of callee allocated resources.
+                __retVal_native__marshaller.Free();
             }
-
-            // Cleanup - Perform required cleanup.
-            __retVal_native__marshaller.Free();
         }
 
         return __retVal;
@@ -257,7 +254,7 @@ file unsafe partial interface InterfaceImplementation
                 param = __param_native__marshaller.ToManagedFinally();
             }
 
-            // Cleanup - Perform required cleanup.
+            // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
             __param_native__marshaller.Free();
         }
 
@@ -296,7 +293,7 @@ file unsafe partial interface InterfaceImplementation
                 param = __param_native__marshaller.ToManagedFinally();
             }
 
-            // Cleanup - Perform required cleanup.
+            // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
             __param_native__marshaller.Free();
         }
 
@@ -329,7 +326,7 @@ file unsafe partial interface InterfaceImplementation
         }
         finally
         {
-            // Cleanup - Perform required cleanup.
+            // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
             __param_native__marshaller.Free();
         }
 
@@ -372,7 +369,7 @@ file unsafe partial interface InterfaceImplementation
                 param = __param_native__marshaller.ToManagedFinally();
             }
 
-            // Cleanup - Perform required cleanup.
+            // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
             __param_native__marshaller.Free();
         }
 
@@ -405,7 +402,7 @@ file unsafe partial interface InterfaceImplementation
         }
         finally
         {
-            // Cleanup - Perform required cleanup.
+            // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
             __invokeRetValUnmanaged__marshaller.Free();
         }
 
@@ -436,7 +433,7 @@ file unsafe partial interface InterfaceImplementation
         }
         finally
         {
-            // Cleanup - Perform required cleanup.
+            // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
             __retVal_native__marshaller.Free();
         }
 
