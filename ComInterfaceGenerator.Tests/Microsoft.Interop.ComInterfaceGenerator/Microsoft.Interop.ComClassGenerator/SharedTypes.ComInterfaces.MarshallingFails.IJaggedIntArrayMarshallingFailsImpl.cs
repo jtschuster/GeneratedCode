@@ -9,7 +9,7 @@ file sealed unsafe class ComClassInformation : System.Runtime.InteropServices.Ma
         {
             System.Runtime.InteropServices.ComWrappers.ComInterfaceEntry* vtables = (System.Runtime.InteropServices.ComWrappers.ComInterfaceEntry*)System.Runtime.CompilerServices.RuntimeHelpers.AllocateTypeAssociatedMemory(typeof(ComClassInformation), sizeof(System.Runtime.InteropServices.ComWrappers.ComInterfaceEntry) * 1);
             System.Runtime.InteropServices.Marshalling.IIUnknownDerivedDetails details;
-            details = System.Runtime.InteropServices.Marshalling.StrategyBasedComWrappers.DefaultIUnknownInterfaceDetailsStrategy.GetIUnknownDerivedDetails(typeof(ComInterfaceGenerator.Tests.ComInterfaces.IJaggedIntArrayMarshallingFails).TypeHandle);
+            details = System.Runtime.InteropServices.Marshalling.StrategyBasedComWrappers.DefaultIUnknownInterfaceDetailsStrategy.GetIUnknownDerivedDetails(typeof(SharedTypes.ComInterfaces.MarshallingFails.IJaggedIntArrayMarshallingFails).TypeHandle);
             vtables[0] = new()
             {
                 IID = details.Iid,
@@ -22,13 +22,10 @@ file sealed unsafe class ComClassInformation : System.Runtime.InteropServices.Ma
     }
 }
 
-namespace ComInterfaceGenerator.Tests
+namespace SharedTypes.ComInterfaces.MarshallingFails
 {
-    public static unsafe partial class ComInterfaces
+    [System.Runtime.InteropServices.Marshalling.ComExposedClassAttribute<ComClassInformation>]
+    internal partial class IJaggedIntArrayMarshallingFailsImpl
     {
-        [System.Runtime.InteropServices.Marshalling.ComExposedClassAttribute<ComClassInformation>]
-        internal partial class IJaggedIntArrayMarshallingFailsImpl
-        {
-        }
     }
 }
