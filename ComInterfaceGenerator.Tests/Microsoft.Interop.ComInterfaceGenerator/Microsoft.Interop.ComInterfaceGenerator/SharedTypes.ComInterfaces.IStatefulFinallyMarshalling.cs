@@ -37,7 +37,7 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
         }
         finally
         {
-            // Cleanup - Perform required cleanup.
+            // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
             __param_native__marshaller.Free();
         }
     }
@@ -68,7 +68,7 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
         }
         finally
         {
-            // Cleanup - Perform required cleanup.
+            // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
             __param_native__marshaller.Free();
         }
     }
@@ -103,10 +103,9 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
             {
                 // GuaranteedUnmarshal - Convert native data to managed data even in the case of an exception during the non-cleanup phases.
                 param = __param_native__marshaller.ToManagedFinally();
+                // CleanupCalleeAllocated - Perform cleanup of callee allocated resources.
+                __param_native__marshaller.Free();
             }
-
-            // Cleanup - Perform required cleanup.
-            __param_native__marshaller.Free();
         }
     }
 
@@ -146,7 +145,7 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
                 param = __param_native__marshaller.ToManagedFinally();
             }
 
-            // Cleanup - Perform required cleanup.
+            // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
             __param_native__marshaller.Free();
         }
     }
@@ -181,10 +180,9 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
             {
                 // GuaranteedUnmarshal - Convert native data to managed data even in the case of an exception during the non-cleanup phases.
                 __retVal = __retVal_native__marshaller.ToManagedFinally();
+                // CleanupCalleeAllocated - Perform cleanup of callee allocated resources.
+                __retVal_native__marshaller.Free();
             }
-
-            // Cleanup - Perform required cleanup.
-            __retVal_native__marshaller.Free();
         }
 
         return __retVal;
@@ -217,10 +215,9 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
             {
                 // GuaranteedUnmarshal - Convert native data to managed data even in the case of an exception during the non-cleanup phases.
                 __retVal = __retVal_native__marshaller.ToManagedFinally();
+                // CleanupCalleeAllocated - Perform cleanup of callee allocated resources.
+                __retVal_native__marshaller.Free();
             }
-
-            // Cleanup - Perform required cleanup.
-            __retVal_native__marshaller.Free();
         }
 
         return __retVal;
@@ -244,9 +241,10 @@ file unsafe partial interface InterfaceImplementation
             // UnmarshalCapture - Capture the native data into marshaller instances in case conversion to managed data throws an exception.
             __param_native__marshaller.FromUnmanaged(__param_native);
             // Unmarshal - Convert native data to managed data.
-            __retVal = 0; // S_OK
             @this = System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch.GetInstance<global::SharedTypes.ComInterfaces.IStatefulFinallyMarshalling>(__this_native);
             @this.Method(param);
+            // NotifyForSuccessfulInvoke - Keep alive any managed objects that need to stay alive across the call.
+            __retVal = 0; // S_OK
         }
         catch (System.Exception __exception)
         {
@@ -254,7 +252,7 @@ file unsafe partial interface InterfaceImplementation
         }
         finally
         {
-            // Cleanup - Perform required cleanup.
+            // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
             __param_native__marshaller.Free();
         }
 
@@ -277,9 +275,10 @@ file unsafe partial interface InterfaceImplementation
             // UnmarshalCapture - Capture the native data into marshaller instances in case conversion to managed data throws an exception.
             __param_native__marshaller.FromUnmanaged(__param_native);
             // Unmarshal - Convert native data to managed data.
-            __retVal = 0; // S_OK
             @this = System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch.GetInstance<global::SharedTypes.ComInterfaces.IStatefulFinallyMarshalling>(__this_native);
             @this.MethodIn(in param);
+            // NotifyForSuccessfulInvoke - Keep alive any managed objects that need to stay alive across the call.
+            __retVal = 0; // S_OK
         }
         catch (System.Exception __exception)
         {
@@ -287,7 +286,7 @@ file unsafe partial interface InterfaceImplementation
         }
         finally
         {
-            // Cleanup - Perform required cleanup.
+            // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
             __param_native__marshaller.Free();
         }
 
@@ -306,10 +305,10 @@ file unsafe partial interface InterfaceImplementation
         try
         {
             // Unmarshal - Convert native data to managed data.
-            __retVal = 0; // S_OK
             @this = System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch.GetInstance<global::SharedTypes.ComInterfaces.IStatefulFinallyMarshalling>(__this_native);
             @this.MethodOut(out param);
             // NotifyForSuccessfulInvoke - Keep alive any managed objects that need to stay alive across the call.
+            __retVal = 0; // S_OK
             __param_native__marshaller.OnInvoked();
             // PinnedMarshal - Convert managed data to native data that requires the managed data to be pinned.
             __param_native = __param_native__marshaller.ToUnmanaged();
@@ -322,7 +321,7 @@ file unsafe partial interface InterfaceImplementation
         }
         finally
         {
-            // Cleanup - Perform required cleanup.
+            // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
             __param_native__marshaller.Free();
         }
 
@@ -345,10 +344,10 @@ file unsafe partial interface InterfaceImplementation
             // UnmarshalCapture - Capture the native data into marshaller instances in case conversion to managed data throws an exception.
             __param_native__marshaller.FromUnmanaged(__param_native);
             // Unmarshal - Convert native data to managed data.
-            __retVal = 0; // S_OK
             @this = System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch.GetInstance<global::SharedTypes.ComInterfaces.IStatefulFinallyMarshalling>(__this_native);
             @this.MethodRef(ref param);
             // NotifyForSuccessfulInvoke - Keep alive any managed objects that need to stay alive across the call.
+            __retVal = 0; // S_OK
             __param_native__marshaller.OnInvoked();
             // PinnedMarshal - Convert managed data to native data that requires the managed data to be pinned.
             __param_native = __param_native__marshaller.ToUnmanaged();
@@ -361,7 +360,7 @@ file unsafe partial interface InterfaceImplementation
         }
         finally
         {
-            // Cleanup - Perform required cleanup.
+            // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
             __param_native__marshaller.Free();
         }
 
@@ -380,10 +379,10 @@ file unsafe partial interface InterfaceImplementation
         try
         {
             // Unmarshal - Convert native data to managed data.
-            __retVal = 0; // S_OK
             @this = System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch.GetInstance<global::SharedTypes.ComInterfaces.IStatefulFinallyMarshalling>(__this_native);
             __invokeRetVal = @this.Return();
             // NotifyForSuccessfulInvoke - Keep alive any managed objects that need to stay alive across the call.
+            __retVal = 0; // S_OK
             __invokeRetValUnmanaged__marshaller.OnInvoked();
             // PinnedMarshal - Convert managed data to native data that requires the managed data to be pinned.
             __invokeRetValUnmanaged = __invokeRetValUnmanaged__marshaller.ToUnmanaged();
@@ -396,7 +395,7 @@ file unsafe partial interface InterfaceImplementation
         }
         finally
         {
-            // Cleanup - Perform required cleanup.
+            // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
             __invokeRetValUnmanaged__marshaller.Free();
         }
 
@@ -429,7 +428,7 @@ file unsafe partial interface InterfaceImplementation
         }
         finally
         {
-            // Cleanup - Perform required cleanup.
+            // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
             __retVal_native__marshaller.Free();
         }
 

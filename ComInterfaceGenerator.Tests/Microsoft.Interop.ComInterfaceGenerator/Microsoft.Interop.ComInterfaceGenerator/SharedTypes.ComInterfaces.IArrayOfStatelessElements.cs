@@ -16,6 +16,7 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
     void global::SharedTypes.ComInterfaces.IArrayOfStatelessElements.Method(global::SharedTypes.ComInterfaces.StatelessType[] param, int size)
     {
         var(__this, __vtable_native) = ((System.Runtime.InteropServices.Marshalling.IUnmanagedVirtualMethodTableProvider)this).GetVirtualMethodTableInfoForKey(typeof(global::SharedTypes.ComInterfaces.IArrayOfStatelessElements));
+        bool __invokeSucceeded = default;
         nint* __param_native = default;
         int __invokeRetVal = default;
         // Setup - Perform required setup.
@@ -46,11 +47,18 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
 
             // NotifyForSuccessfulInvoke - Keep alive any managed objects that need to stay alive across the call.
             System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
+            __invokeSucceeded = true;
             System.GC.KeepAlive(this);
         }
         finally
         {
-            // Cleanup - Perform required cleanup.
+            if (__invokeSucceeded)
+            {
+                // CleanupCalleeAllocated - Perform cleanup of callee allocated resources.
+                _ = __param_native__lastIndexMarshalled;
+            }
+
+            // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
             {
                 System.ReadOnlySpan<nint> __param_native__nativeSpan = __param_native__marshaller.GetUnmanagedValuesDestination();
                 for (int __i0 = 0; __i0 < __param_native__lastIndexMarshalled; ++__i0)
@@ -68,6 +76,7 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
     void global::SharedTypes.ComInterfaces.IArrayOfStatelessElements.MethodIn(in global::SharedTypes.ComInterfaces.StatelessType[] param, int size)
     {
         var(__this, __vtable_native) = ((System.Runtime.InteropServices.Marshalling.IUnmanagedVirtualMethodTableProvider)this).GetVirtualMethodTableInfoForKey(typeof(global::SharedTypes.ComInterfaces.IArrayOfStatelessElements));
+        bool __invokeSucceeded = default;
         nint* __param_native = default;
         int __invokeRetVal = default;
         // Setup - Perform required setup.
@@ -98,11 +107,18 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
 
             // NotifyForSuccessfulInvoke - Keep alive any managed objects that need to stay alive across the call.
             System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
+            __invokeSucceeded = true;
             System.GC.KeepAlive(this);
         }
         finally
         {
-            // Cleanup - Perform required cleanup.
+            if (__invokeSucceeded)
+            {
+                // CleanupCalleeAllocated - Perform cleanup of callee allocated resources.
+                _ = __param_native__lastIndexMarshalled;
+            }
+
+            // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
             {
                 System.ReadOnlySpan<nint> __param_native__nativeSpan = __param_native__marshaller.GetUnmanagedValuesDestination();
                 for (int __i0 = 0; __i0 < __param_native__lastIndexMarshalled; ++__i0)
@@ -120,6 +136,7 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
     void global::SharedTypes.ComInterfaces.IArrayOfStatelessElements.MethodOut(out global::SharedTypes.ComInterfaces.StatelessType[] param, int size)
     {
         var(__this, __vtable_native) = ((System.Runtime.InteropServices.Marshalling.IUnmanagedVirtualMethodTableProvider)this).GetVirtualMethodTableInfoForKey(typeof(global::SharedTypes.ComInterfaces.IArrayOfStatelessElements));
+        bool __invokeSucceeded = default;
         System.Runtime.CompilerServices.Unsafe.SkipInit(out param);
         nint* __param_native = default;
         int __invokeRetVal = default;
@@ -134,6 +151,7 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
 
             // NotifyForSuccessfulInvoke - Keep alive any managed objects that need to stay alive across the call.
             System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
+            __invokeSucceeded = true;
             System.GC.KeepAlive(this);
             // Unmarshal - Convert native data to managed data.
             __param_native__numElements = size;
@@ -149,17 +167,19 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
         }
         finally
         {
-            // Cleanup - Perform required cleanup.
+            if (__invokeSucceeded)
             {
-                System.ReadOnlySpan<nint> __param_native__nativeSpan = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.ComInterfaces.StatelessType, nint>.GetUnmanagedValuesSource(__param_native, __param_native__numElements);
-                for (int __i0 = 0; __i0 < __param_native__nativeSpan.Length; ++__i0)
+                // CleanupCalleeAllocated - Perform cleanup of callee allocated resources.
                 {
-                    global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.UnmanagedToManaged.Free(__param_native__nativeSpan[__i0]);
+                    System.ReadOnlySpan<nint> __param_native__nativeSpan = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.ComInterfaces.StatelessType, nint>.GetUnmanagedValuesSource(__param_native, __param_native__numElements);
+                    for (int __i0 = 0; __i0 < __param_native__nativeSpan.Length; ++__i0)
+                    {
+                        global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.UnmanagedToManaged.Free(__param_native__nativeSpan[__i0]);
+                    }
                 }
-            }
 
-            __param_native__numElements = size;
-            global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.ComInterfaces.StatelessType, nint>.Free(__param_native);
+                global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.ComInterfaces.StatelessType, nint>.Free(__param_native);
+            }
         }
     }
 
@@ -208,7 +228,7 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
         }
         finally
         {
-            // Cleanup - Perform required cleanup.
+            // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
             {
                 System.ReadOnlySpan<nint> __param_native__nativeSpan = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.ComInterfaces.StatelessType, nint>.GetUnmanagedValuesSource(__param_native, __param_native__numElements);
                 for (int __i0 = 0; __i0 < __param_native__lastIndexMarshalled; ++__i0)
@@ -227,6 +247,7 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
     void global::SharedTypes.ComInterfaces.IArrayOfStatelessElements.MethodContentsIn(global::SharedTypes.ComInterfaces.StatelessType[] param, int size)
     {
         var(__this, __vtable_native) = ((System.Runtime.InteropServices.Marshalling.IUnmanagedVirtualMethodTableProvider)this).GetVirtualMethodTableInfoForKey(typeof(global::SharedTypes.ComInterfaces.IArrayOfStatelessElements));
+        bool __invokeSucceeded = default;
         nint* __param_native = default;
         int __invokeRetVal = default;
         // Setup - Perform required setup.
@@ -257,11 +278,18 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
 
             // NotifyForSuccessfulInvoke - Keep alive any managed objects that need to stay alive across the call.
             System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
+            __invokeSucceeded = true;
             System.GC.KeepAlive(this);
         }
         finally
         {
-            // Cleanup - Perform required cleanup.
+            if (__invokeSucceeded)
+            {
+                // CleanupCalleeAllocated - Perform cleanup of callee allocated resources.
+                _ = __param_native__lastIndexMarshalled;
+            }
+
+            // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
             {
                 System.ReadOnlySpan<nint> __param_native__nativeSpan = __param_native__marshaller.GetUnmanagedValuesDestination();
                 for (int __i0 = 0; __i0 < __param_native__lastIndexMarshalled; ++__i0)
@@ -279,6 +307,7 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
     void global::SharedTypes.ComInterfaces.IArrayOfStatelessElements.MethodContentsOut(global::SharedTypes.ComInterfaces.StatelessType[] param, int size)
     {
         var(__this, __vtable_native) = ((System.Runtime.InteropServices.Marshalling.IUnmanagedVirtualMethodTableProvider)this).GetVirtualMethodTableInfoForKey(typeof(global::SharedTypes.ComInterfaces.IArrayOfStatelessElements));
+        bool __invokeSucceeded = default;
         nint* __param_native = default;
         int __invokeRetVal = default;
         // Setup - Perform required setup.
@@ -300,6 +329,7 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
 
             // NotifyForSuccessfulInvoke - Keep alive any managed objects that need to stay alive across the call.
             System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
+            __invokeSucceeded = true;
             System.GC.KeepAlive(this);
             // Unmarshal - Convert native data to managed data.
             {
@@ -314,15 +344,19 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
         }
         finally
         {
-            // Cleanup - Perform required cleanup.
+            if (__invokeSucceeded)
             {
-                System.ReadOnlySpan<nint> __param_native__nativeSpan = __param_native__marshaller.GetUnmanagedValuesDestination();
-                for (int __i0 = 0; __i0 < __param_native__nativeSpan.Length; ++__i0)
+                // CleanupCalleeAllocated - Perform cleanup of callee allocated resources.
                 {
-                    global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.UnmanagedToManaged.Free(__param_native__nativeSpan[__i0]);
+                    System.ReadOnlySpan<nint> __param_native__nativeSpan = __param_native__marshaller.GetUnmanagedValuesDestination();
+                    for (int __i0 = 0; __i0 < __param_native__nativeSpan.Length; ++__i0)
+                    {
+                        global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.UnmanagedToManaged.Free(__param_native__nativeSpan[__i0]);
+                    }
                 }
             }
 
+            // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
             __param_native__marshaller.Free();
         }
     }
@@ -332,6 +366,7 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
     void global::SharedTypes.ComInterfaces.IArrayOfStatelessElements.MethodContentsInOut(global::SharedTypes.ComInterfaces.StatelessType[] param, int size)
     {
         var(__this, __vtable_native) = ((System.Runtime.InteropServices.Marshalling.IUnmanagedVirtualMethodTableProvider)this).GetVirtualMethodTableInfoForKey(typeof(global::SharedTypes.ComInterfaces.IArrayOfStatelessElements));
+        bool __invokeSucceeded = default;
         nint* __param_native = default;
         int __invokeRetVal = default;
         // Setup - Perform required setup.
@@ -362,6 +397,7 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
 
             // NotifyForSuccessfulInvoke - Keep alive any managed objects that need to stay alive across the call.
             System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
+            __invokeSucceeded = true;
             System.GC.KeepAlive(this);
             // Unmarshal - Convert native data to managed data.
             {
@@ -376,7 +412,13 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
         }
         finally
         {
-            // Cleanup - Perform required cleanup.
+            if (__invokeSucceeded)
+            {
+                // CleanupCalleeAllocated - Perform cleanup of callee allocated resources.
+                _ = __param_native__lastIndexMarshalled;
+            }
+
+            // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
             {
                 System.ReadOnlySpan<nint> __param_native__nativeSpan = __param_native__marshaller.GetUnmanagedValuesDestination();
                 for (int __i0 = 0; __i0 < __param_native__lastIndexMarshalled; ++__i0)
@@ -404,7 +446,6 @@ file unsafe partial interface InterfaceImplementation
         try
         {
             // Unmarshal - Convert native data to managed data.
-            __retVal = 0; // S_OK
             __param_native__numElements = size;
             param = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.ComInterfaces.StatelessType, nint>.AllocateContainerForManagedElements(__param_native, __param_native__numElements);
             {
@@ -418,6 +459,8 @@ file unsafe partial interface InterfaceImplementation
 
             @this = System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch.GetInstance<global::SharedTypes.ComInterfaces.IArrayOfStatelessElements>(__this_native);
             @this.Method(param, size);
+            // NotifyForSuccessfulInvoke - Keep alive any managed objects that need to stay alive across the call.
+            __retVal = 0; // S_OK
         }
         catch (System.Exception __exception)
         {
@@ -440,7 +483,6 @@ file unsafe partial interface InterfaceImplementation
         try
         {
             // Unmarshal - Convert native data to managed data.
-            __retVal = 0; // S_OK
             __param_native__numElements = size;
             param = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.ComInterfaces.StatelessType, nint>.AllocateContainerForManagedElements(__param_native, __param_native__numElements);
             {
@@ -454,6 +496,8 @@ file unsafe partial interface InterfaceImplementation
 
             @this = System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch.GetInstance<global::SharedTypes.ComInterfaces.IArrayOfStatelessElements>(__this_native);
             @this.MethodIn(in param, size);
+            // NotifyForSuccessfulInvoke - Keep alive any managed objects that need to stay alive across the call.
+            __retVal = 0; // S_OK
         }
         catch (System.Exception __exception)
         {
@@ -476,9 +520,10 @@ file unsafe partial interface InterfaceImplementation
         try
         {
             // Unmarshal - Convert native data to managed data.
-            __retVal = 0; // S_OK
             @this = System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch.GetInstance<global::SharedTypes.ComInterfaces.IArrayOfStatelessElements>(__this_native);
             @this.MethodOut(out param, size);
+            // NotifyForSuccessfulInvoke - Keep alive any managed objects that need to stay alive across the call.
+            __retVal = 0; // S_OK
             // Marshal - Convert managed data to native data.
             __param_native = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.ComInterfaces.StatelessType, nint>.AllocateContainerForUnmanagedElements(param, out __param_native__numElements);
             {
@@ -515,7 +560,6 @@ file unsafe partial interface InterfaceImplementation
         try
         {
             // Unmarshal - Convert native data to managed data.
-            __retVal = 0; // S_OK
             __param_native__numElements = size;
             param = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.ComInterfaces.StatelessType, nint>.AllocateContainerForManagedElements(__param_native, __param_native__numElements);
             {
@@ -529,6 +573,8 @@ file unsafe partial interface InterfaceImplementation
 
             @this = System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch.GetInstance<global::SharedTypes.ComInterfaces.IArrayOfStatelessElements>(__this_native);
             @this.MethodRef(ref param, size);
+            // NotifyForSuccessfulInvoke - Keep alive any managed objects that need to stay alive across the call.
+            __retVal = 0; // S_OK
             // Marshal - Convert managed data to native data.
             __param_native = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.ComInterfaces.StatelessType, nint>.AllocateContainerForUnmanagedElements(param, out __param_native__numElements);
             __param_native__ownOriginal = true;
@@ -547,7 +593,7 @@ file unsafe partial interface InterfaceImplementation
         }
         finally
         {
-            // Cleanup - Perform required cleanup.
+            // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
             if (__param_native__ownOriginal)
             {
                 {
@@ -578,7 +624,6 @@ file unsafe partial interface InterfaceImplementation
         try
         {
             // Unmarshal - Convert native data to managed data.
-            __retVal = 0; // S_OK
             __param_native__numElements = size;
             param = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.ComInterfaces.StatelessType, nint>.AllocateContainerForManagedElements(__param_native, __param_native__numElements);
             {
@@ -592,6 +637,8 @@ file unsafe partial interface InterfaceImplementation
 
             @this = System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch.GetInstance<global::SharedTypes.ComInterfaces.IArrayOfStatelessElements>(__this_native);
             @this.MethodContentsIn(param, size);
+            // NotifyForSuccessfulInvoke - Keep alive any managed objects that need to stay alive across the call.
+            __retVal = 0; // S_OK
         }
         catch (System.Exception __exception)
         {
@@ -613,10 +660,11 @@ file unsafe partial interface InterfaceImplementation
         try
         {
             // Unmarshal - Convert native data to managed data.
-            __retVal = 0; // S_OK
             global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.ComInterfaces.StatelessType, nint>.GetManagedValuesDestination(param).Clear();
             @this = System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch.GetInstance<global::SharedTypes.ComInterfaces.IArrayOfStatelessElements>(__this_native);
             @this.MethodContentsOut(param, size);
+            // NotifyForSuccessfulInvoke - Keep alive any managed objects that need to stay alive across the call.
+            __retVal = 0; // S_OK
             // Marshal - Convert managed data to native data.
             {
                 __param_native__numElements = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.ComInterfaces.StatelessType, nint>.GetManagedValuesDestination(param).Length;
@@ -650,7 +698,6 @@ file unsafe partial interface InterfaceImplementation
         try
         {
             // Unmarshal - Convert native data to managed data.
-            __retVal = 0; // S_OK
             __param_native__numElements = size;
             param = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.ComInterfaces.StatelessType, nint>.AllocateContainerForManagedElements(__param_native, __param_native__numElements);
             {
@@ -664,6 +711,8 @@ file unsafe partial interface InterfaceImplementation
 
             @this = System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch.GetInstance<global::SharedTypes.ComInterfaces.IArrayOfStatelessElements>(__this_native);
             @this.MethodContentsInOut(param, size);
+            // NotifyForSuccessfulInvoke - Keep alive any managed objects that need to stay alive across the call.
+            __retVal = 0; // S_OK
             // Marshal - Convert managed data to native data.
             {
                 __param_native__numElements = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.ComInterfaces.StatelessType, nint>.GetManagedValuesDestination(param).Length;

@@ -9,7 +9,7 @@ file sealed unsafe class ComClassInformation : System.Runtime.InteropServices.Ma
         {
             System.Runtime.InteropServices.ComWrappers.ComInterfaceEntry* vtables = (System.Runtime.InteropServices.ComWrappers.ComInterfaceEntry*)System.Runtime.CompilerServices.RuntimeHelpers.AllocateTypeAssociatedMemory(typeof(ComClassInformation), sizeof(System.Runtime.InteropServices.ComWrappers.ComInterfaceEntry) * 1);
             System.Runtime.InteropServices.Marshalling.IIUnknownDerivedDetails details;
-            details = System.Runtime.InteropServices.Marshalling.StrategyBasedComWrappers.DefaultIUnknownInterfaceDetailsStrategy.GetIUnknownDerivedDetails(typeof(SharedTypes.ComInterfaces.IStatelessMarshalling).TypeHandle);
+            details = System.Runtime.InteropServices.Marshalling.StrategyBasedComWrappers.DefaultIUnknownInterfaceDetailsStrategy.GetIUnknownDerivedDetails(typeof(SharedTypes.ComInterfaces.IArrayOfStatelessElements).TypeHandle);
             vtables[0] = new()
             {
                 IID = details.Iid,
@@ -25,7 +25,7 @@ file sealed unsafe class ComClassInformation : System.Runtime.InteropServices.Ma
 namespace SharedTypes.ComInterfaces
 {
     [System.Runtime.InteropServices.Marshalling.ComExposedClassAttribute<ComClassInformation>]
-    internal partial class StatelessMarshalling
+    internal partial class ArrayOfStatelessElementsThrows
     {
     }
 }

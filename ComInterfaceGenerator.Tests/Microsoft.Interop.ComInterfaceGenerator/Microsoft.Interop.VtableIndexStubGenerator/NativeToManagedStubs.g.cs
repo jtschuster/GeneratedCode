@@ -148,7 +148,7 @@ namespace ComInterfaceGenerator.Tests
                         }
                         finally
                         {
-                            // Cleanup - Perform required cleanup.
+                            // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                             if (__values_native__ownOriginal)
                             {
                                 __values_native__numElements = numValues;
@@ -275,7 +275,7 @@ namespace ComInterfaceGenerator.Tests
                         }
                         finally
                         {
-                            // Cleanup - Perform required cleanup.
+                            // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                             if (__data_native__ownOriginal)
                             {
                                 global::ComInterfaceGenerator.Tests.UnmanagedToManagedCustomMarshallingTests.IntWrapperMarshallerToIntWithFreeCounts.Free(__data_native__original);
@@ -384,7 +384,7 @@ namespace ComInterfaceGenerator.Tests
                         }
                         finally
                         {
-                            // Cleanup - Perform required cleanup.
+                            // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                             if (__values_native__ownOriginal)
                             {
                                 {
@@ -499,7 +499,7 @@ namespace ComInterfaceGenerator.Tests
                         }
                         finally
                         {
-                            // Cleanup - Perform required cleanup.
+                            // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                             __values_native__marshaller.Free();
                         }
                     }
@@ -568,7 +568,7 @@ namespace ComInterfaceGenerator.Tests
                         }
                         finally
                         {
-                            // Cleanup - Perform required cleanup.
+                            // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                             if (__values_native__ownOriginal)
                             {
                                 {
@@ -640,7 +640,7 @@ namespace ComInterfaceGenerator.Tests
                         }
                         finally
                         {
-                            // Cleanup - Perform required cleanup.
+                            // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                             __values123_native__marshaller.Free();
                         }
                     }

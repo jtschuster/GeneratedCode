@@ -150,7 +150,7 @@ namespace ComInterfaceGenerator.Tests
                         }
                         finally
                         {
-                            // Cleanup - Perform required cleanup.
+                            // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                             __values_native__numElements = numValues;
                             global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.Free(__values_native);
                         }
@@ -259,6 +259,7 @@ namespace ComInterfaceGenerator.Tests
                     global::SharedTypes.IntWrapper global::ComInterfaceGenerator.Tests.NativeExportsNE.UnmanagedToManagedCustomMarshalling.INativeObject.GetData()
                     {
                         var(__this, __vtable_native) = ((System.Runtime.InteropServices.Marshalling.IUnmanagedVirtualMethodTableProvider)this).GetVirtualMethodTableInfoForKey(typeof(global::ComInterfaceGenerator.Tests.NativeExportsNE.UnmanagedToManagedCustomMarshalling.INativeObject));
+                        bool __invokeSucceeded = default;
                         global::SharedTypes.IntWrapper __retVal = default;
                         int __retVal_native = default;
                         try
@@ -267,14 +268,18 @@ namespace ComInterfaceGenerator.Tests
                                 __retVal_native = ((delegate* unmanaged<void*, int> )__vtable_native[0])(__this);
                             }
 
+                            __invokeSucceeded = true;
                             System.GC.KeepAlive(this);
                             // Unmarshal - Convert native data to managed data.
                             __retVal = global::ComInterfaceGenerator.Tests.UnmanagedToManagedCustomMarshallingTests.IntWrapperMarshallerToIntWithFreeCounts.ConvertToManaged(__retVal_native);
                         }
                         finally
                         {
-                            // Cleanup - Perform required cleanup.
-                            global::ComInterfaceGenerator.Tests.UnmanagedToManagedCustomMarshallingTests.IntWrapperMarshallerToIntWithFreeCounts.Free(__retVal_native);
+                            if (__invokeSucceeded)
+                            {
+                                // CleanupCalleeAllocated - Perform cleanup of callee allocated resources.
+                                global::ComInterfaceGenerator.Tests.UnmanagedToManagedCustomMarshallingTests.IntWrapperMarshallerToIntWithFreeCounts.Free(__retVal_native);
+                            }
                         }
 
                         return __retVal;
@@ -312,7 +317,7 @@ namespace ComInterfaceGenerator.Tests
                         }
                         finally
                         {
-                            // Cleanup - Perform required cleanup.
+                            // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                             global::ComInterfaceGenerator.Tests.UnmanagedToManagedCustomMarshallingTests.IntWrapperMarshallerToIntWithFreeCounts.Free(__x_native);
                         }
                     }
@@ -351,7 +356,7 @@ namespace ComInterfaceGenerator.Tests
                         }
                         finally
                         {
-                            // Cleanup - Perform required cleanup.
+                            // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                             global::ComInterfaceGenerator.Tests.UnmanagedToManagedCustomMarshallingTests.IntWrapperMarshallerToIntWithFreeCounts.Free(__data_native);
                         }
                     }
@@ -375,6 +380,7 @@ namespace ComInterfaceGenerator.Tests
                     void global::ComInterfaceGenerator.Tests.NativeExportsNE.UnmanagedToManagedCustomMarshalling.INativeObject.SumAndSetData(global::SharedTypes.IntWrapper[] values, int numValues, out global::SharedTypes.IntWrapper oldValue)
                     {
                         var(__this, __vtable_native) = ((System.Runtime.InteropServices.Marshalling.IUnmanagedVirtualMethodTableProvider)this).GetVirtualMethodTableInfoForKey(typeof(global::ComInterfaceGenerator.Tests.NativeExportsNE.UnmanagedToManagedCustomMarshalling.INativeObject));
+                        bool __invokeSucceeded = default;
                         System.Runtime.CompilerServices.Unsafe.SkipInit(out oldValue);
                         int* __values_native = default;
                         int __oldValue_native = default;
@@ -404,14 +410,21 @@ namespace ComInterfaceGenerator.Tests
                                 ((delegate* unmanaged<void*, int*, int, int*, void> )__vtable_native[3])(__this, __values_native, numValues, &__oldValue_native);
                             }
 
+                            __invokeSucceeded = true;
                             System.GC.KeepAlive(this);
                             // Unmarshal - Convert native data to managed data.
                             oldValue = global::ComInterfaceGenerator.Tests.UnmanagedToManagedCustomMarshallingTests.IntWrapperMarshallerToIntWithFreeCounts.ConvertToManaged(__oldValue_native);
                         }
                         finally
                         {
-                            // Cleanup - Perform required cleanup.
-                            global::ComInterfaceGenerator.Tests.UnmanagedToManagedCustomMarshallingTests.IntWrapperMarshallerToIntWithFreeCounts.Free(__oldValue_native);
+                            if (__invokeSucceeded)
+                            {
+                                // CleanupCalleeAllocated - Perform cleanup of callee allocated resources.
+                                global::ComInterfaceGenerator.Tests.UnmanagedToManagedCustomMarshallingTests.IntWrapperMarshallerToIntWithFreeCounts.Free(__oldValue_native);
+                                _ = __values_native__lastIndexMarshalled;
+                            }
+
+                            // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                             {
                                 System.ReadOnlySpan<int> __values_native__nativeSpan = __values_native__marshaller.GetUnmanagedValuesDestination();
                                 for (int __i0 = 0; __i0 < __values_native__lastIndexMarshalled; ++__i0)
@@ -443,6 +456,7 @@ namespace ComInterfaceGenerator.Tests
                     void global::ComInterfaceGenerator.Tests.NativeExportsNE.UnmanagedToManagedCustomMarshalling.INativeObject.SumAndSetData(ref global::SharedTypes.IntWrapper[] values, int numValues, out global::SharedTypes.IntWrapper oldValue)
                     {
                         var(__this, __vtable_native) = ((System.Runtime.InteropServices.Marshalling.IUnmanagedVirtualMethodTableProvider)this).GetVirtualMethodTableInfoForKey(typeof(global::ComInterfaceGenerator.Tests.NativeExportsNE.UnmanagedToManagedCustomMarshalling.INativeObject));
+                        bool __invokeSucceeded = default;
                         System.Runtime.CompilerServices.Unsafe.SkipInit(out oldValue);
                         int* __values_native = default;
                         int __oldValue_native = default;
@@ -467,6 +481,7 @@ namespace ComInterfaceGenerator.Tests
                                 ((delegate* unmanaged<void*, int**, int, int*, void> )__vtable_native[4])(__this, &__values_native, numValues, &__oldValue_native);
                             }
 
+                            __invokeSucceeded = true;
                             System.GC.KeepAlive(this);
                             // Unmarshal - Convert native data to managed data.
                             oldValue = global::ComInterfaceGenerator.Tests.UnmanagedToManagedCustomMarshallingTests.IntWrapperMarshallerToIntWithFreeCounts.ConvertToManaged(__oldValue_native);
@@ -483,8 +498,13 @@ namespace ComInterfaceGenerator.Tests
                         }
                         finally
                         {
-                            // Cleanup - Perform required cleanup.
-                            global::ComInterfaceGenerator.Tests.UnmanagedToManagedCustomMarshallingTests.IntWrapperMarshallerToIntWithFreeCounts.Free(__oldValue_native);
+                            if (__invokeSucceeded)
+                            {
+                                // CleanupCalleeAllocated - Perform cleanup of callee allocated resources.
+                                global::ComInterfaceGenerator.Tests.UnmanagedToManagedCustomMarshallingTests.IntWrapperMarshallerToIntWithFreeCounts.Free(__oldValue_native);
+                            }
+
+                            // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                             {
                                 System.ReadOnlySpan<int> __values_native__nativeSpan = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.IntWrapper, int>.GetUnmanagedValuesSource(__values_native, __values_native__numElements);
                                 for (int __i0 = 0; __i0 < __values_native__lastIndexMarshalled; ++__i0)
@@ -517,6 +537,7 @@ namespace ComInterfaceGenerator.Tests
                     void global::ComInterfaceGenerator.Tests.NativeExportsNE.UnmanagedToManagedCustomMarshalling.INativeObject.MultiplyWithData(global::SharedTypes.IntWrapper[] values123, int numValues)
                     {
                         var(__this, __vtable_native) = ((System.Runtime.InteropServices.Marshalling.IUnmanagedVirtualMethodTableProvider)this).GetVirtualMethodTableInfoForKey(typeof(global::ComInterfaceGenerator.Tests.NativeExportsNE.UnmanagedToManagedCustomMarshalling.INativeObject));
+                        bool __invokeSucceeded = default;
                         int* __values123_native = default;
                         // Setup - Perform required setup.
                         scoped global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.IntWrapper, int>.ManagedToUnmanagedIn __values123_native__marshaller = new();
@@ -544,6 +565,7 @@ namespace ComInterfaceGenerator.Tests
                                 ((delegate* unmanaged<void*, int*, int, void> )__vtable_native[5])(__this, __values123_native, numValues);
                             }
 
+                            __invokeSucceeded = true;
                             System.GC.KeepAlive(this);
                             // Unmarshal - Convert native data to managed data.
                             {
@@ -558,7 +580,13 @@ namespace ComInterfaceGenerator.Tests
                         }
                         finally
                         {
-                            // Cleanup - Perform required cleanup.
+                            if (__invokeSucceeded)
+                            {
+                                // CleanupCalleeAllocated - Perform cleanup of callee allocated resources.
+                                _ = __values123_native__lastIndexMarshalled;
+                            }
+
+                            // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                             {
                                 System.ReadOnlySpan<int> __values123_native__nativeSpan = __values123_native__marshaller.GetUnmanagedValuesDestination();
                                 for (int __i0 = 0; __i0 < __values123_native__lastIndexMarshalled; ++__i0)
