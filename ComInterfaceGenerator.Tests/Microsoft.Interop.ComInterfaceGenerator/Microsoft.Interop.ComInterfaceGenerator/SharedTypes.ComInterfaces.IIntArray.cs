@@ -31,9 +31,10 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
                 __invokeRetVal = ((delegate* unmanaged[MemberFunction]<void*, int*, int**, int> )__vtable_native[3])(__this, __size_native, &__retVal_native);
             }
 
+            // NotifyForSuccessfulInvoke - Keep alive any managed objects that need to stay alive across the call.
+            System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
             System.GC.KeepAlive(this);
             // Unmarshal - Convert native data to managed data.
-            System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
             __retVal_native__numElements = size;
             __retVal = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.AllocateContainerForManagedElements(__retVal_native, __retVal_native__numElements);
             global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.GetUnmanagedValuesSource(__retVal_native, __retVal_native__numElements).CopyTo(global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.GetManagedValuesDestination(__retVal));
@@ -66,9 +67,10 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
                 __invokeRetVal = ((delegate* unmanaged[MemberFunction]<void*, int**, int*, int> )__vtable_native[4])(__this, &__array_native, &__retVal);
             }
 
+            // NotifyForSuccessfulInvoke - Keep alive any managed objects that need to stay alive across the call.
+            System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
             System.GC.KeepAlive(this);
             // Unmarshal - Convert native data to managed data.
-            System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
             __array_native__numElements = __retVal;
             array = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.AllocateContainerForManagedElements(__array_native, __array_native__numElements);
             global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.GetUnmanagedValuesSource(__array_native, __array_native__numElements).CopyTo(global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.GetManagedValuesDestination(array));
@@ -95,9 +97,9 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
             __invokeRetVal = ((delegate* unmanaged[MemberFunction]<void*, int*, int, int> )__vtable_native[5])(__this, (int*)__array_native, size);
         }
 
-        System.GC.KeepAlive(this);
-        // Unmarshal - Convert native data to managed data.
+        // NotifyForSuccessfulInvoke - Keep alive any managed objects that need to stay alive across the call.
         System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
+        System.GC.KeepAlive(this);
     }
 
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Interop.ComInterfaceGenerator", "42.42.42.42")]
@@ -112,9 +114,9 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
             __invokeRetVal = ((delegate* unmanaged[MemberFunction]<void*, int*, int, int> )__vtable_native[6])(__this, (int*)__array_native, size);
         }
 
-        System.GC.KeepAlive(this);
-        // Unmarshal - Convert native data to managed data.
+        // NotifyForSuccessfulInvoke - Keep alive any managed objects that need to stay alive across the call.
         System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
+        System.GC.KeepAlive(this);
     }
 
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Interop.ComInterfaceGenerator", "42.42.42.42")]
@@ -129,9 +131,9 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
             __invokeRetVal = ((delegate* unmanaged[MemberFunction]<void*, int*, int, int> )__vtable_native[7])(__this, (int*)__array_native, size);
         }
 
-        System.GC.KeepAlive(this);
-        // Unmarshal - Convert native data to managed data.
+        // NotifyForSuccessfulInvoke - Keep alive any managed objects that need to stay alive across the call.
         System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
+        System.GC.KeepAlive(this);
     }
 
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Interop.ComInterfaceGenerator", "42.42.42.42")]
@@ -158,9 +160,9 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
                 __invokeRetVal = ((delegate* unmanaged[MemberFunction]<void*, int**, int, int> )__vtable_native[8])(__this, &__array_native, size);
             }
 
-            System.GC.KeepAlive(this);
-            // Unmarshal - Convert native data to managed data.
+            // NotifyForSuccessfulInvoke - Keep alive any managed objects that need to stay alive across the call.
             System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
+            System.GC.KeepAlive(this);
         }
         finally
         {
@@ -188,9 +190,10 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
                 __invokeRetVal = ((delegate* unmanaged[MemberFunction]<void*, int**, int, int> )__vtable_native[9])(__this, &__array_native, size);
             }
 
+            // NotifyForSuccessfulInvoke - Keep alive any managed objects that need to stay alive across the call.
+            System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
             System.GC.KeepAlive(this);
             // Unmarshal - Convert native data to managed data.
-            System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
             __array_native__numElements = size;
             array = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.AllocateContainerForManagedElements(__array_native, __array_native__numElements);
             global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.GetUnmanagedValuesSource(__array_native, __array_native__numElements).CopyTo(global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.GetManagedValuesDestination(array));
@@ -340,6 +343,8 @@ file unsafe partial interface InterfaceImplementation
             global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.GetUnmanagedValuesSource(__array_native, __array_native__numElements).CopyTo(global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.GetManagedValuesDestination(array));
             @this = System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch.GetInstance<global::SharedTypes.ComInterfaces.IIntArray>(__this_native);
             @this.Double(array, size);
+            // Marshal - Convert managed data to native data.
+            global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.GetManagedValuesDestination(array).CopyTo(System.Runtime.InteropServices.MemoryMarshal.CreateSpan(ref System.Runtime.InteropServices.MemoryMarshal.GetReference(global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.GetUnmanagedValuesSource(__array_native, __array_native__numElements)), global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.GetUnmanagedValuesSource(__array_native, __array_native__numElements).Length));
         }
         catch (System.Exception __exception)
         {

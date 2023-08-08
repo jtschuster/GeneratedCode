@@ -32,7 +32,7 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
                 System.Span<nint> __param_native__nativeSpan = __param_native__marshaller.GetUnmanagedValuesDestination();
                 for (int __i0 = 0; __i0 < __param_native__managedSpan.Length; ++__i0, ++__param_native__lastIndexMarshalled)
                 {
-                    __param_native__nativeSpan[__i0] = global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.ConvertToUnmanaged(__param_native__managedSpan[__i0]);
+                    __param_native__nativeSpan[__i0] = global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.ManagedToUnmanaged.ConvertToUnmanaged(__param_native__managedSpan[__i0]);
                 }
             }
 
@@ -44,9 +44,9 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
                 __invokeRetVal = ((delegate* unmanaged[MemberFunction]<void*, nint*, int, int> )__vtable_native[3])(__this, __param_native, size);
             }
 
-            System.GC.KeepAlive(this);
-            // Unmarshal - Convert native data to managed data.
+            // NotifyForSuccessfulInvoke - Keep alive any managed objects that need to stay alive across the call.
             System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
+            System.GC.KeepAlive(this);
         }
         finally
         {
@@ -55,7 +55,7 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
                 System.ReadOnlySpan<nint> __param_native__nativeSpan = __param_native__marshaller.GetUnmanagedValuesDestination();
                 for (int __i0 = 0; __i0 < __param_native__lastIndexMarshalled; ++__i0)
                 {
-                    global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.Free(__param_native__nativeSpan[__i0]);
+                    global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.ManagedToUnmanaged.Free(__param_native__nativeSpan[__i0]);
                 }
             }
 
@@ -84,7 +84,7 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
                 System.Span<nint> __param_native__nativeSpan = __param_native__marshaller.GetUnmanagedValuesDestination();
                 for (int __i0 = 0; __i0 < __param_native__managedSpan.Length; ++__i0, ++__param_native__lastIndexMarshalled)
                 {
-                    __param_native__nativeSpan[__i0] = global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.ConvertToUnmanaged(__param_native__managedSpan[__i0]);
+                    __param_native__nativeSpan[__i0] = global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.ManagedToUnmanaged.ConvertToUnmanaged(__param_native__managedSpan[__i0]);
                 }
             }
 
@@ -96,9 +96,9 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
                 __invokeRetVal = ((delegate* unmanaged[MemberFunction]<void*, nint**, int, int> )__vtable_native[4])(__this, &__param_native, size);
             }
 
-            System.GC.KeepAlive(this);
-            // Unmarshal - Convert native data to managed data.
+            // NotifyForSuccessfulInvoke - Keep alive any managed objects that need to stay alive across the call.
             System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
+            System.GC.KeepAlive(this);
         }
         finally
         {
@@ -107,7 +107,7 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
                 System.ReadOnlySpan<nint> __param_native__nativeSpan = __param_native__marshaller.GetUnmanagedValuesDestination();
                 for (int __i0 = 0; __i0 < __param_native__lastIndexMarshalled; ++__i0)
                 {
-                    global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.Free(__param_native__nativeSpan[__i0]);
+                    global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.ManagedToUnmanaged.Free(__param_native__nativeSpan[__i0]);
                 }
             }
 
@@ -132,9 +132,10 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
                 __invokeRetVal = ((delegate* unmanaged[MemberFunction]<void*, nint**, int, int> )__vtable_native[5])(__this, &__param_native, size);
             }
 
+            // NotifyForSuccessfulInvoke - Keep alive any managed objects that need to stay alive across the call.
+            System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
             System.GC.KeepAlive(this);
             // Unmarshal - Convert native data to managed data.
-            System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
             __param_native__numElements = size;
             param = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.ComInterfaces.StatelessType, nint>.AllocateContainerForManagedElements(__param_native, __param_native__numElements);
             {
@@ -142,7 +143,7 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
                 System.Span<global::SharedTypes.ComInterfaces.StatelessType> __param_native__managedSpan = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.ComInterfaces.StatelessType, nint>.GetManagedValuesDestination(param);
                 for (int __i0 = 0; __i0 < __param_native__numElements; ++__i0)
                 {
-                    __param_native__managedSpan[__i0] = global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.ConvertToManaged(__param_native__nativeSpan[__i0]);
+                    __param_native__managedSpan[__i0] = global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.UnmanagedToManaged.ConvertToManaged(__param_native__nativeSpan[__i0]);
                 }
             }
         }
@@ -150,10 +151,10 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
         {
             // Cleanup - Perform required cleanup.
             {
-                System.ReadOnlySpan<nint> __param_native__nativeSpan = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.ComInterfaces.StatelessType, nint>.GetUnmanagedValuesDestination(__param_native, __param_native__numElements);
+                System.ReadOnlySpan<nint> __param_native__nativeSpan = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.ComInterfaces.StatelessType, nint>.GetUnmanagedValuesSource(__param_native, __param_native__numElements);
                 for (int __i0 = 0; __i0 < __param_native__nativeSpan.Length; ++__i0)
                 {
-                    global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.Free(__param_native__nativeSpan[__i0]);
+                    global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.UnmanagedToManaged.Free(__param_native__nativeSpan[__i0]);
                 }
             }
 
@@ -182,7 +183,7 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
                 System.Span<nint> __param_native__nativeSpan = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.ComInterfaces.StatelessType, nint>.GetUnmanagedValuesDestination(__param_native, __param_native__numElements);
                 for (int __i0 = 0; __i0 < __param_native__managedSpan.Length; ++__i0, ++__param_native__lastIndexMarshalled)
                 {
-                    __param_native__nativeSpan[__i0] = global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.ConvertToUnmanaged(__param_native__managedSpan[__i0]);
+                    __param_native__nativeSpan[__i0] = global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.Bidirectional.ConvertToUnmanaged(__param_native__managedSpan[__i0]);
                 }
             }
 
@@ -190,9 +191,10 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
                 __invokeRetVal = ((delegate* unmanaged[MemberFunction]<void*, nint**, int, int> )__vtable_native[6])(__this, &__param_native, size);
             }
 
+            // NotifyForSuccessfulInvoke - Keep alive any managed objects that need to stay alive across the call.
+            System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
             System.GC.KeepAlive(this);
             // Unmarshal - Convert native data to managed data.
-            System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
             __param_native__numElements = size;
             param = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.ComInterfaces.StatelessType, nint>.AllocateContainerForManagedElements(__param_native, __param_native__numElements);
             {
@@ -200,7 +202,7 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
                 System.Span<global::SharedTypes.ComInterfaces.StatelessType> __param_native__managedSpan = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.ComInterfaces.StatelessType, nint>.GetManagedValuesDestination(param);
                 for (int __i0 = 0; __i0 < __param_native__numElements; ++__i0)
                 {
-                    __param_native__managedSpan[__i0] = global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.ConvertToManaged(__param_native__nativeSpan[__i0]);
+                    __param_native__managedSpan[__i0] = global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.Bidirectional.ConvertToManaged(__param_native__nativeSpan[__i0]);
                 }
             }
         }
@@ -208,10 +210,10 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
         {
             // Cleanup - Perform required cleanup.
             {
-                System.ReadOnlySpan<nint> __param_native__nativeSpan = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.ComInterfaces.StatelessType, nint>.GetUnmanagedValuesDestination(__param_native, __param_native__numElements);
+                System.ReadOnlySpan<nint> __param_native__nativeSpan = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.ComInterfaces.StatelessType, nint>.GetUnmanagedValuesSource(__param_native, __param_native__numElements);
                 for (int __i0 = 0; __i0 < __param_native__lastIndexMarshalled; ++__i0)
                 {
-                    global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.Free(__param_native__nativeSpan[__i0]);
+                    global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.Bidirectional.Free(__param_native__nativeSpan[__i0]);
                 }
             }
 
@@ -241,7 +243,7 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
                 System.Span<nint> __param_native__nativeSpan = __param_native__marshaller.GetUnmanagedValuesDestination();
                 for (int __i0 = 0; __i0 < __param_native__managedSpan.Length; ++__i0, ++__param_native__lastIndexMarshalled)
                 {
-                    __param_native__nativeSpan[__i0] = global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.ConvertToUnmanaged(__param_native__managedSpan[__i0]);
+                    __param_native__nativeSpan[__i0] = global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.ManagedToUnmanaged.ConvertToUnmanaged(__param_native__managedSpan[__i0]);
                 }
             }
 
@@ -253,9 +255,9 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
                 __invokeRetVal = ((delegate* unmanaged[MemberFunction]<void*, nint*, int, int> )__vtable_native[7])(__this, __param_native, size);
             }
 
-            System.GC.KeepAlive(this);
-            // Unmarshal - Convert native data to managed data.
+            // NotifyForSuccessfulInvoke - Keep alive any managed objects that need to stay alive across the call.
             System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
+            System.GC.KeepAlive(this);
         }
         finally
         {
@@ -264,7 +266,7 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
                 System.ReadOnlySpan<nint> __param_native__nativeSpan = __param_native__marshaller.GetUnmanagedValuesDestination();
                 for (int __i0 = 0; __i0 < __param_native__lastIndexMarshalled; ++__i0)
                 {
-                    global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.Free(__param_native__nativeSpan[__i0]);
+                    global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.ManagedToUnmanaged.Free(__param_native__nativeSpan[__i0]);
                 }
             }
 
@@ -296,16 +298,17 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
                 __invokeRetVal = ((delegate* unmanaged[MemberFunction]<void*, nint*, int, int> )__vtable_native[8])(__this, __param_native, size);
             }
 
+            // NotifyForSuccessfulInvoke - Keep alive any managed objects that need to stay alive across the call.
+            System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
             System.GC.KeepAlive(this);
             // Unmarshal - Convert native data to managed data.
-            System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
             {
                 __param_native__numElements = __param_native__marshaller.GetManagedValuesSource().Length;
                 System.Span<global::SharedTypes.ComInterfaces.StatelessType> __param_native__managedSpan = System.Runtime.InteropServices.MemoryMarshal.CreateSpan(ref System.Runtime.CompilerServices.Unsafe.AsRef(in __param_native__marshaller.GetManagedValuesSource().GetPinnableReference()), __param_native__numElements);
                 System.Span<nint> __param_native__nativeSpan = __param_native__marshaller.GetUnmanagedValuesDestination();
                 for (int __i0 = 0; __i0 < __param_native__numElements; ++__i0)
                 {
-                    __param_native__managedSpan[__i0] = global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.ConvertToManaged(__param_native__nativeSpan[__i0]);
+                    __param_native__managedSpan[__i0] = global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.UnmanagedToManaged.ConvertToManaged(__param_native__nativeSpan[__i0]);
                 }
             }
         }
@@ -316,7 +319,7 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
                 System.ReadOnlySpan<nint> __param_native__nativeSpan = __param_native__marshaller.GetUnmanagedValuesDestination();
                 for (int __i0 = 0; __i0 < __param_native__nativeSpan.Length; ++__i0)
                 {
-                    global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.Free(__param_native__nativeSpan[__i0]);
+                    global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.UnmanagedToManaged.Free(__param_native__nativeSpan[__i0]);
                 }
             }
 
@@ -345,7 +348,7 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
                 System.Span<nint> __param_native__nativeSpan = __param_native__marshaller.GetUnmanagedValuesDestination();
                 for (int __i0 = 0; __i0 < __param_native__managedSpan.Length; ++__i0, ++__param_native__lastIndexMarshalled)
                 {
-                    __param_native__nativeSpan[__i0] = global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.ConvertToUnmanaged(__param_native__managedSpan[__i0]);
+                    __param_native__nativeSpan[__i0] = global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.Bidirectional.ConvertToUnmanaged(__param_native__managedSpan[__i0]);
                 }
             }
 
@@ -357,16 +360,17 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
                 __invokeRetVal = ((delegate* unmanaged[MemberFunction]<void*, nint*, int, int> )__vtable_native[9])(__this, __param_native, size);
             }
 
+            // NotifyForSuccessfulInvoke - Keep alive any managed objects that need to stay alive across the call.
+            System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
             System.GC.KeepAlive(this);
             // Unmarshal - Convert native data to managed data.
-            System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
             {
                 __param_native__numElements = __param_native__marshaller.GetManagedValuesSource().Length;
                 System.Span<global::SharedTypes.ComInterfaces.StatelessType> __param_native__managedSpan = System.Runtime.InteropServices.MemoryMarshal.CreateSpan(ref System.Runtime.CompilerServices.Unsafe.AsRef(in __param_native__marshaller.GetManagedValuesSource().GetPinnableReference()), __param_native__numElements);
                 System.Span<nint> __param_native__nativeSpan = __param_native__marshaller.GetUnmanagedValuesDestination();
                 for (int __i0 = 0; __i0 < __param_native__numElements; ++__i0)
                 {
-                    __param_native__managedSpan[__i0] = global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.ConvertToManaged(__param_native__nativeSpan[__i0]);
+                    __param_native__managedSpan[__i0] = global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.Bidirectional.ConvertToManaged(__param_native__nativeSpan[__i0]);
                 }
             }
         }
@@ -377,7 +381,7 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
                 System.ReadOnlySpan<nint> __param_native__nativeSpan = __param_native__marshaller.GetUnmanagedValuesDestination();
                 for (int __i0 = 0; __i0 < __param_native__lastIndexMarshalled; ++__i0)
                 {
-                    global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.Free(__param_native__nativeSpan[__i0]);
+                    global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.Bidirectional.Free(__param_native__nativeSpan[__i0]);
                 }
             }
 
@@ -408,7 +412,7 @@ file unsafe partial interface InterfaceImplementation
                 System.Span<global::SharedTypes.ComInterfaces.StatelessType> __param_native__managedSpan = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.ComInterfaces.StatelessType, nint>.GetManagedValuesDestination(param);
                 for (int __i0 = 0; __i0 < __param_native__numElements; ++__i0)
                 {
-                    __param_native__managedSpan[__i0] = global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.ConvertToManaged(__param_native__nativeSpan[__i0]);
+                    __param_native__managedSpan[__i0] = global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.UnmanagedToManaged.ConvertToManaged(__param_native__nativeSpan[__i0]);
                 }
             }
 
@@ -444,7 +448,7 @@ file unsafe partial interface InterfaceImplementation
                 System.Span<global::SharedTypes.ComInterfaces.StatelessType> __param_native__managedSpan = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.ComInterfaces.StatelessType, nint>.GetManagedValuesDestination(param);
                 for (int __i0 = 0; __i0 < __param_native__numElements; ++__i0)
                 {
-                    __param_native__managedSpan[__i0] = global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.ConvertToManaged(__param_native__nativeSpan[__i0]);
+                    __param_native__managedSpan[__i0] = global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.UnmanagedToManaged.ConvertToManaged(__param_native__nativeSpan[__i0]);
                 }
             }
 
@@ -483,7 +487,7 @@ file unsafe partial interface InterfaceImplementation
                 __param_native__nativeSpan.Clear();
                 for (int __i0 = 0; __i0 < __param_native__managedSpan.Length; ++__i0)
                 {
-                    __param_native__nativeSpan[__i0] = global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.ConvertToUnmanaged(__param_native__managedSpan[__i0]);
+                    __param_native__nativeSpan[__i0] = global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.ManagedToUnmanaged.ConvertToUnmanaged(__param_native__managedSpan[__i0]);
                 }
             }
         }
@@ -519,7 +523,7 @@ file unsafe partial interface InterfaceImplementation
                 System.Span<global::SharedTypes.ComInterfaces.StatelessType> __param_native__managedSpan = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.ComInterfaces.StatelessType, nint>.GetManagedValuesDestination(param);
                 for (int __i0 = 0; __i0 < __param_native__numElements; ++__i0)
                 {
-                    __param_native__managedSpan[__i0] = global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.ConvertToManaged(__param_native__nativeSpan[__i0]);
+                    __param_native__managedSpan[__i0] = global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.Bidirectional.ConvertToManaged(__param_native__nativeSpan[__i0]);
                 }
             }
 
@@ -533,7 +537,7 @@ file unsafe partial interface InterfaceImplementation
                 System.Span<nint> __param_native__nativeSpan = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.ComInterfaces.StatelessType, nint>.GetUnmanagedValuesDestination(__param_native, __param_native__numElements);
                 for (int __i0 = 0; __i0 < __param_native__managedSpan.Length; ++__i0, ++__param_native__lastIndexMarshalled)
                 {
-                    __param_native__nativeSpan[__i0] = global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.ConvertToUnmanaged(__param_native__managedSpan[__i0]);
+                    __param_native__nativeSpan[__i0] = global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.Bidirectional.ConvertToUnmanaged(__param_native__managedSpan[__i0]);
                 }
             }
         }
@@ -550,7 +554,7 @@ file unsafe partial interface InterfaceImplementation
                     System.ReadOnlySpan<nint> __param_native__nativeSpan = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.ComInterfaces.StatelessType, nint>.GetUnmanagedValuesSource(__param_native__original, __param_native__numElements);
                     for (int __i0 = 0; __i0 < __param_native__lastIndexMarshalled; ++__i0)
                     {
-                        global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.Free(__param_native__nativeSpan[__i0]);
+                        global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.Bidirectional.Free(__param_native__nativeSpan[__i0]);
                     }
                 }
 
@@ -582,7 +586,7 @@ file unsafe partial interface InterfaceImplementation
                 System.Span<global::SharedTypes.ComInterfaces.StatelessType> __param_native__managedSpan = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.ComInterfaces.StatelessType, nint>.GetManagedValuesDestination(param);
                 for (int __i0 = 0; __i0 < __param_native__numElements; ++__i0)
                 {
-                    __param_native__managedSpan[__i0] = global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.ConvertToManaged(__param_native__nativeSpan[__i0]);
+                    __param_native__managedSpan[__i0] = global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.UnmanagedToManaged.ConvertToManaged(__param_native__nativeSpan[__i0]);
                 }
             }
 
@@ -621,8 +625,8 @@ file unsafe partial interface InterfaceImplementation
                 for (int __i0 = 0; __i0 < __param_native__numElements; ++__i0)
                 {
                     nint __param_native__nativeSpan____i0__original = __param_native__nativeSpan[__i0];
-                    __param_native__nativeSpan[__i0] = global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.ConvertToUnmanaged(__param_native__managedSpan[__i0]);
-                    global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.Free(__param_native__nativeSpan____i0__original);
+                    __param_native__nativeSpan[__i0] = global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.ManagedToUnmanaged.ConvertToUnmanaged(__param_native__managedSpan[__i0]);
+                    global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.ManagedToUnmanaged.Free(__param_native__nativeSpan____i0__original);
                 }
             }
         }
@@ -654,7 +658,7 @@ file unsafe partial interface InterfaceImplementation
                 System.Span<global::SharedTypes.ComInterfaces.StatelessType> __param_native__managedSpan = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.ComInterfaces.StatelessType, nint>.GetManagedValuesDestination(param);
                 for (int __i0 = 0; __i0 < __param_native__numElements; ++__i0)
                 {
-                    __param_native__managedSpan[__i0] = global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.ConvertToManaged(__param_native__nativeSpan[__i0]);
+                    __param_native__managedSpan[__i0] = global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.Bidirectional.ConvertToManaged(__param_native__nativeSpan[__i0]);
                 }
             }
 
@@ -668,8 +672,8 @@ file unsafe partial interface InterfaceImplementation
                 for (int __i0 = 0; __i0 < __param_native__numElements; ++__i0)
                 {
                     nint __param_native__nativeSpan____i0__original = __param_native__nativeSpan[__i0];
-                    __param_native__nativeSpan[__i0] = global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.ConvertToUnmanaged(__param_native__managedSpan[__i0]);
-                    global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.Free(__param_native__nativeSpan____i0__original);
+                    __param_native__nativeSpan[__i0] = global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.Bidirectional.ConvertToUnmanaged(__param_native__managedSpan[__i0]);
+                    global::SharedTypes.ComInterfaces.StatelessTypeMarshaller.Bidirectional.Free(__param_native__nativeSpan____i0__original);
                 }
             }
         }

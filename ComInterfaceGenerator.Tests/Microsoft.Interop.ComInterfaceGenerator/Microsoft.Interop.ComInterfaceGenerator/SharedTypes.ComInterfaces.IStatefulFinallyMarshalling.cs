@@ -16,10 +16,10 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
     void global::SharedTypes.ComInterfaces.IStatefulFinallyMarshalling.Method(global::SharedTypes.ComInterfaces.StatefulFinallyType param)
     {
         var(__this, __vtable_native) = ((System.Runtime.InteropServices.Marshalling.IUnmanagedVirtualMethodTableProvider)this).GetVirtualMethodTableInfoForKey(typeof(global::SharedTypes.ComInterfaces.IStatefulFinallyMarshalling));
-        nint __param_native = default;
+        global::SharedTypes.ComInterfaces.StatefulFinallyNative __param_native = default;
         int __invokeRetVal = default;
         // Setup - Perform required setup.
-        global::SharedTypes.ComInterfaces.StatefulFinallyTypeMarshaller __param_native__marshaller = new();
+        global::SharedTypes.ComInterfaces.StatefulFinallyTypeMarshaller.ManagedToUnmanaged __param_native__marshaller = new();
         try
         {
             // Marshal - Convert managed data to native data.
@@ -27,12 +27,13 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
             {
                 // PinnedMarshal - Convert managed data to native data that requires the managed data to be pinned.
                 __param_native = __param_native__marshaller.ToUnmanaged();
-                __invokeRetVal = ((delegate* unmanaged[MemberFunction]<void*, nint, int> )__vtable_native[3])(__this, __param_native);
+                __invokeRetVal = ((delegate* unmanaged[MemberFunction]<void*, global::SharedTypes.ComInterfaces.StatefulFinallyNative, int> )__vtable_native[3])(__this, __param_native);
             }
 
-            System.GC.KeepAlive(this);
-            // Unmarshal - Convert native data to managed data.
+            // NotifyForSuccessfulInvoke - Keep alive any managed objects that need to stay alive across the call.
             System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
+            __param_native__marshaller.OnInvoked();
+            System.GC.KeepAlive(this);
         }
         finally
         {
@@ -46,10 +47,10 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
     void global::SharedTypes.ComInterfaces.IStatefulFinallyMarshalling.MethodIn(in global::SharedTypes.ComInterfaces.StatefulFinallyType param)
     {
         var(__this, __vtable_native) = ((System.Runtime.InteropServices.Marshalling.IUnmanagedVirtualMethodTableProvider)this).GetVirtualMethodTableInfoForKey(typeof(global::SharedTypes.ComInterfaces.IStatefulFinallyMarshalling));
-        nint __param_native = default;
+        global::SharedTypes.ComInterfaces.StatefulFinallyNative __param_native = default;
         int __invokeRetVal = default;
         // Setup - Perform required setup.
-        global::SharedTypes.ComInterfaces.StatefulFinallyTypeMarshaller __param_native__marshaller = new();
+        global::SharedTypes.ComInterfaces.StatefulFinallyTypeMarshaller.ManagedToUnmanaged __param_native__marshaller = new();
         try
         {
             // Marshal - Convert managed data to native data.
@@ -57,12 +58,13 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
             {
                 // PinnedMarshal - Convert managed data to native data that requires the managed data to be pinned.
                 __param_native = __param_native__marshaller.ToUnmanaged();
-                __invokeRetVal = ((delegate* unmanaged[MemberFunction]<void*, nint*, int> )__vtable_native[4])(__this, &__param_native);
+                __invokeRetVal = ((delegate* unmanaged[MemberFunction]<void*, global::SharedTypes.ComInterfaces.StatefulFinallyNative*, int> )__vtable_native[4])(__this, &__param_native);
             }
 
-            System.GC.KeepAlive(this);
-            // Unmarshal - Convert native data to managed data.
+            // NotifyForSuccessfulInvoke - Keep alive any managed objects that need to stay alive across the call.
             System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
+            __param_native__marshaller.OnInvoked();
+            System.GC.KeepAlive(this);
         }
         finally
         {
@@ -78,22 +80,22 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
         var(__this, __vtable_native) = ((System.Runtime.InteropServices.Marshalling.IUnmanagedVirtualMethodTableProvider)this).GetVirtualMethodTableInfoForKey(typeof(global::SharedTypes.ComInterfaces.IStatefulFinallyMarshalling));
         bool __invokeSucceeded = default;
         System.Runtime.CompilerServices.Unsafe.SkipInit(out param);
-        nint __param_native = default;
+        global::SharedTypes.ComInterfaces.StatefulFinallyNative __param_native = default;
         int __invokeRetVal = default;
         // Setup - Perform required setup.
-        global::SharedTypes.ComInterfaces.StatefulFinallyTypeMarshaller __param_native__marshaller = new();
+        global::SharedTypes.ComInterfaces.StatefulFinallyTypeMarshaller.UnmanagedToManaged __param_native__marshaller = new();
         try
         {
             {
-                __invokeRetVal = ((delegate* unmanaged[MemberFunction]<void*, nint*, int> )__vtable_native[5])(__this, &__param_native);
+                __invokeRetVal = ((delegate* unmanaged[MemberFunction]<void*, global::SharedTypes.ComInterfaces.StatefulFinallyNative*, int> )__vtable_native[5])(__this, &__param_native);
             }
 
+            // NotifyForSuccessfulInvoke - Keep alive any managed objects that need to stay alive across the call.
+            System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
             __invokeSucceeded = true;
             System.GC.KeepAlive(this);
             // UnmarshalCapture - Capture the native data into marshaller instances in case conversion to managed data throws an exception.
             __param_native__marshaller.FromUnmanaged(__param_native);
-            // Unmarshal - Convert native data to managed data.
-            System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
         }
         finally
         {
@@ -114,10 +116,10 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
     {
         var(__this, __vtable_native) = ((System.Runtime.InteropServices.Marshalling.IUnmanagedVirtualMethodTableProvider)this).GetVirtualMethodTableInfoForKey(typeof(global::SharedTypes.ComInterfaces.IStatefulFinallyMarshalling));
         bool __invokeSucceeded = default;
-        nint __param_native = default;
+        global::SharedTypes.ComInterfaces.StatefulFinallyNative __param_native = default;
         int __invokeRetVal = default;
         // Setup - Perform required setup.
-        global::SharedTypes.ComInterfaces.StatefulFinallyTypeMarshaller __param_native__marshaller = new();
+        global::SharedTypes.ComInterfaces.StatefulFinallyTypeMarshaller.Bidirectional __param_native__marshaller = new();
         try
         {
             // Marshal - Convert managed data to native data.
@@ -125,15 +127,16 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
             {
                 // PinnedMarshal - Convert managed data to native data that requires the managed data to be pinned.
                 __param_native = __param_native__marshaller.ToUnmanaged();
-                __invokeRetVal = ((delegate* unmanaged[MemberFunction]<void*, nint*, int> )__vtable_native[6])(__this, &__param_native);
+                __invokeRetVal = ((delegate* unmanaged[MemberFunction]<void*, global::SharedTypes.ComInterfaces.StatefulFinallyNative*, int> )__vtable_native[6])(__this, &__param_native);
             }
 
+            // NotifyForSuccessfulInvoke - Keep alive any managed objects that need to stay alive across the call.
+            System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
+            __param_native__marshaller.OnInvoked();
             __invokeSucceeded = true;
             System.GC.KeepAlive(this);
             // UnmarshalCapture - Capture the native data into marshaller instances in case conversion to managed data throws an exception.
             __param_native__marshaller.FromUnmanaged(__param_native);
-            // Unmarshal - Convert native data to managed data.
-            System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
         }
         finally
         {
@@ -155,22 +158,22 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
         var(__this, __vtable_native) = ((System.Runtime.InteropServices.Marshalling.IUnmanagedVirtualMethodTableProvider)this).GetVirtualMethodTableInfoForKey(typeof(global::SharedTypes.ComInterfaces.IStatefulFinallyMarshalling));
         bool __invokeSucceeded = default;
         global::SharedTypes.ComInterfaces.StatefulFinallyType __retVal = default;
-        nint __retVal_native = default;
+        global::SharedTypes.ComInterfaces.StatefulFinallyNative __retVal_native = default;
         int __invokeRetVal = default;
         // Setup - Perform required setup.
-        global::SharedTypes.ComInterfaces.StatefulFinallyTypeMarshaller __retVal_native__marshaller = new();
+        global::SharedTypes.ComInterfaces.StatefulFinallyTypeMarshaller.UnmanagedToManaged __retVal_native__marshaller = new();
         try
         {
             {
-                __invokeRetVal = ((delegate* unmanaged[MemberFunction]<void*, nint*, int> )__vtable_native[7])(__this, &__retVal_native);
+                __invokeRetVal = ((delegate* unmanaged[MemberFunction]<void*, global::SharedTypes.ComInterfaces.StatefulFinallyNative*, int> )__vtable_native[7])(__this, &__retVal_native);
             }
 
+            // NotifyForSuccessfulInvoke - Keep alive any managed objects that need to stay alive across the call.
+            System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
             __invokeSucceeded = true;
             System.GC.KeepAlive(this);
             // UnmarshalCapture - Capture the native data into marshaller instances in case conversion to managed data throws an exception.
             __retVal_native__marshaller.FromUnmanaged(__retVal_native);
-            // Unmarshal - Convert native data to managed data.
-            System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
         }
         finally
         {
@@ -194,13 +197,13 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
         var(__this, __vtable_native) = ((System.Runtime.InteropServices.Marshalling.IUnmanagedVirtualMethodTableProvider)this).GetVirtualMethodTableInfoForKey(typeof(global::SharedTypes.ComInterfaces.IStatefulFinallyMarshalling));
         bool __invokeSucceeded = default;
         global::SharedTypes.ComInterfaces.StatefulFinallyType __retVal = default;
-        nint __retVal_native = default;
+        global::SharedTypes.ComInterfaces.StatefulFinallyNative __retVal_native = default;
         // Setup - Perform required setup.
-        global::SharedTypes.ComInterfaces.StatefulFinallyTypeMarshaller __retVal_native__marshaller = new();
+        global::SharedTypes.ComInterfaces.StatefulFinallyTypeMarshaller.UnmanagedToManaged __retVal_native__marshaller = new();
         try
         {
             {
-                __retVal_native = ((delegate* unmanaged[MemberFunction]<void*, nint> )__vtable_native[8])(__this);
+                __retVal_native = ((delegate* unmanaged[MemberFunction]<void*, global::SharedTypes.ComInterfaces.StatefulFinallyNative> )__vtable_native[8])(__this);
             }
 
             __invokeSucceeded = true;
@@ -227,23 +230,23 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
 file unsafe partial interface InterfaceImplementation
 {
     [System.Runtime.InteropServices.UnmanagedCallersOnlyAttribute(CallConvs = new[] { typeof(System.Runtime.CompilerServices.CallConvMemberFunction) })]
-    internal static int ABI_Method(System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch* __this_native, nint __param_native)
+    internal static int ABI_Method(System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch* __this_native, global::SharedTypes.ComInterfaces.StatefulFinallyNative __param_native)
     {
-        bool __invokeSucceeded = default;
         global::SharedTypes.ComInterfaces.IStatefulFinallyMarshalling @this = default;
         global::SharedTypes.ComInterfaces.StatefulFinallyType param = default;
         int __retVal = default;
         // Setup - Perform required setup.
-        global::SharedTypes.ComInterfaces.StatefulFinallyTypeMarshaller __param_native__marshaller = new();
+        global::SharedTypes.ComInterfaces.StatefulFinallyTypeMarshaller.UnmanagedToManaged __param_native__marshaller = new();
         try
         {
+            // GuaranteedUnmarshal - Convert native data to managed data even in the case of an exception during the non-cleanup phases.
+            param = __param_native__marshaller.ToManagedFinally();
             // UnmarshalCapture - Capture the native data into marshaller instances in case conversion to managed data throws an exception.
             __param_native__marshaller.FromUnmanaged(__param_native);
             // Unmarshal - Convert native data to managed data.
             __retVal = 0; // S_OK
             @this = System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch.GetInstance<global::SharedTypes.ComInterfaces.IStatefulFinallyMarshalling>(__this_native);
             @this.Method(param);
-            __invokeSucceeded = true;
         }
         catch (System.Exception __exception)
         {
@@ -251,12 +254,6 @@ file unsafe partial interface InterfaceImplementation
         }
         finally
         {
-            if (__invokeSucceeded)
-            {
-                // GuaranteedUnmarshal - Convert native data to managed data even in the case of an exception during the non-cleanup phases.
-                param = __param_native__marshaller.ToManagedFinally();
-            }
-
             // Cleanup - Perform required cleanup.
             __param_native__marshaller.Free();
         }
@@ -265,24 +262,24 @@ file unsafe partial interface InterfaceImplementation
     }
 
     [System.Runtime.InteropServices.UnmanagedCallersOnlyAttribute(CallConvs = new[] { typeof(System.Runtime.CompilerServices.CallConvMemberFunction) })]
-    internal static int ABI_MethodIn(System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch* __this_native, nint* __param_native__param)
+    internal static int ABI_MethodIn(System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch* __this_native, global::SharedTypes.ComInterfaces.StatefulFinallyNative* __param_native__param)
     {
-        bool __invokeSucceeded = default;
         global::SharedTypes.ComInterfaces.IStatefulFinallyMarshalling @this = default;
-        ref nint __param_native = ref *__param_native__param;
+        ref global::SharedTypes.ComInterfaces.StatefulFinallyNative __param_native = ref *__param_native__param;
         global::SharedTypes.ComInterfaces.StatefulFinallyType param = default;
         int __retVal = default;
         // Setup - Perform required setup.
-        global::SharedTypes.ComInterfaces.StatefulFinallyTypeMarshaller __param_native__marshaller = new();
+        global::SharedTypes.ComInterfaces.StatefulFinallyTypeMarshaller.UnmanagedToManaged __param_native__marshaller = new();
         try
         {
+            // GuaranteedUnmarshal - Convert native data to managed data even in the case of an exception during the non-cleanup phases.
+            param = __param_native__marshaller.ToManagedFinally();
             // UnmarshalCapture - Capture the native data into marshaller instances in case conversion to managed data throws an exception.
             __param_native__marshaller.FromUnmanaged(__param_native);
             // Unmarshal - Convert native data to managed data.
             __retVal = 0; // S_OK
             @this = System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch.GetInstance<global::SharedTypes.ComInterfaces.IStatefulFinallyMarshalling>(__this_native);
             @this.MethodIn(in param);
-            __invokeSucceeded = true;
         }
         catch (System.Exception __exception)
         {
@@ -290,12 +287,6 @@ file unsafe partial interface InterfaceImplementation
         }
         finally
         {
-            if (__invokeSucceeded)
-            {
-                // GuaranteedUnmarshal - Convert native data to managed data even in the case of an exception during the non-cleanup phases.
-                param = __param_native__marshaller.ToManagedFinally();
-            }
-
             // Cleanup - Perform required cleanup.
             __param_native__marshaller.Free();
         }
@@ -304,20 +295,22 @@ file unsafe partial interface InterfaceImplementation
     }
 
     [System.Runtime.InteropServices.UnmanagedCallersOnlyAttribute(CallConvs = new[] { typeof(System.Runtime.CompilerServices.CallConvMemberFunction) })]
-    internal static int ABI_MethodOut(System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch* __this_native, nint* __param_native__param)
+    internal static int ABI_MethodOut(System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch* __this_native, global::SharedTypes.ComInterfaces.StatefulFinallyNative* __param_native__param)
     {
         global::SharedTypes.ComInterfaces.IStatefulFinallyMarshalling @this = default;
-        ref nint __param_native = ref *__param_native__param;
+        ref global::SharedTypes.ComInterfaces.StatefulFinallyNative __param_native = ref *__param_native__param;
         global::SharedTypes.ComInterfaces.StatefulFinallyType param = default;
         int __retVal = default;
         // Setup - Perform required setup.
-        global::SharedTypes.ComInterfaces.StatefulFinallyTypeMarshaller __param_native__marshaller = new();
+        global::SharedTypes.ComInterfaces.StatefulFinallyTypeMarshaller.ManagedToUnmanaged __param_native__marshaller = new();
         try
         {
             // Unmarshal - Convert native data to managed data.
             __retVal = 0; // S_OK
             @this = System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch.GetInstance<global::SharedTypes.ComInterfaces.IStatefulFinallyMarshalling>(__this_native);
             @this.MethodOut(out param);
+            // NotifyForSuccessfulInvoke - Keep alive any managed objects that need to stay alive across the call.
+            __param_native__marshaller.OnInvoked();
             // PinnedMarshal - Convert managed data to native data that requires the managed data to be pinned.
             __param_native = __param_native__marshaller.ToUnmanaged();
             // Marshal - Convert managed data to native data.
@@ -337,24 +330,26 @@ file unsafe partial interface InterfaceImplementation
     }
 
     [System.Runtime.InteropServices.UnmanagedCallersOnlyAttribute(CallConvs = new[] { typeof(System.Runtime.CompilerServices.CallConvMemberFunction) })]
-    internal static int ABI_MethodRef(System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch* __this_native, nint* __param_native__param)
+    internal static int ABI_MethodRef(System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch* __this_native, global::SharedTypes.ComInterfaces.StatefulFinallyNative* __param_native__param)
     {
-        bool __invokeSucceeded = default;
         global::SharedTypes.ComInterfaces.IStatefulFinallyMarshalling @this = default;
-        ref nint __param_native = ref *__param_native__param;
+        ref global::SharedTypes.ComInterfaces.StatefulFinallyNative __param_native = ref *__param_native__param;
         global::SharedTypes.ComInterfaces.StatefulFinallyType param = default;
         int __retVal = default;
         // Setup - Perform required setup.
-        global::SharedTypes.ComInterfaces.StatefulFinallyTypeMarshaller __param_native__marshaller = new();
+        global::SharedTypes.ComInterfaces.StatefulFinallyTypeMarshaller.Bidirectional __param_native__marshaller = new();
         try
         {
+            // GuaranteedUnmarshal - Convert native data to managed data even in the case of an exception during the non-cleanup phases.
+            param = __param_native__marshaller.ToManagedFinally();
             // UnmarshalCapture - Capture the native data into marshaller instances in case conversion to managed data throws an exception.
             __param_native__marshaller.FromUnmanaged(__param_native);
             // Unmarshal - Convert native data to managed data.
             __retVal = 0; // S_OK
             @this = System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch.GetInstance<global::SharedTypes.ComInterfaces.IStatefulFinallyMarshalling>(__this_native);
             @this.MethodRef(ref param);
-            __invokeSucceeded = true;
+            // NotifyForSuccessfulInvoke - Keep alive any managed objects that need to stay alive across the call.
+            __param_native__marshaller.OnInvoked();
             // PinnedMarshal - Convert managed data to native data that requires the managed data to be pinned.
             __param_native = __param_native__marshaller.ToUnmanaged();
             // Marshal - Convert managed data to native data.
@@ -366,12 +361,6 @@ file unsafe partial interface InterfaceImplementation
         }
         finally
         {
-            if (__invokeSucceeded)
-            {
-                // GuaranteedUnmarshal - Convert native data to managed data even in the case of an exception during the non-cleanup phases.
-                param = __param_native__marshaller.ToManagedFinally();
-            }
-
             // Cleanup - Perform required cleanup.
             __param_native__marshaller.Free();
         }
@@ -380,20 +369,22 @@ file unsafe partial interface InterfaceImplementation
     }
 
     [System.Runtime.InteropServices.UnmanagedCallersOnlyAttribute(CallConvs = new[] { typeof(System.Runtime.CompilerServices.CallConvMemberFunction) })]
-    internal static int ABI_Return(System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch* __this_native, nint* __invokeRetValUnmanaged__param)
+    internal static int ABI_Return(System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch* __this_native, global::SharedTypes.ComInterfaces.StatefulFinallyNative* __invokeRetValUnmanaged__param)
     {
         global::SharedTypes.ComInterfaces.IStatefulFinallyMarshalling @this = default;
-        ref nint __invokeRetValUnmanaged = ref *__invokeRetValUnmanaged__param;
+        ref global::SharedTypes.ComInterfaces.StatefulFinallyNative __invokeRetValUnmanaged = ref *__invokeRetValUnmanaged__param;
         global::SharedTypes.ComInterfaces.StatefulFinallyType __invokeRetVal = default;
         int __retVal = default;
         // Setup - Perform required setup.
-        global::SharedTypes.ComInterfaces.StatefulFinallyTypeMarshaller __invokeRetValUnmanaged__marshaller = new();
+        global::SharedTypes.ComInterfaces.StatefulFinallyTypeMarshaller.ManagedToUnmanaged __invokeRetValUnmanaged__marshaller = new();
         try
         {
             // Unmarshal - Convert native data to managed data.
             __retVal = 0; // S_OK
             @this = System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch.GetInstance<global::SharedTypes.ComInterfaces.IStatefulFinallyMarshalling>(__this_native);
             __invokeRetVal = @this.Return();
+            // NotifyForSuccessfulInvoke - Keep alive any managed objects that need to stay alive across the call.
+            __invokeRetValUnmanaged__marshaller.OnInvoked();
             // PinnedMarshal - Convert managed data to native data that requires the managed data to be pinned.
             __invokeRetValUnmanaged = __invokeRetValUnmanaged__marshaller.ToUnmanaged();
             // Marshal - Convert managed data to native data.
@@ -413,18 +404,20 @@ file unsafe partial interface InterfaceImplementation
     }
 
     [System.Runtime.InteropServices.UnmanagedCallersOnlyAttribute(CallConvs = new[] { typeof(System.Runtime.CompilerServices.CallConvMemberFunction) })]
-    internal static nint ABI_ReturnPreserveSig(System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch* __this_native)
+    internal static global::SharedTypes.ComInterfaces.StatefulFinallyNative ABI_ReturnPreserveSig(System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch* __this_native)
     {
         global::SharedTypes.ComInterfaces.IStatefulFinallyMarshalling @this = default;
         global::SharedTypes.ComInterfaces.StatefulFinallyType __retVal = default;
-        nint __retVal_native = default;
+        global::SharedTypes.ComInterfaces.StatefulFinallyNative __retVal_native = default;
         // Setup - Perform required setup.
-        global::SharedTypes.ComInterfaces.StatefulFinallyTypeMarshaller __retVal_native__marshaller = new();
+        global::SharedTypes.ComInterfaces.StatefulFinallyTypeMarshaller.ManagedToUnmanaged __retVal_native__marshaller = new();
         try
         {
             // Unmarshal - Convert native data to managed data.
             @this = System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch.GetInstance<global::SharedTypes.ComInterfaces.IStatefulFinallyMarshalling>(__this_native);
             __retVal = @this.ReturnPreserveSig();
+            // NotifyForSuccessfulInvoke - Keep alive any managed objects that need to stay alive across the call.
+            __retVal_native__marshaller.OnInvoked();
             // PinnedMarshal - Convert managed data to native data that requires the managed data to be pinned.
             __retVal_native = __retVal_native__marshaller.ToUnmanaged();
             // Marshal - Convert managed data to native data.
@@ -432,7 +425,7 @@ file unsafe partial interface InterfaceImplementation
         }
         catch (System.Exception __exception)
         {
-            __retVal_native = System.Runtime.InteropServices.Marshalling.ExceptionAsDefaultMarshaller<nint>.ConvertToUnmanaged(__exception);
+            __retVal_native = System.Runtime.InteropServices.Marshalling.ExceptionAsDefaultMarshaller<global::SharedTypes.ComInterfaces.StatefulFinallyNative>.ConvertToUnmanaged(__exception);
         }
         finally
         {
@@ -458,12 +451,12 @@ file unsafe partial interface InterfaceImplementation
         }
 
         {
-            vtable[3] = (void*)(delegate* unmanaged[MemberFunction]<System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch*, nint, int> )&ABI_Method;
-            vtable[4] = (void*)(delegate* unmanaged[MemberFunction]<System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch*, nint*, int> )&ABI_MethodIn;
-            vtable[5] = (void*)(delegate* unmanaged[MemberFunction]<System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch*, nint*, int> )&ABI_MethodOut;
-            vtable[6] = (void*)(delegate* unmanaged[MemberFunction]<System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch*, nint*, int> )&ABI_MethodRef;
-            vtable[7] = (void*)(delegate* unmanaged[MemberFunction]<System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch*, nint*, int> )&ABI_Return;
-            vtable[8] = (void*)(delegate* unmanaged[MemberFunction]<System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch*, nint> )&ABI_ReturnPreserveSig;
+            vtable[3] = (void*)(delegate* unmanaged[MemberFunction]<System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch*, global::SharedTypes.ComInterfaces.StatefulFinallyNative, int> )&ABI_Method;
+            vtable[4] = (void*)(delegate* unmanaged[MemberFunction]<System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch*, global::SharedTypes.ComInterfaces.StatefulFinallyNative*, int> )&ABI_MethodIn;
+            vtable[5] = (void*)(delegate* unmanaged[MemberFunction]<System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch*, global::SharedTypes.ComInterfaces.StatefulFinallyNative*, int> )&ABI_MethodOut;
+            vtable[6] = (void*)(delegate* unmanaged[MemberFunction]<System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch*, global::SharedTypes.ComInterfaces.StatefulFinallyNative*, int> )&ABI_MethodRef;
+            vtable[7] = (void*)(delegate* unmanaged[MemberFunction]<System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch*, global::SharedTypes.ComInterfaces.StatefulFinallyNative*, int> )&ABI_Return;
+            vtable[8] = (void*)(delegate* unmanaged[MemberFunction]<System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch*, global::SharedTypes.ComInterfaces.StatefulFinallyNative> )&ABI_ReturnPreserveSig;
         }
 
         return vtable;

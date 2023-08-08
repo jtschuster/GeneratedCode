@@ -35,9 +35,9 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
             __invokeRetVal = ((delegate* unmanaged[MemberFunction]<void*, global::System.Drawing.Point, int> )__vtable_native[4])(__this, point);
         }
 
-        System.GC.KeepAlive(this);
-        // Unmarshal - Convert native data to managed data.
+        // NotifyForSuccessfulInvoke - Keep alive any managed objects that need to stay alive across the call.
         System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
+        System.GC.KeepAlive(this);
     }
 }
 

@@ -486,7 +486,7 @@ namespace ComInterfaceGenerator.Tests
                             // Cleanup - Perform required cleanup.
                             global::ComInterfaceGenerator.Tests.UnmanagedToManagedCustomMarshallingTests.IntWrapperMarshallerToIntWithFreeCounts.Free(__oldValue_native);
                             {
-                                System.ReadOnlySpan<int> __values_native__nativeSpan = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.IntWrapper, int>.GetUnmanagedValuesDestination(__values_native, __values_native__numElements);
+                                System.ReadOnlySpan<int> __values_native__nativeSpan = global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<global::SharedTypes.IntWrapper, int>.GetUnmanagedValuesSource(__values_native, __values_native__numElements);
                                 for (int __i0 = 0; __i0 < __values_native__lastIndexMarshalled; ++__i0)
                                 {
                                     global::ComInterfaceGenerator.Tests.UnmanagedToManagedCustomMarshallingTests.IntWrapperMarshallerToIntWithFreeCounts.Free(__values_native__nativeSpan[__i0]);

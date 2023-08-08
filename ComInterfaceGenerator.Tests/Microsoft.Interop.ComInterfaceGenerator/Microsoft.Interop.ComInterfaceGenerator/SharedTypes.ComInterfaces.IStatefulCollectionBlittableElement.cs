@@ -33,9 +33,9 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
                 __invokeRetVal = ((delegate* unmanaged[MemberFunction]<void*, byte*, int, int> )__vtable_native[3])(__this, __p_native, size);
             }
 
-            System.GC.KeepAlive(this);
-            // Unmarshal - Convert native data to managed data.
+            // NotifyForSuccessfulInvoke - Keep alive any managed objects that need to stay alive across the call.
             System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
+            System.GC.KeepAlive(this);
         }
         finally
         {
@@ -68,9 +68,9 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
                 __invokeRetVal = ((delegate* unmanaged[MemberFunction]<void*, byte**, int*, int> )__vtable_native[4])(__this, &__pIn_native, __size_native);
             }
 
-            System.GC.KeepAlive(this);
-            // Unmarshal - Convert native data to managed data.
+            // NotifyForSuccessfulInvoke - Keep alive any managed objects that need to stay alive across the call.
             System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
+            System.GC.KeepAlive(this);
         }
         finally
         {
@@ -101,11 +101,12 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
                 __invokeRetVal = ((delegate* unmanaged[MemberFunction]<void*, byte**, int, int> )__vtable_native[5])(__this, &__pRef_native, size);
             }
 
+            // NotifyForSuccessfulInvoke - Keep alive any managed objects that need to stay alive across the call.
+            System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
             System.GC.KeepAlive(this);
             // UnmarshalCapture - Capture the native data into marshaller instances in case conversion to managed data throws an exception.
             __pRef_native__marshaller.FromUnmanaged(__pRef_native);
             // Unmarshal - Convert native data to managed data.
-            System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
             __pRef_native__numElements = size;
             __pRef_native__marshaller.GetUnmanagedValuesSource(__pRef_native__numElements).CopyTo(__pRef_native__marshaller.GetManagedValuesDestination(__pRef_native__numElements));
             pRef = __pRef_native__marshaller.ToManaged();
@@ -138,11 +139,12 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
                 __invokeRetVal = ((delegate* unmanaged[MemberFunction]<void*, byte**, int*, int> )__vtable_native[6])(__this, &__pOut_native, __size_native);
             }
 
+            // NotifyForSuccessfulInvoke - Keep alive any managed objects that need to stay alive across the call.
+            System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
             System.GC.KeepAlive(this);
             // UnmarshalCapture - Capture the native data into marshaller instances in case conversion to managed data throws an exception.
             __pOut_native__marshaller.FromUnmanaged(__pOut_native);
             // Unmarshal - Convert native data to managed data.
-            System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
             __pOut_native__numElements = size;
             __pOut_native__marshaller.GetUnmanagedValuesSource(__pOut_native__numElements).CopyTo(__pOut_native__marshaller.GetManagedValuesDestination(__pOut_native__numElements));
             pOut = __pOut_native__marshaller.ToManaged();
@@ -172,11 +174,12 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
                 __invokeRetVal = ((delegate* unmanaged[MemberFunction]<void*, int, byte**, int> )__vtable_native[7])(__this, size, &__retVal_native);
             }
 
+            // NotifyForSuccessfulInvoke - Keep alive any managed objects that need to stay alive across the call.
+            System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
             System.GC.KeepAlive(this);
             // UnmarshalCapture - Capture the native data into marshaller instances in case conversion to managed data throws an exception.
             __retVal_native__marshaller.FromUnmanaged(__retVal_native);
             // Unmarshal - Convert native data to managed data.
-            System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
             __retVal_native__numElements = size;
             __retVal_native__marshaller.GetUnmanagedValuesSource(__retVal_native__numElements).CopyTo(__retVal_native__marshaller.GetManagedValuesDestination(__retVal_native__numElements));
             __retVal = __retVal_native__marshaller.ToManaged();

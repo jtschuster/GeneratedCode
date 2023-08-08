@@ -23,9 +23,9 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
             __invokeRetVal = ((delegate* unmanaged[MemberFunction]<void*, ushort*, int> )__vtable_native[5])(__this, (ushort*)__name_native);
         }
 
-        System.GC.KeepAlive(this);
-        // Unmarshal - Convert native data to managed data.
+        // NotifyForSuccessfulInvoke - Keep alive any managed objects that need to stay alive across the call.
         System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
+        System.GC.KeepAlive(this);
     }
 
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Interop.ComInterfaceGenerator", "42.42.42.42")]
@@ -42,9 +42,10 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
                 __invokeRetVal = ((delegate* unmanaged[MemberFunction]<void*, ushort**, int> )__vtable_native[6])(__this, &__retVal_native);
             }
 
+            // NotifyForSuccessfulInvoke - Keep alive any managed objects that need to stay alive across the call.
+            System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
             System.GC.KeepAlive(this);
             // Unmarshal - Convert native data to managed data.
-            System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
             __retVal = global::System.Runtime.InteropServices.Marshalling.Utf16StringMarshaller.ConvertToManaged(__retVal_native);
         }
         finally
@@ -67,9 +68,9 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
             __invokeRetVal = ((delegate* unmanaged[MemberFunction]<void*, int*, int> )__vtable_native[3])(__this, &__retVal);
         }
 
-        System.GC.KeepAlive(this);
-        // Unmarshal - Convert native data to managed data.
+        // NotifyForSuccessfulInvoke - Keep alive any managed objects that need to stay alive across the call.
         System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
+        System.GC.KeepAlive(this);
         return __retVal;
     }
 
@@ -83,9 +84,9 @@ file unsafe partial interface InterfaceImplementation : global::SharedTypes.ComI
             __invokeRetVal = ((delegate* unmanaged[MemberFunction]<void*, int, int> )__vtable_native[4])(__this, x);
         }
 
-        System.GC.KeepAlive(this);
-        // Unmarshal - Convert native data to managed data.
+        // NotifyForSuccessfulInvoke - Keep alive any managed objects that need to stay alive across the call.
         System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(__invokeRetVal);
+        System.GC.KeepAlive(this);
     }
 
     int global::SharedTypes.ComInterfaces.IGetAndSetInt.GetInt() => throw new System.Diagnostics.UnreachableException();
