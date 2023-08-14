@@ -3,7 +3,7 @@ namespace ComInterfaceGenerator.Tests
 {
     unsafe partial class NativeExportsNE
     {
-        [System.Runtime.InteropServices.DllImportAttribute("Microsoft.Interop.Tests.NativeExportsNE", EntryPoint = "set_com_object_data", ExactSpelling = true)]
+        [global::System.Runtime.InteropServices.DllImportAttribute("Microsoft.Interop.Tests.NativeExportsNE", EntryPoint = "set_com_object_data", ExactSpelling = true)]
         public static extern partial void SetComObjectData(void* obj, int data);
     }
 }
@@ -11,7 +11,7 @@ namespace ComInterfaceGenerator.Tests
 {
     unsafe partial class NativeExportsNE
     {
-        [System.Runtime.InteropServices.DllImportAttribute("Microsoft.Interop.Tests.NativeExportsNE", EntryPoint = "get_com_object_data", ExactSpelling = true)]
+        [global::System.Runtime.InteropServices.DllImportAttribute("Microsoft.Interop.Tests.NativeExportsNE", EntryPoint = "get_com_object_data", ExactSpelling = true)]
         public static extern partial int GetComObjectData(void* obj);
     }
 }
@@ -34,12 +34,12 @@ namespace ComInterfaceGenerator.Tests
             }
             finally
             {
-                // Cleanup - Perform required cleanup.
+                // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                 global::System.Runtime.InteropServices.Marshalling.ComInterfaceMarshaller<global::SharedTypes.ComInterfaces.IGetAndSetInt>.Free(__obj_native);
             }
 
             // Local P/Invoke
-            [System.Runtime.InteropServices.DllImportAttribute("Microsoft.Interop.Tests.NativeExportsNE", EntryPoint = "set_com_object_data", ExactSpelling = true)]
+            [global::System.Runtime.InteropServices.DllImportAttribute("Microsoft.Interop.Tests.NativeExportsNE", EntryPoint = "set_com_object_data", ExactSpelling = true)]
             static extern unsafe void __PInvoke(void* __obj_native, int __data_native);
         }
     }
@@ -64,13 +64,13 @@ namespace ComInterfaceGenerator.Tests
             }
             finally
             {
-                // Cleanup - Perform required cleanup.
+                // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                 global::System.Runtime.InteropServices.Marshalling.ComInterfaceMarshaller<global::SharedTypes.ComInterfaces.IGetAndSetInt>.Free(__obj_native);
             }
 
             return __retVal;
             // Local P/Invoke
-            [System.Runtime.InteropServices.DllImportAttribute("Microsoft.Interop.Tests.NativeExportsNE", EntryPoint = "get_com_object_data", ExactSpelling = true)]
+            [global::System.Runtime.InteropServices.DllImportAttribute("Microsoft.Interop.Tests.NativeExportsNE", EntryPoint = "get_com_object_data", ExactSpelling = true)]
             static extern unsafe int __PInvoke(void* __obj_native);
         }
     }
@@ -83,6 +83,7 @@ namespace ComInterfaceGenerator.Tests
         [global::System.Runtime.CompilerServices.SkipLocalsInitAttribute]
         private static partial global::SharedTypes.ComInterfaces.IGetAndSetInt NewNativeObject()
         {
+            bool __invokeSucceeded = default;
             global::SharedTypes.ComInterfaces.IGetAndSetInt __retVal = default;
             void* __retVal_native = default;
             try
@@ -91,18 +92,22 @@ namespace ComInterfaceGenerator.Tests
                     __retVal_native = __PInvoke();
                 }
 
+                __invokeSucceeded = true;
                 // Unmarshal - Convert native data to managed data.
                 __retVal = global::System.Runtime.InteropServices.Marshalling.ComInterfaceMarshaller<global::SharedTypes.ComInterfaces.IGetAndSetInt>.ConvertToManaged(__retVal_native);
             }
             finally
             {
-                // Cleanup - Perform required cleanup.
-                global::System.Runtime.InteropServices.Marshalling.ComInterfaceMarshaller<global::SharedTypes.ComInterfaces.IGetAndSetInt>.Free(__retVal_native);
+                if (__invokeSucceeded)
+                {
+                    // CleanupCalleeAllocated - Perform cleanup of callee allocated resources.
+                    global::System.Runtime.InteropServices.Marshalling.ComInterfaceMarshaller<global::SharedTypes.ComInterfaces.IGetAndSetInt>.Free(__retVal_native);
+                }
             }
 
             return __retVal;
             // Local P/Invoke
-            [System.Runtime.InteropServices.DllImportAttribute("Microsoft.Interop.Tests.NativeExportsNE", EntryPoint = "new_get_and_set_int", ExactSpelling = true)]
+            [global::System.Runtime.InteropServices.DllImportAttribute("Microsoft.Interop.Tests.NativeExportsNE", EntryPoint = "new_get_and_set_int", ExactSpelling = true)]
             static extern unsafe void* __PInvoke();
         }
     }
@@ -111,7 +116,7 @@ namespace ComInterfaceGenerator.Tests
 {
     internal unsafe partial class NativeExportsNE
     {
-        [System.Runtime.InteropServices.DllImportAttribute("Microsoft.Interop.Tests.NativeExportsNE", EntryPoint = "get_com_object", ExactSpelling = true)]
+        [global::System.Runtime.InteropServices.DllImportAttribute("Microsoft.Interop.Tests.NativeExportsNE", EntryPoint = "get_com_object", ExactSpelling = true)]
         public static extern partial void* NewNativeObject();
     }
 }
@@ -119,7 +124,7 @@ namespace ComInterfaceGenerator.Tests
 {
     public unsafe partial class IGetAndSetIntTests
     {
-        [System.Runtime.InteropServices.DllImportAttribute("Microsoft.Interop.Tests.NativeExportsNE", EntryPoint = "new_get_and_set_int", ExactSpelling = true)]
+        [global::System.Runtime.InteropServices.DllImportAttribute("Microsoft.Interop.Tests.NativeExportsNE", EntryPoint = "new_get_and_set_int", ExactSpelling = true)]
         public static extern partial void* NewNativeObject();
     }
 }
@@ -131,6 +136,7 @@ namespace ComInterfaceGenerator.Tests
         [global::System.Runtime.CompilerServices.SkipLocalsInitAttribute]
         internal static partial global::SharedTypes.ComInterfaces.IGetAndSetInt NewNativeObjectWithMarshaller()
         {
+            bool __invokeSucceeded = default;
             global::SharedTypes.ComInterfaces.IGetAndSetInt __retVal = default;
             void* __retVal_native = default;
             try
@@ -139,18 +145,22 @@ namespace ComInterfaceGenerator.Tests
                     __retVal_native = __PInvoke();
                 }
 
+                __invokeSucceeded = true;
                 // Unmarshal - Convert native data to managed data.
                 __retVal = global::System.Runtime.InteropServices.Marshalling.ComInterfaceMarshaller<global::SharedTypes.ComInterfaces.IGetAndSetInt>.ConvertToManaged(__retVal_native);
             }
             finally
             {
-                // Cleanup - Perform required cleanup.
-                global::System.Runtime.InteropServices.Marshalling.ComInterfaceMarshaller<global::SharedTypes.ComInterfaces.IGetAndSetInt>.Free(__retVal_native);
+                if (__invokeSucceeded)
+                {
+                    // CleanupCalleeAllocated - Perform cleanup of callee allocated resources.
+                    global::System.Runtime.InteropServices.Marshalling.ComInterfaceMarshaller<global::SharedTypes.ComInterfaces.IGetAndSetInt>.Free(__retVal_native);
+                }
             }
 
             return __retVal;
             // Local P/Invoke
-            [System.Runtime.InteropServices.DllImportAttribute("Microsoft.Interop.Tests.NativeExportsNE", EntryPoint = "new_get_and_set_int", ExactSpelling = true)]
+            [global::System.Runtime.InteropServices.DllImportAttribute("Microsoft.Interop.Tests.NativeExportsNE", EntryPoint = "new_get_and_set_int", ExactSpelling = true)]
             static extern unsafe void* __PInvoke();
         }
     }
@@ -163,6 +173,7 @@ namespace ComInterfaceGenerator.Tests
         [global::System.Runtime.CompilerServices.SkipLocalsInitAttribute]
         internal static partial global::SharedTypes.ComInterfaces.IGetAndSetInt NewNativeObjectWithUniqueMarshaller()
         {
+            bool __invokeSucceeded = default;
             global::SharedTypes.ComInterfaces.IGetAndSetInt __retVal = default;
             void* __retVal_native = default;
             try
@@ -171,18 +182,22 @@ namespace ComInterfaceGenerator.Tests
                     __retVal_native = __PInvoke();
                 }
 
+                __invokeSucceeded = true;
                 // Unmarshal - Convert native data to managed data.
                 __retVal = global::System.Runtime.InteropServices.Marshalling.UniqueComInterfaceMarshaller<global::SharedTypes.ComInterfaces.IGetAndSetInt>.ConvertToManaged(__retVal_native);
             }
             finally
             {
-                // Cleanup - Perform required cleanup.
-                global::System.Runtime.InteropServices.Marshalling.UniqueComInterfaceMarshaller<global::SharedTypes.ComInterfaces.IGetAndSetInt>.Free(__retVal_native);
+                if (__invokeSucceeded)
+                {
+                    // CleanupCalleeAllocated - Perform cleanup of callee allocated resources.
+                    global::System.Runtime.InteropServices.Marshalling.UniqueComInterfaceMarshaller<global::SharedTypes.ComInterfaces.IGetAndSetInt>.Free(__retVal_native);
+                }
             }
 
             return __retVal;
             // Local P/Invoke
-            [System.Runtime.InteropServices.DllImportAttribute("Microsoft.Interop.Tests.NativeExportsNE", EntryPoint = "new_get_and_set_int", ExactSpelling = true)]
+            [global::System.Runtime.InteropServices.DllImportAttribute("Microsoft.Interop.Tests.NativeExportsNE", EntryPoint = "new_get_and_set_int", ExactSpelling = true)]
             static extern unsafe void* __PInvoke();
         }
     }
@@ -191,7 +206,7 @@ namespace ComInterfaceGenerator.Tests
 {
     public unsafe partial class IGetIntArrayTests
     {
-        [System.Runtime.InteropServices.DllImportAttribute("Microsoft.Interop.Tests.NativeExportsNE", EntryPoint = "new_get_and_set_int_array", ExactSpelling = true)]
+        [global::System.Runtime.InteropServices.DllImportAttribute("Microsoft.Interop.Tests.NativeExportsNE", EntryPoint = "new_get_and_set_int_array", ExactSpelling = true)]
         public static extern partial void* NewNativeObject();
     }
 }
@@ -215,7 +230,7 @@ namespace ComInterfaceGenerator.Tests
                 __retVal = global::ComInterfaceGenerator.Tests.NativeExportsNE.ImplicitThis.NativeObjectMarshaller.ConvertToManaged(__retVal_native);
                 return __retVal;
                 // Local P/Invoke
-                [System.Runtime.InteropServices.DllImportAttribute("Microsoft.Interop.Tests.NativeExportsNE", EntryPoint = "new_native_object", ExactSpelling = true)]
+                [global::System.Runtime.InteropServices.DllImportAttribute("Microsoft.Interop.Tests.NativeExportsNE", EntryPoint = "new_native_object", ExactSpelling = true)]
                 static extern unsafe void* __PInvoke();
             }
         }
@@ -227,7 +242,7 @@ namespace ComInterfaceGenerator.Tests
     {
         internal unsafe partial class ImplicitThis
         {
-            [System.Runtime.InteropServices.DllImportAttribute("Microsoft.Interop.Tests.NativeExportsNE", EntryPoint = "delete_native_object", ExactSpelling = true)]
+            [global::System.Runtime.InteropServices.DllImportAttribute("Microsoft.Interop.Tests.NativeExportsNE", EntryPoint = "delete_native_object", ExactSpelling = true)]
             public static extern partial void DeleteNativeObject(void* obj);
         }
     }
@@ -238,7 +253,7 @@ namespace ComInterfaceGenerator.Tests
     {
         internal unsafe partial class ImplicitThis
         {
-            [System.Runtime.InteropServices.DllImportAttribute("Microsoft.Interop.Tests.NativeExportsNE", EntryPoint = "set_native_object_data", ExactSpelling = true)]
+            [global::System.Runtime.InteropServices.DllImportAttribute("Microsoft.Interop.Tests.NativeExportsNE", EntryPoint = "set_native_object_data", ExactSpelling = true)]
             public static extern partial void SetNativeObjectData(void* obj, int data);
         }
     }
@@ -249,7 +264,7 @@ namespace ComInterfaceGenerator.Tests
     {
         internal unsafe partial class ImplicitThis
         {
-            [System.Runtime.InteropServices.DllImportAttribute("Microsoft.Interop.Tests.NativeExportsNE", EntryPoint = "get_native_object_data", ExactSpelling = true)]
+            [global::System.Runtime.InteropServices.DllImportAttribute("Microsoft.Interop.Tests.NativeExportsNE", EntryPoint = "get_native_object_data", ExactSpelling = true)]
             public static extern partial int GetNativeObjectData(void* obj);
         }
     }
@@ -274,7 +289,7 @@ namespace ComInterfaceGenerator.Tests
                 __retVal = global::ComInterfaceGenerator.Tests.NativeExportsNE.NoImplicitThis.StaticMethodTableMarshaller.ConvertToManaged(__retVal_native);
                 return __retVal;
                 // Local P/Invoke
-                [System.Runtime.InteropServices.DllImportAttribute("Microsoft.Interop.Tests.NativeExportsNE", EntryPoint = "get_static_function_table", ExactSpelling = true)]
+                [global::System.Runtime.InteropServices.DllImportAttribute("Microsoft.Interop.Tests.NativeExportsNE", EntryPoint = "get_static_function_table", ExactSpelling = true)]
                 static extern unsafe void* __PInvoke();
             }
         }
@@ -284,7 +299,7 @@ namespace ComInterfaceGenerator.Tests
 {
     public unsafe partial class PreserveSigTests
     {
-        [System.Runtime.InteropServices.DllImportAttribute("Microsoft.Interop.Tests.NativeExportsNE", EntryPoint = "create_point_provider", ExactSpelling = true)]
+        [global::System.Runtime.InteropServices.DllImportAttribute("Microsoft.Interop.Tests.NativeExportsNE", EntryPoint = "create_point_provider", ExactSpelling = true)]
         public static extern partial void* NewNativeObject();
     }
 }
@@ -292,7 +307,7 @@ namespace ComInterfaceGenerator.Tests
 {
     public unsafe partial class StringMarshallingTests
     {
-        [System.Runtime.InteropServices.DllImportAttribute("Microsoft.Interop.Tests.NativeExportsNE", EntryPoint = "new_utf8_marshalling", ExactSpelling = true)]
+        [global::System.Runtime.InteropServices.DllImportAttribute("Microsoft.Interop.Tests.NativeExportsNE", EntryPoint = "new_utf8_marshalling", ExactSpelling = true)]
         public static extern partial void* NewIUtf8Marshalling();
     }
 }
@@ -300,7 +315,7 @@ namespace ComInterfaceGenerator.Tests
 {
     public unsafe partial class StringMarshallingTests
     {
-        [System.Runtime.InteropServices.DllImportAttribute("Microsoft.Interop.Tests.NativeExportsNE", EntryPoint = "new_utf16_marshalling", ExactSpelling = true)]
+        [global::System.Runtime.InteropServices.DllImportAttribute("Microsoft.Interop.Tests.NativeExportsNE", EntryPoint = "new_utf16_marshalling", ExactSpelling = true)]
         public static extern partial void* NewIUtf16Marshalling();
     }
 }
@@ -308,7 +323,7 @@ namespace ComInterfaceGenerator.Tests
 {
     public unsafe partial class StringMarshallingTests
     {
-        [System.Runtime.InteropServices.DllImportAttribute("Microsoft.Interop.Tests.NativeExportsNE", EntryPoint = "new_string_marshalling_override", ExactSpelling = true)]
+        [global::System.Runtime.InteropServices.DllImportAttribute("Microsoft.Interop.Tests.NativeExportsNE", EntryPoint = "new_string_marshalling_override", ExactSpelling = true)]
         public static extern partial void* NewStringMarshallingOverride();
     }
 }
@@ -318,7 +333,7 @@ namespace ComInterfaceGenerator.Tests
     {
         internal unsafe partial class UnmanagedToManagedCustomMarshalling
         {
-            [System.Runtime.InteropServices.DllImportAttribute("Microsoft.Interop.Tests.NativeExportsNE", EntryPoint = "set_native_object_data", ExactSpelling = true)]
+            [global::System.Runtime.InteropServices.DllImportAttribute("Microsoft.Interop.Tests.NativeExportsNE", EntryPoint = "set_native_object_data", ExactSpelling = true)]
             public static extern partial void SetNativeObjectData(void* obj, int data);
         }
     }
@@ -329,7 +344,7 @@ namespace ComInterfaceGenerator.Tests
     {
         internal unsafe partial class UnmanagedToManagedCustomMarshalling
         {
-            [System.Runtime.InteropServices.DllImportAttribute("Microsoft.Interop.Tests.NativeExportsNE", EntryPoint = "get_native_object_data", ExactSpelling = true)]
+            [global::System.Runtime.InteropServices.DllImportAttribute("Microsoft.Interop.Tests.NativeExportsNE", EntryPoint = "get_native_object_data", ExactSpelling = true)]
             public static extern partial int GetNativeObjectData(void* obj);
         }
     }
@@ -353,7 +368,7 @@ namespace ComInterfaceGenerator.Tests
 
                 return __retVal;
                 // Local P/Invoke
-                [System.Runtime.InteropServices.DllImportAttribute("Microsoft.Interop.Tests.NativeExportsNE", EntryPoint = "exchange_native_object_data", ExactSpelling = true)]
+                [global::System.Runtime.InteropServices.DllImportAttribute("Microsoft.Interop.Tests.NativeExportsNE", EntryPoint = "exchange_native_object_data", ExactSpelling = true)]
                 static extern unsafe int __PInvoke(void* __obj_native, int* __x_native);
             }
         }
@@ -369,7 +384,7 @@ namespace ComInterfaceGenerator.Tests
             [global::System.Runtime.CompilerServices.SkipLocalsInitAttribute]
             public static partial int SumAndSetNativeObjectData(void* obj, int[] arr, int numValues, out int oldValue)
             {
-                System.Runtime.CompilerServices.Unsafe.SkipInit(out oldValue);
+                global::System.Runtime.CompilerServices.Unsafe.SkipInit(out oldValue);
                 int __retVal;
                 // Pin - Pin data in preparation for calling the P/Invoke.
                 fixed (int* __oldValue_native = &oldValue)
@@ -380,7 +395,7 @@ namespace ComInterfaceGenerator.Tests
 
                 return __retVal;
                 // Local P/Invoke
-                [System.Runtime.InteropServices.DllImportAttribute("Microsoft.Interop.Tests.NativeExportsNE", EntryPoint = "sum_and_set_native_object_data", ExactSpelling = true)]
+                [global::System.Runtime.InteropServices.DllImportAttribute("Microsoft.Interop.Tests.NativeExportsNE", EntryPoint = "sum_and_set_native_object_data", ExactSpelling = true)]
                 static extern unsafe int __PInvoke(void* __obj_native, int* __arr_native, int __numValues_native, int* __oldValue_native);
             }
         }
@@ -396,12 +411,12 @@ namespace ComInterfaceGenerator.Tests
             [global::System.Runtime.CompilerServices.SkipLocalsInitAttribute]
             public static partial int SumAndSetNativeObjectData(void* obj, ref int[] arr, int numValues, out int oldValue)
             {
-                System.Runtime.CompilerServices.Unsafe.SkipInit(out oldValue);
+                global::System.Runtime.CompilerServices.Unsafe.SkipInit(out oldValue);
                 int* __arr_native = default;
                 int __retVal = default;
                 // Setup - Perform required setup.
                 int __arr_native__numElements;
-                System.Runtime.CompilerServices.Unsafe.SkipInit(out __arr_native__numElements);
+                global::System.Runtime.CompilerServices.Unsafe.SkipInit(out __arr_native__numElements);
                 try
                 {
                     // Marshal - Convert managed data to native data.
@@ -420,14 +435,14 @@ namespace ComInterfaceGenerator.Tests
                 }
                 finally
                 {
-                    // Cleanup - Perform required cleanup.
+                    // CleanupCallerAllocated - Perform cleanup of caller allocated resources.
                     __arr_native__numElements = numValues;
                     global::System.Runtime.InteropServices.Marshalling.ArrayMarshaller<int, int>.Free(__arr_native);
                 }
 
                 return __retVal;
                 // Local P/Invoke
-                [System.Runtime.InteropServices.DllImportAttribute("Microsoft.Interop.Tests.NativeExportsNE", EntryPoint = "sum_and_set_native_object_data_with_ref", ExactSpelling = true)]
+                [global::System.Runtime.InteropServices.DllImportAttribute("Microsoft.Interop.Tests.NativeExportsNE", EntryPoint = "sum_and_set_native_object_data_with_ref", ExactSpelling = true)]
                 static extern unsafe int __PInvoke(void* __obj_native, int** __arr_native, int __numValues_native, int* __oldValue_native);
             }
         }
@@ -452,7 +467,7 @@ namespace ComInterfaceGenerator.Tests
 
                 return __retVal;
                 // Local P/Invoke
-                [System.Runtime.InteropServices.DllImportAttribute("Microsoft.Interop.Tests.NativeExportsNE", EntryPoint = "multiply_with_native_object_data", ExactSpelling = true)]
+                [global::System.Runtime.InteropServices.DllImportAttribute("Microsoft.Interop.Tests.NativeExportsNE", EntryPoint = "multiply_with_native_object_data", ExactSpelling = true)]
                 static extern unsafe int __PInvoke(void* __obj_native, int* __arr_native, int __numValues_native);
             }
         }
